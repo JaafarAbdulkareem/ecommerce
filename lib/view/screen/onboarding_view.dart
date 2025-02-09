@@ -6,11 +6,13 @@ class OnboardingView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       body: SafeArea(
-        child: const Column(
+        child: Column(
           children: [
-            Expanded(child: SliderPageView(),),
+            Expanded(
+              child: SliderPageView(),
+            ),
             SizedBox(height: 64),
           ],
         ),
@@ -18,4 +20,3 @@ class OnboardingView extends StatelessWidget {
     );
   }
 }
-

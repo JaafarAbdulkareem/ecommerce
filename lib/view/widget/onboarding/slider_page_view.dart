@@ -9,7 +9,7 @@ class SliderPageView extends StatelessWidget {
   Widget build(BuildContext context) {
     return PageView(
       onPageChanged: (value) {
-        print(value);
+       
       },
       children: onboardingdata
           .map(
