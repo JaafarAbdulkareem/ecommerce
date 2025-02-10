@@ -19,7 +19,7 @@ class SliderPageViewItem extends StatelessWidget {
         const SizedBox(height: 64),
         Image.asset(data.image),
         const SizedBox(height: 64),
-        Text(
+         Text(
           data.body,
           style: AppStyle.styleBold14(context),
           textAlign: TextAlign.center,

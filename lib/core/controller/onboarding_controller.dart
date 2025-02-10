@@ -1,9 +1,11 @@
 import 'package:ecommerce/core/constant/constant_scale.dart';
+import 'package:ecommerce/data/data_source/static/static_onboarding.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 abstract class OnboardingController extends GetxController {
-  void changePageView(int index);
+  void nextpage();
+  void changePage(int index);
 }
 
 class OnboardingControllerImp extends OnboardingController {
@@ -16,7 +18,22 @@ class OnboardingControllerImp extends OnboardingController {
   }
 
   @override
-  void changePageView(int index) {
+  Future<void> nextpage() async {
+    currentIndex++;
+    if (currentIndex >= onboardingdata.length) {
+      print("login");
+    } else {
+      await pageController.animateToPage(
+        currentIndex,
+        duration: Duration(milliseconds: 500),
+        curve: Curves.easeOut,
+      );
+    }
+    update();
+  }
+
+  @override
+  void changePage(int index) {
     currentIndex = index;
     update();
   }
