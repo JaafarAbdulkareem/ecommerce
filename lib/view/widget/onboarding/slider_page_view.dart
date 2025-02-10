@@ -1,4 +1,4 @@
-import 'package:ecommerce/core/controller/onboarding_controller.dart';
+import 'package:ecommerce/controller/onboarding_controller.dart';
 import 'package:ecommerce/data/data_source/static/static_onboarding.dart';
 import 'package:ecommerce/view/widget/onboarding/slider_page_view_item.dart';
 import 'package:flutter/material.dart';
