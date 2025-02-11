@@ -1,3 +1,4 @@
+import 'package:ecommerce/core/constant/constant_screen_name.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -35,5 +36,7 @@ class SignupControllerImp extends SignupController {
   }
 
   @override
-  void signupOnTap() {}
+  void signupOnTap() {
+    Get.offNamed(ConstantScreenName.success);
+  }
 }

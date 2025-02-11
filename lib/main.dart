@@ -25,13 +25,12 @@ class MyApp extends StatelessWidget {
       title: 'Ecommerce',
       theme: ThemeData(
         fontFamily: ConstantTextFons.englishFont,
-       
       ),
       translations: TranslationLanguages(),
       locale: controller.language,
-      home: 
-      // ChooseAppLanguage(),
-       const LoginView(),
+      home:
+          // ChooseAppLanguage(),
+          const LoginView(),
       getPages: getPages,
     );
   }
