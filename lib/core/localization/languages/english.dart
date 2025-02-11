@@ -1,6 +1,7 @@
 import 'package:ecommerce/core/localization/key_language.dart';
 
 Map<String, String> english = {
+  //onboarding
   KeyLanguage.chooseLanguage: "choose language",
   KeyLanguage.arabic: "Arabic",
   KeyLanguage.english: "English",
@@ -10,12 +11,27 @@ Map<String, String> english = {
   KeyLanguage.fastDelivery: "Fast Delivery",
   KeyLanguage.bodyChooseProduct:
       "We Have 100k Product, Choose\nYour Product From Our E-commerce Shop",
+  //button
   KeyLanguage.continueButton: "Continue",
   KeyLanguage.login: "Login",
   KeyLanguage.signup: "SignUp",
+  KeyLanguage.save: "Save",
+//auth
   KeyLanguage.welcome: "Welcome Back",
+  KeyLanguage.checkEmail: "Check Email",
+  KeyLanguage.verify: "Verification",
+  KeyLanguage.newPassword: "New PassWord",
+  KeyLanguage.done: "Done",
   KeyLanguage.loginContent:
       "Login with your email and password or continue with social media",
+  KeyLanguage.signupContent:
+      "Signup with your email and password or continue with social media",
+  KeyLanguage.forgetPasswordContent:
+      "Please, Enter Your Email Address to Recive A Verification Code",
+  KeyLanguage.verifyContent: "Please, Enter The Digital Code to Sent : ",
+  KeyLanguage.resetPasswordContent: "Please, Enter New Password",
+  KeyLanguage.successContent:
+      "Success! Your Action Is Complete. Please Log In Again.",
   KeyLanguage.usernameLabel: "Username",
   KeyLanguage.emailLabel: "Email",
   KeyLanguage.passwordLabel: "Password",

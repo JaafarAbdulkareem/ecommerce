@@ -31,7 +31,10 @@ class SignupView extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              const TitleDescriptionWidget(),
+              TitleDescriptionWidget(
+                title: KeyLanguage.welcome.tr,
+                subTitle: KeyLanguage.signupContent.tr,
+              ),
               CustomTextFormFieldWidget(
                 hint: KeyLanguage.usernameHint.tr,
                 label: KeyLanguage.usernameLabel.tr,

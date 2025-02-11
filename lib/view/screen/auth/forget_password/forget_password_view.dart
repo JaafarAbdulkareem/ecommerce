@@ -1,23 +1,21 @@
-import 'package:ecommerce/controller/login_controller.dart';
+import 'package:ecommerce/controller/forget_password_controller.dart';
 import 'package:ecommerce/core/constant/app_color.dart';
 import 'package:ecommerce/core/constant/app_icon.dart';
 import 'package:ecommerce/core/constant/app_style.dart';
 import 'package:ecommerce/core/localization/key_language.dart';
 import 'package:ecommerce/core/share/custom_button_widget.dart';
 import 'package:ecommerce/core/share/custom_text_form_field_widget.dart';
-import 'package:ecommerce/view/widget/login/custom_logo_widget.dart';
-import 'package:ecommerce/view/widget/login/forget_password_widget.dart';
-import 'package:ecommerce/view/widget/login/link_message.dart';
 import 'package:ecommerce/view/widget/login/title_description_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class LoginView extends StatelessWidget {
-  const LoginView({super.key});
+class ForgetPasswordView extends StatelessWidget {
+  const ForgetPasswordView({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final LoginControllerImp controller = Get.put(LoginControllerImp());
+    final ForgetPasswordControllerImp controller =
+        Get.put(ForgetPasswordControllerImp());
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
@@ -33,10 +31,9 @@ class LoginView extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              const CustomLogoWidget(),
               TitleDescriptionWidget(
-                title: KeyLanguage.welcome.tr,
-                subTitle: KeyLanguage.loginContent.tr,
+                title: KeyLanguage.checkEmail.tr,
+                subTitle: KeyLanguage.forgetPasswordContent.tr,
               ),
               CustomTextFormFieldWidget(
                 hint: KeyLanguage.emailHint.tr,
@@ -44,26 +41,11 @@ class LoginView extends StatelessWidget {
                 icon: AppIcon.email,
                 controller: controller.email,
               ),
-              CustomTextFormFieldWidget(
-                hint: KeyLanguage.passwordHint.tr,
-                label: KeyLanguage.passwordLabel.tr,
-                icon: AppIcon.password,
-                controller: controller.password,
-                obscure: true,
-              ),
-              const ForgetPasswordWidget(),
               CustomButtonWidget(
                 text: KeyLanguage.login.tr,
                 color: AppColor.primary,
                 onTap: () {
-                  controller.loginOnTap();
-                },
-              ),
-              LinkMessage(
-                message: KeyLanguage.messageLinkLogin.tr,
-                link: KeyLanguage.signup.tr,
-                onTap: () {
-                  controller.linkOnTap();
+                  controller.forgetPasswordOnTap();
                 },
               ),
               const SizedBox(height: 32),

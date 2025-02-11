@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 abstract class LoginController extends GetxController {
+  void forgetScreen();
   void linkOnTap();
   void loginOnTap();
 }
@@ -31,4 +32,9 @@ class LoginControllerImp extends LoginController {
 
   @override
   void loginOnTap() {}
+
+  @override
+  void forgetScreen() {
+    Get.toNamed(ConstantScreenName.forgetPassword);
+  }
 }

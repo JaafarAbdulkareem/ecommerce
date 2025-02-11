@@ -12,7 +12,9 @@ class ForgetPasswordWidget extends GetView<LoginControllerImp> {
     return Align(
       alignment: Alignment.centerRight,
       child: InkWell(
-        onTap: () {},
+        onTap: () {
+          controller.forgetScreen();
+        },
         child: Text(
           KeyLanguage.forgetPassword.tr,
           style: AppStyle.styleLight14(context),
