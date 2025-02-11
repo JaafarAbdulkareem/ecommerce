@@ -35,7 +35,7 @@ class LoginView extends StatelessWidget {
             children: [
               const CustomLogoWidget(),
               TitleDescriptionWidget(
-                title: KeyLanguage.welcome.tr,
+                title: KeyLanguage.welcomeTitle.tr,
                 subTitle: KeyLanguage.loginContent.tr,
               ),
               CustomTextFormFieldWidget(

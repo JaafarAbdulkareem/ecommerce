@@ -1,5 +1,4 @@
 import 'package:ecommerce/core/constant/app_style.dart';
-import 'package:ecommerce/core/localization/key_language.dart';
 import 'package:flutter/material.dart';
 
 class CustomButtonWidget extends StatelessWidget {
@@ -20,7 +19,7 @@ class CustomButtonWidget extends StatelessWidget {
       ),
       onPressed: onTap,
       child: Text(
-        KeyLanguage.login,
+        text,
         style: AppStyle.styleBold16(context),
       ),
     );

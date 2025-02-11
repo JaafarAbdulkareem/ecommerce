@@ -16,12 +16,14 @@ Map<String, String> english = {
   KeyLanguage.login: "Login",
   KeyLanguage.signup: "SignUp",
   KeyLanguage.save: "Save",
+  KeyLanguage.check: "Check",
+  KeyLanguage.verify: "Verify",
 //auth
-  KeyLanguage.welcome: "Welcome Back",
-  KeyLanguage.checkEmail: "Check Email",
-  KeyLanguage.verify: "Verification",
-  KeyLanguage.newPassword: "New PassWord",
-  KeyLanguage.done: "Done",
+  KeyLanguage.welcomeTitle: "Welcome Back",
+  KeyLanguage.checkEmailTitle: "Check Email",
+  KeyLanguage.verifyTitle: "Verification",
+  KeyLanguage.newPasswordTitle: "New PassWord",
+  KeyLanguage.successTitle: "Success",
   KeyLanguage.loginContent:
       "Login with your email and password or continue with social media",
   KeyLanguage.signupContent:

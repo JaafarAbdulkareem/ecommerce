@@ -13,12 +13,14 @@ abstract class KeyLanguage {
   static const String login = "login";
   static const String signup = "signup";
   static const String save = "save";
-//auth
-  static const String welcome = "welcome";
-  static const String checkEmail = "checkEmail";
+  static const String check = "check";
   static const String verify = "verify";
-  static const String newPassword = "newPassword";
-  static const String done = "done";
+//auth
+  static const String welcomeTitle = "welcomeTitle";
+  static const String checkEmailTitle = "checkEmailTitle";
+  static const String verifyTitle = "verifyTitle";
+  static const String newPasswordTitle = "newPasswordTitle";
+  static const String successTitle = "successTitle";
   static const String loginContent = "loginContent";
   static const String signupContent = "signupContent";
   static const String forgetPasswordContent = "forgetPasswordContent";
