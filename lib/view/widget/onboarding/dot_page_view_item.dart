@@ -13,7 +13,7 @@ class DotPageViewItem extends StatelessWidget {
       width: select ? 12 : 6,
       height: 6,
       decoration: BoxDecoration(
-        color: select ? AppColor.primary : AppColor.dotColor,
+        color: select ? AppColor.primary : AppColor.secondary,
         borderRadius: BorderRadius.circular(12),
       ),
     );

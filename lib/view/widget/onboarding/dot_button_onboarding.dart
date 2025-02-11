@@ -1,5 +1,6 @@
 import 'package:ecommerce/core/constant/app_color.dart';
 import 'package:ecommerce/controller/onboarding_controller.dart';
+import 'package:ecommerce/core/localization/key_language.dart';
 import 'package:ecommerce/view/widget/onboarding/dot_page_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -24,7 +25,7 @@ class DotButtonOnboarding extends GetView<OnboardingControllerImp> {
               onPressed: () async {
                 await controller.nextpage();
               },
-              child: const Text('Continue'),
+              child: Text(KeyLanguage.continueButton.tr),
             ),
           ),
         ),

@@ -1,29 +1,30 @@
 import 'package:ecommerce/core/constant/app_images.dart';
+import 'package:ecommerce/core/localization/key_language.dart';
 import 'package:ecommerce/data/models/onboarding_model.dart';
 
 const List<OnboardingModel> onboardingdata = [
   OnboardingModel(
-    title: "Choose Product",
+    title: KeyLanguage.chooseProduct,
     image: AppImages.imagesOnboardingone,
     body:
-        "We Have 100k Product, Choose\nYour Product From Our E commerce Shop",
+         KeyLanguage.bodyChooseProduct,
   ),
   OnboardingModel(
-    title: "Easy and Safe Payment",
+    title:  KeyLanguage.easyAndSafePayment,
     image: AppImages.imagesOnboardingtwo,
     body:
-        "We Have 100k Product, Choose\nYour Product From Our E commerce Shop",
+         KeyLanguage.bodyChooseProduct,
   ),
   OnboardingModel(
-    title: "Track Your Order",
+    title:  KeyLanguage.trackYourOrder,
     image: AppImages.imagesOnboardingthree,
     body:
-        "We Have 100k Product, Choose\nYour Product From Our E commerce Shop",
+         KeyLanguage.bodyChooseProduct,
   ),
   OnboardingModel(
-    title: "Fast Delivery",
+    title:  KeyLanguage.fastDelivery,
     image: AppImages.imagesOnboardingfour,
     body:
-        "We Have 100k Product, Choose\nYour Product From Our E commerce Shop",
+         KeyLanguage.bodyChooseProduct,
   ),
 ];

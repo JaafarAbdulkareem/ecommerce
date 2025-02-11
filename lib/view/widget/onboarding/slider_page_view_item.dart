@@ -1,6 +1,7 @@
 import 'package:ecommerce/core/constant/app_style.dart';
 import 'package:ecommerce/data/models/onboarding_model.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class SliderPageViewItem extends StatelessWidget {
   const SliderPageViewItem({
@@ -13,14 +14,14 @@ class SliderPageViewItem extends StatelessWidget {
     return  Column(
       children: [
         Text(
-          data.title,
+          data.title.tr,
           style: AppStyle.styleBold20(context),
         ),
         const SizedBox(height: 64),
         Image.asset(data.image),
         const SizedBox(height: 64),
          Text(
-          data.body,
+          data.body.tr,
           style: AppStyle.styleBold14(context),
           textAlign: TextAlign.center,
         ),
