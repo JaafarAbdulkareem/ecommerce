@@ -19,7 +19,7 @@ abstract class KeyLanguage {
   static const String welcomeTitle = "welcomeTitle";
   static const String checkEmailTitle = "checkEmailTitle";
   static const String verifyTitle = "verifyTitle";
-  static const String newPasswordTitle = "newPasswordTitle";
+  static const String rePasswordTitle = "rePasswordTitle";
   static const String successTitle = "successTitle";
   static const String loginContent = "loginContent";
   static const String signupContent = "signupContent";
@@ -27,12 +27,15 @@ abstract class KeyLanguage {
   static const String verifyContent = "verifyContent";
   static const String resetPasswordContent = "resetPasswordContent";
   static const String successContent = "successContent";
+  //Text field
   static const String usernameLabel = "UsernameLabel";
   static const String usernameHint = "usernameHint";
   static const String emailLabel = "emailLabel";
   static const String emailHint = "emailHint";
   static const String passwordLabel = "passwordLabel";
   static const String passwordHint = "passwordHint";
+  static const String rePasswordLabel = "rePasswordLabel";
+  static const String rePasswordHint = "rePasswordHint";
   static const String phoneLabel = "phoneLabel";
   static const String phoneHint = "phoneHint";
   static const String forgetPassword = "forgetPassword";
