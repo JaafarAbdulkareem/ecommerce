@@ -40,32 +40,42 @@ class ResetPasswordView extends StatelessWidget {
                   title: KeyLanguage.rePasswordTitle.tr,
                   subTitle: KeyLanguage.resetPasswordContent.tr,
                 ),
-                CustomTextFormFieldWidget(
-                  hint: KeyLanguage.passwordHint.tr,
-                  label: KeyLanguage.passwordLabel.tr,
-                  icon: AppIcon.closePassword,
-                  controller: controller.password,
-                  obscure: true,
-                  keyboardType: TextInputType.number,
-                  validator: (value) => validator(
-                    value,
-                    ConstantKey.password,
-                    ConstantScale.minPassword,
-                    ConstantScale.maxPassword,
+                GetBuilder<ResetPasswordControllerImp>(
+                  builder: (controller) => CustomTextFormFieldWidget(
+                    hint: KeyLanguage.passwordHint.tr,
+                    label: KeyLanguage.passwordLabel.tr,
+                    icon: AppIcon.closePassword,
+                    controller: controller.password,
+                    obscure: controller.hidePassword,
+                    keyboardType: TextInputType.number,
+                    validator: (value) => validator(
+                      value,
+                      ConstantKey.password,
+                      ConstantScale.minPassword,
+                      ConstantScale.maxPassword,
+                    ),
+                    changeCasePassword: () {
+                      controller.changeStatePassword();
+                    },
                   ),
                 ),
-                CustomTextFormFieldWidget(
-                  hint: KeyLanguage.rePasswordHint.tr,
-                  label: KeyLanguage.rePasswordLabel.tr,
-                  icon: AppIcon.closePassword,
-                  controller: controller.rePassword,
-                  obscure: true,
-                  keyboardType: TextInputType.number,
-                  validator: (value) => validator(
-                    value,
-                    ConstantKey.password,
-                    ConstantScale.minPassword,
-                    ConstantScale.maxPassword,
+                GetBuilder<ResetPasswordControllerImp>(
+                  builder: (controller) => CustomTextFormFieldWidget(
+                    hint: KeyLanguage.rePasswordHint.tr,
+                    label: KeyLanguage.rePasswordLabel.tr,
+                    icon: AppIcon.closePassword,
+                    controller: controller.rePassword,
+                    obscure: controller.hideRepassword,
+                    keyboardType: TextInputType.number,
+                    validator: (value) => validator(
+                      value,
+                      ConstantKey.password,
+                      ConstantScale.minPassword,
+                      ConstantScale.maxPassword,
+                    ),
+                    changeCasePassword: () {
+                      controller.changeStateRepassword();
+                    },
                   ),
                 ),
                 CustomButtonWidget(

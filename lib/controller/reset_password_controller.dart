@@ -5,9 +5,13 @@ import 'package:get/get.dart';
 abstract class ResetPasswordController extends GetxController {
   void saveOnTap();
   void verifyScreen();
+  void changeStatePassword();
+  void changeStateRepassword();
 }
 
 class ResetPasswordControllerImp extends ResetPasswordController {
+  bool hidePassword = true;
+  bool hideRepassword = true;
   late GlobalKey<FormState> keyResetPassword;
   late TextEditingController password;
   late TextEditingController rePassword;
@@ -36,5 +40,17 @@ class ResetPasswordControllerImp extends ResetPasswordController {
   @override
   void verifyScreen() async {
     await Get.toNamed(ConstantScreenName.success);
+  }
+
+  @override
+  void changeStatePassword() {
+    hidePassword = !hidePassword;
+    update();
+  }
+
+  @override
+  void changeStateRepassword() {
+    hideRepassword = !hideRepassword;
+    update();
   }
 }

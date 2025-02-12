@@ -12,7 +12,7 @@ abstract class LoginController extends GetxController {
 }
 
 class LoginControllerImp extends LoginController {
-  bool showPassword = false;
+  bool hidePassword = true;
   late GlobalKey<FormState> keyLogin;
   late TextEditingController email;
   late TextEditingController password;
@@ -53,7 +53,7 @@ class LoginControllerImp extends LoginController {
 
   @override
   void changeStatePassword() {
-    showPassword = !showPassword;
+    hidePassword = !hidePassword;
     update();
   }
 }

@@ -5,9 +5,11 @@ import 'package:get/get.dart';
 abstract class SignupController extends GetxController {
   void linkOnTap();
   void signupOnTap();
+  void changeStatePassword();
 }
 
 class SignupControllerImp extends SignupController {
+  bool hidePassword = true;
   late GlobalKey<FormState> keySignup;
   late TextEditingController username;
   late TextEditingController email;
@@ -44,5 +46,11 @@ class SignupControllerImp extends SignupController {
     } else {
       // update();
     }
+  }
+
+  @override
+  void changeStatePassword() {
+    hidePassword = !hidePassword;
+    update();
   }
 }

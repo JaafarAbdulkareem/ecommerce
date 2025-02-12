@@ -66,18 +66,23 @@ class SignupView extends StatelessWidget {
                     ConstantScale.maxEmail,
                   ),
                 ),
-                CustomTextFormFieldWidget(
-                  hint: KeyLanguage.passwordHint.tr,
-                  label: KeyLanguage.passwordLabel.tr,
-                  icon: AppIcon.closePassword,
-                  controller: controller.password,
-                  obscure: true,
-                  keyboardType: TextInputType.number,
-                  validator: (value) => validator(
-                    value,
-                    ConstantKey.password,
-                    ConstantScale.minPassword,
-                    ConstantScale.maxPassword,
+                 GetBuilder<SignupControllerImp>(
+                  builder:(controller)=> CustomTextFormFieldWidget(
+                    hint: KeyLanguage.passwordHint.tr,
+                    label: KeyLanguage.passwordLabel.tr,
+                    icon: AppIcon.closePassword,
+                    controller: controller.password,
+                    obscure: controller.hidePassword,
+                    keyboardType: TextInputType.number,
+                    validator: (value) => validator(
+                      value,
+                      ConstantKey.password,
+                      ConstantScale.minPassword,
+                      ConstantScale.maxPassword,
+                    ),
+                    changeCasePassword: () {
+                      controller.changeStatePassword();
+                    },
                   ),
                 ),
                 CustomTextFormFieldWidget(

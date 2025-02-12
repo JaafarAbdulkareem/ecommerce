@@ -1,10 +1,8 @@
-import 'package:ecommerce/controller/login_controller.dart';
 import 'package:ecommerce/core/constant/app_color.dart';
 import 'package:ecommerce/core/constant/app_icon.dart';
 import 'package:ecommerce/core/constant/app_style.dart';
 import 'package:ecommerce/core/constant/constant_key.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 class CustomTextFormFieldWidget extends StatelessWidget {
   const CustomTextFormFieldWidget({
@@ -17,6 +15,7 @@ class CustomTextFormFieldWidget extends StatelessWidget {
     this.validator,
     this.obscure = false,
     this.keyboardType,
+    this.changeCasePassword,
   });
   final String hint, label;
   final IconData icon;
@@ -25,6 +24,7 @@ class CustomTextFormFieldWidget extends StatelessWidget {
   final String? Function(String?)? validator;
   final bool obscure;
   final TextInputType? keyboardType;
+  final VoidCallback? changeCasePassword;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -49,16 +49,12 @@ class CustomTextFormFieldWidget extends StatelessWidget {
           hintText: hint,
           hintStyle: AppStyle.styleLight14(context),
           suffixIcon: keyboardType == TextInputType.number
-              ? GetBuilder<LoginControllerImp>(
-                builder:(controller)=> IconButton(
-                    onPressed: () {
-                      controller.changeStatePassword();
-                    },
-                    icon: Icon(
-                      obscure ? AppIcon.closePassword : AppIcon.openPassword,
-                    ),
+              ? IconButton(
+                  onPressed: changeCasePassword,
+                  icon: Icon(
+                    obscure ? AppIcon.closePassword : AppIcon.openPassword,
                   ),
-              )
+                )
               : Icon(icon),
           isDense: true,
           border: outlineInputBorder(),
