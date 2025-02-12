@@ -69,7 +69,7 @@ class SignupView extends StatelessWidget {
                 CustomTextFormFieldWidget(
                   hint: KeyLanguage.passwordHint.tr,
                   label: KeyLanguage.passwordLabel.tr,
-                  icon: AppIcon.password,
+                  icon: AppIcon.closePassword,
                   controller: controller.password,
                   obscure: true,
                   keyboardType: TextInputType.number,

@@ -1,7 +1,10 @@
+import 'package:ecommerce/controller/login_controller.dart';
 import 'package:ecommerce/core/constant/app_color.dart';
+import 'package:ecommerce/core/constant/app_icon.dart';
 import 'package:ecommerce/core/constant/app_style.dart';
 import 'package:ecommerce/core/constant/constant_key.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class CustomTextFormFieldWidget extends StatelessWidget {
   const CustomTextFormFieldWidget({
@@ -34,7 +37,7 @@ class CustomTextFormFieldWidget extends StatelessWidget {
         keyboardType: keyboardType,
         obscuringCharacter: ConstantText.obscureText,
         decoration: InputDecoration(
-          contentPadding:const EdgeInsets.symmetric(horizontal: 24),
+          contentPadding: const EdgeInsets.symmetric(horizontal: 24),
           floatingLabelBehavior: FloatingLabelBehavior.always,
           label: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 6),
@@ -45,7 +48,18 @@ class CustomTextFormFieldWidget extends StatelessWidget {
           ),
           hintText: hint,
           hintStyle: AppStyle.styleLight14(context),
-          suffixIcon: Icon(icon),
+          suffixIcon: keyboardType == TextInputType.number
+              ? GetBuilder<LoginControllerImp>(
+                builder:(controller)=> IconButton(
+                    onPressed: () {
+                      controller.changeStatePassword();
+                    },
+                    icon: Icon(
+                      obscure ? AppIcon.closePassword : AppIcon.openPassword,
+                    ),
+                  ),
+              )
+              : Icon(icon),
           isDense: true,
           border: outlineInputBorder(),
           enabledBorder: outlineInputBorder(),

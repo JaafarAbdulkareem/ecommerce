@@ -59,9 +59,9 @@ class LoginView extends StatelessWidget {
                 CustomTextFormFieldWidget(
                   hint: KeyLanguage.passwordHint.tr,
                   label: KeyLanguage.passwordLabel.tr,
-                  icon: AppIcon.password,
+                  icon: AppIcon.closePassword,
                   controller: controller.password,
-                  obscure: true,
+                  obscure: controller.showPassword,
                   keyboardType: TextInputType.number,
                   validator: (value) => validator(
                     value,

@@ -8,9 +8,11 @@ abstract class LoginController extends GetxController {
   void forgetScreen();
   void linkOnTap();
   void loginOnTap();
+  void changeStatePassword();
 }
 
 class LoginControllerImp extends LoginController {
+  bool showPassword = false;
   late GlobalKey<FormState> keyLogin;
   late TextEditingController email;
   late TextEditingController password;
@@ -24,14 +26,12 @@ class LoginControllerImp extends LoginController {
   }
 
   @override
-  void dispose()  {
+  void dispose() {
     email.dispose();
     password.dispose();
-    BackButtonInterceptor.remove(  onBackPressed);
+    BackButtonInterceptor.remove(onBackPressed);
     super.dispose();
   }
-
-  
 
   @override
   void linkOnTap() async {
@@ -49,5 +49,11 @@ class LoginControllerImp extends LoginController {
     if (email.text.isNotEmpty) {
       Get.toNamed(ConstantScreenName.forgetPassword);
     } else {}
+  }
+
+  @override
+  void changeStatePassword() {
+    showPassword = !showPassword;
+    update();
   }
 }
