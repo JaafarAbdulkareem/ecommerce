@@ -43,6 +43,7 @@ class LoginView extends StatelessWidget {
                 label: KeyLanguage.emailLabel.tr,
                 icon: AppIcon.email,
                 controller: controller.email,
+                keyboardType: TextInputType.emailAddress,
               ),
               CustomTextFormFieldWidget(
                 hint: KeyLanguage.passwordHint.tr,
@@ -50,6 +51,7 @@ class LoginView extends StatelessWidget {
                 icon: AppIcon.password,
                 controller: controller.password,
                 obscure: true,
+                keyboardType: TextInputType.number,
               ),
               const ForgetPasswordWidget(),
               CustomButtonWidget(

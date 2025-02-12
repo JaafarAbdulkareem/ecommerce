@@ -40,6 +40,7 @@ class ForgetPasswordView extends StatelessWidget {
                 label: KeyLanguage.emailLabel.tr,
                 icon: AppIcon.email,
                 controller: controller.email,
+                keyboardType: TextInputType.emailAddress,
               ),
               CustomButtonWidget(
                 text: KeyLanguage.check.tr,

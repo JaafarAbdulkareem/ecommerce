@@ -41,6 +41,7 @@ class ResetPasswordView extends StatelessWidget {
                 icon: AppIcon.password,
                 controller: controller.password,
                 obscure: true,
+                keyboardType: TextInputType.number,
               ),
               CustomTextFormFieldWidget(
                 hint: KeyLanguage.rePasswordHint.tr,
@@ -48,6 +49,7 @@ class ResetPasswordView extends StatelessWidget {
                 icon: AppIcon.password,
                 controller: controller.password,
                 obscure: true,
+                keyboardType: TextInputType.number,
               ),
               CustomButtonWidget(
                 text: KeyLanguage.save.tr,

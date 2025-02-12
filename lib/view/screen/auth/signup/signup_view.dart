@@ -40,12 +40,14 @@ class SignupView extends StatelessWidget {
                 label: KeyLanguage.usernameLabel.tr,
                 icon: AppIcon.username,
                 controller: controller.username,
+                keyboardType: TextInputType.text,
               ),
               CustomTextFormFieldWidget(
                 hint: KeyLanguage.emailHint.tr,
                 label: KeyLanguage.emailLabel.tr,
                 icon: AppIcon.email,
                 controller: controller.email,
+                keyboardType: TextInputType.emailAddress,
               ),
               CustomTextFormFieldWidget(
                 hint: KeyLanguage.passwordHint.tr,
@@ -53,12 +55,14 @@ class SignupView extends StatelessWidget {
                 icon: AppIcon.password,
                 controller: controller.password,
                 obscure: true,
+                keyboardType: TextInputType.number,
               ),
               CustomTextFormFieldWidget(
                 hint: KeyLanguage.phoneHint.tr,
                 label: KeyLanguage.phoneLabel.tr,
                 icon: AppIcon.phone,
                 controller: controller.phone,
+                keyboardType: TextInputType.phone,
               ),
               CustomButtonWidget(
                 text: KeyLanguage.signup.tr,
