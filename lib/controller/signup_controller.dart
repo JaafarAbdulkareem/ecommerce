@@ -37,6 +37,6 @@ class SignupControllerImp extends SignupController {
 
   @override
   void signupOnTap() {
-    Get.offNamed(ConstantScreenName.success);
+    Get.offNamed(ConstantScreenName.vertifySignup);
   }
 }

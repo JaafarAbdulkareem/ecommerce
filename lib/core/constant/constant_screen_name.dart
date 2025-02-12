@@ -5,6 +5,7 @@ class ConstantScreenName {
   static const String signup = "/signup";
   static const String forgetPassword = "/forgetPassword";
   static const String vertify = "/vertify";
+  static const String vertifySignup = "/vertifySignup";
   static const String resetPassword = "/resetPassword";
   static const String success = "/success";
 }

@@ -6,8 +6,11 @@ import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
 import 'package:get/get.dart';
 
 class OtpTextFieldWidget extends GetView<VerificationController> {
-  const OtpTextFieldWidget({super.key});
-
+  const OtpTextFieldWidget({
+    super.key,
+    required this.onTap,
+  });
+  final VoidCallback onTap;
   @override
   Widget build(BuildContext context) {
     return OtpTextField(
@@ -16,7 +19,7 @@ class OtpTextFieldWidget extends GetView<VerificationController> {
       focusedBorderColor: AppColor.primary,
       showFieldAsBox: true,
       onSubmit: (String verificationCode) {
-        controller.verificationOnTap();
+        onTap();
       },
     );
   }

@@ -1,4 +1,4 @@
-import 'package:ecommerce/controller/verification_controller.dart';
+import 'package:ecommerce/controller/verification_signup_controller.dart';
 import 'package:ecommerce/core/constant/app_style.dart';
 import 'package:ecommerce/core/localization/key_language.dart';
 import 'package:ecommerce/view/widget/login/otp_text_field_widget.dart';
@@ -6,13 +6,13 @@ import 'package:ecommerce/view/widget/login/title_description_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class VerificationView extends StatelessWidget {
-  const VerificationView({super.key});
+class VerificationSignupView extends StatelessWidget {
+  const VerificationSignupView({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final VerificationControllerImp controller =
-        Get.put(VerificationControllerImp());
+    final VerificationSignupControllerImp controller =
+        Get.put(VerificationSignupControllerImp());
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
@@ -34,16 +34,9 @@ class VerificationView extends StatelessWidget {
               ),
               OtpTextFieldWidget(
                 onTap: () {
-                  controller.verificationOnTap();
+                  controller.successScreen();
                 },
               ),
-              // CustomButtonWidget(
-              //   text: KeyLanguage.verify.tr,
-              //   color: AppColor.primary,
-              //   onTap: () {
-              //     controller.verificationOnTap();
-              //   },
-              // ),
               const SizedBox(height: 32),
             ],
           ),

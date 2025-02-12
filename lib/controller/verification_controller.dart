@@ -16,6 +16,6 @@ class VerificationControllerImp extends VerificationController {
 
   @override
   void resetScreen() {
-    Get.toNamed(ConstantScreenName.resetPassword);
+    Get.offAllNamed(ConstantScreenName.resetPassword);
   }
 }

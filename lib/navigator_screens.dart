@@ -3,8 +3,9 @@ import 'package:ecommerce/view/screen/auth/forget_password/forget_password_view.
 import 'package:ecommerce/view/screen/auth/forget_password/reset_password_view.dart';
 import 'package:ecommerce/view/screen/auth/forget_password/verification_view.dart';
 import 'package:ecommerce/view/screen/auth/login_view.dart';
-import 'package:ecommerce/view/screen/auth/signup_view.dart';
-import 'package:ecommerce/view/screen/auth/success_auth_view.dart';
+import 'package:ecommerce/view/screen/auth/signup/signup_view.dart';
+import 'package:ecommerce/view/screen/auth/signup/success_auth_view.dart';
+import 'package:ecommerce/view/screen/auth/signup/verification_signup_view.dart';
 import 'package:ecommerce/view/screen/onboarding/choose_app_language.dart';
 import 'package:ecommerce/view/screen/onboarding/onboarding_view.dart';
 import 'package:get/get.dart';
@@ -33,6 +34,10 @@ List<GetPage<dynamic>> get getPages => [
       GetPage(
         name: ConstantScreenName.vertify,
         page: () => VerificationView(),
+      ),
+      GetPage(
+        name: ConstantScreenName.vertifySignup,
+        page: () => VerificationSignupView(),
       ),
       GetPage(
         name: ConstantScreenName.resetPassword,
