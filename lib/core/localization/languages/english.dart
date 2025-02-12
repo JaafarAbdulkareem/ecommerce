@@ -18,6 +18,8 @@ Map<String, String> english = {
   KeyLanguage.save: "Save",
   KeyLanguage.check: "Check",
   KeyLanguage.verify: "Verify",
+  KeyLanguage.yes: "Yes",
+  KeyLanguage.no: "No",
 //auth
   KeyLanguage.welcomeTitle: "Welcome Back",
   KeyLanguage.checkEmailTitle: "Check Email",
@@ -55,4 +57,7 @@ Map<String, String> english = {
   KeyLanguage.invalidPhone: "Enter The Phone Number Correctly",
   KeyLanguage.lessMin: "Entry length is less than : ",
   KeyLanguage.greaterMax: "Entry length is greater than : ",
+  //dialog 
+  KeyLanguage.dialogPopTitle:"Alert",
+  KeyLanguage.dialogPopContent:"Do You Want Exit?",
 };

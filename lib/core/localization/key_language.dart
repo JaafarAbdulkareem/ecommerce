@@ -15,6 +15,8 @@ abstract class KeyLanguage {
   static const String save = "save";
   static const String check = "check";
   static const String verify = "verify";
+  static const String yes = "yes";
+  static const String no = "no";
 //auth
   static const String welcomeTitle = "welcomeTitle";
   static const String checkEmailTitle = "checkEmailTitle";
@@ -49,4 +51,7 @@ abstract class KeyLanguage {
   static const String invalidPhone = "invalidPhone";
   static const String lessMin = "lessMin";
   static const String greaterMax = "greaterMax";
+  //dialog
+  static const String dialogPopTitle = "dialogPopTitle";
+  static const String dialogPopContent = "dialogPopContent";
 }

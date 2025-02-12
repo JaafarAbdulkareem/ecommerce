@@ -1,4 +1,6 @@
 import 'package:ecommerce/core/constant/constant_screen_name.dart';
+import 'package:back_button_interceptor/back_button_interceptor.dart';
+import 'package:ecommerce/core/function/on_back_pressed.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -17,15 +19,19 @@ class LoginControllerImp extends LoginController {
     keyLogin = GlobalKey<FormState>();
     email = TextEditingController();
     password = TextEditingController();
+    BackButtonInterceptor.add(onBackPressed);
     super.onInit();
   }
 
   @override
-  void dispose() {
+  void dispose()  {
     email.dispose();
     password.dispose();
+    BackButtonInterceptor.remove(  onBackPressed);
     super.dispose();
   }
+
+  
 
   @override
   void linkOnTap() async {
@@ -35,7 +41,6 @@ class LoginControllerImp extends LoginController {
   @override
   void loginOnTap() {
     if (keyLogin.currentState!.validate()) {
-     
     } else {}
   }
 

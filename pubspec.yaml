@@ -9,6 +9,7 @@ environment:
 
 dependencies:
   auto_animated: ^3.0.1
+  back_button_interceptor: ^8.0.4
   badges: ^3.1.2
   cached_network_image: ^3.2.0
   cloud_firestore: ^5.6.3
