@@ -17,6 +17,7 @@ class LocaleController extends GetxController {
     theme = languageCode == ConstantLanguage.ar
         ? ConstantTypeTheme.arabicTheme
         : ConstantTypeTheme.englishTheme;
+    Get.changeTheme(theme);
     Get.updateLocale(locale);
   }
 

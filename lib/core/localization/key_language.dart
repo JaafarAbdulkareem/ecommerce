@@ -41,4 +41,12 @@ abstract class KeyLanguage {
   static const String forgetPassword = "forgetPassword";
   static const String messageLinkLogin = "messsageLinkLogin";
   static const String messageLinkSignup = "messageLinkSignup";
+  //validator
+  static const String empty = "empty";
+  static const String invalidUsername = "invalidUsername";
+  static const String invalidEmail = "invalodUsername";
+  static const String invalidPassword = "invalidPassword";
+  static const String invalidPhone = "invalidPhone";
+  static const String lessMin = "lessMin";
+  static const String greaterMax = "greaterMax";
 }

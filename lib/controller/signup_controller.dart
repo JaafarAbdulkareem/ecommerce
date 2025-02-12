@@ -8,12 +8,14 @@ abstract class SignupController extends GetxController {
 }
 
 class SignupControllerImp extends SignupController {
+  late GlobalKey<FormState> keySignup;
   late TextEditingController username;
   late TextEditingController email;
   late TextEditingController password;
   late TextEditingController phone;
   @override
   void onInit() {
+    keySignup = GlobalKey<FormState>();
     username = TextEditingController();
     email = TextEditingController();
     password = TextEditingController();
@@ -37,6 +39,10 @@ class SignupControllerImp extends SignupController {
 
   @override
   void signupOnTap() {
-    Get.offNamed(ConstantScreenName.vertifySignup);
+    if (keySignup.currentState!.validate()) {
+      Get.offNamed(ConstantScreenName.vertifySignup);
+    } else {
+      // update();
+    }
   }
 }

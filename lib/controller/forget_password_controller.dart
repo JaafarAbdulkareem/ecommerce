@@ -8,9 +8,11 @@ abstract class ForgetPasswordController extends GetxController {
 }
 
 class ForgetPasswordControllerImp extends ForgetPasswordController {
+  late GlobalKey<FormState> keyForgetPassword;
   late TextEditingController email;
   @override
   void onInit() {
+    keyForgetPassword = GlobalKey<FormState>();
     email = TextEditingController();
     super.onInit();
   }
@@ -23,7 +25,11 @@ class ForgetPasswordControllerImp extends ForgetPasswordController {
 
   @override
   void forgetPasswordOnTap() {
-    verifyScreen();
+    if (keyForgetPassword.currentState!.validate()) {
+      verifyScreen();
+    } else {
+      // update();
+    }
   }
 
   @override

@@ -47,4 +47,12 @@ Map<String, String> english = {
   KeyLanguage.forgetPassword: "Forget Password",
   KeyLanguage.messageLinkLogin: "Don't have an acconunt?",
   KeyLanguage.messageLinkSignup: "I really have an account",
+  //validator
+  KeyLanguage.empty: "Please, Fill Field",
+  KeyLanguage.invalidUsername: "Username Is Invalid",
+  KeyLanguage.invalidEmail: "Email Is Invalid",
+  KeyLanguage.invalidPassword: "Enter The Digital Password",
+  KeyLanguage.invalidPhone: "Enter The Phone Number Correctly",
+  KeyLanguage.lessMin: "Entry length is less than : ",
+  KeyLanguage.greaterMax: "Entry length is greater than : ",
 };

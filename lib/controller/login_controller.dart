@@ -34,11 +34,15 @@ class LoginControllerImp extends LoginController {
 
   @override
   void loginOnTap() {
-    
+    if (keyLogin.currentState!.validate()) {
+     
+    } else {}
   }
 
   @override
   void forgetScreen() {
-    Get.toNamed(ConstantScreenName.forgetPassword);
+    if (email.text.isNotEmpty) {
+      Get.toNamed(ConstantScreenName.forgetPassword);
+    } else {}
   }
 }

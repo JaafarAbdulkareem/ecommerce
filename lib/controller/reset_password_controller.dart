@@ -8,10 +8,12 @@ abstract class ResetPasswordController extends GetxController {
 }
 
 class ResetPasswordControllerImp extends ResetPasswordController {
+  late GlobalKey<FormState> keyResetPassword;
   late TextEditingController password;
   late TextEditingController rePassword;
   @override
   void onInit() {
+    keyResetPassword = GlobalKey<FormState>();
     password = TextEditingController();
     rePassword = TextEditingController();
     super.onInit();
@@ -26,7 +28,9 @@ class ResetPasswordControllerImp extends ResetPasswordController {
 
   @override
   void saveOnTap() {
-    verifyScreen();
+    if (keyResetPassword.currentState!.validate()) {
+      verifyScreen();
+    } else {}
   }
 
   @override

@@ -2,6 +2,9 @@ import 'package:ecommerce/controller/login_controller.dart';
 import 'package:ecommerce/core/constant/app_color.dart';
 import 'package:ecommerce/core/constant/app_icon.dart';
 import 'package:ecommerce/core/constant/app_style.dart';
+import 'package:ecommerce/core/constant/constant_key.dart';
+import 'package:ecommerce/core/constant/constant_scale.dart';
+import 'package:ecommerce/core/function/validator.dart';
 import 'package:ecommerce/core/localization/key_language.dart';
 import 'package:ecommerce/core/share/custom_button_widget.dart';
 import 'package:ecommerce/core/share/custom_text_form_field_widget.dart';
@@ -27,49 +30,64 @@ class LoginView extends StatelessWidget {
         ),
       ),
       body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              const CustomLogoWidget(),
-              TitleDescriptionWidget(
-                title: KeyLanguage.welcomeTitle.tr,
-                subTitle: KeyLanguage.loginContent.tr,
-              ),
-              CustomTextFormFieldWidget(
-                hint: KeyLanguage.emailHint.tr,
-                label: KeyLanguage.emailLabel.tr,
-                icon: AppIcon.email,
-                controller: controller.email,
-                keyboardType: TextInputType.emailAddress,
-              ),
-              CustomTextFormFieldWidget(
-                hint: KeyLanguage.passwordHint.tr,
-                label: KeyLanguage.passwordLabel.tr,
-                icon: AppIcon.password,
-                controller: controller.password,
-                obscure: true,
-                keyboardType: TextInputType.number,
-              ),
-              const ForgetPasswordWidget(),
-              CustomButtonWidget(
-                text: KeyLanguage.login.tr,
-                color: AppColor.primary,
-                onTap: () {
-                  controller.loginOnTap();
-                },
-              ),
-              LinkMessage(
-                message: KeyLanguage.messageLinkLogin.tr,
-                link: KeyLanguage.signup.tr,
-                onTap: () {
-                  controller.linkOnTap();
-                },
-              ),
-              const SizedBox(height: 32),
-            ],
+        child: Form(
+          key: controller.keyLogin,
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                const CustomLogoWidget(),
+                TitleDescriptionWidget(
+                  title: KeyLanguage.welcomeTitle.tr,
+                  subTitle: KeyLanguage.loginContent.tr,
+                ),
+                CustomTextFormFieldWidget(
+                  hint: KeyLanguage.emailHint.tr,
+                  label: KeyLanguage.emailLabel.tr,
+                  icon: AppIcon.email,
+                  controller: controller.email,
+                  keyboardType: TextInputType.emailAddress,
+                  validator: (value) => validator(
+                    value,
+                    ConstantKey.email,
+                    ConstantScale.minEmail,
+                    ConstantScale.maxEmail,
+                  ),
+                ),
+                CustomTextFormFieldWidget(
+                  hint: KeyLanguage.passwordHint.tr,
+                  label: KeyLanguage.passwordLabel.tr,
+                  icon: AppIcon.password,
+                  controller: controller.password,
+                  obscure: true,
+                  keyboardType: TextInputType.number,
+                  validator: (value) => validator(
+                    value,
+                    ConstantKey.password,
+                    ConstantScale.minPassword,
+                    ConstantScale.maxPassword,
+                  ),
+                ),
+                const ForgetPasswordWidget(),
+                CustomButtonWidget(
+                  text: KeyLanguage.login.tr,
+                  color: AppColor.primary,
+                  onTap: () {
+                    controller.loginOnTap();
+                  },
+                ),
+                LinkMessage(
+                  message: KeyLanguage.messageLinkLogin.tr,
+                  link: KeyLanguage.signup.tr,
+                  onTap: () {
+                    controller.linkOnTap();
+                  },
+                ),
+                const SizedBox(height: 32),
+              ],
+            ),
           ),
         ),
       ),

@@ -26,8 +26,9 @@ class MyApp extends StatelessWidget {
       theme: controller.theme,
       translations: TranslationLanguages(),
       locale: controller.language,
-      home: const ChooseAppLanguage(),
-          // const LoginView(),
+      home: 
+      // const ChooseAppLanguage(),
+      const LoginView(),
       getPages: getPages,
     );
   }
