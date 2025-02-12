@@ -9,10 +9,12 @@ abstract class LoginController extends GetxController {
 }
 
 class LoginControllerImp extends LoginController {
+  late GlobalKey<FormState> keyLogin;
   late TextEditingController email;
   late TextEditingController password;
   @override
   void onInit() {
+    keyLogin = GlobalKey<FormState>();
     email = TextEditingController();
     password = TextEditingController();
     super.onInit();
@@ -31,7 +33,9 @@ class LoginControllerImp extends LoginController {
   }
 
   @override
-  void loginOnTap() {}
+  void loginOnTap() {
+    
+  }
 
   @override
   void forgetScreen() {

@@ -1,5 +1,5 @@
 import 'package:ecommerce/core/constant/constant_key.dart';
-import 'package:ecommerce/core/localization/locale_language.dart';
+import 'package:ecommerce/core/localization/locale_controller.dart';
 import 'package:ecommerce/core/localization/translation_languages.dart';
 import 'package:ecommerce/core/service/shared_prefs_service.dart';
 import 'package:ecommerce/navigator_screens.dart';
@@ -23,14 +23,11 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Ecommerce',
-      theme: ThemeData(
-        fontFamily: ConstantTextFons.englishFont,
-      ),
+      theme: controller.theme,
       translations: TranslationLanguages(),
       locale: controller.language,
-      home:
-          // ChooseAppLanguage(),
-          const LoginView(),
+      home: const ChooseAppLanguage(),
+          // const LoginView(),
       getPages: getPages,
     );
   }

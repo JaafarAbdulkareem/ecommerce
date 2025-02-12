@@ -1,7 +1,7 @@
 import 'package:ecommerce/core/constant/app_style.dart';
 import 'package:ecommerce/core/constant/constant_key.dart';
 import 'package:ecommerce/core/localization/key_language.dart';
-import 'package:ecommerce/core/localization/locale_language.dart';
+import 'package:ecommerce/core/localization/locale_controller.dart';
 import 'package:ecommerce/view/widget/onboarding/custom_text_language.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
