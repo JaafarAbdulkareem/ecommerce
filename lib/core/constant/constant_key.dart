@@ -1,5 +1,6 @@
 class ConstantKey {
   static const String keySharedPrefs = "language";
+  static const String keyOnboarding = "onboarding";
   static const String username = "username";
   static const String email = "email";
   static const String password = "password";
