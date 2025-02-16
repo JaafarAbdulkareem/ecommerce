@@ -1,4 +1,9 @@
+import 'package:ecommerce/core/class/status_request.dart';
+import 'package:ecommerce/core/constant/api_key.dart';
 import 'package:ecommerce/core/constant/constant_screen_name.dart';
+import 'package:ecommerce/core/function/handle_status.dart';
+import 'package:ecommerce/core/localization/key_language.dart';
+import 'package:ecommerce/data/data_source/remote/auth/signup_remote.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -15,6 +20,8 @@ class SignupControllerImp extends SignupController {
   late TextEditingController email;
   late TextEditingController password;
   late TextEditingController phone;
+  late StatusRequest statusRequest;
+  late SignupRemote signupRemote;
   @override
   void onInit() {
     keySignup = GlobalKey<FormState>();
@@ -22,6 +29,7 @@ class SignupControllerImp extends SignupController {
     email = TextEditingController();
     password = TextEditingController();
     phone = TextEditingController();
+    signupRemote = SignupRemote(curd: Get.find());
     super.onInit();
   }
 
@@ -40,12 +48,30 @@ class SignupControllerImp extends SignupController {
   }
 
   @override
-  void signupOnTap() {
+  void signupOnTap() async {
     if (keySignup.currentState!.validate()) {
-      Get.offNamed(ConstantScreenName.vertifySignup);
-    } else {
-      // update();
+      statusRequest = StatusRequest.loading;
+      update();
+      var response = await signupRemote.getData(
+        username: username.text,
+        email: email.text,
+        password: password.text,
+        phone: phone.text,
+      );
+      statusRequest = handleStatus(response);
+      if (statusRequest == StatusRequest.success) {
+        if (response[ApiResult.status] == ApiResult.success) {
+          Get.offNamed(ConstantScreenName.vertifySignup);
+        } else {
+          await Get.defaultDialog(
+            title: KeyLanguage.alert.tr,
+            middleText: KeyLanguage.signupAlertMessage.tr,
+          );
+          statusRequest = StatusRequest.failure;
+        }
+      }
     }
+    update();
   }
 
   @override

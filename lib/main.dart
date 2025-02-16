@@ -1,3 +1,4 @@
+import 'package:ecommerce/core/binding/initial_bindings.dart';
 import 'package:ecommerce/core/constant/constant_key.dart';
 import 'package:ecommerce/core/localization/locale_controller.dart';
 import 'package:ecommerce/core/localization/translation_languages.dart';
@@ -27,7 +28,8 @@ class MyApp extends StatelessWidget {
       theme: controller.theme,
       translations: TranslationLanguages(),
       locale: controller.language,
-      home: Test(),
+      initialBinding: InitialBindings(),
+      // home: Test(),
       // home: const ChooseAppLanguage(),
       // const LoginView(),
       getPages: getPages,

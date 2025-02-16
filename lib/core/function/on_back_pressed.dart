@@ -6,7 +6,7 @@ import 'package:get/get.dart';
 
 Future<bool> onBackPressed(bool stopDefaultButtonEvent, RouteInfo info) async {
   bool shouldExit = await Get.defaultDialog(
-        title: KeyLanguage.dialogPopTitle.tr,
+        title: KeyLanguage.alert.tr,
         middleText: KeyLanguage.dialogPopContent.tr,
         actions: [
           TextButton(

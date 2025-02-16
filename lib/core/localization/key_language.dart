@@ -52,6 +52,7 @@ abstract class KeyLanguage {
   static const String lessMin = "lessMin";
   static const String greaterMax = "greaterMax";
   //dialog
-  static const String dialogPopTitle = "dialogPopTitle";
+  static const String alert = "alert";
   static const String dialogPopContent = "dialogPopContent";
+  static const String signupAlertMessage = "signupAlertMessage";
 }

@@ -58,6 +58,7 @@ Map<String, String> english = {
   KeyLanguage.lessMin: "Entry length is less than : ",
   KeyLanguage.greaterMax: "Entry length is greater than : ",
   //dialog 
-  KeyLanguage.dialogPopTitle:"Alert",
+  KeyLanguage.alert:"Alert",
   KeyLanguage.dialogPopContent:"Do You Want Exit?",
+  KeyLanguage.signupAlertMessage: "The Email or Phone is Exist",
 };
