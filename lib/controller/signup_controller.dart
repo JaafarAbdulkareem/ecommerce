@@ -29,6 +29,7 @@ class SignupControllerImp extends SignupController {
     email = TextEditingController();
     password = TextEditingController();
     phone = TextEditingController();
+    statusRequest = StatusRequest.initial;
     signupRemote = SignupRemote(curd: Get.find());
     super.onInit();
   }

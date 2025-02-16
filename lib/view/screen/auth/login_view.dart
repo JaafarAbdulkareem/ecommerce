@@ -8,10 +8,10 @@ import 'package:ecommerce/core/function/validator.dart';
 import 'package:ecommerce/core/localization/key_language.dart';
 import 'package:ecommerce/core/share/custom_button_widget.dart';
 import 'package:ecommerce/core/share/custom_text_form_field_widget.dart';
-import 'package:ecommerce/view/widget/login/custom_logo_widget.dart';
-import 'package:ecommerce/view/widget/login/forget_password_widget.dart';
-import 'package:ecommerce/view/widget/login/link_message.dart';
-import 'package:ecommerce/view/widget/login/title_description_widget.dart';
+import 'package:ecommerce/view/widget/auth/custom_logo_widget.dart';
+import 'package:ecommerce/view/widget/auth/forget_password_widget.dart';
+import 'package:ecommerce/view/widget/auth/link_message.dart';
+import 'package:ecommerce/view/widget/auth/title_description_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

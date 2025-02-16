@@ -3,8 +3,8 @@ import 'package:ecommerce/core/constant/app_color.dart';
 import 'package:ecommerce/core/constant/app_style.dart';
 import 'package:ecommerce/core/localization/key_language.dart';
 import 'package:ecommerce/core/share/custom_button_widget.dart';
-import 'package:ecommerce/view/widget/login/correct_logo_widget.dart';
-import 'package:ecommerce/view/widget/login/title_description_widget.dart';
+import 'package:ecommerce/view/widget/auth/correct_logo_widget.dart';
+import 'package:ecommerce/view/widget/auth/title_description_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

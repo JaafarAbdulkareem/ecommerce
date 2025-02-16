@@ -38,6 +38,7 @@ dependencies:
   image_pickers: ^2.0.0+2
   intl: ^0.19.0
   jiffy: ^6.3.2
+  lottie: ^3.2.0
   path: ^1.8.0
   qr_flutter: ^4.0.0
   responsive_builder: ^0.7.1
@@ -80,7 +81,7 @@ flutter:
         - asset: assets/fonts/Cairo/Cairo-Regular.ttf
         - asset: assets/fonts/Cairo/Cairo-Bold.ttf
           weight: 700
-          
+
     - family: PlayfairDisplay
       fonts:
         - asset: assets/fonts/PlayfairDisplay/PlayfairDisplay-Regular.ttf
@@ -103,4 +104,3 @@ flutter_assets:
   filename: app_images.dart
   field_prefix: null
   classname: AppImages
-
