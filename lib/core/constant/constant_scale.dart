@@ -4,7 +4,7 @@ abstract class ConstantScale {
   static const int otpNumber = 5;
 
   static const int minUsername = 3;
-  static const int maxUsername = 30;
+  static const int maxUsername = 50;
 
   static const int minEmail = 5;
   static const int maxEmail = 100;
