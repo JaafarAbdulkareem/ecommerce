@@ -4,6 +4,7 @@ abstract class ApiKey {
   static const String email = "email";
   static const String password = "password";
   static const String phone = "phone";
+  static const String verifyCode = "verifyCode";
 }
 
 abstract class ApiResult{

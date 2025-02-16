@@ -33,8 +33,8 @@ class VerificationView extends StatelessWidget {
                 subTitle: "${KeyLanguage.verifyContent.tr}king@gmail.com",
               ),
               OtpTextFieldWidget(
-                onTap: () {
-                  controller.verificationOnTap();
+                onTap: (String verifyCode) {
+                  controller.verificationOnTap(verifyCode:verifyCode);
                 },
               ),
               // CustomButtonWidget(

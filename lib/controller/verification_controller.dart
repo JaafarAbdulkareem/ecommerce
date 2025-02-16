@@ -2,15 +2,15 @@ import 'package:ecommerce/core/constant/constant_screen_name.dart';
 import 'package:get/get.dart';
 
 abstract class VerificationController extends GetxController {
-  void verificationOnTap();
+  void verificationOnTap({required String verifyCode});
   void resetScreen();
 }
 
 class VerificationControllerImp extends VerificationController {
-  late int digitalCode;
+  
 
   @override
-  void verificationOnTap() {
+  void verificationOnTap({required String verifyCode}) {
     resetScreen();
   }
 

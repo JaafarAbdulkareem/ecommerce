@@ -10,17 +10,16 @@ class OtpTextFieldWidget extends GetView<VerificationController> {
     super.key,
     required this.onTap,
   });
-  final VoidCallback onTap;
+  final void Function(String)? onTap;
   @override
   Widget build(BuildContext context) {
     return OtpTextField(
+      clearText: true,
       numberOfFields: ConstantScale.otpNumber,
       borderRadius: BorderRadius.circular(24),
       focusedBorderColor: AppColor.primary,
       showFieldAsBox: true,
-      onSubmit: (String verificationCode) {
-        onTap();
-      },
+      onSubmit: onTap,
     );
   }
 }

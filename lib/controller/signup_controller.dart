@@ -62,7 +62,10 @@ class SignupControllerImp extends SignupController {
       statusRequest = handleStatus(response);
       if (statusRequest == StatusRequest.success) {
         if (response[ApiResult.status] == ApiResult.success) {
-          Get.offNamed(ConstantScreenName.vertifySignup);
+          Get.offNamed(ConstantScreenName.vertifySignup, arguments: {
+            ApiKey.email: email.text,
+            ApiKey.phone: phone.text,
+          });
         } else {
           await Get.defaultDialog(
             title: KeyLanguage.alert.tr,

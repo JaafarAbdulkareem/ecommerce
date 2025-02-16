@@ -1,21 +1,48 @@
+
+import 'package:ecommerce/core/class/status_request.dart';
+import 'package:ecommerce/core/constant/api_key.dart';
 import 'package:ecommerce/core/constant/constant_screen_name.dart';
+import 'package:ecommerce/core/function/handle_status.dart';
+import 'package:ecommerce/core/localization/key_language.dart';
+import 'package:ecommerce/data/data_source/remote/auth/verifiction_signup_remote.dart';
 import 'package:get/get.dart';
 
 abstract class VerificationSignupController extends GetxController {
-  void verificationSignup();
-  void successScreen();
+  void verificationSignup({required String verifyCode});
 }
 
 class VerificationSignupControllerImp extends VerificationSignupController {
-  late int digitalCode;
-
+  late StatusRequest statusRequest;
+  late VerifictionSignupRemote verifictionSignupRemote;
   @override
-  void verificationSignup() {
-    successScreen();
+  void onInit() {
+    statusRequest = StatusRequest.initial;
+    verifictionSignupRemote = VerifictionSignupRemote(curd: Get.find());
+    super.onInit();
   }
 
   @override
-  void successScreen() {
-    Get.offAllNamed(ConstantScreenName.success);
+  void verificationSignup({required String verifyCode}) async {
+    statusRequest = StatusRequest.loading;
+    update();
+    var response = await verifictionSignupRemote.getData(
+      email: Get.arguments[ApiKey.email],
+      phone: Get.arguments[ApiKey.phone],
+      verifyCode: verifyCode,
+    );
+    statusRequest = handleStatus(response);
+    if (statusRequest == StatusRequest.success) {
+      if (response[ApiResult.status] == ApiResult.success) {
+        await Get.offAllNamed(ConstantScreenName.success);
+      } else {
+        update();
+        await Get.defaultDialog(
+          title: KeyLanguage.alert.tr,
+          middleText: KeyLanguage.signupAlertMessage.tr,
+        );
+        statusRequest = StatusRequest.failure;
+      }
+    }
+    update();
   }
 }

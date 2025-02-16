@@ -1,8 +1,8 @@
 import 'package:ecommerce/controller/verification_signup_controller.dart';
 import 'package:ecommerce/core/constant/app_style.dart';
 import 'package:ecommerce/core/localization/key_language.dart';
-import 'package:ecommerce/view/widget/auth/otp_text_field_widget.dart';
-import 'package:ecommerce/view/widget/auth/title_description_widget.dart';
+import 'package:ecommerce/core/share/status_view.dart';
+import 'package:ecommerce/view/widget/auth/body_verification_signup_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -11,8 +11,7 @@ class VerificationSignupView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final VerificationSignupControllerImp controller =
-        Get.put(VerificationSignupControllerImp());
+    Get.lazyPut(() => VerificationSignupControllerImp());
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
@@ -22,23 +21,10 @@ class VerificationSignupView extends StatelessWidget {
         ),
       ),
       body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              TitleDescriptionWidget(
-                title: KeyLanguage.verifyTitle.tr,
-                subTitle: "${KeyLanguage.verifyContent.tr}king@gmail.com",
-              ),
-              OtpTextFieldWidget(
-                onTap: () {
-                  controller.successScreen();
-                },
-              ),
-              const SizedBox(height: 32),
-            ],
+        child: GetBuilder<VerificationSignupControllerImp>(
+          builder: (controller) => StatusView(
+            statusRequest: controller.statusRequest,
+            widget: BodyVerificationSignupView(),
           ),
         ),
       ),

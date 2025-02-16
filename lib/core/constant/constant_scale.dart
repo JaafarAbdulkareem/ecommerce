@@ -1,7 +1,7 @@
 abstract class ConstantScale {
   static const int initialOnboardingIndex = 0;
 
-  static const int otpNumber = 5;
+  static const int otpNumber = 4;
 //field
   static const int minUsername = 3;
   static const int maxUsername = 50;
