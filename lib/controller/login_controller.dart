@@ -83,15 +83,31 @@ class LoginControllerImp extends LoginController {
             );
           }
         }
+      } else {
+        await Get.defaultDialog(
+          title: titleDialog,
+          middleText: KeyLanguage.someThingMessage.tr,
+        );
       }
     }
   }
 
   @override
-  void forgetScreen() {
+  void forgetScreen() async {
     if (email.text.isNotEmpty) {
-      Get.toNamed(ConstantScreenName.forgetPassword);
-    } else {}
+      statusRequest = StatusRequest.loading;
+      update();
+      await Get.toNamed(ConstantScreenName.forgetPassword, arguments: {
+        ApiKey.email: email.text,
+      });
+      statusRequest = StatusRequest.success;
+      update();
+    } else {
+      await Get.defaultDialog(
+        title: titleDialog,
+        middleText: KeyLanguage.enterEmailMessage.tr,
+      );
+    }
   }
 
   @override

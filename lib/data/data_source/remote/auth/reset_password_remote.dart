@@ -2,19 +2,17 @@ import 'package:ecommerce/core/constant/api_constant.dart';
 import 'package:ecommerce/core/constant/api_key.dart';
 import 'package:ecommerce/core/service/curd.dart';
 
-class VerifictionSignupRemote {
+class ResetPasswordRemote {
   final Curd curd;
 
-  VerifictionSignupRemote({required this.curd});
+  ResetPasswordRemote({required this.curd});
   getData({
     required String email,
-    required String phone,
-    required String verifyCode,
+    required String password,
   }) async {
-    var response = await curd.postData(ApiConstant.apiVerificationSignup, {
+    var response = await curd.postData(ApiConstant.apiResetPassword, {
       ApiKey.email: email,
-      ApiKey.phone: phone,
-      ApiKey.verifyCode: verifyCode,
+      ApiKey.password: password,
     });
     return response.fold((left) => left, (right) => right);
   }

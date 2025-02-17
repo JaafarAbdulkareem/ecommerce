@@ -67,4 +67,5 @@ Map<String, String> english = {
       "verify Your Verification, click Forget Password ",
   KeyLanguage.noFoundMessage: "The Email or Password Was Wrong, Try Again",
   KeyLanguage.passwordMismatchMassage:"Password Mismatch, Check Your Password again",
+  KeyLanguage.enterEmailMessage : "Enter Your Email First Please",
 };

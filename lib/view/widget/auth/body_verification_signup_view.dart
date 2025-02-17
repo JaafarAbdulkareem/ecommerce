@@ -20,7 +20,7 @@ class BodyVerificationSignupView
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           TitleDescriptionWidget(
-            title: KeyLanguage.verifyTitle.tr,
+            title: "${KeyLanguage.verifyTitle.tr} : ${controller.titleAppbar}",
             subTitle: "${KeyLanguage.verifyContent.tr}king@gmail.com",
           ),
           OtpTextFieldWidget(

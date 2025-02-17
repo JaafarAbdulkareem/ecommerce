@@ -58,7 +58,7 @@ class SignupControllerImp extends SignupController {
         phone: phone.text,
       );
       statusRequest = handleStatus(response);
-        update();
+      update();
       if (statusRequest == StatusRequest.success) {
         if (response[ApiResult.status] == ApiResult.success) {
           statusRequest = StatusRequest.loading;
@@ -66,6 +66,7 @@ class SignupControllerImp extends SignupController {
           await Get.offNamed(ConstantScreenName.vertifySignup, arguments: {
             ApiKey.email: email.text,
             ApiKey.phone: phone.text,
+            ApiKey.verifyCode: response[ApiResult.data].toString(),
           });
         } else {
           username.clear();
@@ -76,8 +77,12 @@ class SignupControllerImp extends SignupController {
             title: KeyLanguage.alert.tr,
             middleText: KeyLanguage.emailFoundMessage.tr,
           );
-          // statusRequest = StatusRequest.failure;
         }
+      } else {
+        await Get.defaultDialog(
+          title: KeyLanguage.alert.tr,
+          middleText: KeyLanguage.someThingMessage.tr,
+        );
       }
     }
   }

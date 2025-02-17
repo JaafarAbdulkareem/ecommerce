@@ -4,6 +4,9 @@ abstract class ApiConstant {
   static const String serverPath = "$server/$project";
   static const String folderAuth = "/auth";
   static const String apiSignup = "$serverPath/$folderAuth/signup.php";
+  static const String apiVerificationSignup = "$serverPath/$folderAuth/verify_code_signup.php";
   static const String apiVerification = "$serverPath/$folderAuth/verify_code.php";
   static const String apiLogin = "$serverPath/$folderAuth/login.php";
+  static const String apiForgetPassword = "$serverPath/$folderAuth/forget_password.php";
+  static const String apiResetPassword = "$serverPath/$folderAuth/reset_password.php";
 }

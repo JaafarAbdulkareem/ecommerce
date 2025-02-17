@@ -1,19 +1,27 @@
+import 'package:ecommerce/core/class/status_request.dart';
+import 'package:ecommerce/core/constant/api_key.dart';
 import 'package:ecommerce/core/constant/constant_screen_name.dart';
+import 'package:ecommerce/core/function/handle_status.dart';
+import 'package:ecommerce/core/localization/key_language.dart';
+import 'package:ecommerce/data/data_source/remote/auth/forget_password_remote.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 abstract class ForgetPasswordController extends GetxController {
   void forgetPasswordOnTap();
-  void verifyScreen();
 }
 
 class ForgetPasswordControllerImp extends ForgetPasswordController {
   late GlobalKey<FormState> keyForgetPassword;
   late TextEditingController email;
+  late StatusRequest statusRequest;
+  late ForgetPasswordRemote forgetPasswordRemote;
   @override
   void onInit() {
     keyForgetPassword = GlobalKey<FormState>();
-    email = TextEditingController();
+    email = TextEditingController(text: Get.arguments[ApiKey.email]);
+    statusRequest = StatusRequest.initial;
+    forgetPasswordRemote = ForgetPasswordRemote(curd: Get.find());
     super.onInit();
   }
 
@@ -24,16 +32,33 @@ class ForgetPasswordControllerImp extends ForgetPasswordController {
   }
 
   @override
-  void forgetPasswordOnTap() {
+  void forgetPasswordOnTap() async {
     if (keyForgetPassword.currentState!.validate()) {
-      verifyScreen();
-    } else {
-      // update();
+      var response = await forgetPasswordRemote.getData(
+        email: email.text,
+      );
+      statusRequest = handleStatus(response);
+      update();
+      if (statusRequest == StatusRequest.success) {
+        if (response[ApiResult.status] == ApiResult.success) {
+          statusRequest = StatusRequest.loading;
+          update();
+          await Get.toNamed(ConstantScreenName.vertify, arguments: {
+            ApiKey.verifyCode: response[ApiResult.data].toString(),
+          });
+        } else {
+          email.clear();
+          await Get.defaultDialog(
+            title: KeyLanguage.alert.tr,
+            middleText: KeyLanguage.emailFoundMessage.tr,
+          );
+        }
+      } else {
+        await Get.defaultDialog(
+          title: KeyLanguage.alert.tr,
+          middleText: KeyLanguage.someThingMessage.tr,
+        );
+      }
     }
-  }
-
-  @override
-  void verifyScreen() async {
-    await Get.toNamed(ConstantScreenName.vertify);
   }
 }

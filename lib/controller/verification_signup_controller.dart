@@ -13,10 +13,12 @@ abstract class VerificationSignupController extends GetxController {
 class VerificationSignupControllerImp extends VerificationSignupController {
   late StatusRequest statusRequest;
   late VerifictionSignupRemote verifictionSignupRemote;
+  late String titleAppbar;
   @override
   void onInit() {
     statusRequest = StatusRequest.initial;
     verifictionSignupRemote = VerifictionSignupRemote(curd: Get.find());
+    titleAppbar = Get.arguments[ApiKey.verifyCode];
     super.onInit();
   }
 
@@ -35,13 +37,17 @@ class VerificationSignupControllerImp extends VerificationSignupController {
         update();
         await Get.offAllNamed(ConstantScreenName.success);
       } else {
-        update();
         await Get.defaultDialog(
           title: KeyLanguage.alert.tr,
-          middleText: KeyLanguage.emailFoundMessage.tr,
+          middleText: KeyLanguage.verifyWrongMessage.tr,
         );
-        statusRequest = StatusRequest.failure;
+        // statusRequest = StatusRequest.failure;
       }
+    } else {
+      await Get.defaultDialog(
+        title: KeyLanguage.alert.tr,
+        middleText: KeyLanguage.someThingMessage.tr,
+      );
     }
   }
 }

@@ -60,5 +60,6 @@ abstract class KeyLanguage {
   static const String noApproveMessage = "noApproveMessage";
   static const String noFoundMessage = "noFoundMessage";
   static const String  passwordMismatchMassage = "passwordNotMatch";
+  static const String enterEmailMessage = "enterEmailMessage";
   // static const String 
 }
