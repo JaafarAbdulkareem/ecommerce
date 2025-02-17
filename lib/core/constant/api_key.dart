@@ -7,9 +7,11 @@ abstract class ApiKey {
   static const String verifyCode = "verifyCode";
 }
 
-abstract class ApiResult{
+abstract class ApiResult {
   static const String status = "status";
   static const String data = "data";
   static const String success = "success";
   static const String failure = "failure";
+  static const String noFound = "noFound";
+  static const String noApprove = "noApprove";
 }

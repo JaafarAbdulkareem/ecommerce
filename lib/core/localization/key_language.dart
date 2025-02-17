@@ -54,5 +54,8 @@ abstract class KeyLanguage {
   //dialog
   static const String alert = "alert";
   static const String dialogPopContent = "dialogPopContent";
-  static const String signupAlertMessage = "signupAlertMessage";
+  static const String emailFoundMessage = "signupAlertMessage";
+  static const String someThingMessage = "someThingMessage";
+  static const String noApproveMessage = "noApproveMessage";
+  static const String noFoundMessage = "noFoundMessage";
 }

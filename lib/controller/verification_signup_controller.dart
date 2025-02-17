@@ -38,7 +38,7 @@ class VerificationSignupControllerImp extends VerificationSignupController {
         update();
         await Get.defaultDialog(
           title: KeyLanguage.alert.tr,
-          middleText: KeyLanguage.signupAlertMessage.tr,
+          middleText: KeyLanguage.emailFoundMessage.tr,
         );
         statusRequest = StatusRequest.failure;
       }

@@ -57,8 +57,12 @@ Map<String, String> english = {
   KeyLanguage.invalidPhone: "Enter The Phone Number Correctly",
   KeyLanguage.lessMin: "Entry length is less than : ",
   KeyLanguage.greaterMax: "Entry length is greater than : ",
-  //dialog 
-  KeyLanguage.alert:"Alert",
-  KeyLanguage.dialogPopContent:"Do You Want Exit?",
-  KeyLanguage.signupAlertMessage: "The Email or Phone is Exist",
+  //dialog
+  KeyLanguage.alert: "Alert",
+  KeyLanguage.dialogPopContent: "Do You Want Exit?",
+  KeyLanguage.emailFoundMessage: "The Email or Phone is Exist",
+  KeyLanguage.someThingMessage: "An Error Occurred, Please Try Again Later",
+  KeyLanguage.noApproveMessage:
+      "verify Your Verification, click Forget Password ",
+  KeyLanguage.noFoundMessage: "The Email or Password Was Wrong, Try Again",
 };

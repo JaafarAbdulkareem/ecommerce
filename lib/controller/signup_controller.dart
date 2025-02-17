@@ -51,8 +51,6 @@ class SignupControllerImp extends SignupController {
   @override
   void signupOnTap() async {
     if (keySignup.currentState!.validate()) {
-      statusRequest = StatusRequest.loading;
-      update();
       var response = await signupRemote.getData(
         username: username.text,
         email: email.text,
@@ -62,16 +60,22 @@ class SignupControllerImp extends SignupController {
       statusRequest = handleStatus(response);
       if (statusRequest == StatusRequest.success) {
         if (response[ApiResult.status] == ApiResult.success) {
-          Get.offNamed(ConstantScreenName.vertifySignup, arguments: {
+          statusRequest = StatusRequest.loading;
+          update();
+          await Get.offNamed(ConstantScreenName.vertifySignup, arguments: {
             ApiKey.email: email.text,
             ApiKey.phone: phone.text,
           });
         } else {
+          username.clear();
+          email.clear();
+          password.clear();
+          phone.clear();
           await Get.defaultDialog(
             title: KeyLanguage.alert.tr,
-            middleText: KeyLanguage.signupAlertMessage.tr,
+            middleText: KeyLanguage.emailFoundMessage.tr,
           );
-          statusRequest = StatusRequest.failure;
+          // statusRequest = StatusRequest.failure;
         }
       }
     }
