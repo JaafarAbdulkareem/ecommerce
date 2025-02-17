@@ -1,4 +1,3 @@
-
 import 'package:ecommerce/core/class/status_request.dart';
 import 'package:ecommerce/core/constant/api_key.dart';
 import 'package:ecommerce/core/constant/constant_screen_name.dart';
@@ -23,16 +22,17 @@ class VerificationSignupControllerImp extends VerificationSignupController {
 
   @override
   void verificationSignup({required String verifyCode}) async {
-    statusRequest = StatusRequest.loading;
-    update();
     var response = await verifictionSignupRemote.getData(
       email: Get.arguments[ApiKey.email],
       phone: Get.arguments[ApiKey.phone],
       verifyCode: verifyCode,
     );
     statusRequest = handleStatus(response);
+    update();
     if (statusRequest == StatusRequest.success) {
       if (response[ApiResult.status] == ApiResult.success) {
+        statusRequest = StatusRequest.loading;
+        update();
         await Get.offAllNamed(ConstantScreenName.success);
       } else {
         update();
@@ -43,6 +43,5 @@ class VerificationSignupControllerImp extends VerificationSignupController {
         statusRequest = StatusRequest.failure;
       }
     }
-    update();
   }
 }

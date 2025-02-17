@@ -57,6 +57,7 @@ class LoginControllerImp extends LoginController {
         password: password.text,
       );
       statusRequest = handleStatus(response);
+      update();
       if (statusRequest == StatusRequest.success) {
         if (response[ApiResult.status] == ApiResult.success) {
           statusRequest = StatusRequest.loading;
@@ -84,7 +85,6 @@ class LoginControllerImp extends LoginController {
         }
       }
     }
-    update();
   }
 
   @override

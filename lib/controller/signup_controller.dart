@@ -58,6 +58,7 @@ class SignupControllerImp extends SignupController {
         phone: phone.text,
       );
       statusRequest = handleStatus(response);
+        update();
       if (statusRequest == StatusRequest.success) {
         if (response[ApiResult.status] == ApiResult.success) {
           statusRequest = StatusRequest.loading;
@@ -79,7 +80,6 @@ class SignupControllerImp extends SignupController {
         }
       }
     }
-    update();
   }
 
   @override
