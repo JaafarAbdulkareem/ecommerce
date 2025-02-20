@@ -31,13 +31,14 @@ class CustomSearchWidget extends StatelessWidget {
             ),
           ),
         ),
+        const SizedBox(width: 6),
         IconButton(
           color: AppColor.primary,
           style: IconButton.styleFrom(
             backgroundColor: AppColor.backgroundIcon,
           ),
           onPressed: () {},
-          icon: Icon(AppIcon.notification),
+          icon: const Icon(AppIcon.notification),
         ),
       ],
     );

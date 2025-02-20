@@ -70,4 +70,6 @@ Map<String, String> english = {
   KeyLanguage.noFoundMessage: "The Email or Password Was Wrong, Try Again",
   KeyLanguage.passwordMismatchMassage:"Password Mismatch, Check Your Password again",
   KeyLanguage.enterEmailMessage : "Enter Your Email First Please",
+  //home
+  KeyLanguage.hello: "Hello",
 };

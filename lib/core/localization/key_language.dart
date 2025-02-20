@@ -64,5 +64,6 @@ abstract class KeyLanguage {
   static const String  passwordMismatchMassage = "passwordNotMatch";
   static const String enterEmailMessage = "enterEmailMessage";
   //home 
+  static const String hello = "hello";
   // static const String 
 }
