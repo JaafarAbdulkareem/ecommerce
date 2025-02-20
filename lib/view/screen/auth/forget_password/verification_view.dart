@@ -1,8 +1,8 @@
 import 'package:ecommerce/controller/verification_controller.dart';
 import 'package:ecommerce/core/constant/app_style.dart';
 import 'package:ecommerce/core/localization/key_language.dart';
-import 'package:ecommerce/view/widget/auth/otp_text_field_widget.dart';
-import 'package:ecommerce/view/widget/auth/title_description_widget.dart';
+import 'package:ecommerce/core/share/status_view.dart';
+import 'package:ecommerce/view/widget/auth/body_verification_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -11,8 +11,7 @@ class VerificationView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final VerificationControllerImp controller =
-        Get.put(VerificationControllerImp());
+    Get.lazyPut(() => VerificationControllerImp());
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
@@ -22,30 +21,10 @@ class VerificationView extends StatelessWidget {
         ),
       ),
       body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              TitleDescriptionWidget(
-                title: KeyLanguage.verifyTitle.tr,
-                subTitle: "${KeyLanguage.verifyContent.tr}king@gmail.com",
-              ),
-              OtpTextFieldWidget(
-                onTap: (String verifyCode) {
-                  controller.verificationOnTap(verifyCode:verifyCode);
-                },
-              ),
-              // CustomButtonWidget(
-              //   text: KeyLanguage.verify.tr,
-              //   color: AppColor.primary,
-              //   onTap: () {
-              //     controller.verificationOnTap();
-              //   },
-              // ),
-              const SizedBox(height: 32),
-            ],
+        child: GetBuilder<VerificationControllerImp>(
+          builder: (controller) => StatusView(
+            statusRequest: controller.statusRequest,
+            widget: BodyVerifcationView(),
           ),
         ),
       ),

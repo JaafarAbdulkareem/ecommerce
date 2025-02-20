@@ -13,12 +13,12 @@ abstract class VerificationSignupController extends GetxController {
 class VerificationSignupControllerImp extends VerificationSignupController {
   late StatusRequest statusRequest;
   late VerifictionSignupRemote verifictionSignupRemote;
-  late String titleAppbar;
+  late String titleVerifyCode;
   @override
   void onInit() {
     statusRequest = StatusRequest.initial;
     verifictionSignupRemote = VerifictionSignupRemote(curd: Get.find());
-    titleAppbar = Get.arguments[ApiKey.verifyCode];
+    titleVerifyCode = Get.arguments[ApiKey.verifyCode];
     super.onInit();
   }
 

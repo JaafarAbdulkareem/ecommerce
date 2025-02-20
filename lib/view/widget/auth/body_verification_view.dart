@@ -1,13 +1,12 @@
-import 'package:ecommerce/controller/verification_signup_controller.dart';
+import 'package:ecommerce/controller/verification_controller.dart';
 import 'package:ecommerce/core/localization/key_language.dart';
 import 'package:ecommerce/view/widget/auth/otp_text_field_widget.dart';
 import 'package:ecommerce/view/widget/auth/title_description_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class BodyVerificationSignupView
-    extends GetView<VerificationSignupControllerImp> {
-  const BodyVerificationSignupView({
+class BodyVerifcationView extends GetView<VerificationControllerImp> {
+  const BodyVerifcationView({
     super.key,
   });
 
@@ -24,10 +23,17 @@ class BodyVerificationSignupView
             subTitle: "${KeyLanguage.verifyContent.tr}king@gmail.com",
           ),
           OtpTextFieldWidget(
-            onTap: (String verificationCode) {
-              controller.verificationSignup(verifyCode: verificationCode);
+            onTap: (String verifyCode) {
+              controller.verificationOnTap(verifyCode: verifyCode);
             },
           ),
+          // CustomButtonWidget(
+          //   text: KeyLanguage.verify.tr,
+          //   color: AppColor.primary,
+          //   onTap: () {
+          //     controller.verificationOnTap();
+          //   },
+          // ),
           const SizedBox(height: 32),
         ],
       ),

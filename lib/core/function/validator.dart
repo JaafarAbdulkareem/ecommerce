@@ -28,7 +28,7 @@ String? validator(String? value, String type, int min, int max) {
               ConstantScale.maxPassword.toString();
         }
       } else {
-        return KeyLanguage.invalidPassword;
+        return KeyLanguage.invalidPassword.tr;
       }
     } else if (ConstantKey.phone == type) {
       if (!GetUtils.isPhoneNumber(value)) {

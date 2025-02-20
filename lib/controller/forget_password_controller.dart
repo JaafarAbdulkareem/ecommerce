@@ -43,9 +43,13 @@ class ForgetPasswordControllerImp extends ForgetPasswordController {
         if (response[ApiResult.status] == ApiResult.success) {
           statusRequest = StatusRequest.loading;
           update();
-          await Get.toNamed(ConstantScreenName.vertify, arguments: {
-            ApiKey.verifyCode: response[ApiResult.data].toString(),
-          });
+          await Get.toNamed(
+            ConstantScreenName.vertify,
+            arguments: {
+              ApiKey.email: email.text,
+              ApiKey.verifyCode: response[ApiResult.data].toString(),
+            },
+          );
         } else {
           email.clear();
           await Get.defaultDialog(
@@ -53,12 +57,15 @@ class ForgetPasswordControllerImp extends ForgetPasswordController {
             middleText: KeyLanguage.emailFoundMessage.tr,
           );
         }
-      } else {
-        await Get.defaultDialog(
-          title: KeyLanguage.alert.tr,
-          middleText: KeyLanguage.someThingMessage.tr,
-        );
-      }
+        statusRequest = StatusRequest.success;
+        update();
+      } 
+      // else {
+      //   await Get.defaultDialog(
+      //     title: KeyLanguage.alert.tr,
+      //     middleText: KeyLanguage.someThingMessage.tr,
+      //   );
+      // }
     }
   }
 }
