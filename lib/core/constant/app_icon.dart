@@ -7,4 +7,6 @@ abstract class AppIcon {
   static const IconData openPassword = Icons.lock_open_outlined;
   static const IconData phone = Icons.phone_android_rounded;
   static const IconData success = Icons.check_circle_outline;
+  static const IconData search = Icons.search_outlined;
+  static const IconData notification = Icons.notifications_outlined;
 }

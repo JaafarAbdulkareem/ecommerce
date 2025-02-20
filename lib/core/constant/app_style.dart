@@ -2,6 +2,13 @@ import 'package:ecommerce/core/constant/app_color.dart';
 import 'package:flutter/material.dart';
 
 abstract class AppStyle {
+  static TextStyle styleBold12(BuildContext context) {
+    return TextStyle(
+      fontSize: 12,
+      color: AppColorText.secondary,
+      fontWeight: FontWeight.bold,
+    );
+  }
   static TextStyle styleLight14(BuildContext context) {
     return TextStyle(
       fontSize: 14,

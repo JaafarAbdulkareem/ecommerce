@@ -6,6 +6,7 @@ import 'package:ecommerce/core/service/shared_prefs_service.dart';
 import 'package:ecommerce/navigator_screens.dart';
 import 'package:ecommerce/test.dart';
 import 'package:ecommerce/view/screen/auth/login_view.dart';
+import 'package:ecommerce/view/screen/home/home_view.dart';
 import 'package:ecommerce/view/screen/onboarding/choose_app_language.dart';
 import 'package:ecommerce/view/screen/onboarding/onboarding_view.dart';
 import 'package:flutter/material.dart';
@@ -29,7 +30,7 @@ class MyApp extends StatelessWidget {
       translations: TranslationLanguages(),
       locale: controller.language,
       initialBinding: InitialBindings(),
-      // home: Test(),
+      home: HomeView(),
       // home: const ChooseAppLanguage(),
       // const LoginView(),
       getPages: getPages,

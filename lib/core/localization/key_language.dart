@@ -31,15 +31,17 @@ abstract class KeyLanguage {
   static const String successContent = "successContent";
   //Text field
   static const String usernameLabel = "UsernameLabel";
-  static const String usernameHint = "usernameHint";
   static const String emailLabel = "emailLabel";
-  static const String emailHint = "emailHint";
   static const String passwordLabel = "passwordLabel";
-  static const String passwordHint = "passwordHint";
   static const String rePasswordLabel = "rePasswordLabel";
-  static const String rePasswordHint = "rePasswordHint";
   static const String phoneLabel = "phoneLabel";
+  static const String searchLabel = "searcheLabel";
+  static const String usernameHint = "usernameHint";
+  static const String emailHint = "emailHint";
+  static const String passwordHint = "passwordHint";
+  static const String rePasswordHint = "rePasswordHint";
   static const String phoneHint = "phoneHint";
+  static const String searchHint = "searcheHint";
   static const String forgetPassword = "forgetPassword";
   static const String messageLinkLogin = "messsageLinkLogin";
   static const String messageLinkSignup = "messageLinkSignup";
@@ -61,5 +63,6 @@ abstract class KeyLanguage {
   static const String noFoundMessage = "noFoundMessage";
   static const String  passwordMismatchMassage = "passwordNotMatch";
   static const String enterEmailMessage = "enterEmailMessage";
+  //home 
   // static const String 
 }
