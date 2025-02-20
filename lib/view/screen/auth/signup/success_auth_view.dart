@@ -1,4 +1,4 @@
-import 'package:ecommerce/controller/success_controller.dart';
+import 'package:ecommerce/controller/auth/success_controller.dart';
 import 'package:ecommerce/core/constant/app_color.dart';
 import 'package:ecommerce/core/constant/app_style.dart';
 import 'package:ecommerce/core/localization/key_language.dart';

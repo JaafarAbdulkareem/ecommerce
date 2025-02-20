@@ -1,4 +1,4 @@
-import 'package:ecommerce/controller/login_controller.dart';
+import 'package:ecommerce/controller/auth/login_controller.dart';
 import 'package:ecommerce/core/constant/app_style.dart';
 import 'package:ecommerce/core/localization/key_language.dart';
 import 'package:ecommerce/core/share/status_view.dart';

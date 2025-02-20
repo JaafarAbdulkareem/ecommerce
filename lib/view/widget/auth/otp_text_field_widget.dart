@@ -1,4 +1,4 @@
-import 'package:ecommerce/controller/verification_controller.dart';
+import 'package:ecommerce/controller/auth/verification_controller.dart';
 import 'package:ecommerce/core/constant/app_color.dart';
 import 'package:ecommerce/core/constant/constant_scale.dart';
 import 'package:flutter/material.dart';

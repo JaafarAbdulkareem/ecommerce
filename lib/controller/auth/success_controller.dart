@@ -1,4 +1,4 @@
-import 'package:ecommerce/controller/login_controller.dart';
+import 'package:ecommerce/controller/auth/login_controller.dart';
 import 'package:ecommerce/core/constant/constant_screen_name.dart';
 import 'package:get/get.dart';
 

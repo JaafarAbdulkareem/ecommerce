@@ -1,4 +1,4 @@
-import 'package:ecommerce/controller/verification_controller.dart';
+import 'package:ecommerce/controller/auth/verification_controller.dart';
 import 'package:ecommerce/core/localization/key_language.dart';
 import 'package:ecommerce/view/widget/auth/otp_text_field_widget.dart';
 import 'package:ecommerce/view/widget/auth/title_description_widget.dart';

@@ -1,6 +1,7 @@
 import 'package:ecommerce/core/constant/app_color.dart';
 import 'package:ecommerce/core/constant/app_style.dart';
 import 'package:ecommerce/core/localization/key_language.dart';
+import 'package:ecommerce/view/widget/home/custom_ads_widget.dart';
 import 'package:ecommerce/view/widget/home/custom_search_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -28,6 +29,7 @@ class HomeView extends StatelessWidget {
             SizedBox(
               height: 8
             ),
+            CustomAdsWidget(),
           ],
         ),
       )),
