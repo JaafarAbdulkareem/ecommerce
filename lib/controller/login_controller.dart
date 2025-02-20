@@ -33,6 +33,7 @@ class LoginControllerImp extends LoginController {
     statusRequest = StatusRequest.initial;
     loginRemote = LoginRemote(curd: Get.find());
     titleDialog = KeyLanguage.alert.tr;
+
     super.onInit();
   }
 
