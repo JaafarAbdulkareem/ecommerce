@@ -73,4 +73,5 @@ Map<String, String> english = {
   //home
   KeyLanguage.hello: "Hello",
   KeyLanguage.titleCategories: "Categories",
+  KeyLanguage.titleDiscountProduct: "Product For You",
 };

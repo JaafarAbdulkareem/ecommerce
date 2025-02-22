@@ -1,4 +1,5 @@
 import 'package:ecommerce/view/widget/home/category_list_view.dart';
+import 'package:ecommerce/view/widget/home/product_home_section.dart';
 import 'package:ecommerce/view/widget/home/top_home_section.dart';
 import 'package:flutter/material.dart';
 
@@ -18,6 +19,9 @@ class BodyHomeView extends StatelessWidget {
           ),
           SliverToBoxAdapter(
             child: CategoryListView(),
+          ),
+          SliverToBoxAdapter(
+            child: ProductHomeListView(),
           ),
         ],
       ),
