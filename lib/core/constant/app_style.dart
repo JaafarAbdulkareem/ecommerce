@@ -9,6 +9,7 @@ abstract class AppStyle {
       fontWeight: FontWeight.bold,
     );
   }
+
   static TextStyle styleLight14(BuildContext context) {
     return TextStyle(
       fontSize: 14,
@@ -46,6 +47,14 @@ abstract class AppStyle {
       fontWeight: FontWeight.bold,
       fontSize: 16,
       color: AppColorText.textButton,
+    );
+  }
+
+  static TextStyle styleSemibold18(BuildContext context) {
+    return TextStyle(
+      fontSize: 18,
+      fontWeight: FontWeight.w600,
+      color: AppColor.primary,
     );
   }
 

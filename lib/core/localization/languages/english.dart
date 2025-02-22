@@ -72,4 +72,5 @@ Map<String, String> english = {
   KeyLanguage.enterEmailMessage : "Enter Your Email First Please",
   //home
   KeyLanguage.hello: "Hello",
+  KeyLanguage.titleCategories: "Categories",
 };

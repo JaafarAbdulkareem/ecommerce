@@ -1,5 +1,5 @@
 import 'package:ecommerce/data/models/ads_home_model.dart';
-import 'package:ecommerce/view/widget/home/custom_ads_item_widget.dart';
+import 'package:ecommerce/view/widget/home/custom_item_ads_widget.dart';
 import 'package:flutter/widgets.dart';
 
 class CustomAdsWidget extends StatelessWidget {
@@ -42,7 +42,7 @@ class CustomAdsWidget extends StatelessWidget {
               .map(
                 (e) => AspectRatio(
                   aspectRatio: 2 / 1,
-                  child: CustomAdsItemWidget(data: e),
+                  child: CustomItemAdsWidget(data: e),
                 ),
               )
               .toList(),

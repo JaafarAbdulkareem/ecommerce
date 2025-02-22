@@ -61,9 +61,10 @@ abstract class KeyLanguage {
   static const String someThingMessage = "someThingMessage";
   static const String noApproveMessage = "noApproveMessage";
   static const String noFoundMessage = "noFoundMessage";
-  static const String  passwordMismatchMassage = "passwordNotMatch";
+  static const String passwordMismatchMassage = "passwordNotMatch";
   static const String enterEmailMessage = "enterEmailMessage";
-  //home 
+  //home
   static const String hello = "hello";
-  // static const String 
+  static const String titleCategories = "titleCategories";
+  // static const String
 }

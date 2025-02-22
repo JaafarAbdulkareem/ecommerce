@@ -2,8 +2,8 @@ import 'package:ecommerce/core/constant/app_style.dart';
 import 'package:ecommerce/data/models/ads_home_model.dart';
 import 'package:flutter/material.dart';
 
-class CustomAdsItemWidget extends StatelessWidget {
-  const CustomAdsItemWidget({
+class CustomItemAdsWidget extends StatelessWidget {
+  const CustomItemAdsWidget({
     super.key,
     required this.data,
   });
