@@ -38,7 +38,7 @@ class BodyForgetPasswordView extends GetView<ForgetPasswordControllerImp> {
               keyboardType: TextInputType.emailAddress,
               validator: (value) => validator(
                 value,
-                ConstantKey.email,
+                ConstantKey.emailValidator,
                 ConstantScale.minEmail,
                 ConstantScale.maxEmail,
               ),

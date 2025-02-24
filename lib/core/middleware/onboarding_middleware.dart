@@ -12,6 +12,10 @@ import 'package:get/get.dart';
 
   @override
   RouteSettings? redirect(String? route) {
+    if (pref.prefs.getBool(ConstantKey.keyLogin) ?? false) {
+      return RouteSettings(name: ConstantScreenName.home);
+      
+    } else 
     if (pref.prefs.getBool(ConstantKey.keyOnboarding) ?? false) {
       return RouteSettings(name: ConstantScreenName.login);
     }

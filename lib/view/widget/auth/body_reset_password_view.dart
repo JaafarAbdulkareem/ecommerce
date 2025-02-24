@@ -40,7 +40,7 @@ class BodyResetPasswordView extends GetView<ResetPasswordControllerImp> {
                 keyboardType: TextInputType.number,
                 validator: (value) => validator(
                   value,
-                  ConstantKey.password,
+                  ConstantKey.passwordValidator,
                   ConstantScale.minPassword,
                   ConstantScale.maxPassword,
                 ),
@@ -59,7 +59,7 @@ class BodyResetPasswordView extends GetView<ResetPasswordControllerImp> {
                 keyboardType: TextInputType.number,
                 validator: (value) => validator(
                   value,
-                  ConstantKey.password,
+                  ConstantKey.passwordValidator,
                   ConstantScale.minPassword,
                   ConstantScale.maxPassword,
                 ),

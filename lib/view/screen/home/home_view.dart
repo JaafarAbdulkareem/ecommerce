@@ -1,7 +1,5 @@
 import 'package:ecommerce/controller/home/home_controller.dart';
-import 'package:ecommerce/core/class/status_request.dart';
 import 'package:ecommerce/core/constant/app_color.dart';
-import 'package:ecommerce/core/constant/app_lottie.dart';
 import 'package:ecommerce/core/constant/app_style.dart';
 import 'package:ecommerce/core/localization/key_language.dart';
 import 'package:ecommerce/data/data_source/static/static_navigator_home_bar.dart';
@@ -10,7 +8,6 @@ import 'package:ecommerce/view/widget/home/home_navigator_bar.dart';
 import 'package:ecommerce/view/widget/home/home_status_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:lottie/lottie.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
@@ -23,7 +20,7 @@ class HomeView extends StatelessWidget {
       appBar: AppBar(
         centerTitle: true,
         title: Text(
-          "${KeyLanguage.hello.tr} ${controller.username}",
+          "${KeyLanguage.hello.tr} ${controller.authData.username}",
           style: AppStyle.styleBold16(context),
         ),
         backgroundColor: AppColor.primary,

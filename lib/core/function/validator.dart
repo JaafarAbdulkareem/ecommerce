@@ -10,15 +10,15 @@ String? validator(String? value, String type, int min, int max) {
     value = value.trim();
     if (value.isEmpty) {
       return KeyLanguage.empty.tr;
-    } else if (ConstantKey.username == type) {
+    } else if (ConstantKey.usernameValidator == type) {
       if (!GetUtils.isUsername(value)) {
         return KeyLanguage.invalidUsername.tr;
       }
-    } else if (ConstantKey.email == type) {
+    } else if (ConstantKey.emailValidator == type) {
       if (!GetUtils.isEmail(value)) {
         return KeyLanguage.invalidEmail.tr;
       }
-    } else if (ConstantKey.password == type) {
+    } else if (ConstantKey.passwordValidator == type) {
       if (GetUtils.isNum(value)) {
         if (value.length < min) {
           return KeyLanguage.lessMin.tr + ConstantScale.minPassword.toString();
@@ -30,7 +30,7 @@ String? validator(String? value, String type, int min, int max) {
       } else {
         return KeyLanguage.invalidPassword.tr;
       }
-    } else if (ConstantKey.phone == type) {
+    } else if (ConstantKey.phoneValidator == type) {
       if (!GetUtils.isPhoneNumber(value)) {
         return KeyLanguage.invalidPhone.tr;
       }

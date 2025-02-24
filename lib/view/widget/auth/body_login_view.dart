@@ -45,7 +45,7 @@ class BodyLoginView extends GetView<LoginControllerImp> {
               keyboardType: TextInputType.emailAddress,
               validator: (value) => validator(
                 value,
-                ConstantKey.email,
+                ConstantKey.emailValidator,
                 ConstantScale.minEmail,
                 ConstantScale.maxEmail,
               ),
@@ -60,7 +60,7 @@ class BodyLoginView extends GetView<LoginControllerImp> {
                 keyboardType: TextInputType.number,
                 validator: (value) => validator(
                   value,
-                  ConstantKey.password,
+                  ConstantKey.passwordValidator,
                   ConstantScale.minPassword,
                   ConstantScale.maxPassword,
                 ),

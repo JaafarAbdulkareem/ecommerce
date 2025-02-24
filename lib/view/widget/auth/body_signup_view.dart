@@ -39,7 +39,7 @@ class BodySignupView extends GetView<SignupControllerImp> {
               keyboardType: TextInputType.text,
               validator: (value) => validator(
                 value,
-                ConstantKey.username,
+                ConstantKey.usernameValidator,
                 ConstantScale.minUsername,
                 ConstantScale.maxUsername,
               ),
@@ -52,7 +52,7 @@ class BodySignupView extends GetView<SignupControllerImp> {
               keyboardType: TextInputType.emailAddress,
               validator: (value) => validator(
                 value,
-                ConstantKey.email,
+                ConstantKey.emailValidator,
                 ConstantScale.minEmail,
                 ConstantScale.maxEmail,
               ),
@@ -67,7 +67,7 @@ class BodySignupView extends GetView<SignupControllerImp> {
                 keyboardType: TextInputType.number,
                 validator: (value) => validator(
                   value,
-                  ConstantKey.password,
+                  ConstantKey.passwordValidator,
                   ConstantScale.minPassword,
                   ConstantScale.maxPassword,
                 ),
@@ -84,7 +84,7 @@ class BodySignupView extends GetView<SignupControllerImp> {
               keyboardType: TextInputType.phone,
               validator: (value) => validator(
                 value,
-                ConstantKey.phone,
+                ConstantKey.phoneValidator,
                 ConstantScale.minPhone,
                 ConstantScale.maxPhone,
               ),
