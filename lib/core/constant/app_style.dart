@@ -2,6 +2,14 @@ import 'package:ecommerce/core/constant/app_color.dart';
 import 'package:flutter/material.dart';
 
 abstract class AppStyle {
+  static TextStyle styleSemiBold10(BuildContext context) {
+    return TextStyle(
+      fontSize: 10,
+      color: AppColorText.textButton,
+      fontWeight: FontWeight.w600,
+    );
+  }
+
   static TextStyle styleBold12(BuildContext context) {
     return TextStyle(
       fontSize: 12,

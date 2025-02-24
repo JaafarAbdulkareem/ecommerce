@@ -13,7 +13,7 @@ class DotPageView extends StatelessWidget {
       builder: (controller) => Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: List.generate(
-          onboardingdata.length,
+          dataOnboarding.length,
           (index) => 
           Padding(
             padding: const EdgeInsets.only(right: 8),

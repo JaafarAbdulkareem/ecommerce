@@ -10,9 +10,12 @@ class TitleSectionWidget extends StatelessWidget {
   final String title;
   @override
   Widget build(BuildContext context) {
-    return Text(
-      title.tr,
-      style: AppStyle.styleSemibold18(context),
+    return Padding(
+      padding: const EdgeInsets.only(top:  12,bottom: 6),
+      child: Text(
+        title.tr,
+        style: AppStyle.styleSemibold18(context),
+      ),
     );
   }
 }

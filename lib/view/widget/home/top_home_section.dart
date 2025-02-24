@@ -12,7 +12,6 @@ class TopHomeSection extends StatelessWidget {
         CustomAdsWidget(),
         SizedBox(height: 8),
         CustomSearchWidget(),
-        SizedBox(height: 6),
       ],
     );
   }

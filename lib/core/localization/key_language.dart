@@ -67,6 +67,14 @@ abstract class KeyLanguage {
   static const String hello = "hello";
   static const String titleCategories = "titleCategories";
   static const String titleDiscountProduct = "titleDiscountProduct";
+
+  //botton bar
+  static const String barHome = "barHome";
+  
+  static const String barSetting  = "barSetting";
+  static const String barFavorit = "barFavorit";
+  static const String barProfile = "barProfile";
+  
   // static const String titleBestSelling = "titleBestSelling";
   // static const String
 }

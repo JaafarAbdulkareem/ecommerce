@@ -8,6 +8,7 @@ abstract class AppColor {
   static const Color backgroundIcon = Color(0xFFDAD6D6);
   static const Color iconColor = Color(0xFF7EB5E3);
   static const Color backgroundHomeProduct = Color(0x47000000);
+  static const Color backgroundScaffold = Color(0xFFFFFFFF);
   // static const Color
 }
 

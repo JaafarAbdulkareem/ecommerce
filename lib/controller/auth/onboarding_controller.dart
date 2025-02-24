@@ -27,7 +27,7 @@ class OnboardingControllerImp extends OnboardingController {
   @override
   Future<void> nextpage() async {
     currentIndex++;
-    if (currentIndex >= onboardingdata.length) {
+    if (currentIndex >= dataOnboarding.length) {
       sharedPrefsService.prefs.setBool(ConstantKey.keyOnboarding, true);
       Get.offAllNamed(ConstantScreenName.login);
     } else {

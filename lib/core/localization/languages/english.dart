@@ -41,7 +41,7 @@ Map<String, String> english = {
   KeyLanguage.passwordLabel: "Password",
   KeyLanguage.rePasswordLabel: "Re Password",
   KeyLanguage.phoneLabel: "phone",
-  KeyLanguage.searchLabel:"search",
+  KeyLanguage.searchLabel: "search",
   KeyLanguage.usernameHint: "Enter Your Name",
   KeyLanguage.emailHint: "Enter Your Email",
   KeyLanguage.passwordHint: "Enter Your Password",
@@ -68,10 +68,16 @@ Map<String, String> english = {
   KeyLanguage.noApproveMessage:
       "verify Your Verification, click Forget Password ",
   KeyLanguage.noFoundMessage: "The Email or Password Was Wrong, Try Again",
-  KeyLanguage.passwordMismatchMassage:"Password Mismatch, Check Your Password again",
-  KeyLanguage.enterEmailMessage : "Enter Your Email First Please",
+  KeyLanguage.passwordMismatchMassage:
+      "Password Mismatch, Check Your Password again",
+  KeyLanguage.enterEmailMessage: "Enter Your Email First Please",
   //home
   KeyLanguage.hello: "Hello",
   KeyLanguage.titleCategories: "Categories",
   KeyLanguage.titleDiscountProduct: "Product For You",
+  //botton bar
+  KeyLanguage.barHome: "HOME",
+  KeyLanguage.barSetting: " SETTING",
+  KeyLanguage.barFavorit: "FAVORITE",
+  KeyLanguage.barProfile: "PROFILE",
 };

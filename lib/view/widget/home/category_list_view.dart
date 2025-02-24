@@ -13,14 +13,13 @@ class CategoryListView extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         const TitleSectionWidget(title: KeyLanguage.titleCategories),
-        const SizedBox(height: 6),
         SizedBox(
           height: 85,
           child: ListView.builder(
             scrollDirection: Axis.horizontal,
-            itemCount: categoryLogodata.length,
+            itemCount: dataCategoryLogo.length,
             itemBuilder: (context, index) => CategoryItemListView(
-              data: categoryLogodata[index],
+              data: dataCategoryLogo[index],
             ),
           ),
         ),

@@ -14,7 +14,7 @@ class SliderPageView extends GetView<OnboardingControllerImp> {
       onPageChanged: (value) {
         controller.changePage(value);
       },
-      children: onboardingdata
+      children: dataOnboarding
           .map(
             (e) => SliderPageViewItem(
               data: e,
