@@ -16,4 +16,7 @@ abstract class ApiResult {
   static const String failure = "failure";
   static const String noFound = "noFound";
   static const String noApprove = "noApprove";
+  static const String category = "category";
+  static const String product = "product";
+
 }

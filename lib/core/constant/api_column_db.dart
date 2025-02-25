@@ -15,9 +15,15 @@ class ApiColumnDb {
   //product
   static const String arabicDescription = "arabic_description";
   static const String englishDescription = "english_description";
+  static const String productImage = "product_image";
   static const String count = "count";
   static const String active = "active";
   static const String price = "price";
   static const String discount = "discount";
   static const String categoryId = "category_id";
+  static const String productCategoryId = "product_category_id";
+  static const String categoryArabicName = "category_arabic_name";
+  static const String categoryEnglishName = "category_english_name";
+  static const String categoryImage = "category_image";
+  static const String categoryTimeCreate = "category_time_create";
 }

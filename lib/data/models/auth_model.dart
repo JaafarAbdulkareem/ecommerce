@@ -10,4 +10,6 @@ class AuthModel {
     required this.email,
     required this.phone,
   });
+
+
 }
