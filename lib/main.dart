@@ -1,14 +1,8 @@
 import 'package:ecommerce/core/binding/initial_bindings.dart';
-import 'package:ecommerce/core/constant/constant_key.dart';
 import 'package:ecommerce/core/localization/locale_controller.dart';
 import 'package:ecommerce/core/localization/translation_languages.dart';
 import 'package:ecommerce/core/service/shared_prefs_service.dart';
 import 'package:ecommerce/navigator_screens.dart';
-import 'package:ecommerce/test.dart';
-import 'package:ecommerce/view/screen/auth/login_view.dart';
-import 'package:ecommerce/view/screen/home/home_view.dart';
-import 'package:ecommerce/view/screen/onboarding/choose_app_language.dart';
-import 'package:ecommerce/view/screen/onboarding/onboarding_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

@@ -33,7 +33,7 @@ class HomeView extends StatelessWidget {
           builder: (controller) {
             return HomeStatusView(
               statusRequest: controller.statusRequest,
-              child: dataNavigatorBar[controller.currentAppBar].screen,
+              child: dataNavigatorBar[controller.indexBar].screen,
             );
           },
         ),

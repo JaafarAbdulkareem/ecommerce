@@ -10,6 +10,7 @@ import 'package:ecommerce/view/screen/auth/signup/verification_signup_view.dart'
 import 'package:ecommerce/view/screen/home/home_view.dart';
 import 'package:ecommerce/view/screen/onboarding/choose_app_language.dart';
 import 'package:ecommerce/view/screen/onboarding/onboarding_view.dart';
+import 'package:ecommerce/view/screen/product/product_view.dart';
 import 'package:get/get.dart';
 
 List<GetPage<dynamic>> get getPages => [
@@ -24,7 +25,7 @@ List<GetPage<dynamic>> get getPages => [
         name: ConstantScreenName.onboarding,
         page: () => OnboardingView(),
       ),
-      //auth
+//*************************auth******************
       GetPage(
         name: ConstantScreenName.login,
         page: () => LoginView(),
@@ -53,9 +54,13 @@ List<GetPage<dynamic>> get getPages => [
         name: ConstantScreenName.success,
         page: () => SuccessAuthView(),
       ),
-      //home
+//*********************************home********************
       GetPage(
         name: ConstantScreenName.home,
         page: () => HomeView(),
+      ),
+      GetPage(
+        name: ConstantScreenName.product,
+        page: () => ProductView(),
       ),
     ];

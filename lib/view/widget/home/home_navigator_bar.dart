@@ -1,3 +1,4 @@
+
 import 'package:ecommerce/controller/home/home_controller.dart';
 import 'package:ecommerce/core/constant/app_color.dart';
 import 'package:ecommerce/data/data_source/static/static_navigator_home_bar.dart';
@@ -30,7 +31,7 @@ class HomeNavigatorBar extends StatelessWidget {
                 ? const Spacer()
                 : ItemHomeNavigatorBar(
                     data: dataNavigatorBar[i],
-                    selected: i == controller.currentAppBar,
+                    selected: i == controller.indexBar,
                     index: i,
                   );
           }),

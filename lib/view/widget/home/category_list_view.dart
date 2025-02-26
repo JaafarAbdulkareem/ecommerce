@@ -1,10 +1,11 @@
+import 'package:ecommerce/controller/home/body_home_controller.dart';
 import 'package:ecommerce/core/localization/key_language.dart';
-import 'package:ecommerce/data/data_source/static/static%20_category_logo.dart';
-import 'package:ecommerce/view/widget/home/category_item_list_view.dart';
+import 'package:ecommerce/view/widget/home/item_category_list_view.dart';
 import 'package:ecommerce/view/widget/home/title_section_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
-class CategoryListView extends StatelessWidget {
+class CategoryListView extends GetView<BodyHomeControllerImp> {
   const CategoryListView({super.key});
 
   @override
@@ -17,10 +18,15 @@ class CategoryListView extends StatelessWidget {
           height: 85,
           child: ListView.builder(
             scrollDirection: Axis.horizontal,
-            itemCount: dataCategoryLogo.length,
-            itemBuilder: (context, index) => CategoryItemListView(
-              data: dataCategoryLogo[index],
-            ),
+            itemCount: controller.categoryData.length,
+            itemBuilder: (context, index) {
+              return ItemCategoryListView(
+                data: controller.categoryData[index],
+                onTap: () {
+                 controller.navigatorToProduct(index);
+                },
+              );
+            },
           ),
         ),
       ],

@@ -6,7 +6,6 @@ class CategoryModel {
   final String englishName;
   final String image;
   final String timeCreate;
-  final int userId;
 
   const CategoryModel({
     required this.id,
@@ -14,7 +13,6 @@ class CategoryModel {
     required this.englishName,
     required this.image,
     required this.timeCreate,
-    required this.userId,
   });
 
   factory CategoryModel.fromJson(Map<String, dynamic> json) {
@@ -24,7 +22,6 @@ class CategoryModel {
       englishName: json[ApiColumnDb.englishName],
       image: json[ApiColumnDb.image],
       timeCreate: json[ApiColumnDb.timeCreate],
-      userId: json[ApiColumnDb.userId],
     );
   }
 
@@ -35,7 +32,6 @@ class CategoryModel {
     data[ApiColumnDb.englishName] = englishName;
     data[ApiColumnDb.image] = image;
     data[ApiColumnDb.timeCreate] = timeCreate;
-    data[ApiColumnDb.userId] = userId;
     return data;
   }
 }

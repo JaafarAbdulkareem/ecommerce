@@ -1,43 +1,26 @@
 import 'package:ecommerce/core/class/status_request.dart';
 import 'package:ecommerce/core/constant/api_key.dart';
+import 'package:ecommerce/core/constant/constant_key.dart';
+import 'package:ecommerce/core/constant/constant_screen_name.dart';
 import 'package:ecommerce/core/function/handle_status.dart';
-import 'package:ecommerce/core/service/shared_prefs_service.dart';
 import 'package:ecommerce/data/data_source/remote/home/home_remote.dart';
-import 'package:ecommerce/data/models/auth_model.dart';
 import 'package:ecommerce/data/models/category_model.dart';
 import 'package:ecommerce/data/models/product_model.dart';
 import 'package:get/get.dart';
 
-abstract class HomeController extends GetxController {
-  void sharedPreferenceInitial();
-  void changeBottonBar(int i);
+abstract class BodyHomeController extends GetxController {
   void getData();
+  void navigatorToProduct(int indexCategory);
 }
 
-class HomeControllerImp extends HomeController {
-  late SharedPrefsService sharedPrefsService;
-  late AuthModel authData;
-  late int currentAppBar;
+class BodyHomeControllerImp extends BodyHomeController {
   late StatusRequest statusRequest;
   late List<CategoryModel> categoryData;
   late List<ProductModel> productData;
   late HomeRemote homeRemote;
 
   @override
-  void sharedPreferenceInitial() async {
-    authData = AuthModel(
-      userId: sharedPrefsService.prefs.getString(ApiKey.userId)!,
-      username: sharedPrefsService.prefs.getString(ApiKey.username) ?? "",
-      email: sharedPrefsService.prefs.getString(ApiKey.email)!,
-      phone: sharedPrefsService.prefs.getString(ApiKey.username)!,
-    );
-  }
-
-  @override
   void onInit() {
-    sharedPrefsService = sharedPrefsService = Get.find<SharedPrefsService>();
-    sharedPreferenceInitial();
-    currentAppBar = 0;
     statusRequest = StatusRequest.initial;
     categoryData = [];
     productData = [];
@@ -46,23 +29,18 @@ class HomeControllerImp extends HomeController {
     super.onInit();
   }
 
-  @override
-  changeBottonBar(int i) {
-    // statusRequest = StatusRequest.loading;
-    // update();
-
-    currentAppBar = i;
-    // statusRequest = StatusRequest.success;
-    update();
+  void fetchData(response) {
+    getCategoryData(response[ApiResult.data][ApiResult.category]);
+    getProductData(response[ApiResult.data][ApiResult.product]);
   }
 
-  getCategoryData(response) {
+  void getCategoryData(response) {
     for (var category in response) {
       categoryData.add(CategoryModel.fromJson(category));
     }
   }
 
-  getProductData(response) {
+  void getProductData(response) {
     for (var product in response) {
       productData.add(ProductModel.fromJson(product));
     }
@@ -70,18 +48,14 @@ class HomeControllerImp extends HomeController {
 
   @override
   void getData() async {
-    var response = await homeRemote.getData(
-      userId: authData.userId ,
-    );
+    var response = await homeRemote.getData();
     statusRequest = handleStatus(response);
     update();
     if (statusRequest == StatusRequest.success) {
       if (response[ApiResult.status] == ApiResult.success) {
         statusRequest = StatusRequest.loading;
         update();
-
-        getCategoryData(response[ApiResult.data][ApiResult.category]);
-        getCategoryData(response[ApiResult.data][ApiResult.product]);
+        fetchData(response);
         statusRequest = StatusRequest.success;
         update();
       } else {
@@ -89,5 +63,16 @@ class HomeControllerImp extends HomeController {
         update();
       }
     }
+  }
+
+  @override
+  void navigatorToProduct(int indexCategory) {
+    Get.toNamed(
+      ConstantScreenName.product,
+      arguments: {
+        ConstantKey.indexCategory: indexCategory,
+        ConstantKey.productData: productData,
+      },
+    );
   }
 }

@@ -1,5 +1,5 @@
 import 'package:ecommerce/view/widget/home/custom_ads_widget.dart';
-import 'package:ecommerce/view/widget/home/custom_search_widget.dart';
+import 'package:ecommerce/core/share/custom_search_widget.dart';
 import 'package:flutter/material.dart';
 
 class TopHomeSection extends StatelessWidget {

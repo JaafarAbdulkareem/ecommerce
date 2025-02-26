@@ -1,4 +1,4 @@
-abstract class ApiKey {
+abstract class ApiKey { 
   //Auth
   static const String username = "username";
   static const String email = "email";
@@ -6,7 +6,7 @@ abstract class ApiKey {
   static const String phone = "phone";
   static const String verifyCode = "verifyCode";
   //home 
-  static const String userId = "userId";
+  // static const String userId = "userId";
 }
 
 abstract class ApiResult {

@@ -12,13 +12,11 @@ class ProductModel {
   final int price;
   final int discount;
   final String timeCreate;
-  final int productCategoryId;
   final int categoryId;
   final String categoryArabicName;
   final String categoryEnglishName;
   final String categoryImage;
   final String categoryTimeCreate;
-  final int userId;
 
   const ProductModel({
     required this.id,
@@ -32,13 +30,11 @@ class ProductModel {
     required this.price,
     required this.discount,
     required this.timeCreate,
-    required this.productCategoryId,
     required this.categoryId,
     required this.categoryArabicName,
     required this.categoryEnglishName,
     required this.categoryImage,
     required this.categoryTimeCreate,
-    required this.userId,
   });
 
   factory ProductModel.fromJson(Map<String, dynamic> json) {
@@ -54,13 +50,11 @@ class ProductModel {
       price: json[ApiColumnDb.price],
       discount: json[ApiColumnDb.discount],
       timeCreate: json[ApiColumnDb.timeCreate],
-      productCategoryId: json[ApiColumnDb.productCategoryId],
       categoryId: json[ApiColumnDb.categoryId],
       categoryArabicName: json[ApiColumnDb.categoryArabicName],
       categoryEnglishName: json[ApiColumnDb.categoryEnglishName],
       categoryImage: json[ApiColumnDb.categoryImage],
       categoryTimeCreate: json[ApiColumnDb.categoryTimeCreate],
-      userId: json[ApiColumnDb.userId],
     );
   }
 
@@ -77,13 +71,11 @@ class ProductModel {
     data[ApiColumnDb.price] = price;
     data[ApiColumnDb.discount] = discount;
     data[ApiColumnDb.timeCreate] = timeCreate;
-    data[ApiColumnDb.productCategoryId] = productCategoryId;
     data[ApiColumnDb.categoryId] = categoryId;
     data[ApiColumnDb.categoryArabicName] = categoryArabicName;
     data[ApiColumnDb.categoryEnglishName] = categoryEnglishName;
     data[ApiColumnDb.categoryImage] = categoryImage;
     data[ApiColumnDb.categoryTimeCreate] = categoryTimeCreate;
-    data[ApiColumnDb.userId] = userId;
     return data;
   }
 }
