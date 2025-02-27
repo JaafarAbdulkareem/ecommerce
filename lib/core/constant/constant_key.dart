@@ -9,6 +9,7 @@ class ConstantKey {
   static const String phoneValidator = "phone";
   static const String indexCategory = "indexCategory";
   static const String productData = "productData";
+  static const String categoryNames = "categoryNames";
 }
 
 class ConstantLanguage {

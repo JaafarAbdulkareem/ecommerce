@@ -19,7 +19,7 @@ class HomeControllerImp extends HomeController {
     authData = AuthModel(
       username: sharedPrefsService.prefs.getString(ApiKey.username) ?? "",
       email: sharedPrefsService.prefs.getString(ApiKey.email)!,
-      phone: sharedPrefsService.prefs.getString(ApiKey.username)!,
+      phone: sharedPrefsService.prefs.getString(ApiKey.phone)!,
     );
   }
 
@@ -34,11 +34,7 @@ class HomeControllerImp extends HomeController {
 
   @override
   changeBottonBar(int currentnIdex) {
-    statusRequest = StatusRequest.loading;
-    update();
-
     indexBar = currentnIdex;
-    statusRequest = StatusRequest.success;
     update();
   }
 }

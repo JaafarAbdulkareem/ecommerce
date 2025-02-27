@@ -5,7 +5,6 @@ import 'package:ecommerce/core/localization/key_language.dart';
 import 'package:ecommerce/data/data_source/static/static_navigator_home_bar.dart';
 import 'package:ecommerce/view/widget/home/home_floating_button.dart';
 import 'package:ecommerce/view/widget/home/home_navigator_bar.dart';
-import 'package:ecommerce/view/widget/home/home_status_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -31,10 +30,7 @@ class HomeView extends StatelessWidget {
       body: SafeArea(
         child: GetBuilder<HomeControllerImp>(
           builder: (controller) {
-            return HomeStatusView(
-              statusRequest: controller.statusRequest,
-              child: dataNavigatorBar[controller.indexBar].screen,
-            );
+            return dataNavigatorBar[controller.indexBar].screen;
           },
         ),
       ),

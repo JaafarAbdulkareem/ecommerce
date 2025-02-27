@@ -11,8 +11,9 @@ class ItemProductHomeListView extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 2),
       decoration: BoxDecoration(
-          color: AppColor.backgroundHomeProduct,
-          borderRadius: BorderRadius.circular(15)),
+        color: AppColor.backgroundHomeProduct,
+        borderRadius: BorderRadius.circular(15),
+      ),
       child: Stack(
         alignment: Alignment.center,
         children: [

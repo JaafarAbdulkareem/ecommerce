@@ -5,7 +5,7 @@ import 'package:flutter/widgets.dart';
 class CustomAdsWidget extends StatelessWidget {
   const CustomAdsWidget({super.key});
   //remove
-  static List<AdsHomeModel> data = [
+  static List<AdsHomeModel> data =const [
     AdsHomeModel(
       name: "Offer",
       desc: "Discount 50%",
@@ -33,7 +33,7 @@ class CustomAdsWidget extends StatelessWidget {
   ];
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
+    return  SizedBox(
       height: 150,
       child: SingleChildScrollView(
         scrollDirection: Axis.horizontal,
