@@ -13,7 +13,7 @@ class HomeStatusView extends StatelessWidget {
   final Widget child;
   @override
   Widget build(BuildContext context) {
-    if (statusRequest == StatusRequest.loading) {
+    if (statusRequest == StatusRequest.loading || statusRequest == StatusRequest.initial) {
       return Center(
         child: Lottie.asset(
           AppLottie.loading,

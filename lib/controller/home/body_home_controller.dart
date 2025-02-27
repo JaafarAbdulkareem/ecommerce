@@ -69,6 +69,7 @@ class BodyHomeControllerImp extends BodyHomeController {
   }
 
   void getCategoryNames() {
+    categoryNames.clear();
     for (CategoryModel category in categoryData) {
       categoryNames.add(CategoryNameModel.fromCategoryModel(data: category));
     }
