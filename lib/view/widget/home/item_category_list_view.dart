@@ -1,9 +1,11 @@
 import 'package:ecommerce/core/constant/api_constant.dart';
 import 'package:ecommerce/core/constant/app_color.dart';
+import 'package:ecommerce/core/constant/app_lottie.dart';
 import 'package:ecommerce/core/constant/app_style.dart';
 import 'package:ecommerce/core/function/load_cached_svg.dart';
 import 'package:ecommerce/data/models/category_model.dart';
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 
 class ItemCategoryListView extends StatelessWidget {
   const ItemCategoryListView({
@@ -30,7 +32,11 @@ class ItemCategoryListView extends StatelessWidget {
                       "${ApiConstant.categoryImagePath}/${data.image}"),
                   builder: (context, snapshot) {
                     if (snapshot.connectionState == ConnectionState.waiting) {
-                      return Center(child: CircularProgressIndicator());
+                      return Lottie.asset(
+                        AppLottie.loading,
+                        height: 50,
+                        width: 50,
+                      );
                     } else if (snapshot.hasError) {
                       return Icon(Icons.error);
                     } else {

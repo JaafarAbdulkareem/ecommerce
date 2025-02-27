@@ -9,8 +9,8 @@ class ProductModel {
   final String image;
   final int count;
   final int active;
-  final int price;
-  final int discount;
+  final double price;
+  final double discount;
   final String timeCreate;
   final int categoryId;
   final String categoryArabicName;
@@ -47,8 +47,8 @@ class ProductModel {
       image: json[ApiColumnDb.image],
       count: json[ApiColumnDb.count],
       active: json[ApiColumnDb.active],
-      price: json[ApiColumnDb.price],
-      discount: json[ApiColumnDb.discount],
+      price: json[ApiColumnDb.price].toDouble(),
+      discount: json[ApiColumnDb.discount].toDouble(),
       timeCreate: json[ApiColumnDb.timeCreate],
       categoryId: json[ApiColumnDb.categoryId],
       categoryArabicName: json[ApiColumnDb.categoryArabicName],

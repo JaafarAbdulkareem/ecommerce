@@ -1,4 +1,4 @@
-class ConstantKey {
+abstract class ConstantKey {
   static const String keySharedPrefs = "language";
   static const String keyOnboarding = "onboarding";
   static const String keyLogin = "login";
@@ -12,16 +12,17 @@ class ConstantKey {
   static const String categoryNames = "categoryNames";
 }
 
-class ConstantLanguage {
+abstract class ConstantLanguage {
   static const String ar = "ar";
   static const String en = "en";
 }
 
-class ConstantTextFons {
+abstract class ConstantTextFons {
   static const String englishFont = "PlayfairDisplay";
   static const String arabicFont = "Cairo";
 }
 
-class ConstantText {
+abstract class ConstantText {
   static const String obscureText = "*";
+  static const String currencyPrice = r'$';
 }

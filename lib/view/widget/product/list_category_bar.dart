@@ -8,16 +8,24 @@ class ListCategoryBar extends GetView<ProductControllerImp> {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: controller.categoryNames.asMap().entries.map((e) {
-          int index = e.key ;
-        return GetBuilder<ProductControllerImp>(
-          builder:(controller)=> ItemListCategeryBar(
-              name: e.value.englishName, onTap: () {
-                controller.changeCategory(index);
-              },selected: index == controller.indexCategory,),
-        );
-      }).toList(),
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 10),
+      child: Row(
+        children: controller.categoryNames.asMap().entries.map(
+          (e) {
+            int index = e.key;
+            return GetBuilder<ProductControllerImp>(
+              builder: (controller) => ItemListCategeryBar(
+                name: e.value.englishName,
+                onTap: () {
+                  controller.changeCategory(index);
+                },
+                selected: index == controller.indexCategory,
+              ),
+            );
+          },
+        ).toList(),
+      ),
     );
   }
 }

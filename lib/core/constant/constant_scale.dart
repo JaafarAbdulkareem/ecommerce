@@ -18,4 +18,9 @@ abstract class ConstantScale {
   ///status code
   static const int statusCode = 200;
   static const int statusCodeMax = 299;
+  //product
+  static const int crossAxisCount = 2;
+  static const double iconFavorite = 20;
+  static const int noStar = 1;
+  static const double iconStar = 18;
 }
