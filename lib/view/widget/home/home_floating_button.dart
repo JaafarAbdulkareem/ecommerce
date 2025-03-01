@@ -1,5 +1,6 @@
 import 'package:ecommerce/core/constant/app_color.dart';
 import 'package:ecommerce/core/constant/app_icon.dart';
+import 'package:ecommerce/core/constant/constant_scale.dart';
 import 'package:flutter/material.dart';
 
 class HomeFloatingButton extends StatelessWidget {
@@ -16,7 +17,10 @@ class HomeFloatingButton extends StatelessWidget {
         padding: const EdgeInsets.all(08),
       ),
       onPressed: () {},
-      icon: Icon(AppIcon.shop),
+      icon: Icon(
+        AppIcon.shop,
+        size: ConstantScale.iconShop,
+      ),
     );
   }
 }
