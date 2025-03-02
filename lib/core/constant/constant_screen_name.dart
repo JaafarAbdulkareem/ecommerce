@@ -13,4 +13,5 @@ class ConstantScreenName {
   //home
   static const String home = "/home";
   static const String product = "/product";
+  static const String productDetail = "/productDetail";
 }

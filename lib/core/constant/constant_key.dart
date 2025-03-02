@@ -1,5 +1,5 @@
 abstract class ConstantKey {
-  static const String keySharedPrefs = "language";
+  static const String keyLanguage = "language";
   static const String keyOnboarding = "onboarding";
   static const String keyLogin = "login";
   // static const String userIdValidator = "userId";

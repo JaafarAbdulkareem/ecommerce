@@ -1,8 +1,11 @@
+import 'package:ecommerce/controller/home/body_home_controller.dart';
 import 'package:ecommerce/core/constant/app_style.dart';
+import 'package:ecommerce/core/constant/constant_key.dart';
 import 'package:ecommerce/data/models/ads_home_model.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
-class CustomItemAdsWidget extends StatelessWidget {
+class CustomItemAdsWidget extends GetView<BodyHomeControllerImp> {
   const CustomItemAdsWidget({
     super.key,
     required this.data,
@@ -30,7 +33,8 @@ class CustomItemAdsWidget extends StatelessWidget {
           ),
           Positioned(
             top: -8,
-            right: -25,
+            right: controller.language == ConstantLanguage.en ? -25 : null,
+            left: controller.language == ConstantLanguage.ar ? -25 : null,
             child: Container(
               height: 100,
               width: 100,

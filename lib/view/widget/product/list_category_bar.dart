@@ -1,4 +1,5 @@
 import 'package:ecommerce/controller/product/product_controller.dart';
+import 'package:ecommerce/core/function/translate_language.dart';
 import 'package:ecommerce/view/widget/product/item_list_categery_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -16,7 +17,10 @@ class ListCategoryBar extends GetView<ProductControllerImp> {
             int index = e.key;
             return GetBuilder<ProductControllerImp>(
               builder: (controller) => ItemListCategeryBar(
-                name: e.value.englishName,
+                name: translateLanguage(
+                  arabic: e.value.arabicName,
+                  english: e.value.englishName,
+                ),
                 onTap: () {
                   controller.changeCategory(index);
                 },

@@ -22,8 +22,7 @@ class CustomTextButton extends GetView<LocaleController> {
           backgroundColor: AppColor.primary,
         ),
         onPressed: () async {
-          await controller.changeLanguage(codeLanguage);
-          Get.toNamed(ConstantScreenName.onboarding);
+         await controller.goToOnboarding(codeLanguage);
         },
         child: Text(
           text.tr,

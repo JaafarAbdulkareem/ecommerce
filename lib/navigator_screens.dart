@@ -8,15 +8,16 @@ import 'package:ecommerce/view/screen/auth/signup/signup_view.dart';
 import 'package:ecommerce/view/screen/auth/signup/success_auth_view.dart';
 import 'package:ecommerce/view/screen/auth/signup/verification_signup_view.dart';
 import 'package:ecommerce/view/screen/home/home_view.dart';
-import 'package:ecommerce/view/screen/onboarding/choose_app_language.dart';
+import 'package:ecommerce/view/screen/onboarding/choose_app_language_view.dart';
 import 'package:ecommerce/view/screen/onboarding/onboarding_view.dart';
+import 'package:ecommerce/view/screen/product/product_detail_view.dart';
 import 'package:ecommerce/view/screen/product/product_view.dart';
 import 'package:get/get.dart';
 
 List<GetPage<dynamic>> get getPages => [
       GetPage(
         name: ConstantScreenName.language,
-        page: () => ChooseAppLanguage(),
+        page: () => ChooseAppLanguageView(),
         middlewares: [
           OnboardingMiddleware(),
         ],
@@ -62,5 +63,9 @@ List<GetPage<dynamic>> get getPages => [
       GetPage(
         name: ConstantScreenName.product,
         page: () => ProductView(),
+      ),
+      GetPage(
+        name: ConstantScreenName.productDetail,
+        page: () => ProductDetailView(),
       ),
     ];

@@ -3,6 +3,7 @@ import 'package:ecommerce/core/constant/api_key.dart';
 import 'package:ecommerce/core/constant/constant_key.dart';
 import 'package:ecommerce/core/constant/constant_screen_name.dart';
 import 'package:ecommerce/core/function/handle_status.dart';
+import 'package:ecommerce/core/service/shared_prefs_service.dart';
 import 'package:ecommerce/data/data_source/remote/home/home_remote.dart';
 import 'package:ecommerce/data/models/category_model.dart';
 import 'package:ecommerce/data/models/category_name_model.dart';
@@ -20,6 +21,8 @@ class BodyHomeControllerImp extends BodyHomeController {
   late List<ProductModel> productData;
   late List<CategoryNameModel> categoryNames;
   late HomeRemote homeRemote;
+  late SharedPrefsService prefs;
+  late String language;
 
   @override
   void onInit() {
@@ -29,6 +32,8 @@ class BodyHomeControllerImp extends BodyHomeController {
     categoryNames = [];
     homeRemote = HomeRemote(curd: Get.find());
     getData();
+    prefs = Get.find<SharedPrefsService>();
+    language = prefs.prefs.getString(ConstantKey.keyLanguage)!;
     super.onInit();
   }
 

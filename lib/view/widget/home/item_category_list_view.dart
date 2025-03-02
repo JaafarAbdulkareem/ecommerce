@@ -3,6 +3,7 @@ import 'package:ecommerce/core/constant/app_color.dart';
 import 'package:ecommerce/core/constant/app_lottie.dart';
 import 'package:ecommerce/core/constant/app_style.dart';
 import 'package:ecommerce/core/function/load_cached_svg.dart';
+import 'package:ecommerce/core/function/translate_language.dart';
 import 'package:ecommerce/data/models/category_model.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
@@ -50,7 +51,10 @@ class ItemCategoryListView extends StatelessWidget {
           FittedBox(
             fit: BoxFit.scaleDown,
             child: Text(
-              data.englishName,
+              translateLanguage(
+                arabic: data.arabicName,
+                english: data.englishName,
+              ),
               style: AppStyle.styleBold12(context),
             ),
           ),

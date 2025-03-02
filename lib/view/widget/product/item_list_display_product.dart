@@ -2,6 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:ecommerce/core/constant/api_constant.dart';
 import 'package:ecommerce/core/constant/app_lottie.dart';
 import 'package:ecommerce/core/constant/app_style.dart';
+import 'package:ecommerce/core/function/translate_language.dart';
 import 'package:ecommerce/data/models/product_model.dart';
 import 'package:ecommerce/view/widget/product/foot_item_product.dart';
 import 'package:ecommerce/view/widget/product/price_product_item.dart';
@@ -35,13 +36,19 @@ class ItemListDisplayProduct extends StatelessWidget {
               errorWidget: (context, url, error) => Icon(Icons.error),
             ),
             Text(
-              data.englishName,
+              translateLanguage(
+                arabic: data.arabicName,
+                english: data.englishName,
+              ),
               style: AppStyle.styleSemiBold14(context),
               maxLines: 1,
               overflow: TextOverflow.ellipsis,
             ),
             Text(
-              data.englishDescription,
+              translateLanguage(
+                arabic: data.arabicDescription,
+                english: data.englishDescription,
+              ),
               style: AppStyle.styleBold10(context),
               maxLines: 2,
               overflow: TextOverflow.ellipsis,
