@@ -25,7 +25,10 @@ class DotButtonOnboarding extends GetView<OnboardingControllerImp> {
               onPressed: () async {
                 await controller.nextpage();
               },
-              child: Text(KeyLanguage.continueButton.tr),
+              child: FittedBox(
+                  fit: BoxFit.scaleDown,
+                  alignment: AlignmentDirectional.center,
+                  child: Text(KeyLanguage.continueButton.tr)),
             ),
           ),
         ),
