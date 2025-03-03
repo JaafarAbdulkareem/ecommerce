@@ -1,6 +1,6 @@
 import 'package:ecommerce/core/constant/app_color.dart';
 import 'package:ecommerce/core/constant/app_style.dart';
-import 'package:ecommerce/core/constant/constant_key.dart';
+import 'package:ecommerce/core/function/improve_price.dart';
 import 'package:flutter/material.dart';
 
 class PriceProductItem extends StatelessWidget {
@@ -15,13 +15,13 @@ class PriceProductItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return discount == null
         ? Text(
-            "${price == price.toInt() ? price.toInt() : price} ${ConstantText.currencyPrice}",
+            improvePrice(price: price),
             style: AppStyle.styleRegular14(context),
           )
         : Row(
             children: [
               Text(
-                "${price == price.toInt() ? price.toInt() : price} ${ConstantText.currencyPrice}",
+                improvePrice(price: price),
                 style: AppStyle.styleBold12(context).copyWith(
                   decoration: TextDecoration.lineThrough,
                   decorationThickness: 3,
@@ -30,7 +30,7 @@ class PriceProductItem extends StatelessWidget {
               ),
               const SizedBox(width: 6),
               Text(
-                "${(price - discount!) == (price - discount!).toInt() ? (price - discount!).toInt() : (price - discount!)} ${ConstantText.currencyPrice}",
+                improvePrice(price: price, discount: discount!),
                 style: AppStyle.styleRegular14(context),
               ),
             ],
