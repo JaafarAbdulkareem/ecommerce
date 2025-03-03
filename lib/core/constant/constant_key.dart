@@ -10,8 +10,9 @@ abstract class ConstantKey {
   static const String indexCategory = "indexCategory";
   static const String productData = "productData";
   static const String categoryNames = "categoryNames";
-
+//hero
   static const String tagProductImage = "tagProductImage";
+  static const String tagSearchBar = "tagSearchBar";
 }
 
 abstract class ConstantLanguage {

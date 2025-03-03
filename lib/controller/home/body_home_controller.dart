@@ -12,7 +12,8 @@ import 'package:get/get.dart';
 
 abstract class BodyHomeController extends GetxController {
   void getData();
-  void navigatorToProduct(int indexCategory);
+  void goToProduct(int indexCategory);
+  void goToFavorite();
 }
 
 class BodyHomeControllerImp extends BodyHomeController {
@@ -81,7 +82,7 @@ class BodyHomeControllerImp extends BodyHomeController {
   }
 
   @override
-  void navigatorToProduct(int indexCategory) {
+  void goToProduct(int indexCategory) {
     getCategoryNames();
     Get.toNamed(
       ConstantScreenName.product,
@@ -89,6 +90,16 @@ class BodyHomeControllerImp extends BodyHomeController {
         ConstantKey.indexCategory: indexCategory,
         ConstantKey.productData: productData,
         ConstantKey.categoryNames: categoryNames
+      },
+    );
+  }
+
+  @override
+  void goToFavorite() {
+    Get.toNamed(
+      ConstantScreenName.favorite,
+      arguments: {
+        ConstantKey.productData: productData,
       },
     );
   }
