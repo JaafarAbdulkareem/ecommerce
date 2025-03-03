@@ -1,4 +1,5 @@
 import 'package:ecommerce/core/constant/app_color.dart';
+import 'package:ecommerce/core/constant/constant_key.dart';
 import 'package:flutter/material.dart';
 
 abstract class AppStyle {
@@ -9,6 +10,7 @@ abstract class AppStyle {
       fontWeight: FontWeight.w600,
     );
   }
+
   static TextStyle styleBold10(BuildContext context) {
     return TextStyle(
       fontSize: 10,
@@ -16,14 +18,6 @@ abstract class AppStyle {
       fontWeight: FontWeight.bold,
     );
   }
-
-  // static TextStyle styleSemiBold12(BuildContext context) {
-  //   return TextStyle(
-  //     fontSize: 12,
-  //     color: AppColorText.secondary,
-  //     fontWeight: FontWeight.w600,
-  //   );
-  // }
 
   static TextStyle styleBold12(BuildContext context) {
     return TextStyle(
@@ -40,15 +34,17 @@ abstract class AppStyle {
       fontWeight: FontWeight.w300,
     );
   }
+
   static TextStyle styleRegular14(BuildContext context) {
     return TextStyle(
       fontSize: 14,
       color: AppColor.price,
       fontWeight: FontWeight.w400,
+      fontFamily: ConstantTextFons.sans,
     );
   }
 
-    static TextStyle styleSemiBold14(BuildContext context) {
+  static TextStyle styleSemiBold14(BuildContext context) {
     return TextStyle(
       fontSize: 14,
       fontWeight: FontWeight.w600,
@@ -63,8 +59,6 @@ abstract class AppStyle {
       color: AppColorText.secondary,
     );
   }
-
-
 
   static TextStyle styleLight16(BuildContext context) {
     return TextStyle(
@@ -103,6 +97,14 @@ abstract class AppStyle {
       fontWeight: FontWeight.bold,
       fontSize: 18,
       color: AppColorText.secondary,
+    );
+  }
+
+  static TextStyle styleSemiBold20(BuildContext context) {
+    return TextStyle(
+      fontSize: 20,
+      fontWeight: FontWeight.w600,
+      color: AppColorText.titleProductDetail,
     );
   }
 

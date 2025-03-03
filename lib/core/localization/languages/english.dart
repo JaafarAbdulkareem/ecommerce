@@ -80,4 +80,8 @@ Map<String, String> english = {
   KeyLanguage.barSetting: " SETTING",
   KeyLanguage.barFavorit: "FAVORITE",
   KeyLanguage.barProfile: "PROFILE",
+  //product
+  KeyLanguage.color: "Color",
+  KeyLanguage.addProductMessage: "SORRY, Not More Products",
+  KeyLanguage.removeProductMessage: "This Is The Minimum For This Product",
 };

@@ -1,4 +1,5 @@
 import 'package:ecommerce/controller/product/product_controller.dart';
+import 'package:ecommerce/core/constant/app_color.dart';
 import 'package:ecommerce/core/share/custom_search_widget.dart';
 import 'package:ecommerce/view/widget/home/home_status_view.dart';
 import 'package:ecommerce/view/widget/product/list_category_bar.dart';
@@ -13,6 +14,7 @@ class ProductView extends StatelessWidget {
   Widget build(BuildContext context) {
     Get.lazyPut(() => ProductControllerImp());
     return Scaffold(
+      backgroundColor: AppColor.backgroundScaffold,
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 6),

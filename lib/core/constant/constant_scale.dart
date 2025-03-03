@@ -24,4 +24,9 @@ abstract class ConstantScale {
   static const double iconFavorite = 20;
   static const int noStar = 1;
   static const double iconStar = 18;
+  static const int countStart = 1;
+  static const int addDelay = 250;
+  static const int removeDelay = 300;
+  static const int addColor = 0xFF01A70C;
+  static const int removeColor = 0xFF084275;
 }

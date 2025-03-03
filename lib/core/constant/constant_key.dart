@@ -10,6 +10,8 @@ abstract class ConstantKey {
   static const String indexCategory = "indexCategory";
   static const String productData = "productData";
   static const String categoryNames = "categoryNames";
+
+  static const String tagProductImage = "tagProductImage";
 }
 
 abstract class ConstantLanguage {
@@ -20,6 +22,7 @@ abstract class ConstantLanguage {
 abstract class ConstantTextFons {
   static const String englishFont = "PlayfairDisplay";
   static const String arabicFont = "Cairo";
+  static const String sans = "sans"; //number fonts
 }
 
 abstract class ConstantText {

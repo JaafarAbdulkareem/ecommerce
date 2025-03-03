@@ -1,5 +1,6 @@
 import 'package:ecommerce/core/class/status_request.dart';
 import 'package:ecommerce/core/constant/constant_key.dart';
+import 'package:ecommerce/core/constant/constant_screen_name.dart';
 import 'package:ecommerce/data/models/category_name_model.dart';
 import 'package:ecommerce/data/models/product_model.dart';
 import 'package:get/get.dart';
@@ -7,6 +8,7 @@ import 'package:get/get.dart';
 abstract class ProductController extends GetxController {
   void getProductForCategoryData(int indexCategory);
   void changeCategory(int newIndex);
+  void goToPrductDetail(int newIndex);
 }
 
 class ProductControllerImp extends ProductController {
@@ -47,5 +49,15 @@ class ProductControllerImp extends ProductController {
     indexCategory = newIndex;
     getProductForCategoryData(indexCategory);
     update();
+  }
+
+  @override
+  void goToPrductDetail(int newIndex) {
+    Get.toNamed(
+      ConstantScreenName.productDetail,
+      arguments: {
+        ConstantKey.productData: productCategoryData[newIndex],
+      },
+    );
   }
 }

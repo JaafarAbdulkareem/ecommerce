@@ -10,6 +10,6 @@ String translateLanguage({required String arabic, required String english}) {
   if (systemLanguage == ConstantLanguage.ar) {
     return arabic;
   } else {
-    return english;
+    return english[0].toUpperCase() + english.substring(1);
   }
 }

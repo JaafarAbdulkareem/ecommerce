@@ -17,4 +17,6 @@ abstract class AppIcon {
   static const IconData shop = Icons.shopify_sharp;
   static const IconData star = Icons.star;
   static const IconData starBorder = Icons.star_border;
+  static const IconData add = Icons.add;
+  static const IconData remove = Icons.remove;
 }

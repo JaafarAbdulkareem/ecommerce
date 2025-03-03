@@ -8,15 +8,17 @@ class PriceProductItem extends StatelessWidget {
     super.key,
     required this.price,
     this.discount,
+    this.style,
   });
   final double price;
   final double? discount;
+  final TextStyle? style;
   @override
   Widget build(BuildContext context) {
-    return discount == null
+    return discount == null || discount == 0
         ? Text(
             improvePrice(price: price),
-            style: AppStyle.styleRegular14(context),
+            style: style ?? AppStyle.styleRegular14(context),
           )
         : Row(
             children: [
@@ -31,7 +33,7 @@ class PriceProductItem extends StatelessWidget {
               const SizedBox(width: 6),
               Text(
                 improvePrice(price: price, discount: discount!),
-                style: AppStyle.styleRegular14(context),
+                style: style ?? AppStyle.styleRegular14(context),
               ),
             ],
           );

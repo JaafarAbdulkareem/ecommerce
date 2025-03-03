@@ -16,7 +16,6 @@ class ChooseAppLanguageView extends GetView<LocaleController> {
       body: SafeArea(
         child: GetBuilder<LocaleController>(
           builder: (controller) {
-            print("status : ${controller.statusRequest}");
             return HomeStatusView(
               statusRequest: controller.statusRequest,
               child: Column(
