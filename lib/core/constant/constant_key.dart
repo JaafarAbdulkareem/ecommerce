@@ -12,7 +12,6 @@ abstract class ConstantKey {
   static const String categoryNames = "categoryNames";
 //hero
   static const String tagProductImage = "tagProductImage";
-  static const String tagSearchBar = "tagSearchBar";
 }
 
 abstract class ConstantLanguage {

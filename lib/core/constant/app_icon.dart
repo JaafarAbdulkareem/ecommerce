@@ -11,9 +11,10 @@ abstract class AppIcon {
   static const IconData notification = Icons.notifications_outlined;
   static const IconData home = Icons.home;
   static const IconData setting = Icons.settings;
+  static const IconData cart = Icons.shopping_cart;
+  static const IconData profile = Icons.person;
   static const IconData favorite = Icons.favorite;
   static const IconData favoriteBorder = Icons.favorite_border;
-  static const IconData profile = Icons.person;
   static const IconData shop = Icons.shopify_sharp;
   static const IconData star = Icons.star;
   static const IconData starBorder = Icons.star_border;

@@ -17,9 +17,9 @@ const List<HomeNavigatorBarModel> dataNavigatorBar = [
   ),
  
   HomeNavigatorBarModel(
-    icon: AppIcon.favorite,
-    title: KeyLanguage.barFavorit,
-    screen: Center(child: Text("favorite")),
+    icon: AppIcon.cart,
+    title: KeyLanguage.barCart,
+    screen: Center(child: Text("cart")),
   ),
   HomeNavigatorBarModel(
     icon: AppIcon.profile,
