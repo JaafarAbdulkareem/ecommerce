@@ -20,6 +20,7 @@ Map<String, String> english = {
   KeyLanguage.verify: "Verify",
   KeyLanguage.yes: "Yes",
   KeyLanguage.no: "No",
+  KeyLanguage.goToCart: "Go To Card",
 //auth
   KeyLanguage.welcomeTitle: "Welcome Back",
   KeyLanguage.checkEmailTitle: "Check Email",

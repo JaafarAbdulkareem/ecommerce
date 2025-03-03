@@ -23,7 +23,6 @@ class InfoProductDetail extends GetView<ProductDetailControllerImp> {
             ),
             style: AppStyle.styleSemiBold20(context),
           ),
-          // const SizedBox(height: 8),
           const PriceCountProductDetail(),
           Text(
             translateLanguage(

@@ -17,6 +17,7 @@ abstract class KeyLanguage {
   static const String verify = "verify";
   static const String yes = "yes";
   static const String no = "no";
+  static const String goToCart = "goToCart";
 //auth
   static const String welcomeTitle = "welcomeTitle";
   static const String checkEmailTitle = "checkEmailTitle";

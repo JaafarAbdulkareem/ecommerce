@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 
 abstract class ProductDetailController extends GetxController {
   void transactionColor(int newIndex);
+  void goToCart();
 }
 
 class ProductDetailControllerImp extends ProductDetailController {
@@ -25,4 +26,7 @@ class ProductDetailControllerImp extends ProductDetailController {
     indexColor = newIndex;
     update();
   }
+
+  @override
+  void goToCart() {}
 }

@@ -9,7 +9,7 @@ class ProductDetailView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-     Get.lazyPut(()=>ProductDetailControllerImp());
+    Get.lazyPut(() => ProductDetailControllerImp());
     return Scaffold(
       backgroundColor: AppColor.backgroundScaffold,
       body: SafeArea(
@@ -18,4 +18,3 @@ class ProductDetailView extends StatelessWidget {
     );
   }
 }
-
