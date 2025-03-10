@@ -1,6 +1,7 @@
 import 'package:ecommerce/core/class/status_request.dart';
 import 'package:ecommerce/core/constant/constant_key.dart';
 import 'package:ecommerce/core/constant/constant_screen_name.dart';
+import 'package:ecommerce/core/service/shared_prefs_service.dart';
 import 'package:ecommerce/data/models/category_name_model.dart';
 import 'package:ecommerce/data/models/product_model.dart';
 import 'package:get/get.dart';
@@ -16,8 +17,10 @@ class ProductControllerImp extends ProductController {
   late List<ProductModel> productCategoryData;
   late List<ProductModel> productData;
   late List<CategoryNameModel> categoryNames;
+  late List<int> favoriteIDData;
   late int indexCategory;
   late StatusRequest statusRequest;
+  late SharedPrefsService prefs;
   @override
   void onInit() {
     productCategoryData = [];
@@ -25,9 +28,15 @@ class ProductControllerImp extends ProductController {
     categoryNames = Get.arguments[ConstantKey.categoryNames];
     indexCategory = Get.arguments[ConstantKey.indexCategory];
     statusRequest = StatusRequest.initial;
+    favoriteIDData = Get.arguments[ConstantKey.favoriteIDData];
+    prefs = Get.find<SharedPrefsService>();
     getProductForCategoryData(indexCategory);
-
     super.onInit();
+  }
+
+  void setFavoriteIDSharedPre() async {
+    List<String>? ids = favoriteIDData.map((e) => e.toString()).toList();
+    await prefs.prefs.setStringList(ConstantKey.keyfavoriteId, ids);
   }
 
   @override
@@ -66,6 +75,13 @@ class ProductControllerImp extends ProductController {
   void setFavorite(int newIndex) {
     productCategoryData[newIndex].isFavorite =
         !productCategoryData[newIndex].isFavorite;
+    if (productCategoryData[newIndex].isFavorite) {
+      favoriteIDData.add(productCategoryData[newIndex].id);
+      setFavoriteIDSharedPre();
+    } else {
+      favoriteIDData.remove(productCategoryData[newIndex].id);
+      setFavoriteIDSharedPre();
+    }
     update();
   }
 }

@@ -2,6 +2,7 @@ abstract class ConstantKey {
   static const String keyLanguage = "language";
   static const String keyOnboarding = "onboarding";
   static const String keyLogin = "login";
+  static const String keyfavoriteId = "favoriteId";
   // static const String userIdValidator = "userId";
   static const String usernameValidator = "username";
   static const String emailValidator = "email";
@@ -10,6 +11,7 @@ abstract class ConstantKey {
   static const String indexCategory = "indexCategory";
   static const String productData = "productData";
   static const String categoryNames = "categoryNames";
+  static const String favoriteIDData = "favoriteIDData";
 //hero
   static const String tagProductImage = "tagProductImage";
 }

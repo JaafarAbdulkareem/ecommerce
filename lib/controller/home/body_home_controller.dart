@@ -21,6 +21,7 @@ class BodyHomeControllerImp extends BodyHomeController {
   late List<CategoryModel> categoryData;
   late List<ProductModel> productData;
   late List<CategoryNameModel> categoryNames;
+  late List<int> favoriteIDData;
   late HomeRemote homeRemote;
   late SharedPrefsService prefs;
   late String language;
@@ -31,6 +32,7 @@ class BodyHomeControllerImp extends BodyHomeController {
     categoryData = [];
     productData = [];
     categoryNames = [];
+    favoriteIDData = [];
     homeRemote = HomeRemote(curd: Get.find());
     getData();
     prefs = Get.find<SharedPrefsService>();
@@ -52,6 +54,31 @@ class BodyHomeControllerImp extends BodyHomeController {
   void getProductData(response) {
     for (var product in response) {
       productData.add(ProductModel.fromJson(product));
+    }
+    getFavoriteIDSharedPre();
+  }
+
+  void getFavoriteIDSharedPre() {
+    favoriteIDData.clear();
+    int stop = 0;
+    List<String>? ids = prefs.prefs.getStringList(ConstantKey.keyfavoriteId);
+    if (ids != null) {
+      favoriteIDData = ids.map((e) => int.parse(e)).toList();
+      for (ProductModel product in productData) {
+        for (int favoriteID in favoriteIDData) {
+          if (product.id == favoriteID && stop < favoriteIDData.length) {
+            product.isFavorite = true;
+            stop += 1;
+          } else if (stop >= favoriteIDData.length) {
+            break;
+          }
+        }
+        if (stop >= favoriteIDData.length) {
+          break;
+        }
+      }
+    } else {
+      favoriteIDData = [];
     }
   }
 
@@ -89,7 +116,8 @@ class BodyHomeControllerImp extends BodyHomeController {
       arguments: {
         ConstantKey.indexCategory: indexCategory,
         ConstantKey.productData: productData,
-        ConstantKey.categoryNames: categoryNames
+        ConstantKey.categoryNames: categoryNames,
+        ConstantKey.favoriteIDData: favoriteIDData,
       },
     );
   }
