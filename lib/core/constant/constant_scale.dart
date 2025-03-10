@@ -29,4 +29,5 @@ abstract class ConstantScale {
   static const int removeDelay = 300;
   static const int addColor = 0xFF01A70C;
   static const int removeColor = 0xFF084275;
+  static const int favoriteDelay = 250;
 }

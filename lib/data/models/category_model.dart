@@ -16,9 +16,8 @@ class CategoryModel {
   });
 
   factory CategoryModel.fromJson(Map<String, dynamic> json) {
-    print(" ${json["id"] is String }:${json["id"] is int} : json : $json");
     return CategoryModel(
-      id: int.parse(json[ApiColumnDb.id]) ,
+      id: int.parse(json[ApiColumnDb.id]),
       arabicName: json[ApiColumnDb.arabicName],
       englishName: json[ApiColumnDb.englishName],
       image: json[ApiColumnDb.image],

@@ -16,7 +16,6 @@ class BodyHomeView extends StatelessWidget {
     Get.lazyPut(() => BodyHomeControllerImp());
     return GetBuilder<BodyHomeControllerImp>(
       builder: (controller) {
-        print("status : ${controller.statusRequest}");
         return HomeStatusView(
           statusRequest: controller.statusRequest,
           child: const Padding(
