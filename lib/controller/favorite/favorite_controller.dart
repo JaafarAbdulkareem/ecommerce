@@ -7,7 +7,7 @@ import 'package:get/get.dart';
 
 abstract class FavoriteController extends GetxController {
   void getData();
-  void setFavorite(int newIndex);
+  void setFavorite({required int index, required int idProduct});
   void goToPrductDetail(int newIndex);
 }
 
@@ -37,9 +37,20 @@ class FavoriteControllerImp extends FavoriteController {
   }
 
   @override
-  void setFavorite(int newIndex) {
-    favoriteData[newIndex].isFavorite =
-        !favoriteData[newIndex].isFavorite;
+  void setFavorite({required int index, required int idProduct}) {
+    print("in $index : $idProduct");
+    for (int i = 0; i < favoriteData.length; i++) {
+      if (favoriteData[i].id == idProduct && i == index) {
+        print("done $index : $idProduct");
+
+        favoriteData[i].isFavorite = !favoriteData[i].isFavorite;
+      }
+    }
+
+    // for (var j in favoriteData) {
+    //   print(" ${j.id} : ${j.isFavorite}");
+    // }
+    // favoriteData[idProduct].isFavorite = !favoriteData[idProduct].isFavorite;
     update();
   }
 

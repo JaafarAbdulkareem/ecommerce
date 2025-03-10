@@ -9,6 +9,7 @@ abstract class ProductController extends GetxController {
   void getProductForCategoryData(int indexCategory);
   void changeCategory(int newIndex);
   void goToPrductDetail(int newIndex);
+  void setFavorite(int newIndex);
 }
 
 class ProductControllerImp extends ProductController {
@@ -59,5 +60,12 @@ class ProductControllerImp extends ProductController {
         ConstantKey.productData: productCategoryData[newIndex],
       },
     );
+  }
+
+  @override
+  void setFavorite(int newIndex) {
+    productCategoryData[newIndex].isFavorite =
+        !productCategoryData[newIndex].isFavorite;
+    update();
   }
 }

@@ -18,6 +18,7 @@ class ListDisplayProduct extends GetView<ProductControllerImp> {
           ),
           itemBuilder: (context, index) {
             return ItemListDisplayProduct(
+              index: index,
               data: controller.productCategoryData[index],
               onTap: () {
                 controller.goToPrductDetail(index);
@@ -25,7 +26,7 @@ class ListDisplayProduct extends GetView<ProductControllerImp> {
             );
           },
         );
-      }
+      },
     );
   }
 }

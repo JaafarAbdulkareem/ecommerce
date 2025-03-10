@@ -17,8 +17,9 @@ class ProductModel {
   final String categoryEnglishName;
   final String categoryImage;
   final String categoryTimeCreate;
+  late bool isFavorite;
 
-  const ProductModel({
+  ProductModel({
     required this.id,
     required this.arabicName,
     required this.englishName,
@@ -35,6 +36,7 @@ class ProductModel {
     required this.categoryEnglishName,
     required this.categoryImage,
     required this.categoryTimeCreate,
+    this.isFavorite = false,
   });
 
   factory ProductModel.fromJson(Map<String, dynamic> json) {

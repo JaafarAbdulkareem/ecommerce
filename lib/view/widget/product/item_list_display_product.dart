@@ -14,9 +14,11 @@ import 'package:lottie/lottie.dart';
 class ItemListDisplayProduct extends StatelessWidget {
   const ItemListDisplayProduct({
     super.key,
+    required this.index,
     required this.data,
     required this.onTap,
   });
+  final int index;
   final ProductModel data;
   final VoidCallback onTap;
   @override
@@ -68,15 +70,9 @@ class ItemListDisplayProduct extends StatelessWidget {
                 price: data.price,
                 discount: data.discount,
               ),
-              //update
-              // Flexible(
-
-              // child:
-              //update
-              const FootItemProduct(
-                indexProduct: 0,
+              FootItemProduct(
+                index: index,
               )
-              // ),
             ],
           ),
         ),
