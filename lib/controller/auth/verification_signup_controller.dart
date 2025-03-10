@@ -13,22 +13,28 @@ abstract class VerificationSignupController extends GetxController {
 class VerificationSignupControllerImp extends VerificationSignupController {
   late StatusRequest statusRequest;
   late VerifictionSignupRemote verifictionSignupRemote;
+  late String email;
+  late String password;
   late String titleVerifyCode;
   @override
   void onInit() {
     statusRequest = StatusRequest.initial;
     verifictionSignupRemote = VerifictionSignupRemote(curd: Get.find());
-    titleVerifyCode = Get.arguments[ApiKey.verifyCode];
+    email = Get.arguments[ApiKey.email];
+    password = Get.arguments[ApiKey.password];
+    titleVerifyCode = Get.arguments[ApiKey.verifyCode].toString();
     super.onInit();
   }
 
   @override
   void verificationSignup({required String verifyCode}) async {
+    print(" $email : $password : code : $verifyCode");
     var response = await verifictionSignupRemote.getData(
-      email: Get.arguments[ApiKey.email],
-      phone: Get.arguments[ApiKey.phone],
+      email: email,
+      password: password,
       verifyCode: verifyCode,
     );
+    print("re : $response");
     statusRequest = handleStatus(response);
     update();
     if (statusRequest == StatusRequest.success) {

@@ -18,5 +18,6 @@ abstract class ApiResult {
   static const String noApprove = "noApprove";
   static const String category = "category";
   static const String product = "product";
+  static const String verifyCode = "verifyCode";
 
 }

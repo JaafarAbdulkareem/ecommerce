@@ -8,12 +8,12 @@ class VerifictionSignupRemote {
   VerifictionSignupRemote({required this.curd});
   getData({
     required String email,
-    required String phone,
+    required String password,
     required String verifyCode,
   }) async {
     var response = await curd.postData(ApiConstant.apiVerificationSignup, {
       ApiKey.email: email,
-      ApiKey.phone: phone,
+      ApiKey.password: password,
       ApiKey.verifyCode: verifyCode,
     });
     return response.fold((left) => left, (right) => right);

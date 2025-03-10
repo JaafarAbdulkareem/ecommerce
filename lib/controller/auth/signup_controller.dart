@@ -65,8 +65,9 @@ class SignupControllerImp extends SignupController {
           update();
           await Get.offNamed(ConstantScreenName.vertifySignup, arguments: {
             ApiKey.email: email.text,
-            ApiKey.phone: phone.text,
-            ApiKey.verifyCode: response[ApiResult.data].toString(),
+            ApiKey.password: password.text,
+            // ApiKey.phone: phone.text,
+            ApiKey.verifyCode: response[ApiResult.data],
           });
         } else {
           username.clear();

@@ -86,24 +86,32 @@ class LoginControllerImp extends LoginController {
           await sharedPreferencesInitial(response[ApiResult.data]);
           await Get.offAllNamed(ConstantScreenName.home);
         } else {
-          email.clear();
-          password.clear();
+         
           if (response[ApiResult.data] == ApiResult.noFound) {
             await Get.defaultDialog(
               title: titleDialog,
               middleText: KeyLanguage.noFoundMessage.tr,
             );
-          } else if (response[ApiResult.data] == ApiResult.noApprove) {
-            await Get.defaultDialog(
-              title: titleDialog,
-              middleText: KeyLanguage.noApproveMessage.tr,
-            );
+          } else if (response[ApiResult.data] == ApiResult.noApprove) 
+          {
+            print("${email.text}: ${password.text} :code login : ${response[ApiResult.verifyCode]}");
+            Get.toNamed(ConstantScreenName.vertifySignup, arguments: {
+              ApiKey.email: email.text,
+              ApiKey.password: password.text,
+              ApiKey.verifyCode: response[ApiResult.verifyCode],
+            });
+            // await Get.defaultDialog(
+            //   title: titleDialog,
+            //   middleText: KeyLanguage.noApproveMessage.tr,
+            // );
           } else {
             await Get.defaultDialog(
               title: titleDialog,
               middleText: KeyLanguage.someThingMessage.tr,
             );
           }
+           email.clear();
+          password.clear();
         }
       } else {
         await Get.defaultDialog(
