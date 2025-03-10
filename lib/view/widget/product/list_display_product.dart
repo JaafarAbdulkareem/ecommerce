@@ -9,19 +9,23 @@ class ListDisplayProduct extends GetView<ProductControllerImp> {
 
   @override
   Widget build(BuildContext context) {
-    return GridView.builder(
-      itemCount: controller.productCategoryData.length,
-      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: ConstantScale.crossAxisCount,
-      ),
-      itemBuilder: (context, index) {
-        return ItemListDisplayProduct(
-          data: controller.productCategoryData[index],
-          onTap: (){
-           controller.goToPrductDetail(index);
+    return GetBuilder<ProductControllerImp>(
+      builder: (controller) {
+        return GridView.builder(
+          itemCount: controller.productCategoryData.length,
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: ConstantScale.crossAxisCount,
+          ),
+          itemBuilder: (context, index) {
+            return ItemListDisplayProduct(
+              data: controller.productCategoryData[index],
+              onTap: () {
+                controller.goToPrductDetail(index);
+              },
+            );
           },
         );
-      },
+      }
     );
   }
 }

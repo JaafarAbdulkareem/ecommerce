@@ -11,24 +11,27 @@ class ListCategoryBar extends GetView<ProductControllerImp> {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 10),
-      child: Row(
-        children: controller.categoryNames.asMap().entries.map(
-          (e) {
-            int index = e.key;
-            return GetBuilder<ProductControllerImp>(
-              builder: (controller) => ItemListCategeryBar(
-                name: translateLanguage(
-                  arabic: e.value.arabicName,
-                  english: e.value.englishName,
+      child: SingleChildScrollView(
+        scrollDirection: Axis.horizontal,
+        child: Row(
+          children: controller.categoryNames.asMap().entries.map(
+            (e) {
+              int index = e.key;
+              return GetBuilder<ProductControllerImp>(
+                builder: (controller) => ItemListCategeryBar(
+                  name: translateLanguage(
+                    arabic: e.value.arabicName,
+                    english: e.value.englishName,
+                  ),
+                  onTap: () {
+                    controller.changeCategory(index);
+                  },
+                  selected: index == controller.indexCategory,
                 ),
-                onTap: () {
-                  controller.changeCategory(index);
-                },
-                selected: index == controller.indexCategory,
-              ),
-            );
-          },
-        ).toList(),
+              );
+            },
+          ).toList(),
+        ),
       ),
     );
   }

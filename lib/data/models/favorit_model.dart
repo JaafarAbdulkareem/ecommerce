@@ -13,9 +13,9 @@ class FavoritModel {
   final double discount;
   final String timeCreate;
   final int categoryId;
-  final bool isFavorite;
+  late bool isFavorite;
 
-  const FavoritModel({
+  FavoritModel({
     required this.id,
     required this.arabicName,
     required this.englishName,

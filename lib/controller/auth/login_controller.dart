@@ -64,18 +64,21 @@ class LoginControllerImp extends LoginController {
         .setString(ApiKey.email, response[ApiColumnDb.email]);
     await sharedPrefsService.prefs
         .setString(ApiKey.phone, response[ApiColumnDb.phone].toString());
-        await sharedPrefsService.prefs.setBool(ConstantKey.keyLogin, true);
+    await sharedPrefsService.prefs.setBool(ConstantKey.keyLogin, true);
   }
 
   @override
   void loginOnTap() async {
     if (keyLogin.currentState!.validate()) {
+      statusRequest = StatusRequest.loading;
+      update();
       var response = await loginRemote.getData(
         email: email.text,
         password: password.text,
       );
-      statusRequest = handleStatus(response);
+      statusRequest = StatusRequest.initial;
       update();
+      statusRequest = handleStatus(response);
       if (statusRequest == StatusRequest.success) {
         if (response[ApiResult.status] == ApiResult.success) {
           statusRequest = StatusRequest.loading;

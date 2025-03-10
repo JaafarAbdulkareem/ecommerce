@@ -7,17 +7,19 @@ import 'package:get/get.dart';
 
 abstract class FavoriteController extends GetxController {
   void getData();
-  void setFavorite();
+  void setFavorite(int newIndex);
   void goToPrductDetail(int newIndex);
 }
 
 class FavoriteControllerImp extends FavoriteController {
+  late int indexProduct;
   late List<FavoritModel> favoriteData;
   late List<ProductModel> productData;
   late StatusRequest statusRequest;
 
   @override
   void onInit() {
+    indexProduct = -1;
     favoriteData = [];
     productData = Get.arguments[ConstantKey.productData] ?? [];
     statusRequest = StatusRequest.initial;
@@ -35,7 +37,11 @@ class FavoriteControllerImp extends FavoriteController {
   }
 
   @override
-  void setFavorite() {}
+  void setFavorite(int newIndex) {
+    favoriteData[newIndex].isFavorite =
+        !favoriteData[newIndex].isFavorite;
+    update();
+  }
 
   @override
   void goToPrductDetail(int newIndex) {

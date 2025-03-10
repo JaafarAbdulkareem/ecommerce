@@ -17,10 +17,7 @@ import 'package:get/get.dart';
 class BodyLoginView extends GetView<LoginControllerImp> {
   const BodyLoginView({
     super.key,
-   
   });
-
-
 
   @override
   Widget build(BuildContext context) {

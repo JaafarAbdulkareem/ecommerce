@@ -33,7 +33,7 @@ class ItemListDisplayProduct extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             children: [
               Hero(
-                tag: ConstantKey.tagProductImage,
+                tag: ConstantKey.tagProductImage + data.id.toString(),
                 child: CachedNetworkImage(
                   height: 60,
                   fit: BoxFit.fill,
@@ -72,7 +72,10 @@ class ItemListDisplayProduct extends StatelessWidget {
               // Flexible(
 
               // child:
-              const FootItemProduct()
+              //update
+              const FootItemProduct(
+                indexProduct: 0,
+              )
               // ),
             ],
           ),
