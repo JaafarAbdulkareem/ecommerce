@@ -14,25 +14,29 @@ abstract class BodyHomeController extends GetxController {
   void getData();
   void goToProduct(int indexCategory);
   void goToFavorite();
+  void getDiscountData();
 }
 
 class BodyHomeControllerImp extends BodyHomeController {
   late StatusRequest statusRequest;
-  late List<CategoryModel> categoryData;
-  late List<ProductModel> productData;
+  static List<CategoryModel> categoryData = [];
+  static List<ProductModel> productData = [];
   late List<CategoryNameModel> categoryNames;
   late List<int> favoriteIDData;
+  late List<ProductModel> discountProductData;
   late HomeRemote homeRemote;
   late SharedPrefsService prefs;
   late String language;
+  static bool firstTime = true;
 
   @override
   void onInit() {
     statusRequest = StatusRequest.initial;
-    categoryData = [];
-    productData = [];
+    // categoryData = [];
+    // productData = [];
     categoryNames = [];
     favoriteIDData = [];
+    discountProductData = [];
     homeRemote = HomeRemote(curd: Get.find());
     getData();
     prefs = Get.find<SharedPrefsService>();
@@ -55,10 +59,10 @@ class BodyHomeControllerImp extends BodyHomeController {
     for (var product in response) {
       productData.add(ProductModel.fromJson(product));
     }
-    getFavoriteIDSharedPre();
+    getFavoriteIDProduct();
   }
 
-  void getFavoriteIDSharedPre() {
+  void getFavoriteIDProduct() {
     favoriteIDData.clear();
     int stop = 0;
     List<String>? ids = prefs.prefs.getStringList(ConstantKey.keyfavoriteId);
@@ -84,20 +88,24 @@ class BodyHomeControllerImp extends BodyHomeController {
 
   @override
   void getData() async {
-    var response = await homeRemote.getData();
-    statusRequest = handleStatus(response);
-    update();
-    if (statusRequest == StatusRequest.success) {
-      if (response[ApiResult.status] == ApiResult.success) {
-        statusRequest = StatusRequest.loading;
-        update();
-        fetchData(response);
-        statusRequest = StatusRequest.success;
-        update();
-      } else {
-        statusRequest = StatusRequest.failure;
-        update();
+    if (firstTime) {
+      firstTime = false;
+      statusRequest = StatusRequest.loading;
+      update();
+      var response = await homeRemote.getData();
+      statusRequest = handleStatus(response);
+      if (statusRequest == StatusRequest.success) {
+        if (response[ApiResult.status] == ApiResult.success) {
+          fetchData(response);
+          statusRequest = StatusRequest.success;
+          update();
+        } else {
+          statusRequest = StatusRequest.failure;
+          update();
+        }
       }
+    } else {
+      statusRequest = StatusRequest.success;
     }
   }
 
@@ -130,5 +138,14 @@ class BodyHomeControllerImp extends BodyHomeController {
         ConstantKey.productData: productData,
       },
     );
+  }
+
+  @override
+  void getDiscountData() {
+    for (var product in productData) {
+      if (product.discount != 0) {
+        discountProductData.add(product);
+      }
+    }
   }
 }

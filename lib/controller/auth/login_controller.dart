@@ -94,7 +94,6 @@ class LoginControllerImp extends LoginController {
             );
           } else if (response[ApiResult.data] == ApiResult.noApprove) 
           {
-            print("${email.text}: ${password.text} :code login : ${response[ApiResult.verifyCode]}");
             Get.toNamed(ConstantScreenName.vertifySignup, arguments: {
               ApiKey.email: email.text,
               ApiKey.password: password.text,

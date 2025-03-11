@@ -28,13 +28,11 @@ class VerificationSignupControllerImp extends VerificationSignupController {
 
   @override
   void verificationSignup({required String verifyCode}) async {
-    print(" $email : $password : code : $verifyCode");
     var response = await verifictionSignupRemote.getData(
       email: email,
       password: password,
       verifyCode: verifyCode,
     );
-    print("re : $response");
     statusRequest = handleStatus(response);
     update();
     if (statusRequest == StatusRequest.success) {

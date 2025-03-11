@@ -18,10 +18,10 @@ class CategoryListView extends GetView<BodyHomeControllerImp> {
           height: 85,
           child: ListView.builder(
             scrollDirection: Axis.horizontal,
-            itemCount: controller.categoryData.length,
+            itemCount: BodyHomeControllerImp.categoryData.length,
             itemBuilder: (context, index) {
               return ItemCategoryListView(
-                data: controller.categoryData[index],
+                data: BodyHomeControllerImp.categoryData[index],
                 onTap: () {
                  controller.goToProduct(index);
                 },
