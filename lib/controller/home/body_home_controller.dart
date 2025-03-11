@@ -14,7 +14,7 @@ abstract class BodyHomeController extends GetxController {
   void getData();
   void goToProduct(int indexCategory);
   void goToFavorite();
-  void getDiscountData();
+  // void getDiscountData();
 }
 
 class BodyHomeControllerImp extends BodyHomeController {
@@ -97,6 +97,7 @@ class BodyHomeControllerImp extends BodyHomeController {
       if (statusRequest == StatusRequest.success) {
         if (response[ApiResult.status] == ApiResult.success) {
           fetchData(response);
+          getDiscountData();
           statusRequest = StatusRequest.success;
           update();
         } else {
@@ -140,12 +141,12 @@ class BodyHomeControllerImp extends BodyHomeController {
     );
   }
 
-  @override
   void getDiscountData() {
     for (var product in productData) {
       if (product.discount != 0) {
         discountProductData.add(product);
       }
     }
+    print(discountProductData.length);
   }
 }

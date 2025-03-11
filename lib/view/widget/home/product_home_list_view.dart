@@ -1,9 +1,11 @@
+import 'package:ecommerce/controller/home/body_home_controller.dart';
 import 'package:ecommerce/core/localization/key_language.dart';
 import 'package:ecommerce/view/widget/home/item_product_home_list_view.dart';
 import 'package:ecommerce/view/widget/home/title_section_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
-class ProductHomeListView extends StatelessWidget {
+class ProductHomeListView extends GetView<BodyHomeControllerImp> {
   const ProductHomeListView({
     super.key,
   });
@@ -18,11 +20,12 @@ class ProductHomeListView extends StatelessWidget {
           aspectRatio: 2.8,
           child: ListView.builder(
             scrollDirection: Axis.horizontal,
-            //update
-            itemCount: 3,
-            itemBuilder: (context, index) => const AspectRatio(
+            itemCount: controller.discountProductData.length,
+            itemBuilder: (context, index) => AspectRatio(
               aspectRatio: 2,
-              child: ItemProductHomeListView(),
+              child: ItemProductHomeListView(
+                data: controller.discountProductData[index],
+              ),
             ),
           ),
         ),

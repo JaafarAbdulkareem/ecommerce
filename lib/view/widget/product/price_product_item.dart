@@ -15,27 +15,32 @@ class PriceProductItem extends StatelessWidget {
   final TextStyle? style;
   @override
   Widget build(BuildContext context) {
-    return discount == null || discount == 0
-        ? Text(
-            improvePrice(price: price),
-            style: style ?? AppStyle.styleRegular14(context),
-          )
-        : Row(
-            children: [
-              Text(
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.start,
+      children: [
+        discount == null || discount == 0
+            ? Text(
                 improvePrice(price: price),
-                style: AppStyle.styleBold12(context).copyWith(
-                  decoration: TextDecoration.lineThrough,
-                  decorationThickness: 3,
-                  color: AppColor.wrong,
-                ),
-              ),
-              const SizedBox(width: 6),
-              Text(
-                improvePrice(price: price, discount: discount!),
                 style: style ?? AppStyle.styleRegular14(context),
+              )
+            : Row(
+                children: [
+                  Text(
+                    improvePrice(price: price),
+                    style: AppStyle.styleBold12(context).copyWith(
+                      decoration: TextDecoration.lineThrough,
+                      decorationThickness: 3,
+                      color: AppColor.wrong,
+                    ),
+                  ),
+                  const SizedBox(width: 6),
+                  Text(
+                    improvePrice(price: price, discount: discount!),
+                    style: style ?? AppStyle.styleRegular14(context),
+                  ),
+                ],
               ),
-            ],
-          );
+      ],
+    );
   }
 }
