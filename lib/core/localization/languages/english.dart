@@ -21,6 +21,7 @@ Map<String, String> english = {
   KeyLanguage.yes: "Yes",
   KeyLanguage.no: "No",
   KeyLanguage.goToCart: "Go To Card",
+  KeyLanguage.order: "Place Order",
 //auth
   KeyLanguage.welcomeTitle: "Welcome Back",
   KeyLanguage.checkEmailTitle: "Check Email",
@@ -102,4 +103,11 @@ Map<String, String> english = {
   KeyLanguage.changeModeBG: "changeModeBG",
   KeyLanguage.natification: "natification",
   KeyLanguage.readMoneyAi: "readMoneyAi",
+  //cart
+  KeyLanguage.appBarTitleCart: "My Cart",
+  KeyLanguage.youHave: "You Have",
+  KeyLanguage.listITemCart: "Item/s In Your List",
+  KeyLanguage.totalPrice: "Total Price",
+  KeyLanguage.shopping: "shopping",
+  KeyLanguage.price: "price",
 };

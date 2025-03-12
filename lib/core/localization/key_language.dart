@@ -18,6 +18,7 @@ abstract class KeyLanguage {
   static const String yes = "yes";
   static const String no = "no";
   static const String goToCart = "goToCart";
+  static const String order = "order";
 //auth
   static const String welcomeTitle = "welcomeTitle";
   static const String checkEmailTitle = "checkEmailTitle";
@@ -96,4 +97,12 @@ abstract class KeyLanguage {
   static const String changeModeBG = "changeModeBG";
   static const String natification = "natification";
   static const String readMoneyAi = "readMoneyAi";
+
+  // cart
+  static const String appBarTitleCart = "appBarTitleCart";
+  static const String youHave = "youHave";
+  static const String listITemCart = "listItemCart";
+  static const String totalPrice = "totalPrice";
+  static const String shopping = "shopping";
+  static const String price = "price";
 }

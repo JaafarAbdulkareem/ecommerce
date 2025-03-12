@@ -115,4 +115,11 @@ abstract class AppStyle {
       color: AppColorText.primary,
     );
   }
+  static TextStyle styleSemiBold24(BuildContext context) {
+    return TextStyle(
+      fontSize: 24,
+      fontWeight: FontWeight.w600,
+      color: AppColorText.textButton,
+    );
+  }
 }
