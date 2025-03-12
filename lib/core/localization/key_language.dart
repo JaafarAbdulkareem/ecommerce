@@ -79,5 +79,21 @@ abstract class KeyLanguage {
   static const String addProductMessage = "addProductMessage";
   static const String removeProductMessage = "removeProductMessage";
   // static const String titleBestSelling = "titleBestSelling";
-  // static const String
+  // //setting
+  // static const String nameUSer = "nameUser";
+  static const String addressUser = "addressUser";
+  // static const String emailUSer = "emailUser";
+  // static const String phoneUSer = "phoneUser";
+  // static const String passwordUSer = "passwordUser";
+  static const String logout = "logout";
+  //drawer
+  static const String aboutUS = "aboutUS";
+  static const String contactWithUs = "contactWithUs";
+  static const String commonQuestion = "commonQuestion";
+  static const String sendComment = "sendComment";
+  static const String changeLangeuag = "changeLanguage";
+  static const String changeModeDL = "changeModeDL";
+  static const String changeModeBG = "changeModeBG";
+  static const String natification = "natification";
+  static const String readMoneyAi = "readMoneyAi";
 }

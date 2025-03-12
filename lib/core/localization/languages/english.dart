@@ -85,4 +85,21 @@ Map<String, String> english = {
   KeyLanguage.color: "Color",
   KeyLanguage.addProductMessage: "SORRY, Not More Products",
   KeyLanguage.removeProductMessage: "This Is The Minimum For This Product",
+  //setting
+  // KeyLanguage.nameUSer : "Name : ",
+  KeyLanguage.addressUser: "Address : ",
+  // KeyLanguage.emailUSer : "Email : ",
+  // KeyLanguage.phoneUSer : "Phone : ",
+  // KeyLanguage.passwordUSer : "Password",
+  KeyLanguage.logout: "Logout",
+  //drawer
+  KeyLanguage.aboutUS: "Aboout Us",
+  KeyLanguage.contactWithUs: "contact With Us",
+  KeyLanguage.commonQuestion: "Common Question",
+  KeyLanguage.sendComment: "Send Your Comment",
+  KeyLanguage.changeLangeuag: "Change App Language",
+  KeyLanguage.changeModeDL: "Change ModeDL",
+  KeyLanguage.changeModeBG: "changeModeBG",
+  KeyLanguage.natification: "natification",
+  KeyLanguage.readMoneyAi: "readMoneyAi",
 };

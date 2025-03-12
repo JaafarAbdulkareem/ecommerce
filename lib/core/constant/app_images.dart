@@ -2,25 +2,13 @@
 class AppImages {
   AppImages._();
   
-  /// Assets for images004Box
-  /// assets/images/004-box.png
-  static const String images004Box = "assets/images/004-box.png";
-
-  /// Assets for images1
-  /// assets/images/1.png
-  static const String images1 = "assets/images/1.png";
-
-  /// Assets for images3
-  /// assets/images/3.png
-  static const String images3 = "assets/images/3.png";
-
-  /// Assets for images5
-  /// assets/images/5.png
-  static const String images5 = "assets/images/5.png";
-
   /// Assets for imagesCamera
   /// assets/images/camera.svg
   static const String imagesCamera = "assets/images/camera.svg";
+
+  /// Assets for imagesDragon
+  /// assets/images/dragon.jpg
+  static const String imagesDragon = "assets/images/dragon.jpg";
 
   /// Assets for imagesDress
   /// assets/images/dress.svg
