@@ -5,8 +5,9 @@ abstract class ApiKey {
   static const String password = "password";
   static const String phone = "phone";
   static const String verifyCode = "verifyCode";
-  //home 
-  // static const String userId = "userId";
+  //cart
+  static const String userId = "userId";
+  static const String productId = "productId";
 }
 
 abstract class ApiResult {
@@ -19,5 +20,8 @@ abstract class ApiResult {
   static const String category = "category";
   static const String product = "product";
   static const String verifyCode = "verifyCode";
+  static const String noData = "noData";
+  static const String noIncrement = "noIncrement";
+  // static const String noDecrement = "noDecrement";
 
 }

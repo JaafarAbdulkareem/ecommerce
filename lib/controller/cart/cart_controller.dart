@@ -15,122 +15,22 @@ class CartControllerImp extends CartController {
 
   @override
   void onInit() {
-    cartData = [
-      CartModel(
-        idProduct: 1,
-        arabicName: "",
-        englishName: "englishName",
-        price: 200,
-        discount: 0,
-        productCount: 12,
-        count: 1,
-        active: 1,
-        image: '5.png',
-      ),
-      CartModel(
-        idProduct: 2,
-        arabicName: "",
-        englishName: "englishName",
-        price: 200,
-        discount: 0,
-        productCount: 12,
-        count: 1,
-        active: 1,
-        image: '1.png',
-      ),
-      CartModel(
-        idProduct: 1,
-        arabicName: "",
-        englishName: "englishName",
-        price: 200,
-        discount: 0,
-        productCount: 12,
-        count: 1,
-        active: 1,
-        image: '2.png',
-      ),
-      CartModel(
-        idProduct: 1,
-        arabicName: "",
-        englishName: "englishName",
-        price: 200,
-        discount: 0,
-        productCount: 12,
-        count: 1,
-        active: 1,
-        image: '5.png',
-      ),
-      CartModel(
-        idProduct: 2,
-        arabicName: "",
-        englishName: "englishName",
-        price: 200,
-        discount: 0,
-        productCount: 12,
-        count: 1,
-        active: 1,
-        image: '1.png',
-      ),
-      CartModel(
-        idProduct: 1,
-        arabicName: "",
-        englishName: "englishName",
-        price: 200,
-        discount: 0,
-        productCount: 12,
-        count: 1,
-        active: 1,
-        image: '2.png',
-      ),
-      CartModel(
-        idProduct: 1,
-        arabicName: "",
-        englishName: "englishName",
-        price: 200,
-        discount: 0,
-        productCount: 12,
-        count: 1,
-        active: 1,
-        image: '5.png',
-      ),
-      CartModel(
-        idProduct: 2,
-        arabicName: "",
-        englishName: "englishName",
-        price: 200,
-        discount: 0,
-        productCount: 12,
-        count: 1,
-        active: 1,
-        image: '1.png',
-      ),
-      CartModel(
-        idProduct: 1,
-        arabicName: "",
-        englishName: "englishName",
-        price: 200,
-        discount: 0,
-        productCount: 12,
-        count: 1,
-        active: 1,
-        image: '2.png',
-      ),
-    ];
-      colorValue = ConstantScale.removeColor;
+    cartData = [];
+    colorValue = ConstantScale.removeColor;
     super.onInit();
   }
-      
 
   @override
   void increment() {
-      colorValue = ConstantScale.addColor;
-      update();
+    colorValue = ConstantScale.addColor;
+    update();
     // TODO: implement increment
   }
+
   @override
   void decrement() {
-     colorValue = ConstantScale.removeColor;
-     update();
+    colorValue = ConstantScale.removeColor;
+    update();
     // TODO: implement decrement
   }
 
@@ -143,5 +43,4 @@ class CartControllerImp extends CartController {
   void goToOrdet() {
     // TODO: implement goToOrdet
   }
-
 }

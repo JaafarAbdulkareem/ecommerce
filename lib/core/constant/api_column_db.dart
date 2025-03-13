@@ -25,4 +25,6 @@ class ApiColumnDb {
   static const String categoryEnglishName = "category_english_name";
   static const String categoryImage = "category_image";
   static const String categoryTimeCreate = "category_time_create";
+  //cart
+  static const String productId = "product_id";
 }

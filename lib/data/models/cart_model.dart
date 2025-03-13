@@ -1,6 +1,8 @@
+import 'package:ecommerce/data/models/api_cart_model.dart';
 import 'package:ecommerce/data/models/product_model.dart';
 
 class CartModel {
+  final int id;
   final int idProduct;
   final String arabicName;
   final String englishName;
@@ -12,6 +14,7 @@ class CartModel {
   final int active;
 
   CartModel({
+    required this.id,
     required this.idProduct,
     required this.arabicName,
     required this.englishName,
@@ -23,8 +26,9 @@ class CartModel {
     required this.active,
   });
 
-  factory CartModel.fromProduct(ProductModel data, int cartCount) {
+  factory CartModel.fromProduct(ProductModel data, ApiCartModel cartData) {
     return CartModel(
+      id: cartData.id,
       idProduct: data.id,
       arabicName: data.arabicName,
       englishName: data.englishName,
@@ -32,7 +36,7 @@ class CartModel {
       price: data.price,
       discount: data.discount,
       productCount: data.count,
-      count: cartCount,
+      count: cartData.count,
       active: data.active,
     );
   }

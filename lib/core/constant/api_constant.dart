@@ -19,7 +19,14 @@ abstract class ApiConstant {
       "$serverPath/$folderAuth/forget_password.php";
   static const String apiResetPassword =
       "$serverPath/$folderAuth/reset_password.php";
-      
+
   static const String folderHome = "/home";
   static const String apiHome = "$serverPath/$folderHome/home.php";
+
+  static const String folderCart = "/cart";
+  static const String apiView = "$serverPath/$folderCart/view.php";
+  static const String apiDeleteAllProduct =
+      "$serverPath/$folderCart/delete_all_product.php";
+  static const String apiIncrement = "$serverPath/$folderCart/increment.php";
+  static const String apiDecrement = "$serverPath/$folderCart/decrement.php";
 }
