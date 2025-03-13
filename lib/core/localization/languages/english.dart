@@ -73,6 +73,8 @@ Map<String, String> english = {
   KeyLanguage.passwordMismatchMassage:
       "Password Mismatch, Check Your Password again",
   KeyLanguage.enterEmailMessage: "Enter Your Email First Please",
+  KeyLanguage.incrementMessage:
+      "Your Cart Contains More Items Than Available In Stock. Please Adjust The Quantity Of Items In Your Cart.",
   //home
   KeyLanguage.hello: "Hello",
   KeyLanguage.titleCategories: "Categories",

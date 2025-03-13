@@ -147,6 +147,5 @@ class BodyHomeControllerImp extends BodyHomeController {
         discountProductData.add(product);
       }
     }
-    print(discountProductData.length);
   }
 }

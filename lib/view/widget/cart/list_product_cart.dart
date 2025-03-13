@@ -9,12 +9,13 @@ class ListProductCart extends GetView<CartControllerImp> {
   @override
   Widget build(BuildContext context) {
     return ListView(
-      children: controller.cartData
+      children: controller.cartData.asMap().entries
           .map(
             (e) => AspectRatio(
               aspectRatio: 4,
               child: ItemListProductCart(
-                data: e,
+                index: e.key,
+                data: e.value,
               ),
             ),
           )

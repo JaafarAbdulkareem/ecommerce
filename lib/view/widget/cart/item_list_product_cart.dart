@@ -9,8 +9,10 @@ import 'package:flutter/material.dart';
 class ItemListProductCart extends StatelessWidget {
   const ItemListProductCart({
     super.key,
+    required this.index,
     required this.data,
   });
+  final int index;
   final CartModel data;
   @override
   Widget build(BuildContext context) {
@@ -38,6 +40,7 @@ class ItemListProductCart extends StatelessWidget {
             child: FittedBox(
               fit: BoxFit.scaleDown,
               child: CounterCart(
+                index: index,
                 count: data.count,
               ),
             ),

@@ -1,5 +1,6 @@
 import 'package:ecommerce/core/class/status_request.dart';
 import 'package:ecommerce/core/constant/constant_key.dart';
+import 'package:ecommerce/core/constant/constant_screen_name.dart';
 import 'package:ecommerce/data/models/product_model.dart';
 import 'package:get/get.dart';
 
@@ -28,5 +29,12 @@ class ProductDetailControllerImp extends ProductDetailController {
   }
 
   @override
-  void goToCart() {}
+  void goToCart() {
+    Get.toNamed(
+      ConstantScreenName.cart,
+      arguments: {
+        ConstantKey.productData: productDetailData,
+      },
+    );
+  }
 }

@@ -11,16 +11,17 @@ import 'package:get/get.dart';
 class CounterCart extends GetView<CartControllerImp> {
   const CounterCart({
     super.key,
+    required this.index,
     required this.count,
   });
-  final int count;
+  final int index, count;
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         IconButton(
           onPressed: () {
-            controller.increment();
+            controller.increment(index);
           },
           icon: const Icon(AppIcon.add),
         ),
@@ -54,7 +55,7 @@ class CounterCart extends GetView<CartControllerImp> {
         ),
         IconButton(
           onPressed: () {
-            controller.decrement();
+            controller.decrement(index);
           },
           icon: const Icon(
             AppIcon.remove,
