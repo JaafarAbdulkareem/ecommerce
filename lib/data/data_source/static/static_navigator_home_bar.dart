@@ -1,7 +1,9 @@
 import 'package:ecommerce/core/constant/app_icon.dart';
 import 'package:ecommerce/core/localization/key_language.dart';
 import 'package:ecommerce/data/models/home_navigator_bar_model.dart';
+import 'package:ecommerce/view/screen/cart/cart_view.dart';
 import 'package:ecommerce/view/screen/home/setting_view.dart';
+import 'package:ecommerce/view/widget/cart/body_cart_view.dart';
 import 'package:ecommerce/view/widget/home/body_home_view.dart';
 import 'package:flutter/material.dart';
 
@@ -19,6 +21,7 @@ const List<HomeNavigatorBarModel> dataNavigatorBar = [
   HomeNavigatorBarModel(
     icon: AppIcon.cart,
     title: KeyLanguage.barCart,
+    // screen:BodyCartView(),
     screen: Center(child: Text("cart")),
   ),
   HomeNavigatorBarModel(

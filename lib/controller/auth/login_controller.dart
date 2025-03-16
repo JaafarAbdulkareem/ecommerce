@@ -59,6 +59,8 @@ class LoginControllerImp extends LoginController {
   @override
   Future<void> sharedPreferencesInitial(response) async {
     await sharedPrefsService.prefs
+        .setString(ApiKey.userId, response[ApiColumnDb.id]);
+    await sharedPrefsService.prefs
         .setString(ApiKey.username, response[ApiColumnDb.username]);
     await sharedPrefsService.prefs
         .setString(ApiKey.email, response[ApiColumnDb.email]);

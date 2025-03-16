@@ -15,10 +15,10 @@ class ApiCartModel {
 
   factory ApiCartModel.fromJson(Map<String, dynamic> json) {
     return ApiCartModel(
-      id: json[ApiColumnDb.id],
-      userId: json[ApiColumnDb.userId],
-      productId: json[ApiColumnDb.productId],
-      count: json[ApiColumnDb.count],
+      id: int.parse(json[ApiColumnDb.id]),
+      userId: int.parse(json[ApiColumnDb.userId]),
+      productId: int.parse(json[ApiColumnDb.productId]),
+      count: int.parse(json[ApiColumnDb.count]),
     );
   }
 

@@ -8,7 +8,7 @@ import 'package:get/get.dart';
 
 abstract class FavoriteController extends GetxController {
   void getData();
-  void goToPrductDetail(int newIndex);
+  void goToProductDetail(int newIndex);
 }
 
 class FavoriteControllerImp extends FavoriteController {
@@ -43,7 +43,7 @@ class FavoriteControllerImp extends FavoriteController {
   }
 
   @override
-  void goToPrductDetail(int newIndex) {
+  void goToProductDetail(int newIndex) {
     Get.toNamed(
       ConstantScreenName.productDetail,
       arguments: {

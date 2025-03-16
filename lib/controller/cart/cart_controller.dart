@@ -1,7 +1,10 @@
+import 'package:ecommerce/controller/home/body_home_controller.dart';
 import 'package:ecommerce/controller/product/product_controller.dart';
 import 'package:ecommerce/core/class/status_request.dart';
 import 'package:ecommerce/core/constant/api_key.dart';
+import 'package:ecommerce/core/constant/constant_key.dart';
 import 'package:ecommerce/core/constant/constant_scale.dart';
+import 'package:ecommerce/core/constant/constant_screen_name.dart';
 import 'package:ecommerce/core/function/handle_status.dart';
 import 'package:ecommerce/core/localization/key_language.dart';
 import 'package:ecommerce/core/service/shared_prefs_service.dart';
@@ -13,37 +16,48 @@ import 'package:get/get.dart';
 
 abstract class CartController extends GetxController {
   void getData();
+  Future<void> insertCart(int productId);
   void deleteCart(int newId);
   void increment(int newId);
   void decrement(int newId);
   void goToOrder();
+  void goToProductDetail(int newIndex);
 }
 
 class CartControllerImp extends CartController {
   late CartRemote cartRemote;
   late SharedPrefsService prefs;
-  late ProductControllerImp controllerProduct;
-  late int count;
+  // late ProductControllerImp controllerProduct;
   late String userId;
   late List<ApiCartModel> apiCartData;
   late List<CartModel> cartData;
   late List<ProductModel> productData;
   late int colorValue;
   late StatusRequest statusRequest;
+  // late bool isInsert;
+  // late ProductModel insertProduct;
+  late int count;
+  void isInserFunction(bool isInsert) async {
+    print("stats : $isInsert");
+    if (isInsert) {
+      int productId = Get.arguments[ConstantKey.productId];
+      count = Get.arguments[ConstantKey.count];
+      await insertCart(productId);
+    }
+    getData();
+  }
 
   @override
   void onInit() {
     cartRemote = CartRemote(curd: Get.find());
     prefs = Get.find<SharedPrefsService>();
-    controllerProduct = Get.find<ProductControllerImp>();
-    count = 1;
     userId = prefs.prefs.getString(ApiKey.userId)!;
     apiCartData = [];
     cartData = [];
-    productData = controllerProduct.productData;
+    productData = BodyHomeControllerImp.productData;
     colorValue = ConstantScale.removeColor;
     statusRequest = StatusRequest.initial;
-    getData();
+    isInserFunction(Get.arguments[ConstantKey.boolInsert] ?? false);
     super.onInit();
   }
 
@@ -63,11 +77,11 @@ class CartControllerImp extends CartController {
           if (product.id == cart.productId && stop < apiCartData.length) {
             cartData.add(CartModel.fromProduct(product, cart));
             stop += 1;
-          } else if (stop >= cartData.length) {
+          } else if (stop >= apiCartData.length) {
             break;
           }
         }
-        if (stop >= cartData.length) {
+        if (stop >= apiCartData.length) {
           break;
         }
       }
@@ -86,10 +100,35 @@ class CartControllerImp extends CartController {
     statusRequest = StatusRequest.loading;
     update();
     var response = await cartRemote.getData(userId: userId);
+    print("response: $response");
+
     statusRequest = handleStatus(response);
     if (statusRequest == StatusRequest.success) {
       if (response[ApiResult.status] == ApiResult.success) {
-        fetchData(response[ApiResult.data]);
+        await fetchData(response[ApiResult.data]);
+        print("length cart : ${cartData.length}");
+        statusRequest = StatusRequest.success;
+        update();
+      } else {
+        statusRequest = StatusRequest.failure;
+        update();
+      }
+    }
+  }
+
+  @override
+  Future<void> insertCart(int productId) async {
+    statusRequest = StatusRequest.loading;
+    update();
+    var response = await cartRemote.insertCart(
+      userId: userId,
+      productId: productId.toString(),
+      count: count.toString(),
+    );
+    print("response Cart : $response");
+    statusRequest = handleStatus(response);
+    if (statusRequest == StatusRequest.success) {
+      if (response[ApiResult.status] == ApiResult.success) {
         statusRequest = StatusRequest.success;
         update();
       } else {
@@ -187,5 +226,16 @@ class CartControllerImp extends CartController {
   @override
   void goToOrder() {
     // TODO: implement goToOrdet
+  }
+
+  @override
+  void goToProductDetail(int newIndex) {
+    Get.offNamed(
+      ConstantScreenName.productDetail,
+      arguments: {
+        ConstantKey.productData: productData[newIndex],
+        ConstantKey.count : count,
+      },
+    );
   }
 }

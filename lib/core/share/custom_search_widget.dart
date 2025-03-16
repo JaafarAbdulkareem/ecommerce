@@ -42,8 +42,10 @@ class CustomSearchWidget extends StatelessWidget {
           style: IconButton.styleFrom(
             backgroundColor: AppColor.backgroundIcon,
           ),
-          onPressed: () {},
-          icon: const Icon(AppIcon.notification),
+          onPressed: () {
+            controller.goToCart();
+          },
+          icon: const Icon(AppIcon.cart),
         ),
         isAppearFavorite
             ? IconButton(

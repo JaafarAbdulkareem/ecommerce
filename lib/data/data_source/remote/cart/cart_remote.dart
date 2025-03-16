@@ -16,6 +16,19 @@ class CartRemote {
     return response.fold((left) => left, (right) => right);
   }
 
+  insertCart({
+    required String userId,
+    required String productId,
+    required String count,
+  }) async {
+    var response = await curd.postData(ApiConstant.apiInsert, {
+      ApiKey.userId: userId,
+      ApiKey.productId: productId,
+      ApiKey.count : count,
+    });
+    return response.fold((left) => left, (right) => right);
+  }
+
   getDeleteData({
     required String id,
   }) async {

@@ -16,6 +16,9 @@ class ListProductCart extends GetView<CartControllerImp> {
               child: ItemListProductCart(
                 index: e.key,
                 data: e.value,
+                onTap:(){
+                  controller.goToProductDetail(e.key);
+                },
               ),
             ),
           )

@@ -7,13 +7,11 @@ import 'package:ecommerce/core/share/custom_loading_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class CounterProductDetail extends StatelessWidget {
-  const CounterProductDetail({super.key});
-
+class CounterProductDetail extends GetView<CounterDetailControllerImp> {
+  const CounterProductDetail({super.key, required this.countProduct});
+  final int countProduct;
   @override
   Widget build(BuildContext context) {
-    CounterDetailControllerImp controller =
-        Get.put(CounterDetailControllerImp());
     return Row(
       children: [
         IconButton(

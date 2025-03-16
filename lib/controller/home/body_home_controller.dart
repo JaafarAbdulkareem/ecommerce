@@ -14,6 +14,7 @@ abstract class BodyHomeController extends GetxController {
   void getData();
   void goToProduct(int indexCategory);
   void goToFavorite();
+  void goToCart();
   // void getDiscountData();
 }
 
@@ -23,7 +24,7 @@ class BodyHomeControllerImp extends BodyHomeController {
   static List<ProductModel> productData = [];
   late List<CategoryNameModel> categoryNames;
   late List<int> favoriteIDData;
-  late List<ProductModel> discountProductData;
+  static List<ProductModel> discountProductData = [];
   late HomeRemote homeRemote;
   late SharedPrefsService prefs;
   late String language;
@@ -36,7 +37,7 @@ class BodyHomeControllerImp extends BodyHomeController {
     // productData = [];
     categoryNames = [];
     favoriteIDData = [];
-    discountProductData = [];
+    // discountProductData = [];
     homeRemote = HomeRemote(curd: Get.find());
     getData();
     prefs = Get.find<SharedPrefsService>();
@@ -141,6 +142,18 @@ class BodyHomeControllerImp extends BodyHomeController {
     );
   }
 
+  @override
+  void goToCart() {
+    Get.toNamed(
+      ConstantScreenName.cart,
+      arguments: {
+        ConstantKey.productData: productData,
+        // ConstantKey.count: 0,
+        // ConstantKey.count: countController.counter,
+        // ConstantKey.boolInsert: false,
+      },
+    );
+  }
   void getDiscountData() {
     for (var product in productData) {
       if (product.discount != 0) {
@@ -148,4 +161,5 @@ class BodyHomeControllerImp extends BodyHomeController {
       }
     }
   }
+  
 }

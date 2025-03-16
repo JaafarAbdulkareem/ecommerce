@@ -4,6 +4,7 @@ import 'package:ecommerce/core/constant/app_style.dart';
 import 'package:ecommerce/core/localization/key_language.dart';
 import 'package:ecommerce/view/widget/cart/body_cart_view.dart';
 import 'package:ecommerce/view/widget/cart/bottom_button_cart.dart';
+import 'package:ecommerce/view/widget/home/home_status_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -25,7 +26,12 @@ class CartView extends StatelessWidget {
       bottomNavigationBar: const BottonButtonCart(),
       backgroundColor: AppColor.backgroundScaffold,
       body: SafeArea(
-        child: const BodyCartView(),
+        child: GetBuilder<CartControllerImp>(
+          builder: (controller) => HomeStatusView(
+            statusRequest: controller.statusRequest,
+            child: const BodyCartView(),
+          ),
+        ),
       ),
     );
   }

@@ -1,3 +1,4 @@
+import 'package:ecommerce/controller/product/counter_detail_controller.dart';
 import 'package:ecommerce/core/class/status_request.dart';
 import 'package:ecommerce/core/constant/constant_key.dart';
 import 'package:ecommerce/core/constant/constant_screen_name.dart';
@@ -13,12 +14,18 @@ class ProductDetailControllerImp extends ProductDetailController {
   late int indexColor;
   late ProductModel productDetailData;
   late StatusRequest statusRequest;
+  late CounterDetailControllerImp countController;
 
   @override
   void onInit() {
     indexColor = 0;
     productDetailData = Get.arguments[ConstantKey.productData];
+
     statusRequest = StatusRequest.initial;
+    countController = Get.put(CounterDetailControllerImp(
+      countProduct: productDetailData.count,
+      // startCounter: Get.arguments[ConstantKey.count] ?? 1,
+    ));
     super.onInit();
   }
 
@@ -30,10 +37,13 @@ class ProductDetailControllerImp extends ProductDetailController {
 
   @override
   void goToCart() {
+    print("${countController.counter} : ${productDetailData.id}");
     Get.toNamed(
       ConstantScreenName.cart,
       arguments: {
-        ConstantKey.productData: productDetailData,
+        ConstantKey.productId: productDetailData.id,
+        ConstantKey.count: countController.counter,
+        ConstantKey.boolInsert: true,
       },
     );
   }

@@ -20,11 +20,11 @@ class ProductHomeListView extends GetView<BodyHomeControllerImp> {
           aspectRatio: 2.8,
           child: ListView.builder(
             scrollDirection: Axis.horizontal,
-            itemCount: controller.discountProductData.length,
+            itemCount: BodyHomeControllerImp.discountProductData.length,
             itemBuilder: (context, index) => AspectRatio(
               aspectRatio: 2,
               child: ItemProductHomeListView(
-                data: controller.discountProductData[index],
+                data: BodyHomeControllerImp.discountProductData[index],
               ),
             ),
           ),

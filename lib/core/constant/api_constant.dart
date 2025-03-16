@@ -25,6 +25,7 @@ abstract class ApiConstant {
 
   static const String folderCart = "/cart";
   static const String apiView = "$serverPath/$folderCart/view.php";
+  static const String apiInsert = "$serverPath/$folderCart/insert.php";
   static const String apiDeleteAllProduct =
       "$serverPath/$folderCart/delete_all_product.php";
   static const String apiIncrement = "$serverPath/$folderCart/increment.php";

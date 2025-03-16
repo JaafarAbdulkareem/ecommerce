@@ -1,4 +1,4 @@
-abstract class ApiKey { 
+abstract class ApiKey {
   //Auth
   static const String username = "username";
   static const String email = "email";
@@ -8,6 +8,7 @@ abstract class ApiKey {
   //cart
   static const String userId = "userId";
   static const String productId = "productId";
+  static const String count = "count";
 }
 
 abstract class ApiResult {
@@ -23,5 +24,4 @@ abstract class ApiResult {
   static const String noData = "noData";
   static const String noIncrement = "noIncrement";
   // static const String noDecrement = "noDecrement";
-
 }

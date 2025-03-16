@@ -1,4 +1,3 @@
-import 'package:ecommerce/controller/product/product_detail_controller.dart';
 import 'package:ecommerce/core/class/status_request.dart';
 import 'package:ecommerce/core/constant/app_color.dart';
 import 'package:ecommerce/core/constant/constant_scale.dart';
@@ -8,19 +7,35 @@ import 'package:get/get.dart';
 abstract class CounterDetailController extends GetxController {
   void add();
   void remove();
+  final int countProduct
+  // , startCounter
+  ;
+
+  CounterDetailController({
+    required this.countProduct,
+    // required this.startCounter,
+  });
 }
 
 class CounterDetailControllerImp extends CounterDetailController {
   late int counter;
-  late ProductDetailControllerImp productDetail;
-  late int countProduct;
+
   late int colorValue;
   late StatusRequest statusRequest;
+
+  CounterDetailControllerImp({
+    required super.countProduct,
+    // required super.startCounter,
+  });
+  // CounterDetailControllerImp({
+  //   required super.countProduct,
+  //   required this.counter,
+  // });
+
   @override
   void onInit() {
+    // counter = startCounter;
     counter = ConstantScale.countStart;
-    productDetail = Get.find<ProductDetailControllerImp>();
-    countProduct = productDetail.productDetailData.count;
     colorValue = ConstantScale.removeColor;
     statusRequest = StatusRequest.initial;
     super.onInit();

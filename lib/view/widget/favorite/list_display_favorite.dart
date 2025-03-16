@@ -18,7 +18,7 @@ class ListDisplayFavorite extends GetView<FavoriteControllerImp> {
         return ItemListDisplayFavorite(
           data: controller.favoriteData[index],
           onTap: () {
-            controller.goToPrductDetail(index);
+            controller.goToProductDetail(index);
           },
         );
       },
