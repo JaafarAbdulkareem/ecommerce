@@ -74,7 +74,11 @@ Map<String, String> english = {
       "Password Mismatch, Check Your Password again",
   KeyLanguage.enterEmailMessage: "Enter Your Email First Please",
   KeyLanguage.incrementMessage:
-      "Your Cart Contains More Items Than Available In Stock. Please Adjust The Quantity Of Items In Your Cart.",
+      "Your Cart Contains More Products Than Available In Stock. Please Adjust The Quantity Of Products In Your Cart.",
+  KeyLanguage.decrementMessage:
+      "You Cannot Decrease the Quantity Below the Available Stock. Please Adjust the Quantity Accordingly.",
+  KeyLanguage.messageNotFoundProduct: "This Product Is Not Available",
+
   //home
   KeyLanguage.hello: "Hello",
   KeyLanguage.titleCategories: "Categories",

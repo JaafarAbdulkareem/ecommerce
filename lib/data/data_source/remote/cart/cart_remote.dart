@@ -24,7 +24,7 @@ class CartRemote {
     var response = await curd.postData(ApiConstant.apiInsert, {
       ApiKey.userId: userId,
       ApiKey.productId: productId,
-      ApiKey.count : count,
+      ApiKey.count: count,
     });
     return response.fold((left) => left, (right) => right);
   }
@@ -53,7 +53,7 @@ class CartRemote {
     required String userId,
     required String productId,
   }) async {
-    var response = await curd.postData(ApiConstant.apiIncrement, {
+    var response = await curd.postData(ApiConstant.apiDecrement, {
       ApiKey.userId: userId,
       ApiKey.productId: productId,
     });

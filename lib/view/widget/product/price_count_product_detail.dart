@@ -15,7 +15,6 @@ class PriceCountProductDetail extends GetView<ProductDetailControllerImp> {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         CounterProductDetail(
-          countProduct: controller.productDetailData.count,
         ),
         PriceProductItem(
           price: controller.productDetailData.price,

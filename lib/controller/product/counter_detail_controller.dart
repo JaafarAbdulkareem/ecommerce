@@ -7,13 +7,12 @@ import 'package:get/get.dart';
 abstract class CounterDetailController extends GetxController {
   void add();
   void remove();
-  final int countProduct
-  // , startCounter
-  ;
+  final int countProduct;
+  final int? startCounter;
 
   CounterDetailController({
     required this.countProduct,
-    // required this.startCounter,
+    this.startCounter,
   });
 }
 
@@ -25,17 +24,12 @@ class CounterDetailControllerImp extends CounterDetailController {
 
   CounterDetailControllerImp({
     required super.countProduct,
-    // required super.startCounter,
+    super.startCounter,
   });
-  // CounterDetailControllerImp({
-  //   required super.countProduct,
-  //   required this.counter,
-  // });
 
   @override
   void onInit() {
-    // counter = startCounter;
-    counter = ConstantScale.countStart;
+    counter = startCounter ?? ConstantScale.countStart;
     colorValue = ConstantScale.removeColor;
     statusRequest = StatusRequest.initial;
     super.onInit();

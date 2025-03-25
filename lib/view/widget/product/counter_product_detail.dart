@@ -8,8 +8,10 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class CounterProductDetail extends GetView<CounterDetailControllerImp> {
-  const CounterProductDetail({super.key, required this.countProduct});
-  final int countProduct;
+  const CounterProductDetail({
+    super.key,
+  });
+
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -25,7 +27,9 @@ class CounterProductDetail extends GetView<CounterDetailControllerImp> {
           height: 25,
           decoration: const ShapeDecoration(
             shape: RoundedRectangleBorder(
-              side: BorderSide(color: AppColorText.titleProductDetail),
+              side: BorderSide(
+                color: AppColorText.titleProductDetail,
+              ),
             ),
           ),
           child: GetBuilder<CounterDetailControllerImp>(

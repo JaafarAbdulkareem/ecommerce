@@ -1,10 +1,10 @@
 import 'package:ecommerce/controller/cart/cart_controller.dart';
-import 'package:ecommerce/core/class/status_request.dart';
 import 'package:ecommerce/core/constant/app_color.dart';
 import 'package:ecommerce/core/constant/app_icon.dart';
 import 'package:ecommerce/core/constant/app_style.dart';
 import 'package:ecommerce/core/constant/constant_key.dart';
 import 'package:ecommerce/core/share/custom_loading_widget.dart';
+import 'package:ecommerce/data/models/cart_model.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -14,7 +14,8 @@ class CounterCart extends GetView<CartControllerImp> {
     required this.index,
     required this.count,
   });
-  final int index, count;
+  final int index;
+  final CartModel count;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -36,14 +37,16 @@ class CounterCart extends GetView<CartControllerImp> {
           ),
           alignment: Alignment.center,
           child: GetBuilder<CartControllerImp>(
+            id: count.id,
             builder: (controller) {
               return CustomLoadingWidget(
-                statusRequest: StatusRequest.success,
-                // statusRequest: controller.statusRequest,
+                statusRequest: controller.counterStatusRequest,
                 child: FittedBox(
                   fit: BoxFit.scaleDown,
                   child: Text(
-                    count.toString(),
+                    // controller.counterStatusRequest == StatusRequest.success
+                    //     ? controller.count.toString():
+                    count.count.toString(),
                     style: AppStyle.styleSemiBold20(context).copyWith(
                         color: Color(controller.colorValue),
                         fontFamily: ConstantTextFons.sans),

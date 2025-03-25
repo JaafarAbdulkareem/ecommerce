@@ -24,7 +24,7 @@ class ProductDetailControllerImp extends ProductDetailController {
     statusRequest = StatusRequest.initial;
     countController = Get.put(CounterDetailControllerImp(
       countProduct: productDetailData.count,
-      // startCounter: Get.arguments[ConstantKey.count] ?? 1,
+      startCounter: Get.arguments[ConstantKey.count],
     ));
     super.onInit();
   }
@@ -37,9 +37,9 @@ class ProductDetailControllerImp extends ProductDetailController {
 
   @override
   void goToCart() {
-    print("${countController.counter} : ${productDetailData.id}");
-    Get.toNamed(
+    Get.offNamedUntil(
       ConstantScreenName.cart,
+      (route) => route.settings.name == ConstantScreenName.home,
       arguments: {
         ConstantKey.productId: productDetailData.id,
         ConstantKey.count: countController.counter,

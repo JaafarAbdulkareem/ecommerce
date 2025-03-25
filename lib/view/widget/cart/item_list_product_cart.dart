@@ -40,15 +40,19 @@ class ItemListProductCart extends StatelessWidget {
                 discount: data.discount,
               ),
             ),
+            // GetBuilder<CartControllerImp>(builder: (controller) {
+            // return
             Expanded(
               child: FittedBox(
                 fit: BoxFit.scaleDown,
                 child: CounterCart(
                   index: index,
-                  count: data.count,
+                  count: data,
                 ),
               ),
-            ),
+            )
+            // ;
+            // }),
           ],
         ),
       ),
