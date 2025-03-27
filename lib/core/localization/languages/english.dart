@@ -75,8 +75,8 @@ Map<String, String> english = {
   KeyLanguage.enterEmailMessage: "Enter Your Email First Please",
   KeyLanguage.incrementMessage:
       "Your Cart Contains More Products Than Available In Stock. Please Adjust The Quantity Of Products In Your Cart.",
-  KeyLanguage.decrementMessage:
-      "You Cannot Decrease the Quantity Below the Available Stock. Please Adjust the Quantity Accordingly.",
+  // KeyLanguage.decrementMessage:
+  //     "You Cannot Decrease the Quantity Below the Available Stock. Please Adjust the Quantity Accordingly.",
   KeyLanguage.messageNotFoundProduct: "This Product Is Not Available",
 
   //home

@@ -16,7 +16,7 @@ class Curd {
         );
         if (response.statusCode >= ConstantScale.statusCode &&
             response.statusCode <= ConstantScale.statusCodeMax) {
-              //remove
+              //remove and try catch 
               // print("body : ${response.body}");
           var responseBody = jsonDecode(response.body);
 

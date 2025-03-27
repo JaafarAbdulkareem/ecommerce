@@ -62,7 +62,7 @@ class CounterDetailControllerImp extends CounterDetailController {
     await Future.delayed(Duration(milliseconds: ConstantScale.removeDelay));
     statusRequest = StatusRequest.success;
     update();
-    if (counter > 0) {
+    if (counter > 1) {
       counter--;
       colorValue = ConstantScale.removeColor;
       update();

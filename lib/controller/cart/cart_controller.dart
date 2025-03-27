@@ -2,7 +2,6 @@ import 'package:ecommerce/controller/home/body_home_controller.dart';
 import 'package:ecommerce/core/class/status_request.dart';
 import 'package:ecommerce/core/constant/api_key.dart';
 import 'package:ecommerce/core/constant/constant_key.dart';
-import 'package:ecommerce/core/constant/constant_scale.dart';
 import 'package:ecommerce/core/constant/constant_screen_name.dart';
 import 'package:ecommerce/core/function/handle_status.dart';
 import 'package:ecommerce/core/localization/key_language.dart';
@@ -16,9 +15,7 @@ import 'package:get/get.dart';
 abstract class CartController extends GetxController {
   void getData();
   Future<void> insertCart(int productId);
-  void deleteCart(int newId);
-  void increment(int newId);
-  void decrement(int newId);
+  void deleteCart(int newIndex);
   void goToOrder();
   void goToProductDetail(int newIndex);
 }
@@ -31,14 +28,14 @@ class CartControllerImp extends CartController {
   late List<ApiCartModel> apiCartData;
   late List<CartModel> cartData;
   late List<ProductModel> productData;
-  late int colorValue;
+  // late int colorValue;
   late StatusRequest statusRequest;
   late StatusRequest counterStatusRequest;
   // late bool isInsert;
   // late ProductModel insertProduct;
   late int count;
   //update
-  late int currentCounter;
+  // late int currentCounter;
   void isInserFunction(bool isInsert) async {
     if (isInsert) {
       int productId = Get.arguments[ConstantKey.productId];
@@ -56,7 +53,7 @@ class CartControllerImp extends CartController {
     apiCartData = [];
     cartData = [];
     productData = BodyHomeControllerImp.productData;
-    colorValue = ConstantScale.removeColor;
+    // colorValue = ConstantScale.removeColor;
     statusRequest = StatusRequest.initial;
     counterStatusRequest = StatusRequest.initial;
     isInserFunction(Get.arguments[ConstantKey.boolInsert] ?? false);
@@ -138,83 +135,18 @@ class CartControllerImp extends CartController {
   }
 
   @override
-  void deleteCart(int newId) async {
+  void deleteCart(int newIndex) async {
     statusRequest = StatusRequest.loading;
     update();
-    var response = await cartRemote.getDeleteData(id: newId.toString());
+    var response =
+        await cartRemote.getDeleteData(id: cartData[newIndex].id.toString());
+    print("$newIndex : ${cartData[newIndex].id} : response : $response");
     statusRequest = handleStatus(response);
+    print("response2 : $response");
     if (statusRequest == StatusRequest.success) {
       if (response[ApiResult.status] == ApiResult.success) {
-        statusRequest = StatusRequest.success;
-        update();
-      } else {
-        statusRequest = StatusRequest.failure;
-        update();
-      }
-    }
-  }
+        cartData.remove(newIndex);
 
-  @override
-  void increment(int newId) async {
-    counterStatusRequest = StatusRequest.loading;
-    update([cartData[newId].id]);
-    var response = await cartRemote.getIncrementData(
-      userId: userId,
-      productId: cartData[newId].idProduct.toString(),
-    );
-    counterStatusRequest = handleStatus(response);
-    if (counterStatusRequest == StatusRequest.success) {
-      if (response[ApiResult.status] == ApiResult.success) {
-        colorValue = ConstantScale.addColor;
-        if (response[ApiResult.data] is num) {
-          cartData[newId].count = response[ApiResult.data];
-          counterStatusRequest = StatusRequest.success;
-          update([cartData[newId].id]);
-        } else if (response[ApiResult.data] == ApiResult.noIncrement) {
-          await Get.defaultDialog(
-            title: KeyLanguage.alert.tr,
-            middleText: KeyLanguage.incrementMessage.tr,
-          );
-        } else {
-          await Get.defaultDialog(
-            title: KeyLanguage.alert.tr,
-            middleText: KeyLanguage.someThingMessage.tr,
-          );
-        }
-
-        // update();
-      } else {
-        counterStatusRequest = StatusRequest.failure;
-        update([cartData[newId].id]);
-      }
-    }
-  }
-
-  @override
-  void decrement(int newId) async {
-    counterStatusRequest = StatusRequest.loading;
-    update();
-    var response = await cartRemote.getDecrementData(
-      userId: userId,
-      productId: cartData[newId].idProduct.toString(),
-    );
-    counterStatusRequest = handleStatus(response);
-    if (counterStatusRequest == StatusRequest.success) {
-      if (response[ApiResult.status] == ApiResult.success) {
-        colorValue = ConstantScale.removeColor;
-        if (response[ApiResult.data] is num) {
-          count = response[ApiResult.data];
-        } else if (response[ApiResult.data] == ApiResult.noIncrement) {
-          await Get.defaultDialog(
-            title: KeyLanguage.alert.tr,
-            middleText: KeyLanguage.decrementMessage.tr,
-          );
-        } else {
-          await Get.defaultDialog(
-            title: KeyLanguage.alert.tr,
-            middleText: KeyLanguage.someThingMessage.tr,
-          );
-        }
         statusRequest = StatusRequest.success;
         update();
       } else {
@@ -229,12 +161,10 @@ class CartControllerImp extends CartController {
     // TODO: implement goToOrdet
   }
 
-  ProductModel? getCount(int newIndex) {
+  ProductModel? getDataProductDetail(int newIndex) {
     for (var element in productData) {
       if (cartData[newIndex].idProduct == element.id) {
         return element;
-        // print("count : ${element.count} : ${element.productCount}");
-        // count = element.count;
       }
     }
     return null;
@@ -243,7 +173,7 @@ class CartControllerImp extends CartController {
   @override
   void goToProductDetail(int newIndex) async {
     count = cartData[newIndex].count;
-    ProductModel? data = getCount(newIndex);
+    ProductModel? data = getDataProductDetail(newIndex);
     if (data != null) {
       await Get.offNamed(
         ConstantScreenName.productDetail,
@@ -258,5 +188,10 @@ class CartControllerImp extends CartController {
         middleText: KeyLanguage.messageNotFoundProduct.tr,
       );
     }
+  }
+
+  void refreshPage() {
+    statusRequest = StatusRequest.success;
+    update([ConstantKey.idListProductCart]);
   }
 }

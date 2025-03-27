@@ -19,6 +19,8 @@ abstract class ConstantKey {
   static const String boolInsert = "boolInsert";
 //hero
   static const String tagProductImage = "tagProductImage";
+//id GetBuilder
+  static const String idListProductCart = "idListProductCart";
 }
 
 abstract class ConstantLanguage {

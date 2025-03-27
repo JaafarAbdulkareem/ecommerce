@@ -1,4 +1,4 @@
-import 'package:ecommerce/controller/cart/cart_controller.dart';
+import 'package:ecommerce/controller/cart/counter_cart_controller.dart';
 import 'package:ecommerce/core/constant/app_color.dart';
 import 'package:ecommerce/core/constant/app_icon.dart';
 import 'package:ecommerce/core/constant/app_style.dart';
@@ -8,7 +8,7 @@ import 'package:ecommerce/data/models/cart_model.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class CounterCart extends GetView<CartControllerImp> {
+class CounterCart extends StatelessWidget {
   const CounterCart({
     super.key,
     required this.index,
@@ -18,6 +18,7 @@ class CounterCart extends GetView<CartControllerImp> {
   final CartModel count;
   @override
   Widget build(BuildContext context) {
+    CounterCartControllerImp controller = Get.put(CounterCartControllerImp());
     return Column(
       children: [
         IconButton(
@@ -36,16 +37,14 @@ class CounterCart extends GetView<CartControllerImp> {
             ),
           ),
           alignment: Alignment.center,
-          child: GetBuilder<CartControllerImp>(
+          child: GetBuilder<CounterCartControllerImp>(
             id: count.id,
             builder: (controller) {
               return CustomLoadingWidget(
-                statusRequest: controller.counterStatusRequest,
+                statusRequest: controller.statusRequest,
                 child: FittedBox(
                   fit: BoxFit.scaleDown,
                   child: Text(
-                    // controller.counterStatusRequest == StatusRequest.success
-                    //     ? controller.count.toString():
                     count.count.toString(),
                     style: AppStyle.styleSemiBold20(context).copyWith(
                         color: Color(controller.colorValue),

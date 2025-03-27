@@ -6,6 +6,7 @@ abstract class ApiKey {
   static const String phone = "phone";
   static const String verifyCode = "verifyCode";
   //cart
+  static const String id = "id";
   static const String userId = "userId";
   static const String productId = "productId";
   static const String count = "count";
