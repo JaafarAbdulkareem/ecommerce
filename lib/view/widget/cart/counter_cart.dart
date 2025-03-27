@@ -25,7 +25,9 @@ class CounterCart extends StatelessWidget {
           onPressed: () {
             controller.increment(index);
           },
-          icon: const Icon(AppIcon.add),
+          icon: const Icon(
+            AppIcon.add,
+          ),
         ),
         Container(
           padding: const EdgeInsets.all(2),

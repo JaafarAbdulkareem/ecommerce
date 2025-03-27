@@ -9,46 +9,28 @@ class ListProductCart extends GetView<CartControllerImp> {
 
   @override
   Widget build(BuildContext context) {
-    return
-        //  ListView.builder(
-        //   itemCount: controller.cartData.length,
-        //   itemBuilder: (context, index) => AspectRatio(
-        //     aspectRatio: 4,
-        //     child: ItemListProductCart(
-        //       index: index,
-        //       data: controller.cartData[index],
-        //       onTap: () {
-        //         controller.goToProductDetail(index);
-        //       },
-        //     ),
-        //   ),
-        // );
-        
-         
-       GetBuilder<CartControllerImp>(
-            id:ConstantKey.idListProductCart ,
-            builder: (controller) {
-            return ListView(
-              children: controller.cartData
-                  .asMap()
-                  .entries
-                  .map(
-                    (e) => AspectRatio(
-                      aspectRatio: 4,
-                      child: ItemListProductCart(
-                        index: e.key,
-                        data: e.value,
-                        onTap: () {
-                          controller.goToProductDetail(e.key);
-                        },
-                      ),
-                    ),
-                  )
-                  .toList(),
-            );
-          }
+    return GetBuilder<CartControllerImp>(
+      id: ConstantKey.idListProductCart,
+      builder: (controller) {
+        return ListView(
+          children: controller.cartData
+              .asMap()
+              .entries
+              .map(
+                (e) => AspectRatio(
+                  aspectRatio: 4,
+                  child: ItemListProductCart(
+                    index: e.key,
+                    data: e.value,
+                    onTap: () {
+                      controller.goToProductDetail(e.key);
+                    },
+                  ),
+                ),
+              )
+              .toList(),
         );
-    //   },
-    // );
+      },
+    );
   }
 }
