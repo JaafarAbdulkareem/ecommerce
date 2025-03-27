@@ -22,7 +22,7 @@ abstract class ApiResult {
   static const String category = "category";
   static const String product = "product";
   static const String verifyCode = "verifyCode";
-  static const String noData = "noData";
-  static const String noIncrement = "noIncrement";
+  // static const String noData = "noData";
+  static const String noChange = "noChange";
   // static const String noDecrement = "noDecrement";
 }

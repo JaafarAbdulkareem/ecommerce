@@ -23,19 +23,13 @@ abstract class CartController extends GetxController {
 class CartControllerImp extends CartController {
   late CartRemote cartRemote;
   late SharedPrefsService prefs;
-  // late ProductControllerImp controllerProduct;
   late String userId;
   late List<ApiCartModel> apiCartData;
   late List<CartModel> cartData;
   late List<ProductModel> productData;
-  // late int colorValue;
   late StatusRequest statusRequest;
   late StatusRequest counterStatusRequest;
-  // late bool isInsert;
-  // late ProductModel insertProduct;
   late int count;
-  //update
-  // late int currentCounter;
   void isInserFunction(bool isInsert) async {
     if (isInsert) {
       int productId = Get.arguments[ConstantKey.productId];
@@ -53,7 +47,6 @@ class CartControllerImp extends CartController {
     apiCartData = [];
     cartData = [];
     productData = BodyHomeControllerImp.productData;
-    // colorValue = ConstantScale.removeColor;
     statusRequest = StatusRequest.initial;
     counterStatusRequest = StatusRequest.initial;
     isInserFunction(Get.arguments[ConstantKey.boolInsert] ?? false);
@@ -128,9 +121,15 @@ class CartControllerImp extends CartController {
         statusRequest = StatusRequest.success;
         update();
       } else {
-        statusRequest = StatusRequest.failure;
+        statusRequest = StatusRequest.success;
         update();
+        await Get.defaultDialog(
+          title: KeyLanguage.alert.tr,
+          middleText: KeyLanguage.someThingMessage.tr,
+        );
       }
+    } else {
+      update();
     }
   }
 
@@ -140,19 +139,26 @@ class CartControllerImp extends CartController {
     update();
     var response =
         await cartRemote.getDeleteData(id: cartData[newIndex].id.toString());
-    print("$newIndex : ${cartData[newIndex].id} : response : $response");
     statusRequest = handleStatus(response);
-    print("response2 : $response");
     if (statusRequest == StatusRequest.success) {
       if (response[ApiResult.status] == ApiResult.success) {
-        cartData.remove(newIndex);
-
-        statusRequest = StatusRequest.success;
+        cartData.removeAt(newIndex);
+        if (cartData.isEmpty) {
+          statusRequest = StatusRequest.failure;
+        } else {
+          statusRequest = StatusRequest.success;
+        }
         update();
       } else {
-        statusRequest = StatusRequest.failure;
+        statusRequest = StatusRequest.success;
         update();
+        await Get.defaultDialog(
+          title: KeyLanguage.alert.tr,
+          middleText: KeyLanguage.someThingMessage.tr,
+        );
       }
+    } else {
+      update();
     }
   }
 

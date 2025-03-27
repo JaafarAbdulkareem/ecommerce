@@ -51,12 +51,16 @@ class CounterCartControllerImp extends CounterCartController {
           cartData[newIndex].count = response[ApiResult.data];
           statusRequest = StatusRequest.success;
           update([cartData[newIndex].id]);
-        } else if (response[ApiResult.data] == ApiResult.noIncrement) {
+        } else if (response[ApiResult.data] == ApiResult.noChange) {
+          statusRequest = StatusRequest.success;
+          update([cartData[newIndex].id]);
           await Get.defaultDialog(
             title: KeyLanguage.alert.tr,
             middleText: KeyLanguage.incrementMessage.tr,
           );
         } else {
+          statusRequest = StatusRequest.success;
+          update([cartData[newIndex].id]);
           await Get.defaultDialog(
             title: KeyLanguage.alert.tr,
             middleText: KeyLanguage.someThingMessage.tr,
@@ -65,6 +69,10 @@ class CounterCartControllerImp extends CounterCartController {
       } else {
         statusRequest = StatusRequest.failure;
         update([cartData[newIndex].id]);
+        await Get.defaultDialog(
+          title: KeyLanguage.alert.tr,
+          middleText: KeyLanguage.someThingMessage.tr,
+        );
       }
     } else {
       statusRequest = StatusRequest.failure;
@@ -87,22 +95,22 @@ class CounterCartControllerImp extends CounterCartController {
     statusRequest = handleStatus(response);
     if (statusRequest == StatusRequest.success) {
       if (response[ApiResult.status] == ApiResult.success) {
-        print("res : $response");
         if (response[ApiResult.data] is num) {
           colorValue = ConstantScale.removeColor;
           cartData[newIndex].count = response[ApiResult.data];
+          statusRequest = StatusRequest.success;
+          update([cartData[newIndex].id]);
+        } else if (response[ApiResult.data] == ApiResult.noChange) {
+          cartData.removeAt(newIndex);
+          cartController.refreshPage();
         } else {
+          statusRequest = StatusRequest.success;
+          update([cartData[newIndex].id]);
           await Get.defaultDialog(
             title: KeyLanguage.alert.tr,
             middleText: KeyLanguage.someThingMessage.tr,
           );
         }
-        statusRequest = StatusRequest.success;
-        update([cartData[newIndex].id]);
-      } else if (response[ApiResult.data] == ApiResult.noIncrement) {
-        print("id : ${cartData[newIndex].id}");
-        cartData.removeAt(newIndex);
-        cartController.refreshPage();
       } else {
         statusRequest = StatusRequest.failure;
         update([cartData[newIndex].id]);

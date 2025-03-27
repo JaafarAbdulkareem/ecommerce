@@ -21,7 +21,7 @@ abstract class ConstantScale {
   static const double iconShop = 32;
   //product
   static const int crossAxisCount = 2;
-  static const double iconFavorite = 20;
+  static const double icon = 20;
   static const int noStar = 1;
   static const double iconStar = 18;
   static const int countStart = 1;

@@ -24,7 +24,7 @@ class FootItemProduct extends StatelessWidget {
                 controller.setFavorite(index);
               },
               child: Icon(
-                size: ConstantScale.iconFavorite,
+                size: ConstantScale.icon,
                 controller.productCategoryData[index].isFavorite
                     ? AppIcon.favorite
                     : AppIcon.favoriteBorder,
