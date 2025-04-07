@@ -1,39 +1,25 @@
 import 'package:ecommerce/controller/home/body_home_controller.dart';
 import 'package:ecommerce/core/constant/app_color.dart';
 import 'package:ecommerce/core/constant/app_icon.dart';
-import 'package:ecommerce/core/constant/app_style.dart';
-import 'package:ecommerce/core/localization/key_language.dart';
+import 'package:ecommerce/core/share/custom_search_field_text_widge.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class CustomSearchWidget extends StatelessWidget {
+class CustomSearchWidget extends GetView<BodyHomeControllerImp> {
   const CustomSearchWidget({
     super.key,
     this.isAppearFavorite = true,
+    this.autofocus = false,
   });
   final bool isAppearFavorite;
+  final bool autofocus;
   @override
   Widget build(BuildContext context) {
-    BodyHomeControllerImp controller = Get.find<BodyHomeControllerImp>();
     return Row(
       children: [
         Expanded(
-          child: TextFormField(
-            decoration: InputDecoration(
-              contentPadding: const EdgeInsets.symmetric(
-                horizontal: 0,
-                vertical: 0,
-              ),
-              prefixIcon: const Icon(
-                AppIcon.search,
-                size: 20,
-              ),
-              hintText: KeyLanguage.searchHint.tr,
-              hintStyle: AppStyle.styleBold12(context),
-              border: border(),
-              enabledBorder: border(),
-              focusedBorder: border(),
-            ),
+          child: CustomFieldTextWidge(
+            autofocus: autofocus,
           ),
         ),
         const SizedBox(width: 6),
@@ -60,13 +46,6 @@ class CustomSearchWidget extends StatelessWidget {
               )
             : const SizedBox(),
       ],
-    );
-  }
-
-  OutlineInputBorder border() {
-    return OutlineInputBorder(
-      borderRadius: BorderRadius.circular(25),
-      borderSide: const BorderSide(color: AppColor.primary),
     );
   }
 }

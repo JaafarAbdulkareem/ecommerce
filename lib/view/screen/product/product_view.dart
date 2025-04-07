@@ -1,9 +1,9 @@
 import 'package:ecommerce/controller/product/product_controller.dart';
+import 'package:ecommerce/controller/search/search_product_controller.dart';
 import 'package:ecommerce/core/constant/app_color.dart';
 import 'package:ecommerce/core/share/custom_search_widget.dart';
-import 'package:ecommerce/view/widget/home/home_status_view.dart';
-import 'package:ecommerce/view/widget/product/list_category_bar.dart';
-import 'package:ecommerce/view/widget/product/list_display_product.dart';
+import 'package:ecommerce/view/screen/search/widget/body_search_view.dart';
+import 'package:ecommerce/view/widget/product/body_product_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -21,15 +21,13 @@ class ProductView extends StatelessWidget {
           child: Column(
             children: [
               const CustomSearchWidget(),
-              const ListCategoryBar(),
-              GetBuilder<ProductControllerImp>(
-                builder: (controller) {
-                  return HomeStatusView(
-                    statusRequest: controller.statusRequest,
-                    child: const Expanded(
-                      child: ListDisplayProduct(),
-                    ),
-                  );
+              GetBuilder<SearchProductControllerImp>(
+                builder: (searchController) {
+                  return searchController.isSearch
+                      ? const BodySearchView()
+                      : const Expanded(
+                          child: BodyProductView(),
+                        );
                 },
               ),
             ],

@@ -24,7 +24,7 @@ class ForgetPasswordView extends StatelessWidget {
         child: GetBuilder<ForgetPasswordControllerImp>(
           builder: (controller) => StatusView(
             statusRequest: controller.statusRequest,
-            widget: BodyForgetPasswordView(),
+            child: BodyForgetPasswordView(),
           ),
         ),
       ),

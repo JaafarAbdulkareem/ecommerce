@@ -7,10 +7,10 @@ class StatusView extends StatelessWidget {
   const StatusView({
     super.key,
     required this.statusRequest,
-    required this.widget,
+    required this.child,
   });
   final StatusRequest statusRequest;
-  final Widget widget;
+  final Widget child;
   @override
   Widget build(BuildContext context) {
     if (statusRequest == StatusRequest.loading) {
@@ -40,7 +40,7 @@ class StatusView extends StatelessWidget {
         ),
       );
     } else {
-      return widget;
+      return child;
     }
   }
 }

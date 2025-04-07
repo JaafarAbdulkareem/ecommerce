@@ -24,7 +24,7 @@ class LoginView extends StatelessWidget {
         child: GetBuilder<LoginControllerImp>(
           builder: (controller) => StatusView(
             statusRequest: controller.statusRequest,
-            widget: BodyLoginView(),
+            child: BodyLoginView(),
           ),
         ),
       ),

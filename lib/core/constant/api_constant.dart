@@ -22,6 +22,7 @@ abstract class ApiConstant {
 
   static const String folderHome = "/home";
   static const String apiHome = "$serverPath/$folderHome/home.php";
+  static const String apiSearchPrdouct = "$serverPath/$folderHome/search_product.php";
 
   static const String folderCart = "/cart";
   static const String apiView = "$serverPath/$folderCart/view.php";

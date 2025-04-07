@@ -24,7 +24,7 @@ class ResetPasswordView extends StatelessWidget {
         child: GetBuilder<ResetPasswordControllerImp>(
           builder: (controller) => StatusView(
             statusRequest: controller.statusRequest,
-            widget: BodyResetPasswordView(),
+            child: BodyResetPasswordView(),
           ),
         )
         ,

@@ -24,7 +24,7 @@ class VerificationView extends StatelessWidget {
         child: GetBuilder<VerificationControllerImp>(
           builder: (controller) => StatusView(
             statusRequest: controller.statusRequest,
-            widget: BodyVerifcationView(),
+            child: BodyVerifcationView(),
           ),
         ),
       ),

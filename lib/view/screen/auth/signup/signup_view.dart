@@ -24,7 +24,7 @@ class SignupView extends StatelessWidget {
         child: GetBuilder<SignupControllerImp>(
           builder: (controller) => StatusView(
             statusRequest: controller.statusRequest,
-            widget: BodySignupView(),
+            child: BodySignupView(),
           ),
         ),
       ),
