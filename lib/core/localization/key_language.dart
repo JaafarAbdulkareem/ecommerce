@@ -108,4 +108,7 @@ abstract class KeyLanguage {
   static const String totalPrice = "totalPrice";
   static const String shopping = "shopping";
   static const String price = "price";
+
+  //search 
+  static const String enterEnter = "enterEnter";
 }

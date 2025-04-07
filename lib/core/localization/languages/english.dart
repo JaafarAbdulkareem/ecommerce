@@ -116,4 +116,6 @@ Map<String, String> english = {
   KeyLanguage.totalPrice: "Total Price",
   KeyLanguage.shopping: "shopping",
   KeyLanguage.price: "price",
+  //search
+  KeyLanguage.enterEnter: "Press Enter or tap 🔍 to start the search.",
 };

@@ -13,7 +13,10 @@ class BodyHomeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Get.lazyPut(() => BodyHomeControllerImp());
+    Get.lazyPut(
+      () => BodyHomeControllerImp(),
+      fenix: true,//using multi search page for differenet pleace 
+    );
     return GetBuilder<BodyHomeControllerImp>(
       builder: (controller) {
         return HomeStatusView(
