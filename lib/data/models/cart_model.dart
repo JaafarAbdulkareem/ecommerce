@@ -9,6 +9,7 @@ class CartModel {
   final String image;
   final double price;
   final double discount;
+  final double discountPrice;
   final int productCount;
   late int count;
   final int active;
@@ -21,6 +22,7 @@ class CartModel {
     required this.image,
     required this.price,
     required this.discount,
+    required this.discountPrice,
     required this.productCount,
     required this.count,
     required this.active,
@@ -35,6 +37,7 @@ class CartModel {
       image: data.image,
       price: data.price,
       discount: data.discount,
+      discountPrice: data.discountPrice,
       productCount: data.count,
       count: cartData.count,
       active: data.active,

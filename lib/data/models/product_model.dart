@@ -11,6 +11,7 @@ class ProductModel {
   final int active;
   final double price;
   final double discount;
+  final double discountPrice;
   final String timeCreate;
   final int categoryId;
   final String categoryArabicName;
@@ -30,6 +31,7 @@ class ProductModel {
     required this.active,
     required this.price,
     required this.discount,
+    required this.discountPrice,
     required this.timeCreate,
     required this.categoryId,
     required this.categoryArabicName,
@@ -51,6 +53,7 @@ class ProductModel {
       active: int.parse(json[ApiColumnDb.active]),
       price: double.parse(json[ApiColumnDb.price]),
       discount: double.parse(json[ApiColumnDb.discount]),
+      discountPrice: double.parse(json[ApiColumnDb.discountPrice]),
       timeCreate: json[ApiColumnDb.timeCreate],
       categoryId: int.parse(json[ApiColumnDb.categoryId]),
       categoryArabicName: json[ApiColumnDb.categoryArabicName],
@@ -72,6 +75,7 @@ class ProductModel {
     data[ApiColumnDb.active] = active;
     data[ApiColumnDb.price] = price;
     data[ApiColumnDb.discount] = discount;
+    data[ApiColumnDb.discountPrice] = discountPrice;
     data[ApiColumnDb.timeCreate] = timeCreate;
     data[ApiColumnDb.categoryId] = categoryId;
     data[ApiColumnDb.categoryArabicName] = categoryArabicName;

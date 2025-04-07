@@ -19,6 +19,7 @@ class PriceCountProductDetail extends GetView<ProductDetailControllerImp> {
         PriceProductItem(
           price: controller.productDetailData.price,
           discount: controller.productDetailData.discount,
+          discountPrice: controller.productDetailData.discountPrice,
           style: AppStyle.styleRegular14(context).copyWith(
             fontSize: 18,
           ),

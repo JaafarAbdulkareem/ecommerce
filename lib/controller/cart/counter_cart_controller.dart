@@ -49,6 +49,7 @@ class CounterCartControllerImp extends CounterCartController {
         colorValue = ConstantScale.addColor;
         if (response[ApiResult.data] is num) {
           cartData[newIndex].count = response[ApiResult.data];
+          cartController.refreshReceive();
           statusRequest = StatusRequest.success;
           update([cartData[newIndex].id]);
         } else if (response[ApiResult.data] == ApiResult.noChange) {
@@ -98,6 +99,8 @@ class CounterCartControllerImp extends CounterCartController {
         if (response[ApiResult.data] is num) {
           colorValue = ConstantScale.removeColor;
           cartData[newIndex].count = response[ApiResult.data];
+          // cartController.refreshReceive();
+          cartController.refreshReceive();
           statusRequest = StatusRequest.success;
           update([cartData[newIndex].id]);
         } else if (response[ApiResult.data] == ApiResult.noChange) {

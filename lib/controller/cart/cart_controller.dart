@@ -10,6 +10,7 @@ import 'package:ecommerce/data/data_source/remote/cart/cart_remote.dart';
 import 'package:ecommerce/data/models/api_cart_model.dart';
 import 'package:ecommerce/data/models/cart_model.dart';
 import 'package:ecommerce/data/models/product_model.dart';
+import 'package:ecommerce/data/models/receive_shopping_model.dart.dart';
 import 'package:get/get.dart';
 
 abstract class CartController extends GetxController {
@@ -30,6 +31,15 @@ class CartControllerImp extends CartController {
   late StatusRequest statusRequest;
   late StatusRequest counterStatusRequest;
   late int count;
+  late ReceiveShoppingModel price;
+  late ReceiveShoppingModel shopping;
+  late ReceiveShoppingModel totalPrice;
+
+  // late double totalPrice,
+  //     totalDiscount,
+  //     totalDiscountPrice,
+  //     shoppingTax,
+  //     totalShoppingPrice;
   void isInserFunction(bool isInsert) async {
     if (isInsert) {
       int productId = Get.arguments[ConstantKey.productId];
@@ -37,6 +47,18 @@ class CartControllerImp extends CartController {
       await insertCart(productId);
     }
     getData();
+  }
+
+  void getTotalPrice() {
+    price = ReceiveShoppingModel();
+    for (CartModel element in cartData) {
+      price.price += element.price * element.count;
+      price.discount += element.discount * element.count;
+      price.discountPrice += element.discountPrice * element.count;
+    }
+    totalPrice.price = price.price + shopping.price;
+    totalPrice.discount = price.discount + shopping.discount;
+    totalPrice.discountPrice = price.discountPrice + shopping.discountPrice;
   }
 
   @override
@@ -50,6 +72,11 @@ class CartControllerImp extends CartController {
     statusRequest = StatusRequest.initial;
     counterStatusRequest = StatusRequest.initial;
     isInserFunction(Get.arguments[ConstantKey.boolInsert] ?? false);
+    price = ReceiveShoppingModel();
+    shopping = ReceiveShoppingModel();
+    totalPrice = ReceiveShoppingModel();
+    // shoppingTax = 0;
+    // totalPrice = totalDiscount = totalDiscountPrice = totalShoppingPrice = 0;
     super.onInit();
   }
 
@@ -97,6 +124,7 @@ class CartControllerImp extends CartController {
     if (statusRequest == StatusRequest.success) {
       if (response[ApiResult.status] == ApiResult.success) {
         await fetchData(response[ApiResult.data]);
+        getTotalPrice();
         statusRequest = StatusRequest.success;
         update();
       } else {
@@ -142,7 +170,9 @@ class CartControllerImp extends CartController {
     statusRequest = handleStatus(response);
     if (statusRequest == StatusRequest.success) {
       if (response[ApiResult.status] == ApiResult.success) {
+        price.price -= (cartData[newIndex].price * cartData[newIndex].count);
         cartData.removeAt(newIndex);
+        getTotalPrice();
         if (cartData.isEmpty) {
           statusRequest = StatusRequest.failure;
         } else {
@@ -199,5 +229,10 @@ class CartControllerImp extends CartController {
   void refreshPage() {
     statusRequest = StatusRequest.success;
     update([ConstantKey.idListProductCart]);
+  }
+
+  void refreshReceive() {
+    getTotalPrice();
+    update([ConstantKey.idReceiveShopping]);
   }
 }

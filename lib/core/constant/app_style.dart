@@ -19,6 +19,15 @@ abstract class AppStyle {
     );
   }
 
+  static TextStyle styleSemiBold12(BuildContext context) {
+    return TextStyle(
+      fontSize: 12,
+      color: AppColorText.textButton,
+      fontWeight: FontWeight.w600,
+      fontFamily: ConstantTextFons.sans,
+    );
+  }
+
   static TextStyle styleBold12(BuildContext context) {
     return TextStyle(
       fontSize: 12,
@@ -115,6 +124,7 @@ abstract class AppStyle {
       color: AppColorText.primary,
     );
   }
+
   static TextStyle styleSemiBold24(BuildContext context) {
     return TextStyle(
       fontSize: 24,

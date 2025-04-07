@@ -6,6 +6,10 @@ class AppImages {
   /// assets/images/camera.svg
   static const String imagesCamera = "assets/images/camera.svg";
 
+  /// Assets for imagesDiscount
+  /// assets/images/discount.png
+  static const String imagesDiscount = "assets/images/discount.png";
+
   /// Assets for imagesDragon
   /// assets/images/dragon.jpg
   static const String imagesDragon = "assets/images/dragon.jpg";

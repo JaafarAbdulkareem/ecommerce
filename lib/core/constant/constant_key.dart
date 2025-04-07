@@ -21,6 +21,7 @@ abstract class ConstantKey {
   static const String tagProductImage = "tagProductImage";
 //id GetBuilder
   static const String idListProductCart = "idListProductCart";
+  static const String idReceiveShopping = "idReceiveShopping";
 }
 
 abstract class ConstantLanguage {

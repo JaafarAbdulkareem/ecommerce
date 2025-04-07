@@ -11,6 +11,7 @@ class FavoritModel {
   final int active;
   final double price;
   final double discount;
+  final double discountPrice;
   final String timeCreate;
   final int categoryId;
   late bool isFavorite;
@@ -26,6 +27,7 @@ class FavoritModel {
     required this.active,
     required this.price,
     required this.discount,
+    required this.discountPrice,
     required this.timeCreate,
     required this.categoryId,
     this.isFavorite = false,
@@ -43,6 +45,7 @@ class FavoritModel {
       active: data.active,
       price: data.price,
       discount: data.discount,
+      discountPrice: data.discountPrice,
       timeCreate: data.timeCreate,
       categoryId: data.categoryId,
     );

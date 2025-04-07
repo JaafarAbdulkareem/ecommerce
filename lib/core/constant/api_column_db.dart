@@ -20,6 +20,7 @@ class ApiColumnDb {
   static const String active = "active";
   static const String price = "price";
   static const String discount = "discount";
+  static const String discountPrice = "discountPrice";
   static const String categoryId = "category_id";
   static const String categoryArabicName = "category_arabic_name";
   static const String categoryEnglishName = "category_english_name";

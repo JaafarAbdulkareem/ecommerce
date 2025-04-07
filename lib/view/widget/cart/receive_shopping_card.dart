@@ -1,9 +1,10 @@
+import 'package:ecommerce/controller/cart/cart_controller.dart';
 import 'package:ecommerce/core/localization/key_language.dart';
 import 'package:ecommerce/view/widget/product/price_product_item.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class ReceiveShoppingCard extends StatelessWidget {
+class ReceiveShoppingCard extends GetView<CartControllerImp> {
   const ReceiveShoppingCard({super.key});
 
   @override
@@ -19,8 +20,9 @@ class ReceiveShoppingCard extends StatelessWidget {
                 KeyLanguage.price.tr,
               ),
               PriceProductItem(
-                price: 200,
-                discount: 30,
+                price: controller.price.price,
+                discount: controller.price.discount,
+                discountPrice: controller.price.discountPrice,
               ),
             ],
           ),
@@ -31,8 +33,9 @@ class ReceiveShoppingCard extends StatelessWidget {
                 KeyLanguage.shopping.tr,
               ),
               PriceProductItem(
-                price: 200,
-                discount: 30,
+                price: controller.shopping.price,
+                discount: controller.shopping.discount,
+                discountPrice: controller.shopping.discountPrice,
               ),
             ],
           ),
@@ -44,8 +47,9 @@ class ReceiveShoppingCard extends StatelessWidget {
                 KeyLanguage.totalPrice.tr,
               ),
               PriceProductItem(
-                price: 200,
-                discount: 30,
+                price: controller.totalPrice.price,
+                discount: controller.totalPrice.discount,
+                discountPrice: controller.totalPrice.discountPrice,
               ),
             ],
           ),

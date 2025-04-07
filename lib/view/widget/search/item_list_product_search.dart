@@ -1,5 +1,6 @@
 import 'package:ecommerce/core/constant/app_color.dart';
 import 'package:ecommerce/core/function/translate_language.dart';
+import 'package:ecommerce/core/share/custom_discount_widget.dart';
 import 'package:ecommerce/data/models/product_model.dart';
 import 'package:ecommerce/view/widget/cart/image_cart.dart';
 import 'package:ecommerce/view/widget/cart/info_cart.dart';
@@ -21,24 +22,32 @@ class ItemListProductSearch extends StatelessWidget {
       onTap: onTap,
       child: Card(
         color: AppColor.card,
-        child: Row(
+        child: Stack(
           children: [
-            Expanded(
-              child: ImageCart(
-                image: data.image,
-              ),
-            ),
-            Expanded(
-              flex: 3,
-              child: InfoCart(
-                productName: translateLanguage(
-                  arabic: data.arabicName,
-                  english: data.englishName,
+            Row(
+              children: [
+                Expanded(
+                  child: ImageCart(
+                    image: data.image,
+                  ),
                 ),
-                price: data.price,
-                discount: data.discount,
-              ),
+                Expanded(
+                  flex: 3,
+                  child: InfoCart(
+                    productName: translateLanguage(
+                      arabic: data.arabicName,
+                      english: data.englishName,
+                    ),
+                    price: data.price,
+                    discount: data.discount,
+                    discountPrice: data.discountPrice,
+                  ),
+                ),
+              ],
             ),
+            data.discount == 0 || data.discount == 0.0
+                ? const SizedBox()
+                : CustomDiscountWidget(discount: data.discount),
           ],
         ),
       ),
