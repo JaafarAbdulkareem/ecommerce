@@ -1,5 +1,5 @@
 import 'package:ecommerce/core/share/custom_search_widget.dart';
-import 'package:ecommerce/view/screen/search/widget/body_search_view.dart';
+import 'package:ecommerce/view/widget/search/body_search_view.dart';
 import 'package:flutter/material.dart';
 
 class SearchView extends StatelessWidget {

@@ -1,6 +1,6 @@
 import 'package:ecommerce/controller/search/search_product_controller.dart';
 import 'package:ecommerce/core/share/custom_search_widget.dart';
-import 'package:ecommerce/view/screen/search/widget/body_search_view.dart';
+import 'package:ecommerce/view/widget/search/body_search_view.dart';
 import 'package:ecommerce/view/widget/favorite/list_display_favorite.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
