@@ -82,7 +82,7 @@ class SearchProductControllerImp extends SearchProductController {
       arguments: {
         ConstantKey.productData: searchData[newIndex],
         //update 1
-        ConstantKey.count: 1,
+        ConstantKey.count: searchData[newIndex].count,
       },
     );
   }

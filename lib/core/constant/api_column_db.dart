@@ -16,6 +16,7 @@ class ApiColumnDb {
   static const String arabicDescription = "arabic_description";
   static const String englishDescription = "english_description";
   static const String productImage = "product_image";
+  static const String countProduct = "countProduct";
   static const String count = "count";
   static const String active = "active";
   static const String price = "price";

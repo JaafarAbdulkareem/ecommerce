@@ -9,7 +9,7 @@ import 'package:get/get.dart';
 abstract class ProductController extends GetxController {
   void getProductForCategoryData(int indexCategory);
   void changeCategory(int newIndex);
-  void goToPrductDetail(int newIndex);
+  void goToProductDetail(int newIndex);
   void setFavorite(int newIndex);
 }
 
@@ -62,11 +62,12 @@ class ProductControllerImp extends ProductController {
   }
 
   @override
-  void goToPrductDetail(int newIndex) {
+  void goToProductDetail(int newIndex) {
     Get.toNamed(
       ConstantScreenName.productDetail,
       arguments: {
         ConstantKey.productData: productCategoryData[newIndex],
+        ConstantKey.count: productCategoryData[newIndex].count,
       },
     );
   }

@@ -20,12 +20,13 @@ class ProductDetailControllerImp extends ProductDetailController {
   void onInit() {
     indexColor = 0;
     productDetailData = Get.arguments[ConstantKey.productData];
-
     statusRequest = StatusRequest.initial;
-    countController = Get.put(CounterDetailControllerImp(
-      countProduct: productDetailData.count,
-      startCounter: Get.arguments[ConstantKey.count],
-    ));
+    countController = Get.put(
+      CounterDetailControllerImp(
+        countProduct: productDetailData.countProduct,
+        startCounter: Get.arguments[ConstantKey.count],
+      ),
+    );
     super.onInit();
   }
 

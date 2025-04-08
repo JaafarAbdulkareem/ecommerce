@@ -8,11 +8,11 @@ abstract class CounterDetailController extends GetxController {
   void add();
   void remove();
   final int countProduct;
-  final int? startCounter;
+  final int startCounter;
 
   CounterDetailController({
     required this.countProduct,
-    this.startCounter,
+    required this.startCounter,
   });
 }
 
@@ -24,12 +24,12 @@ class CounterDetailControllerImp extends CounterDetailController {
 
   CounterDetailControllerImp({
     required super.countProduct,
-    super.startCounter,
+    required super.startCounter,
   });
 
   @override
   void onInit() {
-    counter = startCounter ?? ConstantScale.countStart;
+    counter = startCounter == 0 ? ConstantScale.countStart : startCounter;
     colorValue = ConstantScale.removeColor;
     statusRequest = StatusRequest.initial;
     super.onInit();

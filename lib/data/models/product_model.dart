@@ -7,6 +7,7 @@ class ProductModel {
   final String arabicDescription;
   final String englishDescription;
   final String image;
+  final int countProduct;
   final int count;
   final int active;
   final double price;
@@ -27,6 +28,7 @@ class ProductModel {
     required this.arabicDescription,
     required this.englishDescription,
     required this.image,
+    required this.countProduct,
     required this.count,
     required this.active,
     required this.price,
@@ -49,6 +51,7 @@ class ProductModel {
       arabicDescription: json[ApiColumnDb.arabicDescription],
       englishDescription: json[ApiColumnDb.englishDescription],
       image: json[ApiColumnDb.image],
+      countProduct: int.parse(json[ApiColumnDb.countProduct]),
       count: int.parse(json[ApiColumnDb.count]),
       active: int.parse(json[ApiColumnDb.active]),
       price: double.parse(json[ApiColumnDb.price]),
@@ -71,6 +74,7 @@ class ProductModel {
     data[ApiColumnDb.arabicDescription] = arabicDescription;
     data[ApiColumnDb.englishDescription] = englishDescription;
     data[ApiColumnDb.image] = image;
+    data[ApiColumnDb.countProduct] = countProduct;
     data[ApiColumnDb.count] = count;
     data[ApiColumnDb.active] = active;
     data[ApiColumnDb.price] = price;
