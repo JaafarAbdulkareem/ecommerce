@@ -16,4 +16,8 @@ class ConstantScreenName {
   static const String productDetail = "/productDetail";
   static const String favorite = "/favorite";
   static const String cart = "/cart";
+  //address
+  static const String insertAddress = "/insertAddress";
+  static const String detailInsertAddress = "/detailInsertAddress";
+  static const String displayAddress = "/displayAddress";
 }

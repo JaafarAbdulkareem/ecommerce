@@ -1,5 +1,8 @@
 import 'package:ecommerce/core/constant/constant_screen_name.dart';
 import 'package:ecommerce/core/middleware/onboarding_middleware.dart';
+import 'package:ecommerce/view/screen/address/detail_insert_address_view.dart';
+import 'package:ecommerce/view/screen/address/display_address_view.dart';
+import 'package:ecommerce/view/screen/address/insert_address_view.dart';
 import 'package:ecommerce/view/screen/auth/forget_password/forget_password_view.dart';
 import 'package:ecommerce/view/screen/auth/forget_password/reset_password_view.dart';
 import 'package:ecommerce/view/screen/auth/forget_password/verification_view.dart';
@@ -77,5 +80,17 @@ List<GetPage<dynamic>> get getPages => [
       GetPage(
         name: ConstantScreenName.cart,
         page: () => CartView(),
+      ),
+      GetPage(
+        name: ConstantScreenName.insertAddress,
+        page: () => InsertAddressView(),
+      ),
+      GetPage(
+        name: ConstantScreenName.detailInsertAddress,
+        page: () => DetailInsertAddressView(),
+      ),
+      GetPage(
+        name: ConstantScreenName.displayAddress,
+        page: () => DisplayAddressView(),
       ),
     ];
