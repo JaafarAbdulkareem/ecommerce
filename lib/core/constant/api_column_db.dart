@@ -29,4 +29,11 @@ class ApiColumnDb {
   static const String categoryTimeCreate = "category_time_create";
   //cart
   static const String productId = "product_id";
+  //Address
+  static const String typeAddress = "type_address";
+  static const String city = "city";
+  static const String street = "street";
+  static const String detailAddress = "detail_address";
+  static const String latitude = "latitude";
+  static const String longitude = "longitude";
 }
