@@ -21,7 +21,7 @@ class BodyProductDetail extends GetView<ProductDetailControllerImp> {
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 12),
           child: CustomButtonWidget(
-            text: KeyLanguage.goToCart.tr,
+            text: KeyLanguage.goToCartButton.tr,
             color: AppColor.primary,
             onTap: () {
               controller.goToCart();

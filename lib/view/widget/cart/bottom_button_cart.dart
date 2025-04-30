@@ -7,8 +7,8 @@ import 'package:ecommerce/view/widget/cart/receive_shopping_card.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class BottonButtonCart extends StatelessWidget {
-  const BottonButtonCart({
+class BottomButtonCart extends StatelessWidget {
+  const BottomButtonCart({
     super.key,
   });
 
@@ -27,7 +27,7 @@ class BottonButtonCart extends StatelessWidget {
               }),
           const SizedBox(height: 14),
           CustomButtonWidget(
-            text: KeyLanguage.order.tr,
+            text: KeyLanguage.orderButton.tr,
             color: AppColor.primary,
             onTap: () {},
           ),

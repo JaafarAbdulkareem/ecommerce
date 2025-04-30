@@ -10,15 +10,16 @@ abstract class KeyLanguage {
   static const String bodyChooseProduct = "bodyChooseProduct";
   //button
   static const String continueButton = "ContinueButton";
-  static const String login = "login";
-  static const String signup = "signup";
-  static const String save = "save";
-  static const String check = "check";
-  static const String verify = "verify";
-  static const String yes = "yes";
-  static const String no = "no";
-  static const String goToCart = "goToCart";
-  static const String order = "order";
+  static const String loginButton = "loginButton";
+  static const String signupButton = "signupButton";
+  static const String save = "saveButton";
+  static const String checkButton = "checkButton";
+  static const String verifyButton = "verifyButton";
+  static const String yesButton = "yesButton";
+  static const String noButton = "noButton";
+  static const String goToCartButton = "goToCartButton";
+  static const String orderButton = "orderButton";
+  static const String nextButton = "nextButton";
 //auth
   static const String welcomeTitle = "welcomeTitle";
   static const String checkEmailTitle = "checkEmailTitle";
@@ -31,19 +32,31 @@ abstract class KeyLanguage {
   static const String verifyContent = "verifyContent";
   static const String resetPasswordContent = "resetPasswordContent";
   static const String successContent = "successContent";
-  //Text field
+//////Text field
+  //label
   static const String usernameLabel = "UsernameLabel";
   static const String emailLabel = "emailLabel";
   static const String passwordLabel = "passwordLabel";
   static const String rePasswordLabel = "rePasswordLabel";
   static const String phoneLabel = "phoneLabel";
   static const String searchLabel = "searcheLabel";
+  static const String typeAddressLabel = "typeAddressLabel";
+  static const String cityLabel = "cityLabel";
+  static const String streetLabel = "streetLabel";
+  static const String detailAddressLabel = "detailAddressLabel";
+  //hint
   static const String usernameHint = "usernameHint";
   static const String emailHint = "emailHint";
   static const String passwordHint = "passwordHint";
   static const String rePasswordHint = "rePasswordHint";
   static const String phoneHint = "phoneHint";
   static const String searchHint = "searcheHint";
+  static const String typeAddressHint = "typeAddressHint";
+  static const String cityHint = "cityHint";
+  static const String streetHint = "streetHint";
+  static const String detailAddressHint = "detailAddressHint";
+
+  //message
   static const String forgetPassword = "forgetPassword";
   static const String messageLinkLogin = "messsageLinkLogin";
   static const String messageLinkSignup = "messageLinkSignup";
@@ -109,6 +122,11 @@ abstract class KeyLanguage {
   static const String shopping = "shopping";
   static const String price = "price";
 
-  //search 
+  //search
   static const String enterEnter = "enterEnter";
+
+  //address
+  static const String titleInsertAddress = "titleInsertAddress";
+  static const String titleDetailInsertAddress = "titleDetailInsertAddress";
+  static const String titleDisplayAddress = "titleDisplayAddress";
 }

@@ -7,10 +7,11 @@ class InfoCart extends StatelessWidget {
     super.key,
     required this.productName,
     required this.price,
-    required this.discount, required this.discountPrice,
+    required this.discount,
+    required this.discountPrice,
   });
   final String productName;
-  final double price, discount,discountPrice;
+  final double price, discount, discountPrice;
   @override
   Widget build(BuildContext context) {
     return Column(

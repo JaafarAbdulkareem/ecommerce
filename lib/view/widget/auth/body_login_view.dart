@@ -68,7 +68,7 @@ class BodyLoginView extends GetView<LoginControllerImp> {
             ),
             const ForgetPasswordWidget(),
             CustomButtonWidget(
-              text: KeyLanguage.login.tr,
+              text: KeyLanguage.loginButton.tr,
               color: AppColor.primary,
               onTap: () {
                 controller.loginOnTap();
@@ -76,7 +76,7 @@ class BodyLoginView extends GetView<LoginControllerImp> {
             ),
             LinkMessage(
               message: KeyLanguage.messageLinkLogin.tr,
-              link: KeyLanguage.signup.tr,
+              link: KeyLanguage.signupButton.tr,
               onTap: () {
                 controller.linkOnTap();
               },

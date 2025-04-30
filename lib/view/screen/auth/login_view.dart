@@ -16,7 +16,7 @@ class LoginView extends StatelessWidget {
       appBar: AppBar(
         centerTitle: true,
         title: Text(
-          KeyLanguage.login.tr,
+          KeyLanguage.loginButton.tr,
           style: AppStyle.styleBold18(context),
         ),
       ),

@@ -6,25 +6,21 @@ const List<OnboardingModel> dataOnboarding = [
   OnboardingModel(
     title: KeyLanguage.chooseProduct,
     image: AppImages.imagesOnboardingone,
-    body:
-         KeyLanguage.bodyChooseProduct,
+    body: KeyLanguage.bodyChooseProduct,
   ),
   OnboardingModel(
-    title:  KeyLanguage.easyAndSafePayment,
+    title: KeyLanguage.easyAndSafePayment,
     image: AppImages.imagesOnboardingtwo,
-    body:
-         KeyLanguage.bodyChooseProduct,
+    body: KeyLanguage.bodyChooseProduct,
   ),
   OnboardingModel(
-    title:  KeyLanguage.trackYourOrder,
+    title: KeyLanguage.trackYourOrder,
     image: AppImages.imagesOnboardingthree,
-    body:
-         KeyLanguage.bodyChooseProduct,
+    body: KeyLanguage.bodyChooseProduct,
   ),
   OnboardingModel(
-    title:  KeyLanguage.fastDelivery,
+    title: KeyLanguage.fastDelivery,
     image: AppImages.imagesOnboardingfour,
-    body:
-         KeyLanguage.bodyChooseProduct,
+    body: KeyLanguage.bodyChooseProduct,
   ),
 ];

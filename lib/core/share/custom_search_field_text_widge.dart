@@ -6,8 +6,8 @@ import 'package:ecommerce/core/localization/key_language.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class CustomFieldTextWidge extends StatelessWidget {
-  const CustomFieldTextWidge({
+class CustomSearchFieldTextWidge extends StatelessWidget {
+  const CustomSearchFieldTextWidge({
     super.key,
     this.autofocus = false,
   });

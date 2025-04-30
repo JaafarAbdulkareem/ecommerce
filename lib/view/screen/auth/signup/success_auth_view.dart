@@ -35,7 +35,7 @@ class SuccessAuthView extends StatelessWidget {
               ),
               Spacer(),
               CustomButtonWidget(
-                text: KeyLanguage.login.tr,
+                text: KeyLanguage.loginButton.tr,
                 color: AppColor.primary,
                 onTap: () {
                   controller.loginScreen();

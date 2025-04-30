@@ -1,5 +1,4 @@
 class AuthModel {
-
   final String username;
   final String email;
   final String phone;
@@ -9,6 +8,4 @@ class AuthModel {
     required this.email,
     required this.phone,
   });
-
-
 }

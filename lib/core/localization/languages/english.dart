@@ -13,15 +13,16 @@ Map<String, String> english = {
       "We Have 100k Product, Choose\nYour Product From Our E-commerce Shop",
   //button
   KeyLanguage.continueButton: "Continue",
-  KeyLanguage.login: "Login",
-  KeyLanguage.signup: "SignUp",
+  KeyLanguage.loginButton: "Login",
+  KeyLanguage.signupButton: "SignUp",
   KeyLanguage.save: "Save",
-  KeyLanguage.check: "Check",
-  KeyLanguage.verify: "Verify",
-  KeyLanguage.yes: "Yes",
-  KeyLanguage.no: "No",
-  KeyLanguage.goToCart: "Go To Card",
-  KeyLanguage.order: "Place Order",
+  KeyLanguage.checkButton: "Check",
+  KeyLanguage.verifyButton: "Verify",
+  KeyLanguage.yesButton: "Yes",
+  KeyLanguage.noButton: "No",
+  KeyLanguage.goToCartButton: "Go To Card",
+  KeyLanguage.orderButton: "Place Order",
+  KeyLanguage.nextButton: "Next",
 //auth
   KeyLanguage.welcomeTitle: "Welcome Back",
   KeyLanguage.checkEmailTitle: "Check Email",
@@ -38,18 +39,32 @@ Map<String, String> english = {
   KeyLanguage.resetPasswordContent: "Please, Enter New Password",
   KeyLanguage.successContent:
       "Success! Your Action Is Complete. Please Log In Again.",
+//text field
+  //label
   KeyLanguage.usernameLabel: "Username",
   KeyLanguage.emailLabel: "Email",
   KeyLanguage.passwordLabel: "Password",
   KeyLanguage.rePasswordLabel: "Re Password",
-  KeyLanguage.phoneLabel: "phone",
-  KeyLanguage.searchLabel: "search",
+  KeyLanguage.phoneLabel: "Phone",
+  KeyLanguage.searchLabel: "Search",
+  KeyLanguage.typeAddressLabel: "Type Building",
+  KeyLanguage.cityLabel: "City",
+  KeyLanguage.streetLabel: "Street",
+  KeyLanguage.detailAddressLabel: "Detail Address(Option)",
+
+  //hint
   KeyLanguage.usernameHint: "Enter Your Name",
   KeyLanguage.emailHint: "Enter Your Email",
   KeyLanguage.passwordHint: "Enter Your Password",
   KeyLanguage.rePasswordHint: "Enter Your Password Again",
   KeyLanguage.phoneHint: "Enter Your Phone",
   KeyLanguage.searchHint: "Find Your Product Here",
+  KeyLanguage.typeAddressHint: "e.g. Home, Office, School 🏠🏢🏫",
+  KeyLanguage.cityHint: "Enter your city 🏙️",
+  KeyLanguage.streetHint: "Enter your street name 🛣️",
+  KeyLanguage.detailAddressHint: "Apartment number, floor, building 🏢",
+
+  //message
   KeyLanguage.forgetPassword: "Forget Password",
   KeyLanguage.messageLinkLogin: "Don't have an acconunt?",
   KeyLanguage.messageLinkSignup: "I really have an account",
@@ -118,4 +133,8 @@ Map<String, String> english = {
   KeyLanguage.price: "price",
   //search
   KeyLanguage.enterEnter: "Press Enter or tap 🔍 to start the search.",
+  //address
+  KeyLanguage.titleInsertAddress: "Add New Address",
+  KeyLanguage.titleDetailInsertAddress: "Confirm Address Details",
+  KeyLanguage.titleDisplayAddress: "My Addresse/s",
 };

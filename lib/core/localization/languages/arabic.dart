@@ -13,13 +13,13 @@ Map<String, String> arabic = {
       "لدينا 100 ألف منتج، اختر\nمنتجك من متجرنا الإلكتروني",
   //button
   KeyLanguage.continueButton: "استمر",
-  KeyLanguage.login: "تسجيل الدخول",
-  KeyLanguage.signup: "التسجيل",
+  KeyLanguage.loginButton: "تسجيل الدخول",
+  KeyLanguage.signupButton: "التسجيل",
   KeyLanguage.save: "حفظ",
-  KeyLanguage.check: "تحقق",
-  KeyLanguage.verify: "تأكيد",
-  KeyLanguage.yes: "نعم",
-  KeyLanguage.no: "لا",
+  KeyLanguage.checkButton: "تحقق",
+  KeyLanguage.verifyButton: "تأكيد",
+  KeyLanguage.yesButton: "نعم",
+  KeyLanguage.noButton: "لا",
   //auth
   KeyLanguage.welcomeTitle: "مرحبًا بك مجددًا",
   KeyLanguage.checkEmailTitle: "تحقق من البريد الإلكتروني",
@@ -67,7 +67,8 @@ Map<String, String> arabic = {
   KeyLanguage.someThingMessage: "حدث خطأ، يرجى المحاولة لاحقًا",
   KeyLanguage.noApproveMessage:
       "تحقق من التحقق الخاص بك، اضغط على نسيت كلمة المرور",
-  KeyLanguage.noFoundMessage: "البريد الإلكتروني أو كلمة المرور خاطئة، حاول مرة أخرى",
+  KeyLanguage.noFoundMessage:
+      "البريد الإلكتروني أو كلمة المرور خاطئة، حاول مرة أخرى",
   KeyLanguage.passwordMismatchMassage:
       "عدم تطابق كلمة المرور، تحقق من كلمة المرور الخاصة بك مرة أخرى",
   KeyLanguage.enterEmailMessage: "أدخل بريدك الإلكتروني أولاً من فضلك",

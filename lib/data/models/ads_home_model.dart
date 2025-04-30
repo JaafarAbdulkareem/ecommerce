@@ -1,4 +1,4 @@
- class AdsHomeModel {
+class AdsHomeModel {
   final String name;
   final String desc;
   final int background;

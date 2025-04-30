@@ -14,12 +14,11 @@ class DotPageView extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: List.generate(
           dataOnboarding.length,
-          (index) => 
-          Padding(
+          (index) => Padding(
             padding: const EdgeInsets.only(right: 8),
             child: DotPageViewItem(
-                select: controller.currentIndex == index,
-              ),
+              select: controller.currentIndex == index,
+            ),
           ),
           //  AnimatedContainer(
           //   margin:  const EdgeInsets.only(right: 8),

@@ -18,7 +18,7 @@ class CustomSearchWidget extends GetView<BodyHomeControllerImp> {
     return Row(
       children: [
         Expanded(
-          child: CustomFieldTextWidge(
+          child: CustomSearchFieldTextWidge(
             autofocus: autofocus,
           ),
         ),

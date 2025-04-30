@@ -23,4 +23,8 @@ abstract class AppIcon {
   static const IconData address = Icons.location_on_outlined;
   static const IconData logout = Icons.logout_outlined;
   static const IconData delete = Icons.delete_outline;
+  static const IconData typeAddress = Icons.bookmark;
+  static const IconData city = Icons.location_city;
+  static const IconData street = Icons.route;
+  static const IconData detailAddress = Icons.near_me;
 }

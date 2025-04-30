@@ -9,7 +9,7 @@ class UserDetail extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView(
-      children:  [
+      children: [
         FieldSetting(
           title: "king Samy",
           icon: AppIcon.username,

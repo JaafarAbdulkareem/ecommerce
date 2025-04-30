@@ -23,7 +23,7 @@ class CategoryListView extends GetView<BodyHomeControllerImp> {
               return ItemCategoryListView(
                 data: BodyHomeControllerImp.categoryData[index],
                 onTap: () {
-                 controller.goToProduct(index);
+                  controller.goToProduct(index);
                 },
               );
             },

@@ -19,7 +19,8 @@ class BodyVerifcationView extends GetView<VerificationControllerImp> {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           TitleDescriptionWidget(
-            title: "${KeyLanguage.verifyTitle.tr} : ${controller.titleVerifyCode}",
+            title:
+                "${KeyLanguage.verifyTitle.tr} : ${controller.titleVerifyCode}",
             subTitle: "${KeyLanguage.verifyContent.tr}king@gmail.com",
           ),
           OtpTextFieldWidget(

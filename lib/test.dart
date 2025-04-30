@@ -90,10 +90,8 @@
 //   }
 // }
 
-
 // // //*********************************************  dark and light mode   *****************************
 // // // import 'package:flutter/material.dart';
-
 
 // // // class DarkModeSwitchScreen extends StatefulWidget {
 // // //   const DarkModeSwitchScreen({Key? key}) : super(key: key);
@@ -172,7 +170,6 @@
 // // //   }
 // // // }
 
-
 //*************************************Horizon************************ */
 
 // ListView.builder(
@@ -185,26 +182,26 @@
 //         return items[index % items.length]; // Looping effect
 //       },
 //     );
-    //******************************* LOOP ******************************** */
-    // ListWheelScrollView.useDelegate(
-    //   physics: const FixedExtentScrollPhysics(),
-    //   itemExtent: 60,
-    //   perspective: 0.005,
-    //   overAndUnderCenterOpacity: 0.5,
-    //   childDelegate: ListWheelChildLoopingListDelegate(
-    //     children: [
-    //      
-    //     ],
-    //   ),
-    // );
+//******************************* LOOP ******************************** */
+// ListWheelScrollView.useDelegate(
+//   physics: const FixedExtentScrollPhysics(),
+//   itemExtent: 60,
+//   perspective: 0.005,
+//   overAndUnderCenterOpacity: 0.5,
+//   childDelegate: ListWheelChildLoopingListDelegate(
+//     children: [
+//
+//     ],
+//   ),
+// );
 //********************************************** */
-    // ListWheelScrollView(
-    //   // controller: FixedExtentScrollController(),
-    //   // physics: ClampingScrollPhysics(),
-    //   perspective: 0.005,
-    //   overAndUnderCenterOpacity: 0.5,
-    //   itemExtent: 60,
+// ListWheelScrollView(
+//   // controller: FixedExtentScrollController(),
+//   // physics: ClampingScrollPhysics(),
+//   perspective: 0.005,
+//   overAndUnderCenterOpacity: 0.5,
+//   itemExtent: 60,
 
-    //   children: [
-    //   ],
-    // );
+//   children: [
+//   ],
+// );

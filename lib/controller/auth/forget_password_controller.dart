@@ -59,7 +59,7 @@ class ForgetPasswordControllerImp extends ForgetPasswordController {
         }
         statusRequest = StatusRequest.success;
         update();
-      } 
+      }
       // else {
       //   await Get.defaultDialog(
       //     title: KeyLanguage.alert.tr,

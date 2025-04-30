@@ -90,7 +90,7 @@ class BodySignupView extends GetView<SignupControllerImp> {
               ),
             ),
             CustomButtonWidget(
-              text: KeyLanguage.signup.tr,
+              text: KeyLanguage.signupButton.tr,
               color: AppColor.primary,
               onTap: () {
                 controller.signupOnTap();
@@ -98,7 +98,7 @@ class BodySignupView extends GetView<SignupControllerImp> {
             ),
             LinkMessage(
               message: KeyLanguage.messageLinkSignup.tr,
-              link: KeyLanguage.login.tr,
+              link: KeyLanguage.loginButton.tr,
               onTap: () {
                 controller.linkOnTap();
               },

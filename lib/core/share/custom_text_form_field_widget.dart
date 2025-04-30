@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 class CustomTextFormFieldWidget extends StatelessWidget {
   const CustomTextFormFieldWidget({
     super.key,
+    this.maxLines = 1,
     required this.hint,
     required this.label,
     required this.icon,
@@ -17,6 +18,7 @@ class CustomTextFormFieldWidget extends StatelessWidget {
     this.keyboardType,
     this.changeCasePassword,
   });
+  final int? maxLines;
   final String hint, label;
   final IconData icon;
   final TextEditingController controller;
@@ -30,6 +32,7 @@ class CustomTextFormFieldWidget extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 8),
       child: TextFormField(
+        maxLines: maxLines,
         controller: controller,
         validator: validator,
         onTap: onTap,

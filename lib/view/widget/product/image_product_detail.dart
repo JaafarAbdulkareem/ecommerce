@@ -29,7 +29,8 @@ class ImageProductDetail extends GetView<ProductDetailControllerImp> {
           right: 30,
           left: 30,
           child: Hero(
-            tag: ConstantKey.tagProductImage+ controller.productDetailData.id.toString(),
+            tag: ConstantKey.tagProductImage +
+                controller.productDetailData.id.toString(),
             child: Padding(
               padding: const EdgeInsets.all(4),
               child: CachedNetworkImage(

@@ -4,7 +4,7 @@ import 'package:ecommerce/core/service/shared_prefs_service.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
- class OnboardingMiddleware extends GetMiddleware {
+class OnboardingMiddleware extends GetMiddleware {
   SharedPrefsService pref = Get.find<SharedPrefsService>();
 
   @override
@@ -14,9 +14,7 @@ import 'package:get/get.dart';
   RouteSettings? redirect(String? route) {
     if (pref.prefs.getBool(ConstantKey.keyLogin) ?? false) {
       return RouteSettings(name: ConstantScreenName.home);
-      
-    } else 
-    if (pref.prefs.getBool(ConstantKey.keyOnboarding) ?? false) {
+    } else if (pref.prefs.getBool(ConstantKey.keyOnboarding) ?? false) {
       return RouteSettings(name: ConstantScreenName.login);
     }
     return null;

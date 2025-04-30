@@ -18,7 +18,7 @@ class BodyCartView extends StatelessWidget {
         Expanded(
           child: ListProductCart(),
         ),
-        BottonButtonCart()
+        BottomButtonCart()
       ],
     );
   }

@@ -88,14 +88,12 @@ class LoginControllerImp extends LoginController {
           await sharedPreferencesInitial(response[ApiResult.data]);
           await Get.offAllNamed(ConstantScreenName.home);
         } else {
-         
           if (response[ApiResult.data] == ApiResult.noFound) {
             await Get.defaultDialog(
               title: titleDialog,
               middleText: KeyLanguage.noFoundMessage.tr,
             );
-          } else if (response[ApiResult.data] == ApiResult.noApprove) 
-          {
+          } else if (response[ApiResult.data] == ApiResult.noApprove) {
             Get.toNamed(ConstantScreenName.vertifySignup, arguments: {
               ApiKey.email: email.text,
               ApiKey.password: password.text,
@@ -111,7 +109,7 @@ class LoginControllerImp extends LoginController {
               middleText: KeyLanguage.someThingMessage.tr,
             );
           }
-           email.clear();
+          email.clear();
           password.clear();
         }
       } else {

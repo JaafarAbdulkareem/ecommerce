@@ -14,13 +14,13 @@ class RateItemProduct extends StatelessWidget {
         // ...List.generate(
         //   ConstantScale.noStar,
         //   (index) {
-        //     return 
-            Icon(
-              size: ConstantScale.iconStar,
-              AppIcon.star,
-              color: AppColor.star,
-            )
-            // ;
+        //     return
+        Icon(
+          size: ConstantScale.iconStar,
+          AppIcon.star,
+          color: AppColor.star,
+        )
+        // ;
         //   },
         // ),
       ],

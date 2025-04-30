@@ -11,7 +11,7 @@ class ResetPasswordView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Get.lazyPut(()=>ResetPasswordControllerImp());
+    Get.lazyPut(() => ResetPasswordControllerImp());
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
@@ -26,10 +26,8 @@ class ResetPasswordView extends StatelessWidget {
             statusRequest: controller.statusRequest,
             child: BodyResetPasswordView(),
           ),
-        )
-        ,
+        ),
       ),
     );
   }
 }
-

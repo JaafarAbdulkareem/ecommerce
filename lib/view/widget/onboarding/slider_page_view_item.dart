@@ -11,7 +11,7 @@ class SliderPageViewItem extends StatelessWidget {
   final OnboardingModel data;
   @override
   Widget build(BuildContext context) {
-    return  Column(
+    return Column(
       children: [
         Text(
           data.title.tr,
@@ -20,7 +20,7 @@ class SliderPageViewItem extends StatelessWidget {
         const SizedBox(height: 64),
         Image.asset(data.image),
         const SizedBox(height: 64),
-         Text(
+        Text(
           data.body.tr,
           style: AppStyle.styleBold14(context),
           textAlign: TextAlign.center,

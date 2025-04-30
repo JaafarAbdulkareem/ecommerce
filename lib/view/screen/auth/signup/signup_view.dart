@@ -16,7 +16,7 @@ class SignupView extends StatelessWidget {
       appBar: AppBar(
         centerTitle: true,
         title: Text(
-          KeyLanguage.signup.tr,
+          KeyLanguage.signupButton.tr,
           style: AppStyle.styleBold18(context),
         ),
       ),

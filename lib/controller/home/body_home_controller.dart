@@ -154,6 +154,7 @@ class BodyHomeControllerImp extends BodyHomeController {
       },
     );
   }
+
   void getDiscountData() {
     for (var product in productData) {
       if (product.discount != 0) {
@@ -161,5 +162,4 @@ class BodyHomeControllerImp extends BodyHomeController {
       }
     }
   }
-  
 }

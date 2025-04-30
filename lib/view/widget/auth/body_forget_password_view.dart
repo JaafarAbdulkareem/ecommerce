@@ -44,7 +44,7 @@ class BodyForgetPasswordView extends GetView<ForgetPasswordControllerImp> {
               ),
             ),
             CustomButtonWidget(
-              text: KeyLanguage.check.tr,
+              text: KeyLanguage.checkButton.tr,
               color: AppColor.primary,
               onTap: () {
                 controller.forgetPasswordOnTap();

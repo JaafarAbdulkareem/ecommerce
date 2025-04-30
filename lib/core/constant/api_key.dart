@@ -12,6 +12,13 @@ abstract class ApiKey {
   static const String count = "count";
   //search
   static const String searchName = "searchName";
+  //address
+  static const String typeAddress = "typeAddress";
+  static const String city = "city";
+  static const String street = "street";
+  static const String latitude = "latitude";
+  static const String longitude = "longitude";
+  static const String detailAddress = "detailAddress";
 }
 
 abstract class ApiResult {
