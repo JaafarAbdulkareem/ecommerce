@@ -22,7 +22,8 @@ abstract class ApiConstant {
 
   static const String folderHome = "/home";
   static const String apiHome = "$serverPath/$folderHome/home.php";
-  static const String apiSearchPrdouct = "$serverPath/$folderHome/search_product.php";
+  static const String apiSearchPrdouct =
+      "$serverPath/$folderHome/search_product.php";
 
   static const String folderCart = "/cart";
   static const String apiView = "$serverPath/$folderCart/view.php";
@@ -31,4 +32,14 @@ abstract class ApiConstant {
       "$serverPath/$folderCart/delete_all_product.php";
   static const String apiIncrement = "$serverPath/$folderCart/increment.php";
   static const String apiDecrement = "$serverPath/$folderCart/decrement.php";
+
+  static const String folderAddress = "/Address";
+  static const String apiViewAddress =
+      "$serverPath/$folderAddress/view_address.php";
+  static const String apiInsertAddress =
+      "$serverPath/$folderAddress/insert_address.php";
+  static const String apiDeleteAddress =
+      "$serverPath/$folderAddress/delete_address.php";
+  static const String apiUpdateAddress =
+      "$serverPath/$folderAddress/update_address.php";
 }
