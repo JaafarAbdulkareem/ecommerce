@@ -31,7 +31,7 @@ dependencies:
   geocoding: ^3.0.0
   geolocator: ^13.0.2
   get: ^4.6.6
-  google_maps_flutter: ^2.1.5
+  google_maps_flutter: ^2.10.0
   google_sign_in: ^6.2.2
   grouped_list: ^6.0.0
   http: ^1.3.0
@@ -39,6 +39,7 @@ dependencies:
   image_pickers: ^2.0.0+2
   intl: ^0.19.0
   jiffy: ^6.3.2
+  location: ^7.0.1
   lottie: ^3.2.0
   path: ^1.8.0
   qr_flutter: ^4.0.0
@@ -47,12 +48,8 @@ dependencies:
   show_up_animation: ^2.0.0
   sqflite: ^2.0.2
   url_launcher: ^6.1.2
-  # hive: ^2.0.0
-  # hive_flutter: ^1.1.0
 
 dev_dependencies:
-  # hive_generator: ^1.0.0  
-  # build_runner: ^2.0.0
   flutter_lints: ^5.0.0
   flutter_test:
     sdk: flutter

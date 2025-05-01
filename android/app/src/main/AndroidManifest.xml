@@ -3,6 +3,8 @@
         android:label="ecommerce"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
+        <meta-data android:name="com.google.android.geo.API_KEY"
+               android:value="AIzaSyCTPW1ZZEbKBs4v9WzlpAq200jfGr6yMp0"/>
         <activity
             android:name=".MainActivity"
             android:exported="true"
