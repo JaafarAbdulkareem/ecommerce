@@ -66,7 +66,7 @@ class FavoriteControllerImp extends FavoriteController {
     } else {
       await Get.defaultDialog(
         title: KeyLanguage.alert.tr,
-        middleText: KeyLanguage.messageNotFoundProduct.tr,
+        middleText: KeyLanguage.notFoundProductMessage.tr,
       );
     }
     // Get.toNamed(

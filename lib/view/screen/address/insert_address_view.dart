@@ -1,3 +1,4 @@
+import 'package:ecommerce/controller/address/insert_address_controller.dart';
 import 'package:ecommerce/core/constant/app_style.dart';
 import 'package:ecommerce/core/localization/key_language.dart';
 import 'package:ecommerce/view/widget/address/body_insert_address_view.dart';
@@ -9,6 +10,10 @@ class InsertAddressView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Get.create<InsertAddressControllerImp>(() => InsertAddressControllerImp());
+    Get.lazyPut(()=>InsertAddressControllerImp());
+    // Get.put(InsertAddressControllerImp(), permanent: true);
+
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,

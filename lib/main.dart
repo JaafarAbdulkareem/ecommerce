@@ -37,7 +37,7 @@ class MyApp extends StatelessWidget {
       translations: TranslationLanguages(),
       locale: controller.language,
       initialBinding: InitialBindings(),
-      // home: DisplayAddressView(),
+      // home: InsertAddressView(),
       // home: const ChooseAppLanguage(),
       // const LoginView(),
       getPages: getPages,

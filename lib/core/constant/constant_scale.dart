@@ -34,4 +34,8 @@ abstract class ConstantScale {
   //setting
   static const int settingDeley = 100;
   static const int settingNoPassword = 6;
+  // address
+  static const double initialLatitude = 0;
+  static const double initialLongitude = 0;
+  static const double zoomUserLocation = 14;
 }

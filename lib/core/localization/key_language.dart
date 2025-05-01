@@ -80,7 +80,9 @@ abstract class KeyLanguage {
   static const String enterEmailMessage = "enterEmailMessage";
   static const String incrementMessage = "incrementMessage";
   // static const String decrementMessage = "decrementMessage";
-  static const String messageNotFoundProduct = "messageNotFoundProduct";
+  static const String notFoundProductMessage = "messageNotFoundProduct";
+  static const String serviceExceptionMessage = "serviceExceptionMessage";
+  static const String permissionExceptionMessage = "permissionExceptionMessage";
   //home
   static const String hello = "hello";
   static const String titleCategories = "titleCategories";
