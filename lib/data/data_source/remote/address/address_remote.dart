@@ -1,7 +1,7 @@
 import 'package:ecommerce/core/constant/api_constant.dart';
 import 'package:ecommerce/core/constant/api_key.dart';
 import 'package:ecommerce/core/service/curd.dart';
-import 'package:ecommerce/data/models/address_model.dart';
+import 'package:ecommerce/data/models/setting_model/address_model.dart';
 
 class AddressRemote {
   final Curd curd;

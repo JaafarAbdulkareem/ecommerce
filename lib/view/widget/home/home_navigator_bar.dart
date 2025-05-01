@@ -16,7 +16,7 @@ class HomeNavigatorBar extends StatelessWidget {
         color: AppColor.backgroundScaffold,
         shadowColor: AppColor.primary,
         elevation: 30,
-        shape: CircularNotchedRectangle(),
+        shape: const CircularNotchedRectangle(),
         height: 65,
         child: Row(
           children: List.generate(dataNavigatorBar.length + 1, (index) {

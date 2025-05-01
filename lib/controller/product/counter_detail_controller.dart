@@ -48,7 +48,7 @@ class CounterDetailControllerImp extends CounterDetailController {
       update();
     } else {
       Get.snackbar(
-        KeyLanguage.alert,
+        KeyLanguage.alert.tr,
         KeyLanguage.addProductMessage.tr,
         backgroundColor: AppColor.snackbar,
       );
@@ -68,7 +68,7 @@ class CounterDetailControllerImp extends CounterDetailController {
       update();
     } else {
       Get.snackbar(
-        KeyLanguage.alert,
+        KeyLanguage.alert.tr,
         KeyLanguage.removeProductMessage.tr,
         backgroundColor: AppColor.snackbar,
       );

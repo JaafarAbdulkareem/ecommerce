@@ -19,6 +19,7 @@ abstract class ApiConstant {
       "$serverPath/$folderAuth/forget_password.php";
   static const String apiResetPassword =
       "$serverPath/$folderAuth/reset_password.php";
+  static const String apiViewAuth = "$serverPath/$folderAuth/view_auth.php";
 
   static const String folderHome = "/home";
   static const String apiHome = "$serverPath/$folderHome/home.php";

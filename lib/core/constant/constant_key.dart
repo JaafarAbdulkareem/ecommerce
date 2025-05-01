@@ -1,8 +1,10 @@
 abstract class ConstantKey {
-  static const String keyLanguage = "language";
-  static const String keyOnboarding = "onboarding";
-  static const String keyLogin = "login";
-  static const String keyfavoriteId = "favoriteId";
+  static const String keyLanguage = "keyLanguage";
+  static const String keyOnboarding = "keyOnboarding";
+  static const String keyLogin = "keyLogin";
+  static const String keyfavoriteId = "keyFavoriteId";
+  static const String keyUserId = "keyUserId";
+  static const String keyUsername = "keyUsername";
   // static const String userIdValidator = "userId";
   //validator
   static const String usernameValidator = "username";

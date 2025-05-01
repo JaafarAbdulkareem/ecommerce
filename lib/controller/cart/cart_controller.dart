@@ -65,7 +65,7 @@ class CartControllerImp extends CartController {
   void onInit() {
     cartRemote = CartRemote(curd: Get.find());
     prefs = Get.find<SharedPrefsService>();
-    userId = prefs.prefs.getString(ApiKey.userId)!;
+    userId = prefs.prefs.getString(ConstantKey.keyUserId)!;
     apiCartData = [];
     cartData = [];
     productData = BodyHomeControllerImp.productData;

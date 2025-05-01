@@ -1,6 +1,7 @@
 import 'package:ecommerce/controller/cart/cart_controller.dart';
 import 'package:ecommerce/core/class/status_request.dart';
 import 'package:ecommerce/core/constant/api_key.dart';
+import 'package:ecommerce/core/constant/constant_key.dart';
 import 'package:ecommerce/core/constant/constant_scale.dart';
 import 'package:ecommerce/core/function/handle_status.dart';
 import 'package:ecommerce/core/localization/key_language.dart';
@@ -27,7 +28,7 @@ class CounterCartControllerImp extends CounterCartController {
   void onInit() {
     cartRemote = CartRemote(curd: Get.find());
     prefs = Get.find<SharedPrefsService>();
-    userId = prefs.prefs.getString(ApiKey.userId)!;
+    userId = prefs.prefs.getString(ConstantKey.keyUserId)!;
     cartController = Get.find<CartControllerImp>();
     cartData = cartController.cartData;
     colorValue = ConstantScale.removeColor;

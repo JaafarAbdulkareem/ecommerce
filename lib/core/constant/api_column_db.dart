@@ -30,6 +30,7 @@ class ApiColumnDb {
   //cart
   static const String productId = "product_id";
   //Address
+  static const String address = "address";
   static const String typeAddress = "type_address";
   static const String city = "city";
   static const String street = "street";

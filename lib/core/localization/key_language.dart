@@ -98,7 +98,7 @@ abstract class KeyLanguage {
   // static const String titleBestSelling = "titleBestSelling";
   // //setting
   // static const String nameUSer = "nameUser";
-  static const String addressUser = "addressUser";
+  static const String addressSetting = "addressSetting";
   // static const String emailUSer = "emailUser";
   // static const String phoneUSer = "phoneUser";
   // static const String passwordUSer = "passwordUser";

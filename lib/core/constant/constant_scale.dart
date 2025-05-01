@@ -19,6 +19,7 @@ abstract class ConstantScale {
   static const int statusCodeMax = 299;
   //home
   static const double iconShop = 32;
+  static const int defalutIndexView = 0;
   //product
   static const int crossAxisCount = 2;
   static const double icon = 20;
@@ -30,4 +31,7 @@ abstract class ConstantScale {
   static const int addColor = 0xFF01A70C;
   static const int removeColor = 0xFF084275;
   static const int favoriteDelay = 250;
+  //setting
+  static const int settingDeley = 100;
+  static const int settingNoPassword = 6;
 }

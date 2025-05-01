@@ -38,7 +38,8 @@ class LoginControllerImp extends LoginController {
     statusRequest = StatusRequest.initial;
     loginRemote = LoginRemote(curd: Get.find());
     titleDialog = KeyLanguage.alert.tr;
-    sharedPrefsService = sharedPrefsService = Get.find<SharedPrefsService>();
+    // sharedPrefsService =
+    sharedPrefsService = Get.find<SharedPrefsService>();
 
     super.onInit();
   }
@@ -59,13 +60,13 @@ class LoginControllerImp extends LoginController {
   @override
   Future<void> sharedPreferencesInitial(response) async {
     await sharedPrefsService.prefs
-        .setString(ApiKey.userId, response[ApiColumnDb.id]);
+        .setString(ConstantKey.keyUserId, response[ApiColumnDb.id]);
     await sharedPrefsService.prefs
-        .setString(ApiKey.username, response[ApiColumnDb.username]);
-    await sharedPrefsService.prefs
-        .setString(ApiKey.email, response[ApiColumnDb.email]);
-    await sharedPrefsService.prefs
-        .setString(ApiKey.phone, response[ApiColumnDb.phone].toString());
+        .setString(ConstantKey.keyUsername, response[ApiColumnDb.username]);
+    // await sharedPrefsService.prefs
+    //     .setString(ApiKey.email, response[ApiColumnDb.email]);
+    // await sharedPrefsService.prefs
+    //     .setString(ApiKey.phone, response[ApiColumnDb.phone].toString());
     await sharedPrefsService.prefs.setBool(ConstantKey.keyLogin, true);
   }
 

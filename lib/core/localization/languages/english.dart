@@ -109,7 +109,7 @@ Map<String, String> english = {
   KeyLanguage.removeProductMessage: "This Is The Minimum For This Product",
   //setting
   // KeyLanguage.nameUSer : "Name : ",
-  KeyLanguage.addressUser: "Address : ",
+  KeyLanguage.addressSetting: "Drop Your Address Here",
   // KeyLanguage.emailUSer : "Email : ",
   // KeyLanguage.phoneUSer : "Phone : ",
   // KeyLanguage.passwordUSer : "Password",
