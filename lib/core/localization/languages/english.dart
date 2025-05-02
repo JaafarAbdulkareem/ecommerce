@@ -141,4 +141,5 @@ Map<String, String> english = {
   KeyLanguage.titleInsertAddress: "Add New Address",
   KeyLanguage.titleDetailInsertAddress: "Confirm Address Details",
   KeyLanguage.titleDisplayAddress: "My Addresse/s",
+  KeyLanguage.waitingGoogleMap: "Waiting, Please...",
 };

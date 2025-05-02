@@ -10,9 +10,7 @@ class InsertAddressView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Get.create<InsertAddressControllerImp>(() => InsertAddressControllerImp());
-    Get.lazyPut(()=>InsertAddressControllerImp());
-    // Get.put(InsertAddressControllerImp(), permanent: true);
+    Get.lazyPut(() => InsertAddressControllerImp());
 
     return Scaffold(
       appBar: AppBar(

@@ -131,4 +131,5 @@ abstract class KeyLanguage {
   static const String titleInsertAddress = "titleInsertAddress";
   static const String titleDetailInsertAddress = "titleDetailInsertAddress";
   static const String titleDisplayAddress = "titleDisplayAddress";
+  static const String waitingGoogleMap= "waitingGoogleMap";
 }

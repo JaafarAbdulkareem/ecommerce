@@ -8,21 +8,23 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 abstract class InsertAddressController extends GetxController {
   void goToDetailInsertAddress();
+  void changeuserLocation(LatLng latLng);
 }
 
 class InsertAddressControllerImp extends InsertAddressController {
   late LocationService locationService;
-  static late GoogleMapController googleMapController;
+  late GoogleMapController googleMapController;
   late CameraPosition initialCameraPosition;
   late RxSet<Marker> markers;
-  // late RxBool enableButton;
+  late RxBool enableButton;
+  late LatLng userLocation;
 
   @override
   void onInit() {
     locationService = LocationService();
     initialCameraPosition = _initialCamera();
     markers = <Marker>{}.obs;
-    // enableButton = false.obs;
+    enableButton = false.obs;
     super.onInit();
   }
 
@@ -46,7 +48,7 @@ class InsertAddressControllerImp extends InsertAddressController {
     try {
       // Step 1: Get current location and place initial marker
       LatLng initialLatLng = await locationService.getCurrentLocation();
-
+      userLocation = initialLatLng;
       markers.add(
         Marker(
           markerId: const MarkerId(ConstantKey.idUserLocation),
@@ -63,10 +65,10 @@ class InsertAddressControllerImp extends InsertAddressController {
           ),
         ),
       );
-      // if (!enableButton.value) {
-      //   enableButton = true.obs;
-      //   enableButton.refresh();
-      // }
+      if (!enableButton.value) {
+        enableButton = true.obs;
+      }
+
       // Step 2: Listen for real-time updates
       await locationService.getRealTimeLocationData((locationData) {
         final currentLatLng = LatLng(
@@ -109,6 +111,29 @@ class InsertAddressControllerImp extends InsertAddressController {
 
   @override
   void goToDetailInsertAddress() {
-    Get.offNamed(ConstantScreenName.detailInsertAddress);
+    Get.offNamed(
+      ConstantScreenName.detailInsertAddress,
+      arguments: {
+        ConstantKey.userLocation: userLocation,
+      },
+    );
+  }
+
+  @override
+  void changeuserLocation(LatLng latLng) {
+    userLocation = latLng;
+    markers.removeWhere(
+        (marker) => marker.markerId.value == ConstantKey.idUserLocation);
+    markers.add(
+      Marker(
+        markerId: const MarkerId(ConstantKey.idUserLocation),
+        position: latLng,
+      ),
+    );
+    markers.refresh();
+
+    googleMapController.animateCamera(
+      CameraUpdate.newLatLng(latLng),
+    );
   }
 }

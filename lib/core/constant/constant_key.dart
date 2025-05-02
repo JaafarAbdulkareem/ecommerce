@@ -19,6 +19,7 @@ abstract class ConstantKey {
   static const String productId = "productId";
   static const String count = "count";
   static const String boolInsert = "boolInsert";
+  static const String userLocation = "latLng";
 //hero
   static const String tagProductImage = "tagProductImage";
 //id GetBuilder
