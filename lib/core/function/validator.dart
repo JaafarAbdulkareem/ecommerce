@@ -38,3 +38,15 @@ String? validator(String? value, String type, int min, int max) {
     return null;
   }
 }
+
+String? validatorGeneral(String? value) {
+  if (value == null) {
+    return KeyLanguage.empty.tr;
+  } else {
+    value = value.trim();
+    if (value.isEmpty) {
+      return KeyLanguage.empty.tr;
+    }
+    return null;
+  }
+}

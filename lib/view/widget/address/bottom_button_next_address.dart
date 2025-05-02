@@ -1,10 +1,11 @@
+import 'package:ecommerce/controller/address/detail_address_controller.dart';
 import 'package:ecommerce/core/constant/app_color.dart';
 import 'package:ecommerce/core/localization/key_language.dart';
 import 'package:ecommerce/core/share/custom_button_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class BottomButtonNextAddress extends StatelessWidget {
+class BottomButtonNextAddress extends GetView<DetailAddressControllerImp> {
   const BottomButtonNextAddress({
     super.key,
   });
@@ -16,9 +17,11 @@ class BottomButtonNextAddress extends StatelessWidget {
       child: SizedBox(
         width: double.infinity,
         child: CustomButtonWidget(
-          text: KeyLanguage.nextButton.tr,
+          text: KeyLanguage.saveButton.tr,
           color: AppColor.primary,
-          onTap: () {},
+          onTap: () {
+            controller.saveButton();
+          },
         ),
       ),
     );

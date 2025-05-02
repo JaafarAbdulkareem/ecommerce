@@ -18,7 +18,8 @@ class HomeView extends StatelessWidget {
   Widget build(BuildContext context) {
     HomeControllerImp controller = Get.put(HomeControllerImp());
     //update create bindings all home controller
-    Get.lazyPut(() => SearchProductControllerImp());
+    Get.put(SearchProductControllerImp());
+    // Get.lazyPut(() => SearchProductControllerImp());
     return Scaffold(
       backgroundColor: AppColor.backgroundScaffold,
       appBar: AppBar(

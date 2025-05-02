@@ -15,7 +15,7 @@ Map<String, String> arabic = {
   KeyLanguage.continueButton: "استمر",
   KeyLanguage.loginButton: "تسجيل الدخول",
   KeyLanguage.signupButton: "التسجيل",
-  KeyLanguage.save: "حفظ",
+  KeyLanguage.saveButton: "حفظ",
   KeyLanguage.checkButton: "تحقق",
   KeyLanguage.verifyButton: "تأكيد",
   KeyLanguage.yesButton: "نعم",

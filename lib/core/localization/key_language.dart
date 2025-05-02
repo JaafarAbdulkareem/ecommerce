@@ -12,7 +12,7 @@ abstract class KeyLanguage {
   static const String continueButton = "ContinueButton";
   static const String loginButton = "loginButton";
   static const String signupButton = "signupButton";
-  static const String save = "saveButton";
+  static const String saveButton = "saveButton";
   static const String checkButton = "checkButton";
   static const String verifyButton = "verifyButton";
   static const String yesButton = "yesButton";

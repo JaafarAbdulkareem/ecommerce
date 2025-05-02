@@ -69,7 +69,7 @@ class BodyResetPasswordView extends GetView<ResetPasswordControllerImp> {
               ),
             ),
             CustomButtonWidget(
-              text: KeyLanguage.save.tr,
+              text: KeyLanguage.saveButton.tr,
               color: AppColor.primary,
               onTap: () {
                 controller.saveOnTap();

@@ -1,3 +1,4 @@
+import 'package:ecommerce/controller/address/detail_address_controller.dart';
 import 'package:ecommerce/core/constant/app_style.dart';
 import 'package:ecommerce/core/localization/key_language.dart';
 import 'package:ecommerce/view/widget/address/body_detail_insert_address_view.dart';
@@ -10,6 +11,7 @@ class DetailInsertAddressView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Get.lazyPut(() => DetailAddressControllerImp());
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
