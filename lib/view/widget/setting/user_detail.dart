@@ -18,21 +18,25 @@ class UserDetail extends GetView<SettingControllerImp> {
           icon: AppIcon.username,
           onTap: () {},
         ),
-        controller.userData.address.isNotEmpty
-            ? FieldSetting(
-                title: controller.userData.address.first.city,
-                icon: AppIcon.address,
-                onTap: () {
-                  controller.goToDisplayAddress();
-                },
-              )
-            : FieldSetting(
-                title: KeyLanguage.addressSetting.tr,
-                icon: AppIcon.address,
-                onTap: () {
-                  controller.goToInserAddress();
-                },
-              ),
+        GetBuilder<SettingControllerImp>(
+            id: ConstantKey.idUpdateAddress,
+            builder: (controller) {
+              return controller.userData.address.isNotEmpty
+                  ? FieldSetting(
+                      title: controller.userData.address.first.city,
+                      icon: AppIcon.address,
+                      onTap: () {
+                        controller.goToDisplayAddress();
+                      },
+                    )
+                  : FieldSetting(
+                      title: KeyLanguage.addressSetting.tr,
+                      icon: AppIcon.address,
+                      onTap: () {
+                        controller.goToInserAddress();
+                      },
+                    );
+            }),
         FieldSetting(
           title: controller.userData.email,
           icon: AppIcon.email,

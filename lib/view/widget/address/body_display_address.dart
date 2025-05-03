@@ -1,9 +1,9 @@
-import 'package:ecommerce/core/constant/app_color.dart';
-import 'package:ecommerce/core/constant/app_icon.dart';
-import 'package:ecommerce/core/constant/app_style.dart';
+import 'package:ecommerce/controller/address/display_address_controller.dart';
+import 'package:ecommerce/view/widget/address/item_display_address.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
-class BodyDisplayAddressView extends StatelessWidget {
+class BodyDisplayAddressView extends GetView<DisplayAddressControllerImp> {
   const BodyDisplayAddressView({super.key});
 
   @override
@@ -11,38 +11,12 @@ class BodyDisplayAddressView extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16),
       child: ListView.builder(
-        //update
-        itemCount: 5,
-        itemBuilder: (context, index) => SizedBox(
-          height: 130,
-          child: Card(
-            color: AppColor.card,
-            child: Center(
-              child: ListTile(
-                contentPadding: EdgeInsets.only(left: 12),
-                trailing: IconButton(
-                  onPressed: () {},
-                  icon: Icon(
-                    AppIcon.delete,
-                  ),
-                ),
-                title: Text(
-                  "234 Oak Street, Anytown, CA 91234, USA",
-                  style: AppStyle.styleSemiBold14(context),
-                  maxLines: 2,
-                  overflow: TextOverflow.ellipsis,
-                  textAlign: TextAlign.justify,
-                ),
-                subtitle: Text(
-                  " 44/1 Bharat Apartment 4C 5th Main Road, Jayanagar, Bangalore 560041, KA, IND Smarty, a provider of address formatting. These formats include a street number and name, city, state/province/region, and zip/postal",
-                  style: AppStyle.styleLight14(context),
-                  maxLines: 3,
-                  overflow: TextOverflow.ellipsis,
-                  textAlign: TextAlign.justify,
-                ),
-              ),
-            ),
-          ),
+        itemCount: controller.addressData.length,
+        itemBuilder: (context, index) => ItemDisplayAddress(
+          data: controller.addressData[index],
+          deleteTap: () {
+            controller.deleteAddress(index);
+          },
         ),
       ),
     );

@@ -25,6 +25,7 @@ class DetailAddressControllerImp extends DetailAddressController {
   late StatusRequest statusRequest;
   late AddressRemote addressRemote;
   late SharedPrefsService pref;
+  late SettingControllerImp settingController;
   late LatLng userLocation;
   late AddressModel addressData;
   late String userId;
@@ -38,6 +39,7 @@ class DetailAddressControllerImp extends DetailAddressController {
     statusRequest = StatusRequest.initial;
     addressRemote = AddressRemote(curd: Get.find());
     pref = Get.find<SharedPrefsService>();
+    settingController = Get.find<SettingControllerImp>();
     userLocation = Get.arguments[ConstantKey.userLocation];
     userId = pref.prefs.getString(ConstantKey.keyUserId)!;
 
@@ -56,45 +58,43 @@ class DetailAddressControllerImp extends DetailAddressController {
   @override
   void saveButton() async {
     addressData = AddressModel(
-      id: "",
+      id: 0,
       typeAddress: typeAddress.text,
       city: city.text,
       street: street.text,
       detailAddress: detailAddress.text,
-      latitude: userLocation.latitude.toString(),
-      longitude: userLocation.longitude.toString(),
-      userId: userId,
+      latitude: userLocation.latitude,
+      longitude: userLocation.longitude,
+      userId: int.parse(userId),
     );
 
     if (keyDetailAddress.currentState!.validate()) {
-      statusRequest = StatusRequest.loading;
-      update();
       var response = await addressRemote.insertAddress(data: addressData);
       statusRequest = handleStatus(response);
-      update();
       if (statusRequest == StatusRequest.success) {
         if (response[ApiResult.status] == ApiResult.success) {
-          statusRequest = StatusRequest.success;
-          update();
-          SettingControllerImp.firstTime =
-              true; // request for information for getting address
-          Get.offAllNamed(ConstantScreenName.home);
-        } else {
-          typeAddress.clear();
-          city.clear();
-          street.clear();
-          detailAddress.clear();
-          await Get.defaultDialog(
-            title: KeyLanguage.alert.tr,
-            middleText: KeyLanguage.someThingMessage.tr,
+          await settingController.getData();
+          Get.offNamedUntil(
+            ConstantScreenName.displayAddress,
+            (route) => route.settings.name == ConstantScreenName.home,
           );
+        } else {
+          await cleanController();
         }
       } else {
-        await Get.defaultDialog(
-          title: KeyLanguage.alert.tr,
-          middleText: KeyLanguage.someThingMessage.tr,
-        );
+        await cleanController();
       }
     }
+  }
+
+  Future<void> cleanController() async {
+    typeAddress.clear();
+    city.clear();
+    street.clear();
+    detailAddress.clear();
+    await Get.defaultDialog(
+      title: KeyLanguage.alert.tr,
+      middleText: KeyLanguage.someThingMessage.tr,
+    );
   }
 }

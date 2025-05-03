@@ -111,7 +111,7 @@ class InsertAddressControllerImp extends InsertAddressController {
 
   @override
   void goToDetailInsertAddress() {
-    Get.offNamed(
+    Get.toNamed(
       ConstantScreenName.detailInsertAddress,
       arguments: {
         ConstantKey.userLocation: userLocation,

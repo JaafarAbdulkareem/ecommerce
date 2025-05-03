@@ -1,6 +1,7 @@
 abstract class ApiConstant {
-  static const String server = "http://192.168.0.113";
+  // static const String server = "http://192.168.0.113"; // home wifi 
   // static const String server = "http://192.168.230.139";
+  static const String server = "http://192.168.189.139"; // mobile
   static const String project = "/project/ecommerce";
   static const String serverPath = "$server/$project";
 

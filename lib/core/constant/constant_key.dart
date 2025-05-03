@@ -25,6 +25,7 @@ abstract class ConstantKey {
 //id GetBuilder
   static const String idListProductCart = "idListProductCart";
   static const String idReceiveShopping = "idReceiveShopping";
+  static const String idUpdateAddress = "idUpdateAddress";
 // id marker in google map
   static const String idUserLocation = "user_location";
 }

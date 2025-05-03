@@ -24,10 +24,10 @@ class AddressRemote {
       ApiKey.typeAddress: data.typeAddress,
       ApiKey.city: data.city,
       ApiKey.street: data.street,
-      ApiKey.latitude: data.latitude,
-      ApiKey.longitude: data.longitude,
+      ApiKey.latitude: data.latitude.toString(),
+      ApiKey.longitude: data.longitude.toString(),
       if (data.detailAddress != null) ApiKey.detailAddress: data.detailAddress!,
-      ApiKey.userId: data.userId,
+      ApiKey.userId: data.userId.toString(),
     });
     return response.fold((left) => left, (right) => right);
   }
@@ -45,14 +45,14 @@ class AddressRemote {
     required AddressModel data,
   }) async {
     var response = await curd.postData(ApiConstant.apiUpdateAddress, {
-      ApiKey.id: data.id,
+      ApiKey.id: data.id.toString(),
       ApiKey.typeAddress: data.typeAddress,
       ApiKey.city: data.city,
       ApiKey.street: data.street,
-      ApiKey.latitude: data.latitude,
-      ApiKey.longitude: data.longitude,
+      ApiKey.latitude: data.latitude.toString(),
+      ApiKey.longitude: data.longitude.toString(),
       if (data.detailAddress != null) ApiKey.detailAddress: data.detailAddress!,
-      ApiKey.userId: data.userId,
+      ApiKey.userId: data.userId.toString(),
     });
     return response.fold((left) => left, (right) => right);
   }

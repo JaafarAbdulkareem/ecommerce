@@ -74,7 +74,7 @@ class SettingControllerImp extends SettingController {
     lastUserData = userData;
   }
 
-  void getData() async {
+  Future<void> getData() async {
     statusRequest = StatusRequest.loading;
     update();
     var response = await userInfoRemote.getData(userId: userId!);
@@ -92,6 +92,12 @@ class SettingControllerImp extends SettingController {
     } else {
       update();
     }
+  }
+
+  void refreshSetting() async {
+    update([
+      ConstantKey.idUpdateAddress
+    ]); //when the delete all data in displayAddress
   }
 
   @override
