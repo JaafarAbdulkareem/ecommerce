@@ -14,6 +14,8 @@ abstract class AppColor {
   static const Color price = Color(0xFF01A70C);
   static const Color star = Color(0xFFFFC107);
   static const Color snackbar = Color(0xAAFFFFFF);
+  static const Color optionCheckout = Color(0xFF7EB5E3);
+  
   // static const Color
 }
 

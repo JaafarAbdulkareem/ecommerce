@@ -70,22 +70,13 @@ class CartControllerImp extends CartController {
 
   void countCouponsDiscount() {
     if (couponsController.isApplyCoupons) {
-      // couponsDiscount = 0;
-      print(
-          " ${couponsController.couponsData!.amount} : discount : ${totalPrice.discountPrice}");
-      // if (couponsController.isApplyCoupons) {
-      couponsDiscount = /*totalPrice.discountPrice -*/
-          totalPrice.discountPrice *
-              couponsController.couponsData!.amount /
-              100;
-      print(couponsDiscount);
+      couponsDiscount = totalPrice.discountPrice *
+          couponsController.couponsData!.amount /
+          100;
 
       totalPrice.price += couponsDiscount;
       totalPrice.discount += couponsController.couponsData!.amount;
       totalPrice.discountPrice -= couponsDiscount;
-
-      // update();
-      // }
     }
   }
 
@@ -271,7 +262,6 @@ class CartControllerImp extends CartController {
   void applyCoupons() async {
     if (!couponsController.isApplyCoupons) {
       await couponsController.getData(couponsController.couponsTextEdite.text);
-      
     } else {
       //function for Remove button
       couponsController.isApplyCoupons = false;

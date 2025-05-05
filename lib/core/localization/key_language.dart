@@ -22,6 +22,7 @@ abstract class KeyLanguage {
   static const String nextButton = "nextButton";
   static const String applyButton = "applyButton";
   static const String reomveButton = "reomveButton";
+  static const String checkoutButton = "checkoutButton";
 //auth
   static const String welcomeTitle = "welcomeTitle";
   static const String checkEmailTitle = "checkEmailTitle";
@@ -137,4 +138,13 @@ abstract class KeyLanguage {
   static const String titleDetailInsertAddress = "titleDetailInsertAddress";
   static const String titleDisplayAddress = "titleDisplayAddress";
   static const String waitingGoogleMap = "waitingGoogleMap";
+
+  //checkout
+  static const String titlePaymentMethod = "titlePaymentMethod";
+  static const String titleDeliveryType = "titleDeliveryType";
+  static const String titleShoppingAddress = "titleShoppingAddress";
+  static const String cashOption = "cashOption";
+  static const String paymentOption = "paymentOption";
+  static const String deliveryOption = "deliveryOption";
+  static const String receiveOption = "receiveOption";
 }

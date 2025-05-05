@@ -25,6 +25,7 @@ Map<String, String> english = {
   KeyLanguage.nextButton: "Next",
   KeyLanguage.applyButton: "Apply",
   KeyLanguage.reomveButton: "Remove",
+  KeyLanguage.checkoutButton: "Checkout",
 //auth
   KeyLanguage.welcomeTitle: "Welcome Back",
   KeyLanguage.checkEmailTitle: "Check Email",
@@ -147,4 +148,12 @@ Map<String, String> english = {
   KeyLanguage.titleDetailInsertAddress: "Confirm Address Details",
   KeyLanguage.titleDisplayAddress: "My Addresse/s",
   KeyLanguage.waitingGoogleMap: "Waiting, Please...",
+  //checkout
+  KeyLanguage.titlePaymentMethod: "Choose Payment Method",
+  KeyLanguage.titleDeliveryType: "Choose Delivery Type",
+  KeyLanguage.titleShoppingAddress: "Choose Shopping Address",
+  KeyLanguage.cashOption: "Cash On Delivery",
+  KeyLanguage.paymentOption: "Payment Cards",
+  KeyLanguage.deliveryOption: "Delivery",
+  KeyLanguage.receiveOption: "Receive",
 };

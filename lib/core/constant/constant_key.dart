@@ -26,9 +26,18 @@ abstract class ConstantKey {
   static const String idListProductCart = "idListProductCart";
   static const String idReceiveShopping = "idReceiveShopping";
   static const String idUpdateAddress = "idUpdateAddress";
-// id marker in google map
+  // id marker in google map
   static const String idUserLocation = "userLocation";
   static const String idCouponsApply = "idCouponsApply";
+  //checkout
+  static const String idPaymentType = "idPaymentType";
+  static const String idDeliveryType = "idDeliveryType";
+  static const String idAddressType = "idAddressType";
+//choose option
+  static const String cachOption = "cachOption";
+  static const String paymentOption = "paymentOption";
+  static const String deliveryOption = "deliveryOption";
+  static const String receiveOption = "receiveOption";
 }
 
 abstract class ConstantLanguage {

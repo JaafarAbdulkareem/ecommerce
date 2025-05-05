@@ -11,6 +11,7 @@ import 'package:ecommerce/view/screen/auth/signup/signup_view.dart';
 import 'package:ecommerce/view/screen/auth/signup/success_auth_view.dart';
 import 'package:ecommerce/view/screen/auth/signup/verification_signup_view.dart';
 import 'package:ecommerce/view/screen/cart/cart_view.dart';
+import 'package:ecommerce/view/screen/checkout/checkout_view.dart';
 import 'package:ecommerce/view/screen/favorite/favorite_view.dart';
 import 'package:ecommerce/view/screen/home/home_view.dart';
 import 'package:ecommerce/view/screen/onboarding/choose_app_language_view.dart';
@@ -22,75 +23,79 @@ import 'package:get/get.dart';
 List<GetPage<dynamic>> get getPages => [
       GetPage(
         name: ConstantScreenName.language,
-        page: () => ChooseAppLanguageView(),
+        page: () => const ChooseAppLanguageView(),
         middlewares: [
           OnboardingMiddleware(),
         ],
       ),
       GetPage(
         name: ConstantScreenName.onboarding,
-        page: () => OnboardingView(),
+        page: () => const OnboardingView(),
       ),
 //*************************auth******************
       GetPage(
         name: ConstantScreenName.login,
-        page: () => LoginView(),
+        page: () => const LoginView(),
       ),
       GetPage(
         name: ConstantScreenName.signup,
-        page: () => SignupView(),
+        page: () => const SignupView(),
       ),
       GetPage(
         name: ConstantScreenName.forgetPassword,
-        page: () => ForgetPasswordView(),
+        page: () => const ForgetPasswordView(),
       ),
       GetPage(
         name: ConstantScreenName.vertify,
-        page: () => VerificationView(),
+        page: () => const VerificationView(),
       ),
       GetPage(
         name: ConstantScreenName.vertifySignup,
-        page: () => VerificationSignupView(),
+        page: () => const VerificationSignupView(),
       ),
       GetPage(
         name: ConstantScreenName.resetPassword,
-        page: () => ResetPasswordView(),
+        page: () => const ResetPasswordView(),
       ),
       GetPage(
         name: ConstantScreenName.success,
-        page: () => SuccessAuthView(),
+        page: () => const SuccessAuthView(),
       ),
 //*********************************home********************
       GetPage(
         name: ConstantScreenName.home,
-        page: () => HomeView(),
+        page: () => const HomeView(),
       ),
       GetPage(
         name: ConstantScreenName.product,
-        page: () => ProductView(),
+        page: () => const ProductView(),
       ),
       GetPage(
         name: ConstantScreenName.productDetail,
-        page: () => ProductDetailView(),
+        page: () => const ProductDetailView(),
       ),
       GetPage(
         name: ConstantScreenName.favorite,
-        page: () => FavoriteView(),
+        page: () => const FavoriteView(),
       ),
       GetPage(
         name: ConstantScreenName.cart,
-        page: () => CartView(),
+        page: () => const CartView(),
+      ),
+      GetPage(
+        name: ConstantScreenName.checkout,
+        page: () => const CheckoutView(),
       ),
       GetPage(
         name: ConstantScreenName.insertAddress,
-        page: () => InsertAddressView(),
+        page: () => const InsertAddressView(),
       ),
       GetPage(
         name: ConstantScreenName.detailInsertAddress,
-        page: () => DetailInsertAddressView(),
+        page: () => const DetailInsertAddressView(),
       ),
       GetPage(
         name: ConstantScreenName.displayAddress,
-        page: () => DisplayAddressView(),
+        page: () => const DisplayAddressView(),
       ),
     ];
