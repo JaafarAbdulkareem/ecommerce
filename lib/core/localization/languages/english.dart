@@ -23,6 +23,8 @@ Map<String, String> english = {
   KeyLanguage.goToCartButton: "Go To Card",
   KeyLanguage.orderButton: "Place Order",
   KeyLanguage.nextButton: "Next",
+  KeyLanguage.applyButton: "Apply",
+  KeyLanguage.reomveButton: "Remove",
 //auth
   KeyLanguage.welcomeTitle: "Welcome Back",
   KeyLanguage.checkEmailTitle: "Check Email",
@@ -63,7 +65,7 @@ Map<String, String> english = {
   KeyLanguage.cityHint: "Enter your city 🏙️",
   KeyLanguage.streetHint: "Enter your street name 🛣️",
   KeyLanguage.detailAddressHint: "Apartment number, floor, building 🏢",
-
+  KeyLanguage.couponsHint: "Enter Coupons",
   //message
   KeyLanguage.forgetPassword: "Forget Password",
   KeyLanguage.messageLinkLogin: "Don't have an acconunt?",
@@ -133,8 +135,11 @@ Map<String, String> english = {
   KeyLanguage.youHave: "You Have",
   KeyLanguage.listITemCart: "Item/s In Your List",
   KeyLanguage.totalPrice: "Total Price",
-  KeyLanguage.shopping: "shopping",
-  KeyLanguage.price: "price",
+  KeyLanguage.shopping: "Shopping",
+  KeyLanguage.price: "Price",
+  KeyLanguage.couponsDiscount: "Coupon Discount",
+  KeyLanguage.couponsNotFoundMessage:
+      "Oops, That Coupon Didn’t Work. Try Another One!",
   //search
   KeyLanguage.enterEnter: "Press Enter or tap 🔍 to start the search.",
   //address

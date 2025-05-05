@@ -37,4 +37,8 @@ class ApiColumnDb {
   static const String detailAddress = "detail_address";
   static const String latitude = "latitude";
   static const String longitude = "longitude";
+  //coupons
+  static const String couponsName = "coupons_name";
+  static const String amount= "amount";
+  static const String expiryData= "expiry_date";
 }

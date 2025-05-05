@@ -19,6 +19,8 @@ abstract class ApiKey {
   static const String latitude = "latitude";
   static const String longitude = "longitude";
   static const String detailAddress = "detailAddress";
+  //coupons
+  static const String couponsName = "couponsName";
 }
 
 abstract class ApiResult {

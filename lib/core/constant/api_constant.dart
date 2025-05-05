@@ -1,5 +1,5 @@
 abstract class ApiConstant {
-  // static const String server = "http://192.168.0.113"; // home wifi 
+  // static const String server = "http://192.168.0.113"; // home wifi
   // static const String server = "http://192.168.230.139";
   static const String server = "http://192.168.189.139"; // mobile
   static const String project = "/project/ecommerce";
@@ -35,7 +35,7 @@ abstract class ApiConstant {
   static const String apiIncrement = "$serverPath/$folderCart/increment.php";
   static const String apiDecrement = "$serverPath/$folderCart/decrement.php";
 
-  static const String folderAddress = "/Address";
+  static const String folderAddress = "/address";
   static const String apiViewAddress =
       "$serverPath/$folderAddress/view_address.php";
   static const String apiInsertAddress =
@@ -44,4 +44,9 @@ abstract class ApiConstant {
       "$serverPath/$folderAddress/delete_address.php";
   static const String apiUpdateAddress =
       "$serverPath/$folderAddress/update_address.php";
+
+  static const String folderCoupons = "/coupons";
+   static const String apiViewCoupons =
+      "$serverPath/$folderCoupons/view_coupons.php";
+
 }

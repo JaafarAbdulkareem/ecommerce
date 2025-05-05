@@ -1,3 +1,4 @@
+import 'package:ecommerce/controller/cart/coupons_controller.dart';
 import 'package:ecommerce/controller/home/body_home_controller.dart';
 import 'package:ecommerce/core/class/status_request.dart';
 import 'package:ecommerce/core/constant/api_key.dart';
@@ -14,11 +15,12 @@ import 'package:ecommerce/data/models/receive_shopping_model.dart.dart';
 import 'package:get/get.dart';
 
 abstract class CartController extends GetxController {
-  void getData();
+  // void getData();
   Future<void> insertCart(int productId);
   void deleteCart(int newIndex);
   void goToOrder();
   void goToProductDetail(int newIndex);
+  void applyCoupons();
 }
 
 class CartControllerImp extends CartController {
@@ -34,6 +36,9 @@ class CartControllerImp extends CartController {
   late ReceiveShoppingModel price;
   late ReceiveShoppingModel shopping;
   late ReceiveShoppingModel totalPrice;
+
+  late CouponsControllerImp couponsController;
+  late double couponsDiscount;
 
   // late double totalPrice,
   //     totalDiscount,
@@ -59,6 +64,29 @@ class CartControllerImp extends CartController {
     totalPrice.price = price.price + shopping.price;
     totalPrice.discount = price.discount + shopping.discount;
     totalPrice.discountPrice = price.discountPrice + shopping.discountPrice;
+
+    countCouponsDiscount();
+  }
+
+  void countCouponsDiscount() {
+    if (couponsController.isApplyCoupons) {
+      // couponsDiscount = 0;
+      print(
+          " ${couponsController.couponsData!.amount} : discount : ${totalPrice.discountPrice}");
+      // if (couponsController.isApplyCoupons) {
+      couponsDiscount = /*totalPrice.discountPrice -*/
+          totalPrice.discountPrice *
+              couponsController.couponsData!.amount /
+              100;
+      print(couponsDiscount);
+
+      totalPrice.price += couponsDiscount;
+      totalPrice.discount += couponsController.couponsData!.amount;
+      totalPrice.discountPrice -= couponsDiscount;
+
+      // update();
+      // }
+    }
   }
 
   @override
@@ -77,6 +105,9 @@ class CartControllerImp extends CartController {
     totalPrice = ReceiveShoppingModel();
     // shoppingTax = 0;
     // totalPrice = totalDiscount = totalDiscountPrice = totalShoppingPrice = 0;
+
+    couponsController = Get.put(CouponsControllerImp());
+    couponsDiscount = 0;
     super.onInit();
   }
 
@@ -114,7 +145,7 @@ class CartControllerImp extends CartController {
     await fetchCartData();
   }
 
-  @override
+  // @override
   void getData() async {
     statusRequest = StatusRequest.loading;
     update();
@@ -151,10 +182,10 @@ class CartControllerImp extends CartController {
       } else {
         statusRequest = StatusRequest.success;
         update();
-        await Get.defaultDialog(
-          title: KeyLanguage.alert.tr,
-          middleText: KeyLanguage.someThingMessage.tr,
-        );
+        // await Get.defaultDialog(
+        //   title: KeyLanguage.alert.tr,
+        //   middleText: KeyLanguage.someThingMessage.tr,
+        // );
       }
     } else {
       update();
@@ -234,5 +265,21 @@ class CartControllerImp extends CartController {
   void refreshReceive() {
     getTotalPrice();
     update([ConstantKey.idReceiveShopping]);
+  }
+
+  @override
+  void applyCoupons() async {
+    if (!couponsController.isApplyCoupons) {
+      await couponsController.getData(couponsController.couponsTextEdite.text);
+      
+    } else {
+      //function for Remove button
+      couponsController.isApplyCoupons = false;
+      couponsController.couponsTextEdite.clear();
+    }
+    getTotalPrice();
+    update([ConstantKey.idCouponsApply]);
+    update([ConstantKey.idReceiveShopping]);
+    couponsController.refershCouponsDiscount();
   }
 }

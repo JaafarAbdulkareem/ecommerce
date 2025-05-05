@@ -27,7 +27,8 @@ abstract class ConstantKey {
   static const String idReceiveShopping = "idReceiveShopping";
   static const String idUpdateAddress = "idUpdateAddress";
 // id marker in google map
-  static const String idUserLocation = "user_location";
+  static const String idUserLocation = "userLocation";
+  static const String idCouponsApply = "idCouponsApply";
 }
 
 abstract class ConstantLanguage {

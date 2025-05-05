@@ -18,9 +18,12 @@ class CustomButtonWidget extends StatelessWidget {
         backgroundColor: color,
       ),
       onPressed: onTap,
-      child: Text(
-        text,
-        style: AppStyle.styleBold16(context),
+      child: FittedBox(
+        fit: BoxFit.scaleDown,
+        child: Text(
+          text,
+          style: AppStyle.styleBold16(context),
+        ),
       ),
     );
   }

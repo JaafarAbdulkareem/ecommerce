@@ -20,6 +20,8 @@ abstract class KeyLanguage {
   static const String goToCartButton = "goToCartButton";
   static const String orderButton = "orderButton";
   static const String nextButton = "nextButton";
+  static const String applyButton = "applyButton";
+  static const String reomveButton = "reomveButton";
 //auth
   static const String welcomeTitle = "welcomeTitle";
   static const String checkEmailTitle = "checkEmailTitle";
@@ -55,6 +57,7 @@ abstract class KeyLanguage {
   static const String cityHint = "cityHint";
   static const String streetHint = "streetHint";
   static const String detailAddressHint = "detailAddressHint";
+  static const String couponsHint = "couponsHint";
 
   //message
   static const String forgetPassword = "forgetPassword";
@@ -123,6 +126,8 @@ abstract class KeyLanguage {
   static const String totalPrice = "totalPrice";
   static const String shopping = "shopping";
   static const String price = "price";
+  static const String couponsDiscount = "couponsDiscount";
+  static const String couponsNotFoundMessage = "couponsNotFoundMessage";
 
   //search
   static const String enterEnter = "enterEnter";
@@ -131,5 +136,5 @@ abstract class KeyLanguage {
   static const String titleInsertAddress = "titleInsertAddress";
   static const String titleDetailInsertAddress = "titleDetailInsertAddress";
   static const String titleDisplayAddress = "titleDisplayAddress";
-  static const String waitingGoogleMap= "waitingGoogleMap";
+  static const String waitingGoogleMap = "waitingGoogleMap";
 }
