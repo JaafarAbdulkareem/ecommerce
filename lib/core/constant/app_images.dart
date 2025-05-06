@@ -1,10 +1,18 @@
 // ignore_for_file: prefer_single_quotes
 class AppImages {
   AppImages._();
-
+  
   /// Assets for imagesCamera
   /// assets/images/camera.svg
   static const String imagesCamera = "assets/images/camera.svg";
+
+  /// Assets for imagesDelivery
+  /// assets/images/delivery.png
+  static const String imagesDelivery = "assets/images/delivery.png";
+
+  /// Assets for imagesDelivery2
+  /// assets/images/delivery2.png
+  static const String imagesDelivery2 = "assets/images/delivery2.png";
 
   /// Assets for imagesDiscount
   /// assets/images/discount.png
@@ -40,12 +48,15 @@ class AppImages {
 
   /// Assets for imagesOnboardingthree
   /// assets/images/onboardingthree.PNG
-  static const String imagesOnboardingthree =
-      "assets/images/onboardingthree.PNG";
+  static const String imagesOnboardingthree = "assets/images/onboardingthree.PNG";
 
   /// Assets for imagesOnboardingtwo
   /// assets/images/onboardingtwo.PNG
   static const String imagesOnboardingtwo = "assets/images/onboardingtwo.PNG";
+
+  /// Assets for imagesReceive
+  /// assets/images/receive.png
+  static const String imagesReceive = "assets/images/receive.png";
 
   /// Assets for imagesShirt
   /// assets/images/shirt.svg
@@ -55,3 +66,4 @@ class AppImages {
   /// assets/images/shoes.svg
   static const String imagesShoes = "assets/images/shoes.svg";
 }
+

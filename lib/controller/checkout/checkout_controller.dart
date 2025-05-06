@@ -15,7 +15,7 @@ class CheckoutControllerImp extends CheckoutController {
   late StatusRequest statusRequest;
   late String language;
   late String paymentType;
-  late String deliveryType;
+  String? deliveryType;
   late int addressType;
   @override
   void onInit() {
@@ -23,7 +23,8 @@ class CheckoutControllerImp extends CheckoutController {
 
     // userId = pref.prefs.getString(ConstantKey.keyUserId)!;
     statusRequest = StatusRequest.initial;
-    language = prefs.prefs.getString(ConstantKey.keyLanguage)??ConstantLanguage.en;
+    language =
+        prefs.prefs.getString(ConstantKey.keyLanguage) ?? ConstantLanguage.en;
     paymentType = ConstantKey.cachOption;
 
     super.onInit();
