@@ -1,3 +1,4 @@
+import 'package:ecommerce/view/widget/checkout/address_method.dart';
 import 'package:ecommerce/view/widget/checkout/delivery_method.dart';
 import 'package:ecommerce/view/widget/checkout/payment_method.dart';
 import 'package:flutter/material.dart';
@@ -17,6 +18,8 @@ class BodyCheckoutView extends StatelessWidget {
             PaymentMethod(),
             SizedBox(height: 6),
             DeliveryMethod(),
+            SizedBox(height: 6),
+            AddressMethod(),
           ],
         ),
       ),

@@ -18,7 +18,7 @@ abstract class CartController extends GetxController {
   // void getData();
   Future<void> insertCart(int productId);
   void deleteCart(int newIndex);
-  void goToOrder();
+  void goToCheckout();
   void goToProductDetail(int newIndex);
   void applyCoupons();
 }
@@ -215,8 +215,8 @@ class CartControllerImp extends CartController {
   }
 
   @override
-  void goToOrder() {
-    // TODO: implement goToOrdet
+  void goToCheckout() async {
+    await Get.toNamed(ConstantScreenName.checkout);
   }
 
   ProductModel? getDataProductDetail(int newIndex) {
@@ -249,8 +249,13 @@ class CartControllerImp extends CartController {
   }
 
   void refreshPage() {
-    statusRequest = StatusRequest.success;
-    update([ConstantKey.idListProductCart]);
+    if (cartData.isEmpty) {
+      statusRequest = StatusRequest.failure;
+      update();
+    } else {
+      statusRequest = StatusRequest.success;
+      update([ConstantKey.idListProductCart]);
+    }
   }
 
   void refreshReceive() {

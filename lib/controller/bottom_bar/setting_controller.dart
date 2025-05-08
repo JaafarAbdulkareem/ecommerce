@@ -22,7 +22,7 @@ class SettingControllerImp extends SettingController {
   late StatusRequest statusRequest;
   static StatusRequest lastStatusRequest = StatusRequest.initial;
   late UserInfoModel userData;
-  static late UserInfoModel lastUserData;
+  static  UserInfoModel? lastUserData;
   static bool firstTime = true;
 
   @override
@@ -44,7 +44,7 @@ class SettingControllerImp extends SettingController {
         await Future.delayed(
             Duration(milliseconds: ConstantScale.settingDeley));
         if (lastStatusRequest == StatusRequest.success) {
-          userData = lastUserData;
+          userData = lastUserData!;
         } else if (lastStatusRequest == StatusRequest.failure) {
           dialogMessage();
         }

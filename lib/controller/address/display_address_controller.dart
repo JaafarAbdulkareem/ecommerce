@@ -22,7 +22,7 @@ class DisplayAddressControllerImp extends DisplayAddressController {
   void onInit() {
     addressRemote = AddressRemote(curd: Get.find());
     statusRequest = StatusRequest.initial;
-    addressData = SettingControllerImp.lastUserData.address;
+    addressData = SettingControllerImp.lastUserData!.address;
     settingController = Get.find<SettingControllerImp>();
 
     super.onInit();

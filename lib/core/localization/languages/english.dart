@@ -20,12 +20,12 @@ Map<String, String> english = {
   KeyLanguage.verifyButton: "Verify",
   KeyLanguage.yesButton: "Yes",
   KeyLanguage.noButton: "No",
-  KeyLanguage.goToCartButton: "Go To Card",
-  KeyLanguage.orderButton: "Place Order",
+  KeyLanguage.goToCartButton: "Add To Card",
   KeyLanguage.nextButton: "Next",
   KeyLanguage.applyButton: "Apply",
   KeyLanguage.reomveButton: "Remove",
   KeyLanguage.checkoutButton: "Checkout",
+  KeyLanguage.orderButton: "Place Order",
 //auth
   KeyLanguage.welcomeTitle: "Welcome Back",
   KeyLanguage.checkEmailTitle: "Check Email",
@@ -156,4 +156,10 @@ Map<String, String> english = {
   KeyLanguage.paymentOption: "Payment Cards",
   KeyLanguage.deliveryOption: "Delivery",
   KeyLanguage.receiveOption: "Receive",
+  KeyLanguage.errorAddressMessage:
+      "Oops! Couldn't Load Your Address. Try Again?",
+  KeyLanguage.chooseDeliveryMessage:
+      "Oops! Please Select A Delivery Option—Either Delivery Or Receive—Before Continuing. 😊",
+  KeyLanguage.chooseAddressMessage:
+      "Oops! Please Select One Of Your Saved Addresses Before Continuing. 😊",
 };

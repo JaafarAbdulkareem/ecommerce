@@ -18,11 +18,11 @@ abstract class KeyLanguage {
   static const String yesButton = "yesButton";
   static const String noButton = "noButton";
   static const String goToCartButton = "goToCartButton";
-  static const String orderButton = "orderButton";
   static const String nextButton = "nextButton";
   static const String applyButton = "applyButton";
   static const String reomveButton = "reomveButton";
   static const String checkoutButton = "checkoutButton";
+  static const String orderButton = "orderButton";
 //auth
   static const String welcomeTitle = "welcomeTitle";
   static const String checkEmailTitle = "checkEmailTitle";
@@ -147,4 +147,7 @@ abstract class KeyLanguage {
   static const String paymentOption = "paymentOption";
   static const String deliveryOption = "deliveryOption";
   static const String receiveOption = "receiveOption";
+  static const String errorAddressMessage = "errorAddressMessage";
+  static const String chooseDeliveryMessage = "chooseDeliveryMessage";
+  static const String chooseAddressMessage = "chooseAddressMessage";
 }

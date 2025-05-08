@@ -9,9 +9,11 @@ class ListProductSearch extends GetView<SearchProductControllerImp> {
 
   @override
   Widget build(BuildContext context) {
-    return GetBuilder<SearchProductControllerImp>(
-      id: ConstantKey.idListProductCart,
-      builder: (controller) {
+    //TODO: check id builder 
+    // return 
+    // GetBuilder<SearchProductControllerImp>(
+    //   id: ConstantKey.idListProductCart,
+    //   builder: (controller) {
         return ListView(
           children: controller.searchData
               .asMap()
@@ -30,7 +32,7 @@ class ListProductSearch extends GetView<SearchProductControllerImp> {
               )
               .toList(),
         );
-      },
-    );
+    //   },
+    // );
   }
 }
