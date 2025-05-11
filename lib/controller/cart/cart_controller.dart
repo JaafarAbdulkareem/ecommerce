@@ -233,13 +233,28 @@ class CartControllerImp extends CartController {
     count = cartData[newIndex].count;
     ProductModel? data = getDataProductDetail(newIndex);
     if (data != null) {
-      await Get.offNamed(
+      Get.offNamedUntil(
         ConstantScreenName.productDetail,
+        (route) {
+          if (route.settings.name == ConstantScreenName.product) {
+            return true;
+          } else if (route.settings.name == ConstantScreenName.home) {
+            return true;
+          }
+          return false;
+        },
         arguments: {
           ConstantKey.productData: data,
           ConstantKey.count: count,
         },
       );
+      // await Get.offNamed(
+      //   ConstantScreenName.productDetail,
+      //   arguments: {
+      //     ConstantKey.productData: data,
+      //     ConstantKey.count: count,
+      //   },
+      // );
     } else {
       await Get.defaultDialog(
         title: KeyLanguage.alert.tr,
@@ -253,8 +268,10 @@ class CartControllerImp extends CartController {
       statusRequest = StatusRequest.failure;
       update();
     } else {
+      getTotalPrice();
       statusRequest = StatusRequest.success;
       update([ConstantKey.idListProductCart]);
+      update([ConstantKey.idReceiveShopping]);
     }
   }
 
