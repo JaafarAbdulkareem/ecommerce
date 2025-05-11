@@ -38,14 +38,22 @@ class ProductDetailControllerImp extends ProductDetailController {
 
   @override
   void goToCart() {
-    Get.offNamedUntil(
+    Get.toNamed(
       ConstantScreenName.cart,
-      (route) => route.settings.name == ConstantScreenName.home,
       arguments: {
         ConstantKey.productId: productDetailData.id,
         ConstantKey.count: countController.counter,
         ConstantKey.boolInsert: true,
       },
     );
+    // Get.offNamedUntil(
+    //   ConstantScreenName.cart,
+    //   (route) => route.settings.name == ConstantScreenName.home,
+    //   arguments: {
+    //     ConstantKey.productId: productDetailData.id,
+    //     ConstantKey.count: countController.counter,
+    //     ConstantKey.boolInsert: true,
+    //   },
+    // );
   }
 }
