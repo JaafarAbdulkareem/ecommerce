@@ -23,6 +23,7 @@ abstract class KeyLanguage {
   static const String reomveButton = "reomveButton";
   static const String checkoutButton = "checkoutButton";
   static const String orderButton = "orderButton";
+  static const String detailButton = "detailButton";
 //auth
   static const String welcomeTitle = "welcomeTitle";
   static const String checkEmailTitle = "checkEmailTitle";
@@ -134,9 +135,10 @@ abstract class KeyLanguage {
   static const String enterEnter = "enterEnter";
 
   //address
-  static const String titleInsertAddress = "titleInsertAddress";
-  static const String titleDetailInsertAddress = "titleDetailInsertAddress";
-  static const String titleDisplayAddress = "titleDisplayAddress";
+  static const String appBarTitleInsertAddress = "appBarTitleInsertAddress";
+  static const String appBarTitleDetailInsertAddress =
+      "appBarTitleDetailInsertAddress";
+  static const String appBarTitleDisplayAddress = "appBarTitleDisplayAddress";
   static const String waitingGoogleMap = "waitingGoogleMap";
 
   //checkout
@@ -150,4 +152,13 @@ abstract class KeyLanguage {
   static const String errorAddressMessage = "errorAddressMessage";
   static const String chooseDeliveryMessage = "chooseDeliveryMessage";
   static const String chooseAddressMessage = "chooseAddressMessage";
+  //order
+  static const String appBarTitleOrder = "appBarTitleOrder";
+  static const String appBarTitleArchive = "appBarTitleArchive";
+  static const String orderNumber = "orderNumber";
+  static const String orderType = "orderType";
+  static const String orderPrice = "orderPrice";
+  static const String deliveyPrice = "deliveyPrice";
+  static const String paymentMethod = "paymentMethod";
+  // static const String totalPrice  = "deliveyPrice";
 }

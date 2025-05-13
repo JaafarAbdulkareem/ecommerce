@@ -19,7 +19,7 @@ class DisplayAddressView extends StatelessWidget {
       appBar: AppBar(
         centerTitle: true,
         title: Text(
-          KeyLanguage.titleDisplayAddress.tr,
+          KeyLanguage.appBarTitleDisplayAddress.tr,
           style: AppStyle.styleBold18(context),
         ),
       ),

@@ -16,7 +16,7 @@ class DetailInsertAddressView extends StatelessWidget {
       appBar: AppBar(
         centerTitle: true,
         title: Text(
-          KeyLanguage.titleDetailInsertAddress.tr,
+          KeyLanguage.appBarTitleDetailInsertAddress.tr,
           style: AppStyle.styleBold18(context),
         ),
       ),

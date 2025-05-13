@@ -24,4 +24,5 @@ abstract class AppColorText {
   static const Color secondary = Color(0xFF8B8787);
   static const Color textButton = Color(0xFFFFFFFF);
   static const Color titleProductDetail = Color(0xFF084275);
+  static const Color titleArchive = Color(0xFF747070);
 }

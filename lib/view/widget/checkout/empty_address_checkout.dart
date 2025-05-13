@@ -35,7 +35,7 @@ class EmptyAddressCheckout extends GetView<CheckoutControllerImp> {
               FittedBox(
                 fit: BoxFit.scaleDown,
                 child: Text(
-                  KeyLanguage.titleInsertAddress.tr,
+                  KeyLanguage.appBarTitleInsertAddress.tr,
                   style: AppStyle.styleBold14(context).copyWith(
                     color: AppColorText.titleProductDetail,
                   ),

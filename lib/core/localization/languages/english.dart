@@ -26,6 +26,7 @@ Map<String, String> english = {
   KeyLanguage.reomveButton: "Remove",
   KeyLanguage.checkoutButton: "Checkout",
   KeyLanguage.orderButton: "Place Order",
+  KeyLanguage.detailButton: "Details",
 //auth
   KeyLanguage.welcomeTitle: "Welcome Back",
   KeyLanguage.checkEmailTitle: "Check Email",
@@ -144,9 +145,9 @@ Map<String, String> english = {
   //search
   KeyLanguage.enterEnter: "Press Enter or tap 🔍 to start the search.",
   //address
-  KeyLanguage.titleInsertAddress: "Add New Address",
-  KeyLanguage.titleDetailInsertAddress: "Confirm Address Details",
-  KeyLanguage.titleDisplayAddress: "My Addresse/s",
+  KeyLanguage.appBarTitleInsertAddress: "Add New Address",
+  KeyLanguage.appBarTitleDetailInsertAddress: "Confirm Address Details",
+  KeyLanguage.appBarTitleDisplayAddress: "My Addresse/s",
   KeyLanguage.waitingGoogleMap: "Waiting, Please...",
   //checkout
   KeyLanguage.titlePaymentMethod: "Choose Payment Method",
@@ -162,4 +163,11 @@ Map<String, String> english = {
       "Oops! Please Select A Delivery Option—Either Delivery Or Receive—Before Continuing. 😊",
   KeyLanguage.chooseAddressMessage:
       "Oops! Please Select One Of Your Saved Addresses Before Continuing. 😊",
+  KeyLanguage.appBarTitleOrder: "Orders",
+  KeyLanguage.appBarTitleArchive: "Archive",
+  KeyLanguage.orderNumber: "Oreder Number : #",
+  KeyLanguage.orderType: "Oreder Type : ",
+  KeyLanguage.orderPrice: "Order Price : ",
+  KeyLanguage.deliveyPrice: "Delivery Price : ",
+  KeyLanguage.paymentMethod: "Payment Method : ",
 };
