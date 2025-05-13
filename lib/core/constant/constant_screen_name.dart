@@ -17,9 +17,11 @@ class ConstantScreenName {
   static const String favorite = "/favorite";
   static const String cart = "/cart";
   static const String checkout = "/checkout";
+  static const String order = "/order";
   //address
   static const String insertAddress = "/insertAddress";
   static const String detailInsertAddress = "/detailInsertAddress";
   static const String displayAddress = "/displayAddress";
+
   
 }
