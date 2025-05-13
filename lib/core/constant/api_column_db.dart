@@ -39,6 +39,14 @@ class ApiColumnDb {
   static const String longitude = "longitude";
   //coupons
   static const String couponsName = "coupons_name";
-  static const String amount= "amount";
-  static const String expiryData= "expiry_date";
+  static const String amount = "amount";
+  static const String expiryData = "expiry_date";
+  //order
+  static const String addressId = 'addressId';
+  static const String typePayment = 'typePayment';
+  static const String typeDelivery = 'typeDelivery';
+  static const String deliveryPrice = 'deliveryPrice';
+  static const String totalPrice = 'totalPrice';
+  static const String status = "status";
+  static const String couponsId = 'couponsId';
 }

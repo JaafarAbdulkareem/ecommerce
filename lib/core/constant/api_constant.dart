@@ -46,7 +46,11 @@ abstract class ApiConstant {
       "$serverPath/$folderAddress/update_address.php";
 
   static const String folderCoupons = "/coupons";
-   static const String apiViewCoupons =
+  static const String apiViewCoupons =
       "$serverPath/$folderCoupons/view_coupons.php";
 
+  static const String folderOrder = "/order";
+  static const String apiCheckProductNo =
+      "$serverPath/$folderOrder/check_product_no.php";
+  static const String apiCheckout = "$serverPath/$folderOrder/checkout.php";
 }
