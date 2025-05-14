@@ -1,7 +1,7 @@
 abstract class ApiConstant {
-  // static const String server = "http://192.168.0.113"; // home wifi
+  static const String server = "http://192.168.0.113"; // home wifi
   // static const String server = "http://192.168.230.139";
-  static const String server = "http://192.168.50.139"; // mobile
+  // static const String server = "http://192.168.50.139"; // mobile
   static const String project = "/project/ecommerce";
   static const String serverPath = "$server/$project";
 
@@ -50,7 +50,7 @@ abstract class ApiConstant {
       "$serverPath/$folderCoupons/view_coupons.php";
 
   static const String folderOrder = "/order";
-  static const String apiCheckProductNo =
-      "$serverPath/$folderOrder/check_product_no.php";
+  // static const String apiCheckProductNo =
+  //     "$serverPath/$folderOrder/check_product_no.php";
   static const String apiCheckout = "$serverPath/$folderOrder/checkout.php";
 }

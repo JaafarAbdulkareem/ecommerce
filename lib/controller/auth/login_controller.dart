@@ -107,7 +107,7 @@ class LoginControllerImp extends LoginController {
           } else {
             await Get.defaultDialog(
               title: titleDialog,
-              middleText: KeyLanguage.someThingMessage.tr,
+              middleText: KeyLanguage.someErrorMessage.tr,
             );
           }
           email.clear();
@@ -116,7 +116,7 @@ class LoginControllerImp extends LoginController {
       } else {
         await Get.defaultDialog(
           title: titleDialog,
-          middleText: KeyLanguage.someThingMessage.tr,
+          middleText: KeyLanguage.someErrorMessage.tr,
         );
       }
     }

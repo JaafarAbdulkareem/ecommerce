@@ -64,7 +64,7 @@ Map<String, String> arabic = {
   KeyLanguage.dialogPopContent: "هل تريد الخروج؟",
   KeyLanguage.emailFoundMessage: "البريد الإلكتروني أو الهاتف موجود",
   KeyLanguage.verifyWrongMessage: "التحقق غير صحيح، حاول مرة أخرى ",
-  KeyLanguage.someThingMessage: "حدث خطأ، يرجى المحاولة لاحقًا",
+  KeyLanguage.someErrorMessage: "حدث خطأ، يرجى المحاولة لاحقًا",
   KeyLanguage.noApproveMessage:
       "تحقق من التحقق الخاص بك، اضغط على نسيت كلمة المرور",
   KeyLanguage.noFoundMessage:

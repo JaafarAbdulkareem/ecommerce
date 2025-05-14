@@ -28,9 +28,9 @@ class ImageProductDetail extends GetView<ProductDetailControllerImp> {
           top: -25,
           right: 30,
           left: 30,
-          child: Hero(
-            tag: ConstantKey.tagProductImage +
-                controller.productDetailData.id.toString(),
+          // child: Hero(
+          //   tag: ConstantKey.tagProductImage +
+          //       controller.productDetailData.id.toString(),
             child: Padding(
               padding: const EdgeInsets.all(4),
               child: CachedNetworkImage(
@@ -45,7 +45,7 @@ class ImageProductDetail extends GetView<ProductDetailControllerImp> {
                 errorWidget: (context, url, error) => const Icon(Icons.error),
               ),
             ),
-          ),
+          // ),
         ),
       ],
     );

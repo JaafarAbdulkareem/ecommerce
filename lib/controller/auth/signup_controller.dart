@@ -82,7 +82,7 @@ class SignupControllerImp extends SignupController {
       } else {
         await Get.defaultDialog(
           title: KeyLanguage.alert.tr,
-          middleText: KeyLanguage.someThingMessage.tr,
+          middleText: KeyLanguage.someErrorMessage.tr,
         );
       }
     }

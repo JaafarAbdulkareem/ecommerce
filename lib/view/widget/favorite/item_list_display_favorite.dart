@@ -35,9 +35,10 @@ class ItemListDisplayFavorite extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  Hero(
-                    tag: ConstantKey.tagProductImage + data.id.toString(),
-                    child: CachedNetworkImage(
+                  // Hero(
+                  //   tag: ConstantKey.tagProductImage + data.id.toString(),
+                  //   child:
+                     CachedNetworkImage(
                       height: 60,
                       fit: BoxFit.fill,
                       imageUrl: "${ApiConstant.productImagePath}/${data.image}",
@@ -48,7 +49,7 @@ class ItemListDisplayFavorite extends StatelessWidget {
                       errorWidget: (context, url, error) =>
                           const Icon(Icons.error),
                     ),
-                  ),
+                  // ),
                   Text(
                     translateLanguage(
                       arabic: data.arabicName,

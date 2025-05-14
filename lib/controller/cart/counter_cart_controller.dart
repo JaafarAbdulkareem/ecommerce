@@ -65,7 +65,7 @@ class CounterCartControllerImp extends CounterCartController {
           update([cartData[newIndex].id]);
           await Get.defaultDialog(
             title: KeyLanguage.alert.tr,
-            middleText: KeyLanguage.someThingMessage.tr,
+            middleText: KeyLanguage.someErrorMessage.tr,
           );
         }
       } else {
@@ -73,7 +73,7 @@ class CounterCartControllerImp extends CounterCartController {
         update([cartData[newIndex].id]);
         await Get.defaultDialog(
           title: KeyLanguage.alert.tr,
-          middleText: KeyLanguage.someThingMessage.tr,
+          middleText: KeyLanguage.someErrorMessage.tr,
         );
       }
     } else {
@@ -81,7 +81,7 @@ class CounterCartControllerImp extends CounterCartController {
       update([cartData[newIndex].id]);
       await Get.defaultDialog(
         title: KeyLanguage.alert.tr,
-        middleText: KeyLanguage.someThingMessage.tr,
+        middleText: KeyLanguage.someErrorMessage.tr,
       );
     }
   }
@@ -112,7 +112,7 @@ class CounterCartControllerImp extends CounterCartController {
           update([cartData[newIndex].id]);
           await Get.defaultDialog(
             title: KeyLanguage.alert.tr,
-            middleText: KeyLanguage.someThingMessage.tr,
+            middleText: KeyLanguage.someErrorMessage.tr,
           );
         }
       } else {
@@ -120,7 +120,7 @@ class CounterCartControllerImp extends CounterCartController {
         update([cartData[newIndex].id]);
         await Get.defaultDialog(
           title: KeyLanguage.alert.tr,
-          middleText: KeyLanguage.someThingMessage.tr,
+          middleText: KeyLanguage.someErrorMessage.tr,
         );
       }
     } else {
@@ -128,7 +128,7 @@ class CounterCartControllerImp extends CounterCartController {
       update([cartData[newIndex].id]);
       await Get.defaultDialog(
         title: KeyLanguage.alert.tr,
-        middleText: KeyLanguage.someThingMessage.tr,
+        middleText: KeyLanguage.someErrorMessage.tr,
       );
     }
   }

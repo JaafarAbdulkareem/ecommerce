@@ -1,3 +1,4 @@
+//php Body
 abstract class ApiKey {
   //Auth
   static const String username = "username";
@@ -21,6 +22,15 @@ abstract class ApiKey {
   static const String detailAddress = "detailAddress";
   //coupons
   static const String couponsName = "couponsName";
+  //order
+  static const String typePayment = "typePayment";
+  static const String typeDelivery = "typeDelivery";
+  static const String deliveryPrice = "deliveryPrice";
+  static const String price = "price";
+  static const String totalPrice = "totalPrice";
+  static const String status = "status";
+  static const String couponsId = "couponsId";
+  static const String addressId = "addressId";
 }
 
 abstract class ApiResult {
@@ -36,4 +46,5 @@ abstract class ApiResult {
   // static const String noData = "noData";
   static const String noChange = "noChange";
   // static const String noDecrement = "noDecrement";
+  static const String insertAddressError = "insertAddressError";
 }

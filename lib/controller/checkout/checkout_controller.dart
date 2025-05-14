@@ -1,4 +1,6 @@
 import 'package:ecommerce/controller/bottom_bar/setting_controller.dart';
+import 'package:ecommerce/controller/cart/coupons_controller.dart';
+import 'package:ecommerce/controller/order/order_controller.dart';
 import 'package:ecommerce/core/class/status_request.dart';
 import 'package:ecommerce/core/constant/api_key.dart';
 import 'package:ecommerce/core/constant/app_color.dart';
@@ -7,6 +9,7 @@ import 'package:ecommerce/core/function/handle_status.dart';
 import 'package:ecommerce/core/localization/key_language.dart';
 import 'package:ecommerce/core/service/shared_prefs_service.dart';
 import 'package:ecommerce/data/data_source/remote/address/address_remote.dart';
+import 'package:ecommerce/data/models/order_model.dart';
 import 'package:ecommerce/data/models/setting_model/address_model.dart';
 import 'package:get/get.dart';
 
@@ -30,6 +33,14 @@ class CheckoutControllerImp extends CheckoutController {
   int? idAddress;
   static List<AddressModel> addressData = [];
   static bool firstTime = true;
+
+  late OrderControllerImp orderController;
+  // late OrderModel orderData;
+  late double totalPrice;
+  late double price;
+  late double deliveryPrice;
+  int? couponsId;
+
   @override
   void onInit() {
     prefs = Get.find<SharedPrefsService>();
@@ -40,6 +51,13 @@ class CheckoutControllerImp extends CheckoutController {
     language =
         prefs.prefs.getString(ConstantKey.keyLanguage) ?? ConstantLanguage.en;
     paymentType = ConstantKey.cachOption;
+    orderController = Get.put(OrderControllerImp());
+
+    ///
+    totalPrice = Get.arguments[ApiKey.totalPrice];
+    price = Get.arguments[ApiKey.price];
+    deliveryPrice = Get.arguments[ApiKey.deliveryPrice];
+    couponsId = CouponsControllerImp().couponsData?.id;
     super.onInit();
   }
 
@@ -115,6 +133,20 @@ class CheckoutControllerImp extends CheckoutController {
       );
     } else {
       //TODO:
+      orderController.getData(
+        orderData: OrderModel(
+          id: 0,
+          typePayment: paymentType == ConstantKey.cachOption ? 0 : 1,
+          typeDelivery: deliveryType == ConstantKey.deliveryOption ? 0 : 1,
+          deliveryPrice: deliveryPrice,
+          price: price,
+          totalPrice: totalPrice,
+          status: null,
+          userId: int.parse(userId),
+          addressId: idAddress,
+          couponsId: couponsId,
+        ),
+      );
     }
   }
 

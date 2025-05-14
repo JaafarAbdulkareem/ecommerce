@@ -7,9 +7,8 @@ class OrderModel {
   final double deliveryPrice;
   final double price;
   final double totalPrice;
-  final int status;
+  final int? status;
   final int userId;
-  // final int productId;
   final int? addressId;
   final int? couponsId;
 
@@ -22,7 +21,6 @@ class OrderModel {
     required this.totalPrice,
     required this.status,
     required this.userId,
-    // required this.productId,
     required this.addressId,
     required this.couponsId,
   });
@@ -34,9 +32,10 @@ class OrderModel {
         deliveryPrice: double.parse(json[ApiColumnDb.deliveryPrice]),
         price: double.parse(json[ApiColumnDb.price]),
         totalPrice: double.parse(json[ApiColumnDb.totalPrice]),
-        status: int.parse(json[ApiColumnDb.status]),
+        status: json[ApiColumnDb.status] != null
+            ? int.parse(json[ApiColumnDb.status])
+            : null,
         userId: int.parse(json[ApiColumnDb.userId]),
-        // productId: int.parse(json[ApiColumnDb.productId]),
         addressId: json[ApiColumnDb.addressId] != null
             ? int.tryParse(json[ApiColumnDb.addressId])
             : null,
@@ -51,7 +50,6 @@ class OrderModel {
         ApiColumnDb.price: price,
         ApiColumnDb.totalPrice: totalPrice,
         ApiColumnDb.userId: userId,
-        // ApiColumnDb.productId: productId,
         ApiColumnDb.addressId: addressId,
         ApiColumnDb.couponsId: couponsId,
       };

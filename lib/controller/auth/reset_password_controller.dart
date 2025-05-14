@@ -68,7 +68,7 @@ class ResetPasswordControllerImp extends ResetPasswordController {
           } else {
             await Get.defaultDialog(
               title: titleDialog,
-              middleText: KeyLanguage.someThingMessage.tr,
+              middleText: KeyLanguage.someErrorMessage.tr,
             );
           }
         }

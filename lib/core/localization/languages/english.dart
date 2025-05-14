@@ -85,7 +85,7 @@ Map<String, String> english = {
   KeyLanguage.dialogPopContent: "Do You Want Exit?",
   KeyLanguage.emailFoundMessage: "The Email or Phone is Exist",
   KeyLanguage.verifyWrongMessage: "Your Verification Was Wrong, Try Again ",
-  KeyLanguage.someThingMessage: "An Error Occurred, Please Try Again Later",
+  KeyLanguage.someErrorMessage: "An Error Occurred, Please Try Again Later",
   KeyLanguage.noApproveMessage:
       "verify Your Verification, click Forget Password ",
   KeyLanguage.noFoundMessage: "The Email or Password Was Wrong, Try Again",
@@ -101,7 +101,9 @@ Map<String, String> english = {
       "Location Services Are Turned Off. Please Enable Location Services To Continue.",
   KeyLanguage.permissionExceptionMessage:
       "Location Permission Is Denied. Please Grant Location Access In Your Device Settings To Continue.",
-
+  KeyLanguage.orderSuccessMessage: "You’re the best — thanks for your order!",
+  KeyLanguage.productOutStackMessage:
+      "Some Products Are Not Valid Or Out Of Stock.",
   //home
   KeyLanguage.hello: "Hello",
   KeyLanguage.titleCategories: "Categories",

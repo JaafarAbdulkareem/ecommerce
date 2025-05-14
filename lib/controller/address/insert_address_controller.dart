@@ -104,7 +104,7 @@ class InsertAddressControllerImp extends InsertAddressController {
     } catch (e) {
       await Get.defaultDialog(
         title: KeyLanguage.alert.tr,
-        middleText: "${KeyLanguage.someThingMessage.tr} : $e",
+        middleText: "${KeyLanguage.someErrorMessage.tr} : $e",
       );
     }
   }

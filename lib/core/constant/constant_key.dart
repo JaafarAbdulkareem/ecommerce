@@ -1,4 +1,5 @@
 abstract class ConstantKey {
+//shared references
   static const String keyLanguage = "keyLanguage";
   static const String keyOnboarding = "keyOnboarding";
   static const String keyLogin = "keyLogin";
@@ -20,6 +21,7 @@ abstract class ConstantKey {
   static const String count = "count";
   static const String boolInsert = "boolInsert";
   static const String userLocation = "latLng";
+  static const String invalidProductIds = "invalidProductIds";
 //hero
   static const String tagProductImage = "tagProductImage";
 //id GetBuilder

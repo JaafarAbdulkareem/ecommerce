@@ -94,7 +94,7 @@ class DetailAddressControllerImp extends DetailAddressController {
     detailAddress.clear();
     await Get.defaultDialog(
       title: KeyLanguage.alert.tr,
-      middleText: KeyLanguage.someThingMessage.tr,
+      middleText: KeyLanguage.someErrorMessage.tr,
     );
   }
 }

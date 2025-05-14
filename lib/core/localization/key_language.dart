@@ -78,7 +78,7 @@ abstract class KeyLanguage {
   static const String dialogPopContent = "dialogPopContent";
   static const String emailFoundMessage = "emailFoundMessage";
   static const String verifyWrongMessage = "verifyWrongMessage";
-  static const String someThingMessage = "someThingMessage";
+  static const String someErrorMessage = "someThingMessage";
   static const String noApproveMessage = "noApproveMessage";
   static const String noFoundMessage = "noFoundMessage";
   static const String passwordMismatchMassage = "passwordNotMatch";
@@ -88,6 +88,8 @@ abstract class KeyLanguage {
   static const String notFoundProductMessage = "messageNotFoundProduct";
   static const String serviceExceptionMessage = "serviceExceptionMessage";
   static const String permissionExceptionMessage = "permissionExceptionMessage";
+  static const String orderSuccessMessage = "orderSuccessMessage";
+  static const String productOutStackMessage = "productOutStackMessage";
   //home
   static const String hello = "hello";
   static const String titleCategories = "titleCategories";

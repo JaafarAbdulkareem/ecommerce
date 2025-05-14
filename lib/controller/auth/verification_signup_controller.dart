@@ -50,7 +50,7 @@ class VerificationSignupControllerImp extends VerificationSignupController {
     } else {
       await Get.defaultDialog(
         title: KeyLanguage.alert.tr,
-        middleText: KeyLanguage.someThingMessage.tr,
+        middleText: KeyLanguage.someErrorMessage.tr,
       );
     }
   }

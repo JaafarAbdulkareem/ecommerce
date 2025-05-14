@@ -46,6 +46,7 @@ class CartControllerImp extends CartController {
   //     shoppingTax,
   //     totalShoppingPrice;
   void isInserFunction(bool isInsert) async {
+    print("insert to cart $isInsert");
     if (isInsert) {
       int productId = Get.arguments[ConstantKey.productId];
       count = Get.arguments[ConstantKey.count];
@@ -206,7 +207,7 @@ class CartControllerImp extends CartController {
         update();
         await Get.defaultDialog(
           title: KeyLanguage.alert.tr,
-          middleText: KeyLanguage.someThingMessage.tr,
+          middleText: KeyLanguage.someErrorMessage.tr,
         );
       }
     } else {
@@ -216,7 +217,14 @@ class CartControllerImp extends CartController {
 
   @override
   void goToCheckout() async {
-    await Get.toNamed(ConstantScreenName.checkout);
+    await Get.toNamed(
+      ConstantScreenName.checkout,
+      arguments: {
+        ApiKey.totalPrice: totalPrice.discountPrice,
+        ApiKey.price: price.discountPrice,
+        ApiKey.deliveryPrice: shopping.price,
+      },
+    );
   }
 
   ProductModel? getDataProductDetail(int newIndex) {
