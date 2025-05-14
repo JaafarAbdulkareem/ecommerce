@@ -35,6 +35,7 @@ class CheckoutControllerImp extends CheckoutController {
   static bool firstTime = true;
 
   late OrderControllerImp orderController;
+  late CouponsControllerImp couponsController;
   // late OrderModel orderData;
   late double totalPrice;
   late double price;
@@ -52,12 +53,13 @@ class CheckoutControllerImp extends CheckoutController {
         prefs.prefs.getString(ConstantKey.keyLanguage) ?? ConstantLanguage.en;
     paymentType = ConstantKey.cachOption;
     orderController = Get.put(OrderControllerImp());
+    couponsController = Get.put(CouponsControllerImp());
 
     ///
     totalPrice = Get.arguments[ApiKey.totalPrice];
     price = Get.arguments[ApiKey.price];
     deliveryPrice = Get.arguments[ApiKey.deliveryPrice];
-    couponsId = CouponsControllerImp().couponsData?.id;
+    couponsId = couponsController.couponsData?.id;
     super.onInit();
   }
 
@@ -141,7 +143,6 @@ class CheckoutControllerImp extends CheckoutController {
           deliveryPrice: deliveryPrice,
           price: price,
           totalPrice: totalPrice,
-          status: null,
           userId: int.parse(userId),
           addressId: idAddress,
           couponsId: couponsId,

@@ -34,6 +34,7 @@ class OrderControllerImp extends OrderController {
   }
 
   getData({required OrderModel orderData}) async {
+    print("coupons id : ${orderData.couponsId}");
     statusRequest = StatusRequest.loading;
     update();
     var response = await orderRemote.checkout(data: orderData);

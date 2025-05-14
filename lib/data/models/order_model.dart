@@ -19,10 +19,10 @@ class OrderModel {
     required this.deliveryPrice,
     required this.price,
     required this.totalPrice,
-    required this.status,
+    this.status,
     required this.userId,
-    required this.addressId,
-    required this.couponsId,
+    this.addressId,
+    this.couponsId,
   });
 
   factory OrderModel.fromJson(Map<String, dynamic> json) => OrderModel(
