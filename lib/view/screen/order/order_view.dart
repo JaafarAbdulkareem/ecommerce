@@ -17,7 +17,7 @@ class OrderView extends StatelessWidget {
           style: AppStyle.styleBold18(context),
         ),
       ),
-      body: SafeArea(
+      body: const SafeArea(
         child: BodyOrderView(),
       ),
     );

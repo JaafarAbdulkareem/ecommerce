@@ -6,9 +6,10 @@ class CouponsRemote {
   final Curd curd;
 
   CouponsRemote({required this.curd});
-  getData({required String couponsName}) async {
+  getData({required String couponsName, required String userId}) async {
     var response = await curd.postData(ApiConstant.apiViewCoupons, {
       ApiKey.couponsName: couponsName,
+      ApiKey.userId: userId,
     });
     return response.fold((left) => left, (right) => right);
   }

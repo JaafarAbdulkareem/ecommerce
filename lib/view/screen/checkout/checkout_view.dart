@@ -2,8 +2,8 @@ import 'package:ecommerce/controller/checkout/checkout_controller.dart';
 import 'package:ecommerce/core/constant/app_color.dart';
 import 'package:ecommerce/core/constant/app_style.dart';
 import 'package:ecommerce/core/localization/key_language.dart';
-import 'package:ecommerce/core/share/custom_button_widget.dart';
 import 'package:ecommerce/view/widget/checkout/body_checkout_view.dart';
+import 'package:ecommerce/view/widget/checkout/bottom_button_checkout.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -12,7 +12,8 @@ class CheckoutView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    CheckoutControllerImp controller = Get.put(CheckoutControllerImp());
+    // CheckoutControllerImp controller = Get.put(CheckoutControllerImp());
+    Get.lazyPut(() => CheckoutControllerImp());
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
@@ -22,13 +23,7 @@ class CheckoutView extends StatelessWidget {
         ),
         backgroundColor: AppColor.primary,
       ),
-      bottomNavigationBar: CustomButtonWidget(
-        text: KeyLanguage.orderButton.tr,
-        color: AppColor.primary,
-        onTap: () {
-          controller.checkoutButton();
-        },
-      ),
+      bottomNavigationBar: const BottomButtonCheckout(),
       backgroundColor: AppColor.backgroundScaffold,
       body: const SafeArea(
         child: BodyCheckoutView(),
