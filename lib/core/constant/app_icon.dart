@@ -12,6 +12,7 @@ abstract class AppIcon {
   static const IconData home = Icons.home;
   static const IconData setting = Icons.settings;
   static const IconData cart = Icons.shopping_cart;
+  static const IconData receive = Icons.receipt;
   static const IconData profile = Icons.person;
   static const IconData favorite = Icons.favorite;
   static const IconData favoriteBorder = Icons.favorite_border;
@@ -27,4 +28,5 @@ abstract class AppIcon {
   static const IconData city = Icons.location_city;
   static const IconData street = Icons.route;
   static const IconData detailAddress = Icons.near_me;
+  
 }

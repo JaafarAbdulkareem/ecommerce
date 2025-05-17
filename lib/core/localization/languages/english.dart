@@ -115,7 +115,7 @@ Map<String, String> english = {
   //botton bar
   KeyLanguage.barHome: "HOME",
   KeyLanguage.barSetting: " SETTING",
-  KeyLanguage.barCart: "CART",
+  KeyLanguage.barReceipt: "Receipt",
   KeyLanguage.barProfile: "PROFILE",
   //product
   KeyLanguage.color: "Color",

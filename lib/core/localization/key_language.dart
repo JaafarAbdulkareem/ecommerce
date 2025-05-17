@@ -102,7 +102,7 @@ abstract class KeyLanguage {
   //botton bar
   static const String barHome = "barHome";
   static const String barSetting = "barSetting";
-  static const String barCart = "barCart";
+  static const String barReceipt = "barReceipt";
   static const String barProfile = "barProfile";
   //product
   static const String color = "color";

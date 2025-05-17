@@ -18,14 +18,14 @@ class OrderControllerImp extends OrderController {
   late OrderRemote orderRemote;
   late StatusRequest statusRequest;
   static List<OrderModel> orderData = [];
-  late bool firstTime;
+  static bool firstTime = true;
   @override
   void onInit() {
     prefs = Get.find<SharedPrefsService>();
     userId = prefs.prefs.getString(ConstantKey.keyUserId)!;
     orderRemote = OrderRemote(curd: Get.find());
     statusRequest = StatusRequest.initial;
-    firstTime = Get.arguments[ConstantKey.boolGetOrder] ?? false;
+    // firstTime = Get.arguments?[ConstantKey.boolGetOrder] ?? false;
     getData();
     super.onInit();
   }
@@ -37,7 +37,9 @@ class OrderControllerImp extends OrderController {
   }
 
   void getData() async {
+    print("$firstTime : data order : ${orderData.length}");
     if (firstTime) {
+      firstTime = false;
       orderData.clear();
       statusRequest = StatusRequest.loading;
       update();

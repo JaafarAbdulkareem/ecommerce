@@ -20,7 +20,7 @@ abstract class ConstantKey {
   static const String productId = "productId";
   static const String count = "count";
   static const String boolInsert = "boolInsert";
-  static const String boolGetOrder = "boolGetOrder";
+  // static const String boolGetOrder = "boolGetOrder";
   static const String userLocation = "latLng";
   static const String invalidProductIds = "invalidProductIds";
   // static const String orderData = "orderData";

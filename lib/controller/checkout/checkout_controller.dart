@@ -1,5 +1,6 @@
 import 'package:ecommerce/controller/bottom_bar/setting_controller.dart';
 import 'package:ecommerce/controller/cart/coupons_controller.dart';
+import 'package:ecommerce/controller/order/order_controller.dart';
 import 'package:ecommerce/core/class/status_request.dart';
 import 'package:ecommerce/core/constant/api_key.dart';
 import 'package:ecommerce/core/constant/app_color.dart';
@@ -174,11 +175,14 @@ class CheckoutControllerImp extends CheckoutController {
         statusRequest = StatusRequest.success;
         data.id = int.parse(response[ApiResult.data]);
         // listOrderData.add(orderData);
-        Get.offNamedUntil(ConstantScreenName.order,
-            (route) => route.settings.name == ConstantScreenName.home,
-            arguments: {
-              ConstantKey.boolGetOrder: true,
-            });
+        OrderControllerImp.firstTime = true;
+        Get.offNamedUntil(
+          ConstantScreenName.order,
+          (route) => route.settings.name == ConstantScreenName.home,
+          // arguments: {
+          //   ConstantKey.boolGetOrder: true,
+          // }
+        );
         // update();
         // Get.offAllNamed(ConstantScreenName.home);
         // Get.back();
