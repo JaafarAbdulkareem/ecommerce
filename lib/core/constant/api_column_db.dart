@@ -42,11 +42,11 @@ class ApiColumnDb {
   static const String amount = "amount";
   static const String expiryData = "expiry_date";
   //order
-  static const String addressId = 'addressId';
-  static const String typePayment = 'typePayment';
-  static const String typeDelivery = 'typeDelivery';
-  static const String deliveryPrice = 'deliveryPrice';
-  static const String totalPrice = 'totalPrice';
+  static const String addressId = 'address_id';
+  static const String typePayment = 'type_payment';
+  static const String typeDelivery = 'type_delivery';
+  static const String deliveryPrice = 'delivery_price';
+  static const String totalPrice = 'total_price';
   static const String status = "status";
-  static const String couponsId = 'couponsId';
+  static const String couponsId = 'coupons_id';
 }

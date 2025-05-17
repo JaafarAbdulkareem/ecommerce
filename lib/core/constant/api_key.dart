@@ -47,4 +47,5 @@ abstract class ApiResult {
   static const String noChange = "noChange";
   // static const String noDecrement = "noDecrement";
   static const String insertAddressError = "insertAddressError";
+  // static const String orderId = "orderId"; // checkout php + order controller
 }

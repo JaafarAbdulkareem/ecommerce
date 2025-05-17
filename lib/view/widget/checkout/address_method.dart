@@ -1,5 +1,6 @@
 import 'package:ecommerce/controller/checkout/checkout_controller.dart';
 import 'package:ecommerce/core/constant/constant_key.dart';
+import 'package:ecommerce/core/constant/constant_scale.dart';
 import 'package:ecommerce/core/localization/key_language.dart';
 import 'package:ecommerce/view/widget/checkout/empty_address_checkout.dart';
 import 'package:ecommerce/view/widget/checkout/title_checkout.dart';
@@ -15,7 +16,7 @@ class AddressMethod extends StatelessWidget {
     return GetBuilder<CheckoutControllerImp>(
       id: ConstantKey.idDeliveryType,
       builder: (controller) {
-        return ConstantKey.deliveryOption == controller.deliveryType
+        return ConstantScale.deliveryOption == controller.deliveryType
             ? Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [

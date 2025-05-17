@@ -1,6 +1,7 @@
 import 'package:ecommerce/controller/checkout/checkout_controller.dart';
 import 'package:ecommerce/core/constant/app_images.dart';
 import 'package:ecommerce/core/constant/constant_key.dart';
+import 'package:ecommerce/core/constant/constant_scale.dart';
 import 'package:ecommerce/core/localization/key_language.dart';
 import 'package:ecommerce/view/widget/checkout/item_delivery_method.dart';
 import 'package:flutter/material.dart';
@@ -22,18 +23,20 @@ class OptionsDeliveryMethod extends StatelessWidget {
               ItemDeliveryMethod(
                 text: KeyLanguage.deliveryOption.tr,
                 image: AppImages.imagesDelivery,
-                isActive: ConstantKey.deliveryOption == controller.deliveryType,
+                isActive:
+                    ConstantScale.deliveryOption == controller.deliveryType,
                 onTap: () {
-                  controller.chooseDeliveryType(ConstantKey.deliveryOption);
+                  controller.chooseDeliveryType(ConstantScale.deliveryOption);
                 },
               ),
               const SizedBox(width: 8),
               ItemDeliveryMethod(
                 text: KeyLanguage.receiveOption.tr,
                 image: AppImages.imagesReceive,
-                isActive: ConstantKey.receiveOption == controller.deliveryType,
+                isActive:
+                    ConstantScale.receiveOption == controller.deliveryType,
                 onTap: () {
-                  controller.chooseDeliveryType(ConstantKey.receiveOption);
+                  controller.chooseDeliveryType(ConstantScale.receiveOption);
                 },
               ),
             ],

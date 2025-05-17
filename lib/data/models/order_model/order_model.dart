@@ -1,7 +1,7 @@
 import 'package:ecommerce/core/constant/api_column_db.dart';
 
 class OrderModel {
-  final int id;
+  late int id;
   final int typePayment;
   final int typeDelivery;
   final double deliveryPrice;
@@ -12,7 +12,7 @@ class OrderModel {
   final int? addressId;
   final int? couponsId;
 
-  const OrderModel({
+  OrderModel({
     required this.id,
     required this.typePayment,
     required this.typeDelivery,

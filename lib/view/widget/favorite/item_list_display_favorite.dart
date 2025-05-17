@@ -3,7 +3,6 @@ import 'package:ecommerce/core/constant/api_constant.dart';
 import 'package:ecommerce/core/constant/app_color.dart';
 import 'package:ecommerce/core/constant/app_lottie.dart';
 import 'package:ecommerce/core/constant/app_style.dart';
-import 'package:ecommerce/core/constant/constant_key.dart';
 import 'package:ecommerce/core/function/translate_language.dart';
 import 'package:ecommerce/core/share/custom_discount_widget.dart';
 import 'package:ecommerce/data/models/favorit_model.dart';

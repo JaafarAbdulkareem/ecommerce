@@ -20,8 +20,10 @@ abstract class ConstantKey {
   static const String productId = "productId";
   static const String count = "count";
   static const String boolInsert = "boolInsert";
+  static const String boolGetOrder = "boolGetOrder";
   static const String userLocation = "latLng";
   static const String invalidProductIds = "invalidProductIds";
+  // static const String orderData = "orderData";
 //hero
   static const String tagProductImage = "tagProductImage";
 //id GetBuilder
@@ -36,10 +38,11 @@ abstract class ConstantKey {
   static const String idDeliveryType = "idDeliveryType";
   static const String idAddressType = "idAddressType";
 //choose option
-  static const String cachOption = "cachOption";
-  static const String paymentOption = "paymentOption";
-  static const String deliveryOption = "deliveryOption";
-  static const String receiveOption = "receiveOption";
+
+  // static const String cachOption = "cachOption";
+  // static const String paymentOption = "paymentOption";
+  // static const String deliveryOption = "deliveryOption";
+  // static const String receiveOption = "receiveOption";
 }
 
 abstract class ConstantLanguage {

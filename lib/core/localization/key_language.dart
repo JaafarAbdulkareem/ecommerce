@@ -24,6 +24,8 @@ abstract class KeyLanguage {
   static const String checkoutButton = "checkoutButton";
   static const String orderButton = "orderButton";
   static const String detailButton = "detailButton";
+  static const String acceptButton = "acceptButton";
+  static const String injectButton = "injectButton";
 //auth
   static const String welcomeTitle = "welcomeTitle";
   static const String checkEmailTitle = "checkEmailTitle";
@@ -65,6 +67,8 @@ abstract class KeyLanguage {
   static const String forgetPassword = "forgetPassword";
   static const String messageLinkLogin = "messsageLinkLogin";
   static const String messageLinkSignup = "messageLinkSignup";
+  static const String productNoNotAvailableMessage =
+      "ProductNoNotAvailableMessage";
   //validator
   static const String empty = "empty";
   static const String invalidUsername = "invalidUsername";
@@ -163,4 +167,6 @@ abstract class KeyLanguage {
   static const String deliveyPrice = "deliveyPrice";
   static const String paymentMethod = "paymentMethod";
   // static const String totalPrice  = "deliveyPrice";
+  static const String productTitle = "productTitle";
+  static const String countTitle = "countTitle";
 }

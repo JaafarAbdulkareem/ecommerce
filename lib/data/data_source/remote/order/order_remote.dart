@@ -1,7 +1,7 @@
 import 'package:ecommerce/core/constant/api_constant.dart';
 import 'package:ecommerce/core/constant/api_key.dart';
 import 'package:ecommerce/core/service/curd.dart';
-import 'package:ecommerce/data/models/order_model.dart';
+import 'package:ecommerce/data/models/order_model/order_model.dart';
 
 class OrderRemote {
   final Curd curd;
@@ -25,6 +25,13 @@ class OrderRemote {
       ApiKey.userId: data.userId.toString(),
       ApiKey.addressId: data.addressId.toString(),
       ApiKey.couponsId: data.couponsId.toString(),
+    });
+    return response.fold((left) => left, (right) => right);
+  }
+
+  getDataOrder({required String userId}) async {
+    var response = await curd.postData(ApiConstant.apiViewOrder, {
+      ApiKey.userId: userId,
     });
     return response.fold((left) => left, (right) => right);
   }

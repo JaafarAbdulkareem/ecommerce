@@ -88,7 +88,7 @@ class BodyHomeControllerImp extends BodyHomeController {
   }
 
   @override
-  void getData() async {
+  Future<void> getData() async {
     if (firstTime) {
       firstTime = false;
       statusRequest = StatusRequest.loading;

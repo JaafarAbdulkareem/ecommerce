@@ -1,5 +1,4 @@
 import 'package:ecommerce/controller/search/search_product_controller.dart';
-import 'package:ecommerce/core/constant/constant_key.dart';
 import 'package:ecommerce/view/widget/search/item_list_product_search.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

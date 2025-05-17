@@ -27,6 +27,8 @@ Map<String, String> english = {
   KeyLanguage.checkoutButton: "Checkout",
   KeyLanguage.orderButton: "Place Order",
   KeyLanguage.detailButton: "Details",
+  KeyLanguage.acceptButton: "Accept",
+  KeyLanguage.injectButton: "Inject",
 //auth
   KeyLanguage.welcomeTitle: "Welcome Back",
   KeyLanguage.checkEmailTitle: "Check Email",
@@ -72,6 +74,8 @@ Map<String, String> english = {
   KeyLanguage.forgetPassword: "Forget Password",
   KeyLanguage.messageLinkLogin: "Don't have an acconunt?",
   KeyLanguage.messageLinkSignup: "I really have an account",
+  KeyLanguage.productNoNotAvailableMessage:
+      "Please Note That This Is The Only Unit Currently Available In Our Store.",
   //validator
   KeyLanguage.empty: "Please, Fill Field",
   KeyLanguage.invalidUsername: "Username Is Invalid",
@@ -172,4 +176,6 @@ Map<String, String> english = {
   KeyLanguage.orderPrice: "Order Price : ",
   KeyLanguage.deliveyPrice: "Delivery Price : ",
   KeyLanguage.paymentMethod: "Payment Method : ",
+  KeyLanguage.productTitle: "Products",
+  KeyLanguage.countTitle: "Counts",
 };

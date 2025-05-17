@@ -1,5 +1,7 @@
+import 'package:ecommerce/controller/order/order_controller.dart';
 import 'package:ecommerce/core/constant/app_style.dart';
 import 'package:ecommerce/core/localization/key_language.dart';
+import 'package:ecommerce/view/widget/home/home_status_view.dart';
 import 'package:ecommerce/view/widget/order/body_order_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -9,6 +11,7 @@ class OrderView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Get.lazyPut(() => OrderControllerImp());
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
@@ -17,8 +20,15 @@ class OrderView extends StatelessWidget {
           style: AppStyle.styleBold18(context),
         ),
       ),
-      body: const SafeArea(
-        child: BodyOrderView(),
+      body: SafeArea(
+        child: GetBuilder<OrderControllerImp>(
+          builder: (controller) {
+            return HomeStatusView(
+              statusRequest: controller.statusRequest,
+              child: const BodyOrderView(),
+            );
+          },
+        ),
       ),
     );
   }
