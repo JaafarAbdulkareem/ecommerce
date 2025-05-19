@@ -35,17 +35,14 @@ class NotificationControllerImp extends NotificationController {
     for (var element in response) {
       notificationData.add(NotificationModel.fromJson(element));
     }
-    print("data: ${notificationData.length}");
   }
 
   void getData() async {
     if (firstTime) {
-      print("****************** $firstTime");
       firstTime = false;
       statusRequest = StatusRequest.loading;
       update();
       var response = await notificationRemote.getData(userId: userId);
-      print("respons : $response");
       statusRequest = handleStatus(response);
       if (statusRequest == StatusRequest.success) {
         if (response[ApiResult.status] == ApiResult.success) {
@@ -90,7 +87,7 @@ class NotificationControllerImp extends NotificationController {
     }
   }
 
-@override
+  @override
   void selectDirectionIcon(int index) {
     dismissDirectionIndex = index;
     update([ConstantKey.idDeleteIcon]);

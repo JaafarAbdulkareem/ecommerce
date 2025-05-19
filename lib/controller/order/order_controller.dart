@@ -37,7 +37,6 @@ class OrderControllerImp extends OrderController {
   }
 
   void getData() async {
-    print("$firstTime : data order : ${orderData.length}");
     if (firstTime) {
       firstTime = false;
       orderData.clear();

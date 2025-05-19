@@ -46,7 +46,6 @@ class CartControllerImp extends CartController {
   //     shoppingTax,
   //     totalShoppingPrice;
   void isInserFunction(bool isInsert) async {
-    print("insert to cart $isInsert");
     if (isInsert) {
       int productId = Get.arguments[ConstantKey.productId];
       count = Get.arguments[ConstantKey.count];

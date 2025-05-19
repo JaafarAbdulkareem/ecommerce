@@ -142,8 +142,6 @@ class CheckoutControllerImp extends CheckoutController {
         middleText: KeyLanguage.chooseAddressMessage.tr,
       );
     } else {
-      //TODO:
-
       checkoutMethod(
         data: OrderModel(
           id: 0,
