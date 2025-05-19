@@ -2,6 +2,7 @@ import 'package:ecommerce/core/class/constant_type_theme.dart';
 import 'package:ecommerce/core/class/status_request.dart';
 import 'package:ecommerce/core/constant/constant_key.dart';
 import 'package:ecommerce/core/constant/constant_screen_name.dart';
+import 'package:ecommerce/core/function/natoification.dart';
 import 'package:ecommerce/core/service/shared_prefs_service.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -40,6 +41,8 @@ class LocaleController extends GetxController {
           ? ConstantTypeTheme.arabicTheme
           : ConstantTypeTheme.englishTheme;
     }
+
+    fCMNotification();
     super.onInit();
   }
 

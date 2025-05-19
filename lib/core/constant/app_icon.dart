@@ -9,6 +9,7 @@ abstract class AppIcon {
   static const IconData success = Icons.check_circle_outline;
   static const IconData search = Icons.search_outlined;
   static const IconData notification = Icons.notifications_outlined;
+  static const IconData notificationRing = Icons.notifications_active_outlined;
   static const IconData home = Icons.home;
   static const IconData setting = Icons.settings;
   static const IconData cart = Icons.shopping_cart;

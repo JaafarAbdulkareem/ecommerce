@@ -9,6 +9,7 @@ import 'package:ecommerce/core/function/on_back_pressed.dart';
 import 'package:ecommerce/core/localization/key_language.dart';
 import 'package:ecommerce/core/service/shared_prefs_service.dart';
 import 'package:ecommerce/data/data_source/remote/auth/login_remote.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -68,6 +69,11 @@ class LoginControllerImp extends LoginController {
     // await sharedPrefsService.prefs
     //     .setString(ApiKey.phone, response[ApiColumnDb.phone].toString());
     await sharedPrefsService.prefs.setBool(ConstantKey.keyLogin, true);
+    
+    String userId = sharedPrefsService.prefs.getString(ConstantKey.keyUserId)!;
+    FirebaseMessaging.instance.subscribeToTopic(ConstantKey.usersTopics);
+    FirebaseMessaging.instance
+        .subscribeToTopic("${ConstantKey.usersTopics}$userId");
   }
 
   @override

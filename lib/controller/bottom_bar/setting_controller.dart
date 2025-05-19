@@ -8,11 +8,13 @@ import 'package:ecommerce/core/localization/key_language.dart';
 import 'package:ecommerce/core/service/shared_prefs_service.dart';
 import 'package:ecommerce/data/data_source/remote/auth/user_info_remote.dart';
 import 'package:ecommerce/data/models/setting_model/user_info_model.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:get/get.dart';
 
 abstract class SettingController extends GetxController {
   void goToInserAddress();
   void goToDisplayAddress();
+  void logout();
 }
 
 class SettingControllerImp extends SettingController {
@@ -22,7 +24,7 @@ class SettingControllerImp extends SettingController {
   late StatusRequest statusRequest;
   static StatusRequest lastStatusRequest = StatusRequest.initial;
   late UserInfoModel userData;
-  static  UserInfoModel? lastUserData;
+  static UserInfoModel? lastUserData;
   static bool firstTime = true;
 
   @override
@@ -108,5 +110,14 @@ class SettingControllerImp extends SettingController {
   @override
   void goToDisplayAddress() {
     Get.toNamed(ConstantScreenName.displayAddress);
+  }
+
+  @override
+  void logout() {
+    FirebaseMessaging.instance.unsubscribeFromTopic(ConstantKey.usersTopics);
+    FirebaseMessaging.instance
+        .unsubscribeFromTopic("${ConstantKey.usersTopics}$userId");
+    sharedPrefsService.prefs.clear();
+    Get.offAllNamed(ConstantScreenName.login);
   }
 }

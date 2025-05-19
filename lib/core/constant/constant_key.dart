@@ -38,11 +38,13 @@ abstract class ConstantKey {
   static const String idDeliveryType = "idDeliveryType";
   static const String idAddressType = "idAddressType";
 //choose option
-
   // static const String cachOption = "cachOption";
   // static const String paymentOption = "paymentOption";
   // static const String deliveryOption = "deliveryOption";
   // static const String receiveOption = "receiveOption";
+
+  //topics
+  static const String usersTopics = "users";
 }
 
 abstract class ConstantLanguage {
