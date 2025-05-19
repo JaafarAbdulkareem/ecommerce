@@ -8,7 +8,7 @@ abstract class AppIcon {
   static const IconData phone = Icons.phone_android_rounded;
   static const IconData success = Icons.check_circle_outline;
   static const IconData search = Icons.search_outlined;
-  static const IconData notification = Icons.notifications_outlined;
+  static const IconData notification = Icons.notifications;
   static const IconData notificationRing = Icons.notifications_active_outlined;
   static const IconData home = Icons.home;
   static const IconData setting = Icons.settings;
@@ -25,6 +25,7 @@ abstract class AppIcon {
   static const IconData address = Icons.location_on_outlined;
   static const IconData logout = Icons.logout_outlined;
   static const IconData delete = Icons.delete_outline;
+  static const IconData deleteSwipe = Icons.delete;
   static const IconData typeAddress = Icons.bookmark;
   static const IconData city = Icons.location_city;
   static const IconData street = Icons.route;

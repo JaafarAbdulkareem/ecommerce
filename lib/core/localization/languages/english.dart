@@ -116,7 +116,8 @@ Map<String, String> english = {
   KeyLanguage.barHome: "HOME",
   KeyLanguage.barSetting: " SETTING",
   KeyLanguage.barReceipt: "Receipt",
-  KeyLanguage.barProfile: "PROFILE",
+  // KeyLanguage.barProfile: "PROFILE",
+  KeyLanguage.barNotification: "Notification",
   //product
   KeyLanguage.color: "Color",
   KeyLanguage.addProductMessage: "SORRY, Not More Products",
@@ -178,4 +179,6 @@ Map<String, String> english = {
   KeyLanguage.paymentMethod: "Payment Method : ",
   KeyLanguage.productTitle: "Products",
   KeyLanguage.countTitle: "Counts",
+  //notification
+  KeyLanguage.appBarTitleNotification: "Notificaion",
 };

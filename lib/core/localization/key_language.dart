@@ -103,7 +103,8 @@ abstract class KeyLanguage {
   static const String barHome = "barHome";
   static const String barSetting = "barSetting";
   static const String barReceipt = "barReceipt";
-  static const String barProfile = "barProfile";
+  // static const String barProfile = "barProfile";
+  static const String barNotification = "barNotification";
   //product
   static const String color = "color";
   static const String addProductMessage = "addProductMessage";
@@ -169,4 +170,6 @@ abstract class KeyLanguage {
   // static const String totalPrice  = "deliveyPrice";
   static const String productTitle = "productTitle";
   static const String countTitle = "countTitle";
+  //notification
+  static const String appBarTitleNotification = "appBarTitleNotification";
 }

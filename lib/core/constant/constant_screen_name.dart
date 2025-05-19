@@ -19,6 +19,7 @@ class ConstantScreenName {
   static const String checkout = "/checkout";
   static const String order = "/order";
   static const String detailOrder = "/detailOrder";
+  static const String notification = "/notification";
   //address
   static const String insertAddress = "/insertAddress";
   static const String detailInsertAddress = "/detailInsertAddress";

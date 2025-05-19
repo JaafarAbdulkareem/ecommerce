@@ -80,5 +80,5 @@ Map<String, String> arabic = {
   KeyLanguage.barHome: "الرئيسية",
   KeyLanguage.barSetting: "الإعدادات",
   KeyLanguage.barReceipt: "المفضلة",
-  KeyLanguage.barProfile: "الملف الشخصي",
+  // KeyLanguage.barProfile: "الملف الشخصي",
 };

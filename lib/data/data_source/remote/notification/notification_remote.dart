@@ -17,7 +17,7 @@ class NotificationRemote {
     return response.fold((left) => left, (right) => right);
   }
 
-  insertAddress({
+  insertNotification({
     required NotificationModel data,
   }) async {
     var response = await curd.postData(ApiConstant.apiInsertNotification, {
@@ -28,7 +28,7 @@ class NotificationRemote {
     return response.fold((left) => left, (right) => right);
   }
 
-  deleteAddress({
+  deleteNotification({
     required String id,
   }) async {
     var response = await curd.postData(ApiConstant.apiDeleteNotification, {

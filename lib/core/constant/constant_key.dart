@@ -37,6 +37,8 @@ abstract class ConstantKey {
   static const String idPaymentType = "idPaymentType";
   static const String idDeliveryType = "idDeliveryType";
   static const String idAddressType = "idAddressType";
+  //notifiction
+  static const String idDeleteIcon = "idDeleteIcon";
 //choose option
   // static const String cachOption = "cachOption";
   // static const String paymentOption = "paymentOption";
