@@ -31,6 +31,9 @@ abstract class ApiKey {
   static const String status = "status";
   static const String couponsId = "couponsId";
   static const String addressId = "addressId";
+  //
+  static const String title = "title";
+  static const String body = "body";
 }
 
 abstract class ApiResult {

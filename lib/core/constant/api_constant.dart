@@ -1,5 +1,7 @@
 abstract class ApiConstant {
-  static const String server = "http://192.168.0.113"; // home wifi
+  static const String server =
+      "https://128c-49-206-3-206.ngrok-free.app/"; // ngrok
+  // static const String server = "http://192.168.0.113"; // home wifi
   // static const String server = "http://192.168.230.139";
   // static const String server = "http://192.168.50.139"; // mobile
   static const String project = "/project/ecommerce";
@@ -53,8 +55,15 @@ abstract class ApiConstant {
   // static const String apiCheckProductNo =
   //     "$serverPath/$folderOrder/check_product_no.php";
   static const String apiCheckout = "$serverPath/$folderOrder/checkout.php";
-  static const String apiViewOrder =
-      "$serverPath/$folderOrder/view_order.php";
+  static const String apiViewOrder = "$serverPath/$folderOrder/view_order.php";
   static const String apiViewArchive =
       "$serverPath/$folderOrder/view_archive.php";
+
+  static const String folderNotification = "/notification";
+  static const String apiViewNotification =
+      "$serverPath/$folderNotification/view_notification.php";
+  static const String apiInsertNotification =
+      "$serverPath/$folderNotification/insert_notification.php";
+  static const String apiDeleteNotification =
+      "$serverPath/$folderNotification/delete_notification.php";
 }
