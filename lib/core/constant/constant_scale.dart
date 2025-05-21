@@ -47,6 +47,9 @@ abstract class ConstantScale {
   static const int paymentOption = 1;
   static const int deliveryOption = 0;
   static const int receiveOption = 1;
+  static const int approvedOption = 0;
+  static const int prepareOption = 1;
+  static const int onWay = 2;
   //notification
   static const double iconDelete = 35;
 }

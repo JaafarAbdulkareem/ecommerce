@@ -17,3 +17,14 @@ String commantDeliveryChoose(int choose) {
     return KeyLanguage.receiveOption.tr;
   }
 }
+
+String commantOrderStatus(int choose) {
+  if (choose == ConstantScale.approvedOption) {
+    return KeyLanguage.approvedOption.tr;
+  }
+  if (choose == ConstantScale.prepareOption) {
+    return KeyLanguage.prepareOption.tr;
+  } else {
+    return KeyLanguage.onWayOption.tr;
+  }
+}

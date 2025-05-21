@@ -1,5 +1,7 @@
+import 'package:ecommerce/controller/order/order_controller.dart';
 import 'package:ecommerce/core/constant/app_color.dart';
 import 'package:ecommerce/core/constant/app_icon.dart';
+import 'package:ecommerce/core/constant/constant_screen_name.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter_ringtone_player/flutter_ringtone_player.dart';
 import 'package:flutter/material.dart';
@@ -30,15 +32,18 @@ Future<void> requestNotificationPremission() async {
 // class ProvisionalStatusException implements Exception {}
 
 void notificationMessage() {
-  FirebaseMessaging.onMessage.listen((message) async{
-    await FlutterRingtonePlayer().playNotification(
-    );
+  FirebaseMessaging.onMessage.listen((message) async {
+    await FlutterRingtonePlayer().playNotification();
     Get.snackbar(
       icon: Icon(AppIcon.notificationRing),
       message.notification?.title ?? "",
       message.notification?.body ?? "",
       backgroundColor: AppColor.snackbar,
     );
+    if (ConstantScreenName.order == message.data["pagename"]) {
+      OrderControllerImp orderController = Get.find<OrderControllerImp>();
+      orderController.refreshOrderStatus();
+    }
   });
 }
 

@@ -10,7 +10,9 @@ import 'package:ecommerce/data/data_source/remote/order/order_remote.dart';
 import 'package:ecommerce/data/models/order_model/order_model.dart';
 import 'package:get/get.dart';
 
-abstract class OrderController extends GetxController {}
+abstract class OrderController extends GetxController {
+  void refreshOrderStatus();
+}
 
 class OrderControllerImp extends OrderController {
   late SharedPrefsService prefs;
@@ -64,5 +66,11 @@ class OrderControllerImp extends OrderController {
         );
       }
     }
+  }
+
+  @override
+  void refreshOrderStatus() {
+    firstTime = true;
+    getData();
   }
 }

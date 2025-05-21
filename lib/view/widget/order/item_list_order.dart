@@ -46,6 +46,10 @@ class ItemListOrder extends StatelessWidget {
               text:
                   "${KeyLanguage.paymentMethod.tr}${commantPaymentChoose(data.typePayment)}",
             ),
+            TextItemOrder(
+              text:
+                  "${KeyLanguage.orderStatus.tr}${commantOrderStatus(data.status ?? 0)}",
+            ),
             const Divider(),
             TotalPriceDetails(
               totalPriceText: "${data.totalPrice}",

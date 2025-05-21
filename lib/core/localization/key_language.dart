@@ -167,6 +167,10 @@ abstract class KeyLanguage {
   static const String orderPrice = "orderPrice";
   static const String deliveyPrice = "deliveyPrice";
   static const String paymentMethod = "paymentMethod";
+  static const String orderStatus = "orderStatus";
+  static const  String approvedOption  = "approvedOption";
+  static const  String prepareOption  = "prepareOption";
+  static const  String onWayOption  = "onWayOption";
   // static const String totalPrice  = "deliveyPrice";
   static const String productTitle = "productTitle";
   static const String countTitle = "countTitle";

@@ -200,7 +200,7 @@ class CheckoutControllerImp extends CheckoutController {
           Get.defaultDialog(
             barrierDismissible: false,
             middleText: KeyLanguage.productOutStackMessage.tr,
-            textConfirm: KeyLanguage.injectButton,
+            textConfirm: KeyLanguage.detailButton.tr,
             onConfirm: () {
               Get.offNamed(ConstantScreenName.detailOrder, arguments: {
                 ConstantKey.invalidProductIds: invalidProductIds,

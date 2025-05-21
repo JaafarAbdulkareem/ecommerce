@@ -19,15 +19,15 @@ class DetailOrderControllerImp extends DetailOrderController {
     invalidProductIds = Get.arguments[ConstantKey.invalidProductIds];
     invalidProductData = [];
     bodyHomeController = Get.find<BodyHomeControllerImp>();
-
+    getProduct();
     super.onInit();
   }
 
-  getPredouct() async {
+  void getProduct() async {
     statusRequest = StatusRequest.loading;
     update();
-    BodyHomeControllerImp.firstTime = true;
-    await bodyHomeController.getData();
+    // BodyHomeControllerImp.firstTime = true;
+    // await bodyHomeController.getData();
     productData = BodyHomeControllerImp.productData;
     getInvalidProduct();
     statusRequest = StatusRequest.success;

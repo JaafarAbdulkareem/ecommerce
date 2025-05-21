@@ -177,6 +177,10 @@ Map<String, String> english = {
   KeyLanguage.orderPrice: "Order Price : ",
   KeyLanguage.deliveyPrice: "Delivery Price : ",
   KeyLanguage.paymentMethod: "Payment Method : ",
+  KeyLanguage.orderStatus: "Order Status : ",
+  KeyLanguage.approvedOption: "✅ Your Order Is Confirmed!",
+  KeyLanguage.prepareOption: "📦 We’re Preparing Your Order.",
+  KeyLanguage.onWayOption: "🚚 Your Order Is On The Way!",
   KeyLanguage.productTitle: "Products",
   KeyLanguage.countTitle: "Counts",
   //notification
