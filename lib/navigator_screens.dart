@@ -17,6 +17,7 @@ import 'package:ecommerce/view/screen/home/home_view.dart';
 import 'package:ecommerce/view/screen/notification/notification_view.dart';
 import 'package:ecommerce/view/screen/onboarding/choose_app_language_view.dart';
 import 'package:ecommerce/view/screen/onboarding/onboarding_view.dart';
+import 'package:ecommerce/view/screen/order/invalid_order_view.dart';
 import 'package:ecommerce/view/screen/order/detail_order_view.dart';
 import 'package:ecommerce/view/screen/order/order_view.dart';
 import 'package:ecommerce/view/screen/product/product_detail_view.dart';
@@ -96,6 +97,10 @@ List<GetPage<dynamic>> get getPages => [
       GetPage(
         name: ConstantScreenName.detailOrder,
         page: () => const DetailOrderView(),
+      ),
+      GetPage(
+        name: ConstantScreenName.invalidOrder,
+        page: () => const InvalidOrderView(),
       ),
       GetPage(
         name: ConstantScreenName.notification,

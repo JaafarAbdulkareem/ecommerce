@@ -1,19 +1,19 @@
 import 'package:ecommerce/core/function/translate_language.dart';
 import 'package:ecommerce/data/models/product_model.dart';
 
-class DetailOrderModel {
+class InvalidOrderModel {
   final int id;
   final String name;
   final int count;
 
-  const DetailOrderModel({
+  const InvalidOrderModel({
     required this.id,
     required this.name,
     required this.count,
   });
 
-  factory DetailOrderModel.fromPrdouct(ProductModel data) {
-    return DetailOrderModel(
+  factory InvalidOrderModel.fromPrdouct(ProductModel data) {
+    return InvalidOrderModel(
       id: data.id,
       name: translateLanguage(
         arabic: data.arabicName,

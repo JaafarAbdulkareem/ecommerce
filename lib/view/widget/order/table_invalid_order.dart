@@ -1,11 +1,11 @@
 import 'package:ecommerce/core/constant/app_style.dart';
 import 'package:ecommerce/core/localization/key_language.dart';
-import 'package:ecommerce/view/widget/order/list_detail_order.dart';
+import 'package:ecommerce/view/widget/order/list_invalid_order.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class TableDetailOrder extends StatelessWidget {
-  const TableDetailOrder({
+class TableInvalidOrder extends StatelessWidget {
+  const TableInvalidOrder({
     super.key,
   });
 
@@ -38,7 +38,7 @@ class TableDetailOrder extends StatelessWidget {
             ],
           ),
           const Expanded(
-            child: ListDetailOrder(),
+            child: ListInvalidOrder(),
           ),
         ],
       ),

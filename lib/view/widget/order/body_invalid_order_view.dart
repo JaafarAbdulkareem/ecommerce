@@ -1,11 +1,11 @@
 import 'package:ecommerce/core/constant/app_style.dart';
 import 'package:ecommerce/core/localization/key_language.dart';
-import 'package:ecommerce/view/widget/order/table_detail_order.dart';
+import 'package:ecommerce/view/widget/order/table_invalid_order.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class BodyDetailOrderView extends StatelessWidget {
-  const BodyDetailOrderView({super.key});
+class BodyInvalidOrderView extends StatelessWidget {
+  const BodyInvalidOrderView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +17,7 @@ class BodyDetailOrderView extends StatelessWidget {
           textAlign: TextAlign.center,
         ),
         const Expanded(
-          child: TableDetailOrder(),
+          child: TableInvalidOrder(),
         ),
       ],
     );

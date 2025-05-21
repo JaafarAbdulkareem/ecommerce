@@ -2,13 +2,13 @@ import 'package:ecommerce/core/constant/app_color.dart';
 import 'package:ecommerce/core/constant/app_style.dart';
 import 'package:ecommerce/core/localization/key_language.dart';
 import 'package:ecommerce/core/share/custom_button_widget.dart';
-import 'package:ecommerce/data/models/order_model/detail_order_model.dart';
+import 'package:ecommerce/data/models/order_model/invalid_order_model.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class ItemListDetailOrder extends StatelessWidget {
-  const ItemListDetailOrder({super.key, required this.data});
-  final DetailOrderModel data;
+class ItemListInvalidOrder extends StatelessWidget {
+  const ItemListInvalidOrder({super.key, required this.data});
+  final InvalidOrderModel data;
   @override
   Widget build(BuildContext context) {
     return Card(

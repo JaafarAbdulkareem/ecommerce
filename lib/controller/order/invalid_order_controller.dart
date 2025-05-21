@@ -1,23 +1,23 @@
 import 'package:ecommerce/controller/home/body_home_controller.dart';
 import 'package:ecommerce/core/class/status_request.dart';
 import 'package:ecommerce/core/constant/constant_key.dart';
-import 'package:ecommerce/data/models/order_model/detail_order_model.dart';
+import 'package:ecommerce/data/models/order_model/invalid_order_model.dart';
 import 'package:ecommerce/data/models/product_model.dart';
 import 'package:get/get.dart';
 
-abstract class DetailOrderController extends GetxController {}
+abstract class InvalidOrderController extends GetxController {}
 
-class DetailOrderControllerImp extends DetailOrderController {
+class InvalidOrderControllerImp extends InvalidOrderController {
   late StatusRequest statusRequest;
   late List<int>? invalidProductIds;
-  late List<DetailOrderModel> invalidProductData;
+  late List<InvalidOrderModel> invalidOrderData;
   late BodyHomeControllerImp bodyHomeController;
   late List<ProductModel> productData;
   @override
   void onInit() {
     statusRequest = StatusRequest.initial;
     invalidProductIds = Get.arguments[ConstantKey.invalidProductIds];
-    invalidProductData = [];
+    invalidOrderData = [];
     bodyHomeController = Get.find<BodyHomeControllerImp>();
     getProduct();
     super.onInit();
@@ -36,7 +36,7 @@ class DetailOrderControllerImp extends DetailOrderController {
 
   void getInvalidProduct() {
     if (invalidProductIds != null) {
-      invalidProductData.addAll(
+      invalidOrderData.addAll(
         productData
             .where(
               (e) =>
@@ -45,7 +45,7 @@ class DetailOrderControllerImp extends DetailOrderController {
                   e.count > 0,
             )
             .map(
-              (e) => DetailOrderModel.fromPrdouct(e),
+              (e) => InvalidOrderModel.fromPrdouct(e),
             ),
       );
     }
