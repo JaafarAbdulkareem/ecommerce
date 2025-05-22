@@ -5,7 +5,7 @@ import 'package:ecommerce/core/function/commant_checkout_choose.dart';
 import 'package:ecommerce/core/localization/key_language.dart';
 import 'package:ecommerce/data/models/order_model/order_model.dart';
 import 'package:ecommerce/view/widget/order/text_item_order.dart';
-import 'package:ecommerce/view/widget/order/total_price_detail.dart';
+import 'package:ecommerce/view/widget/order/total_price_button_detail.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -51,7 +51,8 @@ class ItemListOrder extends StatelessWidget {
                   "${KeyLanguage.orderStatus.tr}${commantOrderStatus(data.status ?? 0)}",
             ),
             const Divider(),
-            TotalPriceDetails(
+            TotalPriceButtonDetail(
+              id: data.id,
               totalPriceText: "${data.totalPrice}",
             ),
           ],

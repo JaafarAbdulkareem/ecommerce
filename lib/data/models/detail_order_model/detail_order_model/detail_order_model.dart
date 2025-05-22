@@ -5,9 +5,9 @@ import 'products_datum.dart';
 class DetailOrderModel {
   final String id;
   final String status;
-  final String price;
-  final String totalPrice;
-  final String addressId;
+  final double price;
+  final double totalPrice;
+  final String? addressId;
   final String userId;
   final List<ProductsDatum> productsData;
   final AddressModel? address;
@@ -28,8 +28,8 @@ class DetailOrderModel {
     return DetailOrderModel(
       id: json[ApiColumnDb.id].toString(),
       status: json[ApiColumnDb.status],
-      price: json[ApiColumnDb.price],
-      totalPrice: json[ApiColumnDb.totalPrice],
+      price: double.parse(json[ApiColumnDb.price]),
+      totalPrice: double.parse(json[ApiColumnDb.totalPrice]),
       addressId: json[ApiColumnDb.addressId],
       userId: json[ApiColumnDb.userId],
       productsData: productsList is List

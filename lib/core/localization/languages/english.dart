@@ -143,9 +143,9 @@ Map<String, String> english = {
   KeyLanguage.appBarTitleCart: "My Cart",
   KeyLanguage.youHave: "You Have",
   KeyLanguage.listITemCart: "Item/s In Your List",
-  KeyLanguage.totalPrice: "Total Price",
-  KeyLanguage.shopping: "Shopping",
-  KeyLanguage.price: "Price",
+  KeyLanguage.totalPriceTitle: "Total Price",
+  KeyLanguage.shoppingTitle: "Shopping",
+  KeyLanguage.priceTitle: "Price",
   KeyLanguage.couponsDiscount: "Coupon Discount",
   KeyLanguage.couponsNotFoundMessage:
       "Oops, That Coupon Didn’t Work. Try Another One!",
@@ -171,6 +171,7 @@ Map<String, String> english = {
   KeyLanguage.chooseAddressMessage:
       "Oops! Please Select One Of Your Saved Addresses Before Continuing. 😊",
   KeyLanguage.appBarTitleOrder: "Orders",
+  KeyLanguage.appBarTitleDetailOrder: "Orders Detail",
   KeyLanguage.appBarTitleArchive: "Archive",
   KeyLanguage.orderNumber: "Oreder Number : #",
   KeyLanguage.orderType: "Oreder Type : ",
@@ -183,6 +184,8 @@ Map<String, String> english = {
   KeyLanguage.onWayOption: "🚚 Your Order Is On The Way!",
   KeyLanguage.productTitle: "Products",
   KeyLanguage.countTitle: "Counts",
+  KeyLanguage.quantityTitle: "QTY",
+  KeyLanguage.addressTitle: "Shipping Address",
   //notification
   KeyLanguage.appBarTitleNotification: "Notificaion",
 };

@@ -1,3 +1,4 @@
+import 'package:ecommerce/controller/order/order_controller.dart';
 import 'package:ecommerce/core/constant/app_color.dart';
 import 'package:ecommerce/core/constant/app_style.dart';
 import 'package:ecommerce/core/constant/constant_key.dart';
@@ -6,8 +7,13 @@ import 'package:ecommerce/core/share/custom_button_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class TotalPriceDetails extends StatelessWidget {
-  const TotalPriceDetails({super.key, required this.totalPriceText});
+class TotalPriceButtonDetail extends GetView<OrderControllerImp> {
+  const TotalPriceButtonDetail({
+    super.key,
+    required this.id,
+    required this.totalPriceText,
+  });
+  final int id;
   final String totalPriceText;
   @override
   Widget build(BuildContext context) {
@@ -15,13 +21,15 @@ class TotalPriceDetails extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Text(
-          "${KeyLanguage.totalPrice.tr} : $totalPriceText${ConstantText.currencyPrice}",
+          "${KeyLanguage.totalPriceTitle.tr} : $totalPriceText${ConstantText.currencyPrice}",
           style: AppStyle.styleSemiBold14(context),
         ),
         CustomButtonWidget(
           text: KeyLanguage.detailButton.tr,
           color: AppColor.iconColor,
-          onTap: () {},
+          onTap: () {
+            controller.goToDetailOrder(id);
+          },
         ),
       ],
     );

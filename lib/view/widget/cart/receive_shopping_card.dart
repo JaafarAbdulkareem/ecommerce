@@ -29,7 +29,7 @@ class ReceiveShoppingCard extends StatelessWidget {
           child: Column(
             children: [
               TextReceiveShoppingCard(
-                title: KeyLanguage.price.tr,
+                title: KeyLanguage.priceTitle.tr,
                 receiveAmount: controller.price,
               ),
               controller.couponsController.isApplyCoupons
@@ -51,12 +51,12 @@ class ReceiveShoppingCard extends StatelessWidget {
                     )
                   : const SizedBox(),
               TextReceiveShoppingCard(
-                title: KeyLanguage.shopping.tr,
+                title: KeyLanguage.shoppingTitle.tr,
                 receiveAmount: controller.shopping,
               ),
               const Divider(),
               TextReceiveShoppingCard(
-                title: KeyLanguage.totalPrice.tr,
+                title: KeyLanguage.totalPriceTitle.tr,
                 receiveAmount: controller.totalPrice,
               ),
             ],

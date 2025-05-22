@@ -11,6 +11,7 @@ class TextItemOrder extends StatelessWidget {
       child: Text(
         text,
         style: AppStyle.styleBold12(context),
+        textAlign: TextAlign.center,
       ),
     );
   }

@@ -30,6 +30,7 @@ abstract class ConstantKey {
   static const String idListProductCart = "idListProductCart";
   static const String idReceiveShopping = "idReceiveShopping";
   static const String idUpdateAddress = "idUpdateAddress";
+  // static const String idGoogleMap = "idGoogleMap";
   // id marker in google map
   static const String idUserLocation = "userLocation";
   static const String idCouponsApply = "idCouponsApply";

@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     LocaleController controller = Get.put(LocaleController());
     return GetMaterialApp(
-      //remove
+      // //remove
       useInheritedMediaQuery: true,
       // locale: DevicePreview.locale(context),
       builder: DevicePreview.appBuilder,

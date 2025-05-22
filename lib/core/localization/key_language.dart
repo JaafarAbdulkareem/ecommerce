@@ -132,9 +132,9 @@ abstract class KeyLanguage {
   static const String appBarTitleCart = "appBarTitleCart";
   static const String youHave = "youHave";
   static const String listITemCart = "listItemCart";
-  static const String totalPrice = "totalPrice";
-  static const String shopping = "shopping";
-  static const String price = "price";
+  static const String totalPriceTitle = "totalPriceTitle";
+  static const String shoppingTitle = "shoppingTitle";
+  static const String priceTitle = "priceTitle";
   static const String couponsDiscount = "couponsDiscount";
   static const String couponsNotFoundMessage = "couponsNotFoundMessage";
 
@@ -161,6 +161,7 @@ abstract class KeyLanguage {
   static const String chooseAddressMessage = "chooseAddressMessage";
   //order
   static const String appBarTitleOrder = "appBarTitleOrder";
+  static const String appBarTitleDetailOrder = "appBarTitleDetailOrder";
   static const String appBarTitleArchive = "appBarTitleArchive";
   static const String orderNumber = "orderNumber";
   static const String orderType = "orderType";
@@ -174,6 +175,8 @@ abstract class KeyLanguage {
   // static const String totalPrice  = "deliveyPrice";
   static const String productTitle = "productTitle";
   static const String countTitle = "countTitle";
+  static const String quantityTitle = "quantityTitle";
+  static const String addressTitle = "addressTitle";
   //notification
   static const String appBarTitleNotification = "appBarTitleNotification";
 }

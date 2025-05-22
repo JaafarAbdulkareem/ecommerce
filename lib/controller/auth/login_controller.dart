@@ -133,9 +133,12 @@ class LoginControllerImp extends LoginController {
     if (email.text.isNotEmpty) {
       statusRequest = StatusRequest.loading;
       update();
-      await Get.toNamed(ConstantScreenName.forgetPassword, arguments: {
-        ApiKey.email: email.text,
-      });
+      await Get.toNamed(
+        ConstantScreenName.forgetPassword,
+        arguments: {
+          ApiKey.email: email.text,
+        },
+      );
       statusRequest = StatusRequest.success;
       update();
     } else {

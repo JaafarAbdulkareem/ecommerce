@@ -2,10 +2,10 @@ import 'package:ecommerce/core/constant/api_constant.dart';
 import 'package:ecommerce/core/constant/api_key.dart';
 import 'package:ecommerce/core/service/curd.dart';
 
-class OrderRemote {
+class DetailOrderRemote {
   final Curd curd;
 
-  OrderRemote({required this.curd});
+  DetailOrderRemote({required this.curd});
 
   getData({
     required String id,

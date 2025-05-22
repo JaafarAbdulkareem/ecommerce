@@ -12,6 +12,7 @@ import 'package:get/get.dart';
 
 abstract class OrderController extends GetxController {
   void refreshOrderStatus();
+  void goToDetailOrder(int id);
 }
 
 class OrderControllerImp extends OrderController {
@@ -56,6 +57,7 @@ class OrderControllerImp extends OrderController {
           update();
         }
       } else {
+        //TODO: check navigator
         Get.offAllNamed(ConstantScreenName.home);
         // statusRequest = StatusRequest.success;
         // update();
@@ -72,5 +74,16 @@ class OrderControllerImp extends OrderController {
   void refreshOrderStatus() {
     firstTime = true;
     getData();
+  }
+
+  @override
+  void goToDetailOrder(int id) {
+    Get.toNamed(
+      ConstantScreenName.detailOrder,
+      arguments: {
+        ApiKey.orderId: id.toString(),
+        ApiKey.userId: userId,
+      },
+    );
   }
 }
