@@ -69,7 +69,7 @@ class LoginControllerImp extends LoginController {
     // await sharedPrefsService.prefs
     //     .setString(ApiKey.phone, response[ApiColumnDb.phone].toString());
     await sharedPrefsService.prefs.setBool(ConstantKey.keyLogin, true);
-    
+
     String userId = sharedPrefsService.prefs.getString(ConstantKey.keyUserId)!;
     FirebaseMessaging.instance.subscribeToTopic(ConstantKey.usersTopics);
     FirebaseMessaging.instance

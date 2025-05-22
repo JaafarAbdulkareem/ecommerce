@@ -8,7 +8,7 @@ import 'package:get/get.dart';
 
 class TotalPriceDetails extends StatelessWidget {
   const TotalPriceDetails({super.key, required this.totalPriceText});
-final String totalPriceText;
+  final String totalPriceText;
   @override
   Widget build(BuildContext context) {
     return Row(

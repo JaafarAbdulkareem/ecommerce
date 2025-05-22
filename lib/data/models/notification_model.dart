@@ -16,7 +16,8 @@ class NotificationModel {
     required this.userId,
   });
 
-  factory NotificationModel.fromJson(Map<String, dynamic> json) => NotificationModel(
+  factory NotificationModel.fromJson(Map<String, dynamic> json) =>
+      NotificationModel(
         id: int.parse(json[ApiColumnDb.id]),
         title: json[ApiColumnDb.title],
         body: json[ApiColumnDb.body],

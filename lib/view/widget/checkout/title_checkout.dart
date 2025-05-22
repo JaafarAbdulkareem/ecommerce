@@ -11,7 +11,7 @@ class TitleCheckout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical:  12),
+      padding: const EdgeInsets.symmetric(vertical: 12),
       child: Text(
         title,
         style: AppStyle.styleSemiBold16(context).copyWith(

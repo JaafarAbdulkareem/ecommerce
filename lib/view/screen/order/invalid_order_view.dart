@@ -10,8 +10,8 @@ class InvalidOrderView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Get.lazyPut(()=>InvalidOrderControllerImp());
-    return  Scaffold(
+    Get.lazyPut(() => InvalidOrderControllerImp());
+    return Scaffold(
       appBar: AppBar(
         centerTitle: true,
         title: Text(

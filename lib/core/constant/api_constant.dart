@@ -58,6 +58,7 @@ abstract class ApiConstant {
   static const String apiViewOrder = "$serverPath/$folderOrder/view_order.php";
   static const String apiViewArchive =
       "$serverPath/$folderOrder/view_archive.php";
+static const String apiViewDetailOrder = "$serverPath/$folderOrder/view_detail_order.php";
 
   static const String folderNotification = "/notification";
   static const String apiViewNotification =

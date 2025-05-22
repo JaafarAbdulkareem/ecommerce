@@ -39,17 +39,17 @@ class ItemListDisplayProduct extends StatelessWidget {
                   // Hero(
                   //   tag: ConstantKey.tagProductImage + data.id.toString(),
                   //   child:
-                     CachedNetworkImage(
-                      height: 60,
-                      fit: BoxFit.fill,
-                      imageUrl: "${ApiConstant.productImagePath}/${data.image}",
-                      progressIndicatorBuilder:
-                          (context, url, downloadProgress) => Lottie.asset(
-                        AppLottie.loading,
-                      ),
-                      errorWidget: (context, url, error) =>
-                          const Icon(Icons.error),
+                  CachedNetworkImage(
+                    height: 60,
+                    fit: BoxFit.fill,
+                    imageUrl: "${ApiConstant.productImagePath}/${data.image}",
+                    progressIndicatorBuilder:
+                        (context, url, downloadProgress) => Lottie.asset(
+                      AppLottie.loading,
                     ),
+                    errorWidget: (context, url, error) =>
+                        const Icon(Icons.error),
+                  ),
                   // ),
                   Text(
                     translateLanguage(

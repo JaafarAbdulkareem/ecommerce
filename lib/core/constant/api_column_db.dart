@@ -49,6 +49,7 @@ class ApiColumnDb {
   static const String totalPrice = 'total_price';
   static const String status = "status";
   static const String couponsId = 'coupons_id';
+  static const String productsData = "products_Data";
 
   //notification
   static const String title = "title";

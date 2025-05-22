@@ -30,20 +30,20 @@ class ImageProductDetail extends GetView<ProductDetailControllerImp> {
           // child: Hero(
           //   tag: ConstantKey.tagProductImage +
           //       controller.productDetailData.id.toString(),
-            child: Padding(
-              padding: const EdgeInsets.all(4),
-              child: CachedNetworkImage(
-                fit: BoxFit.contain,
-                height: 230,
-                imageUrl:
-                    "${ApiConstant.productImagePath}/${controller.productDetailData.image}",
-                progressIndicatorBuilder: (context, url, downloadProgress) =>
-                    Lottie.asset(
-                  AppLottie.loading,
-                ),
-                errorWidget: (context, url, error) => const Icon(Icons.error),
+          child: Padding(
+            padding: const EdgeInsets.all(4),
+            child: CachedNetworkImage(
+              fit: BoxFit.contain,
+              height: 230,
+              imageUrl:
+                  "${ApiConstant.productImagePath}/${controller.productDetailData.image}",
+              progressIndicatorBuilder: (context, url, downloadProgress) =>
+                  Lottie.asset(
+                AppLottie.loading,
               ),
+              errorWidget: (context, url, error) => const Icon(Icons.error),
             ),
+          ),
           // ),
         ),
       ],

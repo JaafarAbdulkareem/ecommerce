@@ -30,5 +30,4 @@ abstract class AppIcon {
   static const IconData city = Icons.location_city;
   static const IconData street = Icons.route;
   static const IconData detailAddress = Icons.near_me;
-  
 }

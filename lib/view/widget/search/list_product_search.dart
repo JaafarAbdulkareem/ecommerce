@@ -8,29 +8,29 @@ class ListProductSearch extends GetView<SearchProductControllerImp> {
 
   @override
   Widget build(BuildContext context) {
-    //TODO: check id builder 
-    // return 
+    //TODO: check id builder
+    // return
     // GetBuilder<SearchProductControllerImp>(
     //   id: ConstantKey.idListProductCart,
     //   builder: (controller) {
-        return ListView(
-          children: controller.searchData
-              .asMap()
-              .entries
-              .map(
-                (e) => AspectRatio(
-                  aspectRatio: 4,
-                  child: ItemListProductSearch(
-                    index: e.key,
-                    data: e.value,
-                    onTap: () {
-                      controller.goToProductDetail(e.key);
-                    },
-                  ),
-                ),
-              )
-              .toList(),
-        );
+    return ListView(
+      children: controller.searchData
+          .asMap()
+          .entries
+          .map(
+            (e) => AspectRatio(
+              aspectRatio: 4,
+              child: ItemListProductSearch(
+                index: e.key,
+                data: e.value,
+                onTap: () {
+                  controller.goToProductDetail(e.key);
+                },
+              ),
+            ),
+          )
+          .toList(),
+    );
     //   },
     // );
   }

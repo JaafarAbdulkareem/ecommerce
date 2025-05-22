@@ -16,7 +16,7 @@ abstract class AppColor {
   static const Color snackbar = Color(0xAAFFFFFF);
   static const Color optionCheckout = Color(0xFF7EB5E3);
   static const Color iconDelete = Color(0xFFFFFFFF);
-  
+
   // static const Color
 }
 

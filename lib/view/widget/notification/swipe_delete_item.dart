@@ -20,7 +20,6 @@ class SwipeDeleteItem extends GetView<NotificationControllerImp> {
     return Dismissible(
       key: Key(data.id.toString()),
       confirmDismiss: (direction) async {
-
         controller.selectDirectionIcon(direction.index);
         return true;
       },
@@ -31,20 +30,19 @@ class SwipeDeleteItem extends GetView<NotificationControllerImp> {
         color: AppColor.wrong,
         child: Center(
           child: GetBuilder<NotificationControllerImp>(
-            id: ConstantKey.idDeleteIcon,
-            builder: (_) {
-              return ListTile(
-                leading: controller.dismissDirectionIndex ==
-                        DismissDirection.startToEnd.index
-                    ? const SwipeDeleteIcon()
-                    : null,
-                trailing: controller.dismissDirectionIndex ==
-                        DismissDirection.endToStart.index
-                    ? const SwipeDeleteIcon()
-                    : null,
-              );
-            }
-          ),
+              id: ConstantKey.idDeleteIcon,
+              builder: (_) {
+                return ListTile(
+                  leading: controller.dismissDirectionIndex ==
+                          DismissDirection.startToEnd.index
+                      ? const SwipeDeleteIcon()
+                      : null,
+                  trailing: controller.dismissDirectionIndex ==
+                          DismissDirection.endToStart.index
+                      ? const SwipeDeleteIcon()
+                      : null,
+                );
+              }),
         ),
       ),
       child: ItemListNotification(data: data),
