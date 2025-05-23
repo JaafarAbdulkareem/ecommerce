@@ -24,6 +24,7 @@ abstract class KeyLanguage {
   static const String checkoutButton = "checkoutButton";
   static const String orderButton = "orderButton";
   static const String detailButton = "detailButton";
+  static const String deleteButton = "deleteButton";
   static const String acceptButton = "acceptButton";
   static const String injectButton = "injectButton";
 //auth
@@ -172,6 +173,7 @@ abstract class KeyLanguage {
   static const String approvedOption = "approvedOption";
   static const String prepareOption = "prepareOption";
   static const String onWayOption = "onWayOption";
+  static const String doneDeliveryOption = "doneDeliveryOption";
   // static const String totalPrice  = "deliveyPrice";
   static const String productTitle = "productTitle";
   static const String countTitle = "countTitle";

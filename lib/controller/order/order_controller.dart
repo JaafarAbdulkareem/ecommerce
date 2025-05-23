@@ -13,6 +13,7 @@ import 'package:get/get.dart';
 abstract class OrderController extends GetxController {
   void refreshOrderStatus();
   void goToDetailOrder(int id);
+  void deleteOrder(int id);
 }
 
 class OrderControllerImp extends OrderController {
@@ -57,15 +58,19 @@ class OrderControllerImp extends OrderController {
           update();
         }
       } else {
-        //TODO: check navigator
         Get.offAllNamed(ConstantScreenName.home);
         // statusRequest = StatusRequest.success;
-        // update();
+        update();
         Get.snackbar(
           KeyLanguage.alert.tr,
           KeyLanguage.errorAddressMessage.tr,
           backgroundColor: AppColor.snackbar,
         );
+      }
+    } else {
+      if (orderData.isEmpty) {
+        statusRequest = StatusRequest.failure;
+        update();
       }
     }
   }
@@ -85,5 +90,31 @@ class OrderControllerImp extends OrderController {
         ApiKey.userId: userId,
       },
     );
+  }
+
+  @override
+  void deleteOrder(int id) async {
+    var response = await orderRemote.deleteOrder(id: id.toString());
+    statusRequest = handleStatus(response);
+    if (statusRequest == StatusRequest.success) {
+      if (response[ApiResult.status] == ApiResult.success) {
+        orderData.removeWhere((e) => e.id == id);
+        if (orderData.isEmpty) {
+          statusRequest = StatusRequest.failure;
+        } else {
+          statusRequest = StatusRequest.success;
+        }
+        update();
+      } else {
+        statusRequest = StatusRequest.success;
+        update();
+        await Get.defaultDialog(
+          title: KeyLanguage.alert.tr,
+          middleText: KeyLanguage.someErrorMessage.tr,
+        );
+      }
+    } else {
+      update();
+    }
   }
 }

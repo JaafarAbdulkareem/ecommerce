@@ -35,4 +35,11 @@ class OrderRemote {
     });
     return response.fold((left) => left, (right) => right);
   }
+
+  deleteOrder({required String id}) async {
+    var response = await curd.postData(ApiConstant.apiDeleteOrder, {
+      ApiKey.id: id,
+    });
+    return response.fold((left) => left, (right) => right);
+  }
 }

@@ -54,6 +54,7 @@ class ItemListOrder extends StatelessWidget {
             TotalPriceButtonDetail(
               id: data.id,
               totalPriceText: "${data.totalPrice}",
+              status: data.status ?? 0,
             ),
           ],
         ),

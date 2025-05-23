@@ -47,6 +47,7 @@ abstract class ApiConstant {
   //     "$folderOrder/check_product_no.php";
   static const String apiCheckout = "$folderOrder/checkout.php";
   static const String apiViewOrder = "$folderOrder/view_order.php";
+  static const String apiDeleteOrder = "$folderOrder/delete_order.php";
   static const String apiViewArchive = "$folderOrder/view_archive.php";
   static const String apiViewDetailOrder = "$folderOrder/view_detail_order.php";
 

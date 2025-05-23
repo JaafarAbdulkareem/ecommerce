@@ -30,7 +30,6 @@ class DetailOrderControllerImp extends DetailOrderController {
     orderId = Get.arguments[ApiKey.orderId];
     userId = Get.arguments[ApiKey.userId];
     statusRequest = StatusRequest.initial;
-    print("initi");
     // callRequest();
     getData();
     // locationService = LocationService();
@@ -54,7 +53,6 @@ class DetailOrderControllerImp extends DetailOrderController {
       id: orderId,
       userId: userId,
     );
-    print("response : $response");
 
     statusRequest = handleStatus(response);
     if (statusRequest == StatusRequest.success) {

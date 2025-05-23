@@ -27,6 +27,7 @@ Map<String, String> english = {
   KeyLanguage.checkoutButton: "Checkout",
   KeyLanguage.orderButton: "Place Order",
   KeyLanguage.detailButton: "Details",
+  KeyLanguage.deleteButton: "Delete",
   KeyLanguage.acceptButton: "Accept",
   KeyLanguage.injectButton: "Inject",
 //auth
@@ -182,6 +183,7 @@ Map<String, String> english = {
   KeyLanguage.approvedOption: "✅ Your Order Is Confirmed!",
   KeyLanguage.prepareOption: "📦 We’re Preparing Your Order.",
   KeyLanguage.onWayOption: "🚚 Your Order Is On The Way!",
+  KeyLanguage.doneDeliveryOption: "📬 Your Order Has Been Delivered. Enjoy!",
   KeyLanguage.productTitle: "Products",
   KeyLanguage.countTitle: "Counts",
   KeyLanguage.quantityTitle: "QTY",

@@ -25,7 +25,7 @@ class OrderView extends StatelessWidget {
           builder: (controller) {
             return StatusView(
               statusRequest: controller.statusRequest,
-              child: const BodyOrderView(),
+              child: BodyOrderView(), //do not put const i want to rebuilding
             );
           },
         ),

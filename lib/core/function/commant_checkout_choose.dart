@@ -21,10 +21,11 @@ String commantDeliveryChoose(int choose) {
 String commantOrderStatus(int choose) {
   if (choose == ConstantScale.approvedOption) {
     return KeyLanguage.approvedOption.tr;
-  }
-  if (choose == ConstantScale.prepareOption) {
+  } else if (choose == ConstantScale.prepareOption) {
     return KeyLanguage.prepareOption.tr;
-  } else {
+  } else if (choose == ConstantScale.onWayOption) {
     return KeyLanguage.onWayOption.tr;
+  } else {
+    return KeyLanguage.doneDeliveryOption.tr;
   }
 }
