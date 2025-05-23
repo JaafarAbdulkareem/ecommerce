@@ -23,6 +23,7 @@ abstract class AppIcon {
   static const IconData add = Icons.add;
   static const IconData remove = Icons.remove;
   static const IconData address = Icons.location_on_outlined;
+  static const IconData archive = Icons.archive_outlined;
   static const IconData logout = Icons.logout_outlined;
   static const IconData delete = Icons.delete_outline;
   static const IconData deleteSwipe = Icons.delete;

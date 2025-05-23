@@ -24,6 +24,7 @@ abstract class ConstantKey {
   static const String userLocation = "latLng";
   static const String invalidProductIds = "invalidProductIds";
   // static const String orderData = "orderData";
+  static const String callArchive = "callArchive";
 //hero
   static const String tagProductImage = "tagProductImage";
 //id GetBuilder

@@ -129,6 +129,7 @@ Map<String, String> english = {
   // KeyLanguage.emailUSer : "Email : ",
   // KeyLanguage.phoneUSer : "Phone : ",
   // KeyLanguage.passwordUSer : "Password",
+  KeyLanguage.archiveTitle: "Orders archive",
   KeyLanguage.logout: "Logout",
   //drawer
   KeyLanguage.aboutUS: "Aboout Us",

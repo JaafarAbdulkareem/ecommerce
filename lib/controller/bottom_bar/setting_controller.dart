@@ -14,6 +14,7 @@ import 'package:get/get.dart';
 abstract class SettingController extends GetxController {
   void goToInserAddress();
   void goToDisplayAddress();
+  void goToArchive();
   void logout();
 }
 
@@ -110,6 +111,16 @@ class SettingControllerImp extends SettingController {
   @override
   void goToDisplayAddress() {
     Get.toNamed(ConstantScreenName.displayAddress);
+  }
+
+  @override
+  void goToArchive() {
+    Get.toNamed(
+      ConstantScreenName.archiveOrder,
+      arguments: {
+        ConstantKey.callArchive: true,
+      },
+    );
   }
 
   @override

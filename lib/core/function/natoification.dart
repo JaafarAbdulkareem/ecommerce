@@ -1,3 +1,4 @@
+import 'package:ecommerce/controller/order/archive_order_controller.dart';
 import 'package:ecommerce/controller/order/order_controller.dart';
 import 'package:ecommerce/core/constant/app_color.dart';
 import 'package:ecommerce/core/constant/app_icon.dart';
@@ -41,8 +42,20 @@ void notificationMessage() {
       backgroundColor: AppColor.snackbar,
     );
     if (ConstantScreenName.order == message.data["pagename"]) {
-      OrderControllerImp orderController = Get.find<OrderControllerImp>();
-      orderController.refreshOrderStatus();
+      print("page : ${Get.currentRoute}");
+      OrderControllerImp orderController;
+      ArchiveOrderControllerImp archiveController;
+      if (ConstantScreenName.home == Get.currentRoute) {
+        orderController = Get.find<OrderControllerImp>();
+        archiveController = Get.put(ArchiveOrderControllerImp());
+        orderController.refreshOrderStatus();
+        archiveController.refreshArchiveOrderStatus();
+      } else if (ConstantScreenName.archiveOrder == Get.currentRoute) {
+        orderController = Get.put(OrderControllerImp());
+        archiveController = Get.find<ArchiveOrderControllerImp>();
+        orderController.refreshOrderStatus();
+        archiveController.refreshArchiveOrderStatus();
+      }
     }
   });
 }

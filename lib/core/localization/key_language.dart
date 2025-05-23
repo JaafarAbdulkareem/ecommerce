@@ -111,12 +111,14 @@ abstract class KeyLanguage {
   static const String addProductMessage = "addProductMessage";
   static const String removeProductMessage = "removeProductMessage";
   // static const String titleBestSelling = "titleBestSelling";
+
   // //setting
   // static const String nameUSer = "nameUser";
   static const String addressSetting = "addressSetting";
   // static const String emailUSer = "emailUser";
   // static const String phoneUSer = "phoneUser";
   // static const String passwordUSer = "passwordUser";
+  static const String archiveTitle = "archiveTitle";
   static const String logout = "logout";
   //drawer
   static const String aboutUS = "aboutUS";

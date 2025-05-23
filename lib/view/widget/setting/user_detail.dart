@@ -38,6 +38,13 @@ class UserDetail extends GetView<SettingControllerImp> {
                     );
             }),
         FieldSetting(
+          title: KeyLanguage.archiveTitle.tr,
+          icon: AppIcon.archive,
+          onTap: () {
+            controller.goToArchive();
+          },
+        ),
+        FieldSetting(
           title: controller.userData.email,
           icon: AppIcon.email,
           onTap: () {},
