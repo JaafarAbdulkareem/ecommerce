@@ -10,11 +10,14 @@ import 'package:ecommerce/data/data_source/remote/auth/user_info_remote.dart';
 import 'package:ecommerce/data/models/setting_model/user_info_model.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:get/get.dart';
+import 'package:url_launcher/url_launcher.dart';
+// import 'package:url_launcher/url_launcher.dart';
 
 abstract class SettingController extends GetxController {
   void goToInserAddress();
   void goToDisplayAddress();
   void goToArchive();
+  void contactUs();
   void logout();
 }
 
@@ -121,6 +124,19 @@ class SettingControllerImp extends SettingController {
         ConstantKey.callArchive: true,
       },
     );
+  }
+
+  @override
+  void contactUs() async {
+    statusRequest = StatusRequest.loading;
+    update();
+    await launchUrl(Uri.parse("tel:+1-555-010-999")).then((_) {
+      statusRequest = StatusRequest.success;
+      update();
+    }).catchError((error) {
+      statusRequest = StatusRequest.failure;
+      update();
+    });
   }
 
   @override

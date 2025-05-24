@@ -61,9 +61,18 @@ class UserDetail extends GetView<SettingControllerImp> {
         ),
         SizedBox(height: 50),
         FieldSetting(
-          title: KeyLanguage.logout,
+          title: KeyLanguage.contectUsTitle.tr,
+          icon: AppIcon.contactUs,
+          onTap: () {
+            controller.contactUs();
+          },
+        ),
+        FieldSetting(
+          title: KeyLanguage.logout.tr,
           icon: AppIcon.logout,
-          onTap: () {},
+          onTap: () {
+            controller.logout();
+          },
         ),
       ],
     );

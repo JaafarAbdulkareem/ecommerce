@@ -119,6 +119,7 @@ abstract class KeyLanguage {
   // static const String phoneUSer = "phoneUser";
   // static const String passwordUSer = "passwordUser";
   static const String archiveTitle = "archiveTitle";
+  static const String contectUsTitle = "contectUsTitle";
   static const String logout = "logout";
   //drawer
   static const String aboutUS = "aboutUS";
