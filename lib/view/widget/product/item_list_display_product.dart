@@ -1,6 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:ecommerce/core/constant/api_constant.dart';
 import 'package:ecommerce/core/constant/app_color.dart';
+import 'package:ecommerce/core/constant/app_icon.dart';
 import 'package:ecommerce/core/constant/app_lottie.dart';
 import 'package:ecommerce/core/constant/app_style.dart';
 import 'package:ecommerce/core/function/translate_language.dart';
@@ -48,7 +49,7 @@ class ItemListDisplayProduct extends StatelessWidget {
                       AppLottie.loading,
                     ),
                     errorWidget: (context, url, error) =>
-                        const Icon(Icons.error),
+                        const Icon(AppIcon.error),
                   ),
                   // ),
                   Text(

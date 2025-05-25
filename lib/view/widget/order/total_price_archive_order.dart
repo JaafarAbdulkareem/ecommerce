@@ -12,9 +12,8 @@ class TotalPriceArchiveOrder extends GetView<ArchiveOrderControllerImp> {
     super.key,
     required this.id,
     required this.totalPriceText,
-    required this.status,
   });
-  final int id, status;
+  final int id;
   final String totalPriceText;
   @override
   Widget build(BuildContext context) {
@@ -29,7 +28,7 @@ class TotalPriceArchiveOrder extends GetView<ArchiveOrderControllerImp> {
           text: KeyLanguage.detailButton.tr,
           color: AppColor.iconColor,
           onTap: () {
-            controller.goToDetailOrder(id);
+            controller.goToDetailArchiveOrder(id);
           },
         ),
       ],

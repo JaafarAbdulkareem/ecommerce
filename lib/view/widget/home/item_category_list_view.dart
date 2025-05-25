@@ -1,5 +1,6 @@
 import 'package:ecommerce/core/constant/api_constant.dart';
 import 'package:ecommerce/core/constant/app_color.dart';
+import 'package:ecommerce/core/constant/app_icon.dart';
 import 'package:ecommerce/core/constant/app_lottie.dart';
 import 'package:ecommerce/core/constant/app_style.dart';
 import 'package:ecommerce/core/function/load_cached_svg.dart';
@@ -39,7 +40,7 @@ class ItemCategoryListView extends StatelessWidget {
                         width: 50,
                       );
                     } else if (snapshot.hasError) {
-                      return Icon(Icons.error);
+                      return Icon(AppIcon.error);
                     } else {
                       return snapshot.data!;
                     }

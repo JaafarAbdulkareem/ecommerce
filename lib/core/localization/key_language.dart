@@ -27,6 +27,8 @@ abstract class KeyLanguage {
   static const String deleteButton = "deleteButton";
   static const String acceptButton = "acceptButton";
   static const String injectButton = "injectButton";
+  static const String cancelButton = "cancelButton";
+  static const String submitButton = "submitButton";
 //auth
   static const String welcomeTitle = "welcomeTitle";
   static const String checkEmailTitle = "checkEmailTitle";
@@ -63,6 +65,8 @@ abstract class KeyLanguage {
   static const String streetHint = "streetHint";
   static const String detailAddressHint = "detailAddressHint";
   static const String couponsHint = "couponsHint";
+  static const String ratingHint = 'ratingHint';
+  static const String commentHint = 'commentHint';
 
   //message
   static const String forgetPassword = "forgetPassword";
@@ -139,6 +143,7 @@ abstract class KeyLanguage {
   static const String totalPriceTitle = "totalPriceTitle";
   static const String shoppingTitle = "shoppingTitle";
   static const String priceTitle = "priceTitle";
+  static const String ratingTitle = "ratingTitle";
   static const String couponsDiscount = "couponsDiscount";
   static const String couponsNotFoundMessage = "couponsNotFoundMessage";
 

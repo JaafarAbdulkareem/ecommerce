@@ -18,6 +18,7 @@ import 'package:ecommerce/view/screen/notification/notification_view.dart';
 import 'package:ecommerce/view/screen/onboarding/choose_app_language_view.dart';
 import 'package:ecommerce/view/screen/onboarding/onboarding_view.dart';
 import 'package:ecommerce/view/screen/order/archive_order_view.dart';
+import 'package:ecommerce/view/screen/order/detail_archive_order_view.dart';
 import 'package:ecommerce/view/screen/order/invalid_order_view.dart';
 import 'package:ecommerce/view/screen/order/detail_order_view.dart';
 import 'package:ecommerce/view/screen/order/order_view.dart';
@@ -96,16 +97,20 @@ List<GetPage<dynamic>> get getPages => [
         page: () => const OrderView(),
       ),
       GetPage(
-        name: ConstantScreenName.detailOrder,
-        page: () => const DetailOrderView(),
-      ),
-      GetPage(
         name: ConstantScreenName.invalidOrder,
         page: () => const InvalidOrderView(),
       ),
       GetPage(
         name: ConstantScreenName.archiveOrder,
         page: () => const ArchiveOrderView(),
+      ),
+      GetPage(
+        name: ConstantScreenName.detailOrder,
+        page: () => const DetailOrderView(),
+      ),
+      GetPage(
+        name: ConstantScreenName.detailArchiveOrder,
+        page: () => const DetailArchiveOrderView(),
       ),
       GetPage(
         name: ConstantScreenName.notification,

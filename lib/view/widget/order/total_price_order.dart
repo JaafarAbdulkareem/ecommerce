@@ -8,8 +8,8 @@ import 'package:ecommerce/core/share/custom_button_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class TotalPriceButtonDetail extends GetView<OrderControllerImp> {
-  const TotalPriceButtonDetail({
+class TotalPriceOrder extends GetView<OrderControllerImp> {
+  const TotalPriceOrder({
     super.key,
     required this.id,
     required this.totalPriceText,

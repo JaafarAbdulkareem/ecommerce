@@ -32,9 +32,12 @@ abstract class ApiKey {
   static const String status = "status";
   static const String couponsId = "couponsId";
   static const String addressId = "addressId";
-  //
+  //notifiaction
   static const String title = "title";
   static const String body = "body";
+  //rating
+  static const String star = "star";
+  static const String comment = "comment";
 }
 
 abstract class ApiResult {
@@ -52,4 +55,5 @@ abstract class ApiResult {
   // static const String noDecrement = "noDecrement";
   static const String insertAddressError = "insertAddressError";
   // static const String orderId = "orderId"; // checkout php + order controller
+  static const String duplicate = "duplicate";
 }

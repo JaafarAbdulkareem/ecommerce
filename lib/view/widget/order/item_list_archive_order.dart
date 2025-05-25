@@ -1,17 +1,16 @@
 import 'package:ecommerce/core/constant/app_color.dart';
 import 'package:ecommerce/core/constant/app_style.dart';
 import 'package:ecommerce/core/constant/constant_key.dart';
-import 'package:ecommerce/core/constant/constant_scale.dart';
 import 'package:ecommerce/core/function/commant_checkout_choose.dart';
 import 'package:ecommerce/core/localization/key_language.dart';
 import 'package:ecommerce/data/models/order_model/order_model.dart';
 import 'package:ecommerce/view/widget/order/text_item_order.dart';
-import 'package:ecommerce/view/widget/order/total_price_order.dart';
+import 'package:ecommerce/view/widget/order/total_price_archive_order.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class ItemListOrder extends StatelessWidget {
-  const ItemListOrder({
+class ItemListArchiveOrder extends StatelessWidget {
+  const ItemListArchiveOrder({
     super.key,
     required this.data,
   });
@@ -52,10 +51,9 @@ class ItemListOrder extends StatelessWidget {
                   "${KeyLanguage.orderStatus.tr}${commantOrderStatus(data.status ?? 0)}",
             ),
             const Divider(),
-            TotalPriceOrder(
+            TotalPriceArchiveOrder(
               id: data.id,
               totalPriceText: "${data.totalPrice}",
-              status: data.status ?? ConstantScale.onWayOption,
             ),
           ],
         ),

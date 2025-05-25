@@ -1,5 +1,5 @@
 import 'package:ecommerce/controller/order/archive_order_controller.dart';
-import 'package:ecommerce/view/widget/order/item_list_order.dart';
+import 'package:ecommerce/view/widget/order/item_list_archive_order.dart';
 import 'package:flutter/material.dart';
 
 class BodyArchiveOrderView extends StatelessWidget {
@@ -14,7 +14,7 @@ class BodyArchiveOrderView extends StatelessWidget {
           horizontal: 16,
           vertical: 4,
         ),
-        child: ItemListOrder(
+        child: ItemListArchiveOrder(
           data: ArchiveOrderControllerImp.archiveOrderData[index],
         ),
       ),

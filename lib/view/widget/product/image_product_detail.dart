@@ -2,6 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:ecommerce/controller/product/product_detail_controller.dart';
 import 'package:ecommerce/core/constant/api_constant.dart';
 import 'package:ecommerce/core/constant/app_color.dart';
+import 'package:ecommerce/core/constant/app_icon.dart';
 import 'package:ecommerce/core/constant/app_lottie.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -41,7 +42,7 @@ class ImageProductDetail extends GetView<ProductDetailControllerImp> {
                   Lottie.asset(
                 AppLottie.loading,
               ),
-              errorWidget: (context, url, error) => const Icon(Icons.error),
+              errorWidget: (context, url, error) => const Icon(AppIcon.error),
             ),
           ),
           // ),

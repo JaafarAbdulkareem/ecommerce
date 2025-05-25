@@ -48,8 +48,13 @@ class ApiColumnDb {
   static const String deliveryPrice = 'delivery_price';
   static const String totalPrice = 'total_price';
   static const String status = "status";
+  static const String rating = "rating";
   static const String couponsId = 'coupons_id';
   static const String productsData = "products_data";
+  //rating
+  static const String orderId = "order_id";
+  static const String star = "star";
+  static const String comment = "comment";
 
   //notification
   static const String title = "title";

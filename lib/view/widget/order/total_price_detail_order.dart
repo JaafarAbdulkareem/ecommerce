@@ -25,7 +25,7 @@ class TotalPriceDetailOrder extends StatelessWidget {
         SizedBox(width: 4),
         PriceProductItem(
           price: price,
-          discount: 1,
+          discount: price == totalPrice ? 0 : 1,
           discountPrice: totalPrice,
         ),
       ],

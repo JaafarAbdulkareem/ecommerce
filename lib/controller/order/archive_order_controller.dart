@@ -12,7 +12,8 @@ import 'package:get/get.dart';
 
 abstract class ArchiveOrderController extends GetxController {
   void refreshArchiveOrderStatus();
-  void goToDetailOrder(int id);
+  // void goToDetailOrder(int id);
+  void goToDetailArchiveOrder(int id);
 }
 
 class ArchiveOrderControllerImp extends ArchiveOrderController {
@@ -82,10 +83,21 @@ class ArchiveOrderControllerImp extends ArchiveOrderController {
     getData();
   }
 
+  // @override
+  // void goToDetailOrder(int id) {
+  //   Get.toNamed(
+  //     ConstantScreenName.detailOrder,
+  //     arguments: {
+  //       ApiKey.orderId: id.toString(),
+  //       ApiKey.userId: userId,
+  //     },
+  //   );
+  // }
+  
   @override
-  void goToDetailOrder(int id) {
+  void goToDetailArchiveOrder(int id) {
     Get.toNamed(
-      ConstantScreenName.detailOrder,
+      ConstantScreenName.detailArchiveOrder,
       arguments: {
         ApiKey.orderId: id.toString(),
         ApiKey.userId: userId,

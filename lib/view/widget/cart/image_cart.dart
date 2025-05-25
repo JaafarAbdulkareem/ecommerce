@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:ecommerce/core/constant/api_constant.dart';
+import 'package:ecommerce/core/constant/app_icon.dart';
 import 'package:ecommerce/core/constant/app_lottie.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
@@ -19,7 +20,7 @@ class ImageCart extends StatelessWidget {
           AppLottie.loading,
         ),
         errorWidget: (context, url, error) => const Icon(
-          Icons.error,
+          AppIcon.error,
         ),
       ),
     );
