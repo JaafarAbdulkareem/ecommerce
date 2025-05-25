@@ -29,6 +29,7 @@ abstract class ConstantKey {
   static const String tagProductImage = "tagProductImage";
 //id GetBuilder
   static const String idListProductCart = "idListProductCart";
+  static const String idFavoriteProduct = "idFavoriteProduct";
   static const String idReceiveShopping = "idReceiveShopping";
   static const String idUpdateAddress = "idUpdateAddress";
   static const String idRatingButton = "idRatingButton";

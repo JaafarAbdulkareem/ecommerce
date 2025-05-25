@@ -83,6 +83,6 @@ class ProductControllerImp extends ProductController {
       favoriteIDData.remove(productCategoryData[newIndex].id);
       setFavoriteIDSharedPre();
     }
-    update();
+    update([ConstantKey.idFavoriteProduct]);
   }
 }

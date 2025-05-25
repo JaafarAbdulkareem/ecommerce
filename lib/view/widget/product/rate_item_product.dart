@@ -4,13 +4,13 @@ import 'package:ecommerce/core/constant/constant_scale.dart';
 import 'package:flutter/material.dart';
 
 class RateItemProduct extends StatelessWidget {
-  const RateItemProduct({super.key});
-
+  const RateItemProduct({super.key, required this.rating});
+final String rating;
   @override
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Text("3.5"),
+        Text(rating),
         // ...List.generate(
         //   ConstantScale.noStar,
         //   (index) {

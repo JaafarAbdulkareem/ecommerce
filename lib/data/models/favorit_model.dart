@@ -15,6 +15,7 @@ class FavoritModel {
   final String timeCreate;
   final int categoryId;
   late bool isFavorite;
+  final double rating;
 
   FavoritModel({
     required this.id,
@@ -31,6 +32,7 @@ class FavoritModel {
     required this.timeCreate,
     required this.categoryId,
     this.isFavorite = false,
+    required this.rating,
   });
 
   factory FavoritModel.fromProduct(ProductModel data) {
@@ -48,6 +50,8 @@ class FavoritModel {
       discountPrice: data.discountPrice,
       timeCreate: data.timeCreate,
       categoryId: data.categoryId,
+      isFavorite: data.isFavorite,
+      rating: data.rating,
     );
   }
 }

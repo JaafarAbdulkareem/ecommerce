@@ -20,6 +20,7 @@ class ProductModel {
   final String categoryImage;
   final String categoryTimeCreate;
   late bool isFavorite;
+  final double rating;
 
   ProductModel({
     required this.id,
@@ -41,51 +42,54 @@ class ProductModel {
     required this.categoryImage,
     required this.categoryTimeCreate,
     this.isFavorite = false,
+    required this.rating,
   });
 
   factory ProductModel.fromJson(Map<String, dynamic> json) {
     return ProductModel(
-      id: int.parse(json[ApiColumnDb.id]),
-      arabicName: json[ApiColumnDb.arabicName],
-      englishName: json[ApiColumnDb.englishName],
-      arabicDescription: json[ApiColumnDb.arabicDescription],
-      englishDescription: json[ApiColumnDb.englishDescription],
-      image: json[ApiColumnDb.image],
-      countProduct: int.parse(json[ApiColumnDb.countProduct]),
-      count: int.parse(json[ApiColumnDb.count]),
-      active: int.parse(json[ApiColumnDb.active]),
-      price: double.parse(json[ApiColumnDb.price]),
-      discount: double.parse(json[ApiColumnDb.discount]),
-      discountPrice: double.parse(json[ApiColumnDb.discountPrice]),
-      timeCreate: json[ApiColumnDb.timeCreate],
-      categoryId: int.parse(json[ApiColumnDb.categoryId]),
-      categoryArabicName: json[ApiColumnDb.categoryArabicName],
-      categoryEnglishName: json[ApiColumnDb.categoryEnglishName],
-      categoryImage: json[ApiColumnDb.categoryImage],
-      categoryTimeCreate: json[ApiColumnDb.categoryTimeCreate],
+      id: int.parse(json[ApiColumnDb.id].toString()),
+      arabicName: json[ApiColumnDb.arabicName] ?? '',
+      englishName: json[ApiColumnDb.englishName] ?? '',
+      arabicDescription: json[ApiColumnDb.arabicDescription] ?? '',
+      englishDescription: json[ApiColumnDb.englishDescription] ?? '',
+      image: json[ApiColumnDb.image] ?? '',
+      countProduct: int.parse(json[ApiColumnDb.countProduct].toString()),
+      count: int.parse(json[ApiColumnDb.count].toString()),
+      active: int.parse(json[ApiColumnDb.active].toString()),
+      price: double.parse(json[ApiColumnDb.price].toString()),
+      discount: double.parse(json[ApiColumnDb.discount].toString()),
+      discountPrice: double.parse(json[ApiColumnDb.discountPrice].toString()),
+      timeCreate: json[ApiColumnDb.timeCreate] ?? '',
+      categoryId: int.parse(json[ApiColumnDb.categoryId].toString()),
+      categoryArabicName: json[ApiColumnDb.categoryArabicName] ?? '',
+      categoryEnglishName: json[ApiColumnDb.categoryEnglishName] ?? '',
+      categoryImage: json[ApiColumnDb.categoryImage] ?? '',
+      categoryTimeCreate: json[ApiColumnDb.categoryTimeCreate] ?? '',
+      rating: double.parse(json[ApiColumnDb.rating].toString()),
     );
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = {};
-    data[ApiColumnDb.id] = id;
-    data[ApiColumnDb.arabicName] = arabicName;
-    data[ApiColumnDb.englishName] = englishName;
-    data[ApiColumnDb.arabicDescription] = arabicDescription;
-    data[ApiColumnDb.englishDescription] = englishDescription;
-    data[ApiColumnDb.image] = image;
-    data[ApiColumnDb.countProduct] = countProduct;
-    data[ApiColumnDb.count] = count;
-    data[ApiColumnDb.active] = active;
-    data[ApiColumnDb.price] = price;
-    data[ApiColumnDb.discount] = discount;
-    data[ApiColumnDb.discountPrice] = discountPrice;
-    data[ApiColumnDb.timeCreate] = timeCreate;
-    data[ApiColumnDb.categoryId] = categoryId;
-    data[ApiColumnDb.categoryArabicName] = categoryArabicName;
-    data[ApiColumnDb.categoryEnglishName] = categoryEnglishName;
-    data[ApiColumnDb.categoryImage] = categoryImage;
-    data[ApiColumnDb.categoryTimeCreate] = categoryTimeCreate;
-    return data;
+    return {
+      ApiColumnDb.id: id,
+      ApiColumnDb.arabicName: arabicName,
+      ApiColumnDb.englishName: englishName,
+      ApiColumnDb.arabicDescription: arabicDescription,
+      ApiColumnDb.englishDescription: englishDescription,
+      ApiColumnDb.image: image,
+      ApiColumnDb.countProduct: countProduct,
+      ApiColumnDb.count: count,
+      ApiColumnDb.active: active,
+      ApiColumnDb.price: price,
+      ApiColumnDb.discount: discount,
+      ApiColumnDb.discountPrice: discountPrice,
+      ApiColumnDb.timeCreate: timeCreate,
+      ApiColumnDb.categoryId: categoryId,
+      ApiColumnDb.categoryArabicName: categoryArabicName,
+      ApiColumnDb.categoryEnglishName: categoryEnglishName,
+      ApiColumnDb.categoryImage: categoryImage,
+      ApiColumnDb.categoryTimeCreate: categoryTimeCreate,
+      ApiColumnDb.rating: rating,
+    };
   }
 }

@@ -78,6 +78,7 @@ class ItemListDisplayProduct extends StatelessWidget {
                   ),
                   FootItemProduct(
                     index: index,
+                    rating: data.rating.toString(),
                   )
                 ],
               ),

@@ -75,7 +75,9 @@ class ItemListDisplayFavorite extends StatelessWidget {
                     discountPrice: data.discountPrice,
                   ),
                   // const FootItemProduct(),
-                  RateItemProduct(),
+                  RateItemProduct(
+                    rating: data.rating.toString(),
+                  ),
                 ],
               ),
             ),
