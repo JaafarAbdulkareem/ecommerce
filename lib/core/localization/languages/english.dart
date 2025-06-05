@@ -23,7 +23,7 @@ Map<String, String> english = {
   KeyLanguage.goToCartButton: "Add To Card",
   KeyLanguage.nextButton: "Next",
   KeyLanguage.applyButton: "Apply",
-  KeyLanguage.reomveButton: "Remove",
+  KeyLanguage.removeButton: "Remove",
   KeyLanguage.checkoutButton: "Checkout",
   KeyLanguage.orderButton: "Place Order",
   KeyLanguage.detailButton: "Details",
