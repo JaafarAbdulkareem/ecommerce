@@ -20,7 +20,7 @@ abstract class KeyLanguage {
   static const String goToCartButton = "goToCartButton";
   static const String nextButton = "nextButton";
   static const String applyButton = "applyButton";
-  static const String reomveButton = "reomveButton";
+  static const String removeButton = "reomveButton";
   static const String checkoutButton = "checkoutButton";
   static const String orderButton = "orderButton";
   static const String detailButton = "detailButton";

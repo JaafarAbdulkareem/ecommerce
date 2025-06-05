@@ -27,7 +27,7 @@ class ButtonCuoponsApply extends StatelessWidget {
             statusRequest: controller.statusRequest,
             child: Text(
               controller.isApplyCoupons
-                  ? KeyLanguage.reomveButton.tr
+                  ? KeyLanguage.removeButton.tr
                   : KeyLanguage.applyButton.tr,
               style: AppStyle.styleBold16(context),
             ),
