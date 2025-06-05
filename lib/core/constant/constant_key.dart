@@ -25,6 +25,7 @@ abstract class ConstantKey {
   static const String invalidProductIds = "invalidProductIds";
   // static const String orderData = "orderData";
   static const String callArchive = "callArchive";
+  static const String orderData = "orderData";
 //hero
   static const String tagProductImage = "tagProductImage";
 //id GetBuilder
@@ -32,6 +33,7 @@ abstract class ConstantKey {
   static const String idFavoriteProduct = "idFavoriteProduct";
   static const String idReceiveShopping = "idReceiveShopping";
   static const String idUpdateAddress = "idUpdateAddress";
+  static const String idInvalidButton = "idInvalidButton";
   static const String idRatingButton = "idRatingButton";
   // static const String idGoogleMap = "idGoogleMap";
   // id marker in google map

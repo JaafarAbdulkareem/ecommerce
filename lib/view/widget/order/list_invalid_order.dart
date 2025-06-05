@@ -13,6 +13,7 @@ class ListInvalidOrder extends GetView<InvalidOrderControllerImp> {
     return ListView.builder(
       itemCount: controller.invalidOrderData.length,
       itemBuilder: (context, index) => ItemListInvalidOrder(
+        index: index,
         data: controller.invalidOrderData[index],
       ),
     );

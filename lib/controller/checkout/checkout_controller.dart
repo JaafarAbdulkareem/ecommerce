@@ -202,9 +202,14 @@ class CheckoutControllerImp extends CheckoutController {
             middleText: KeyLanguage.productOutStackMessage.tr,
             textConfirm: KeyLanguage.detailButton.tr,
             onConfirm: () {
-              Get.offNamed(ConstantScreenName.invalidOrder, arguments: {
-                ConstantKey.invalidProductIds: invalidProductIds,
-              });
+              Get.offNamed(
+                ConstantScreenName.invalidOrder,
+                arguments: {
+                  // ConstantKey.invalidProductIds: invalidProductIds,
+                  ConstantKey.orderData: data,
+                  // "":[],
+                },
+              );
             },
           );
           responseData.clear();

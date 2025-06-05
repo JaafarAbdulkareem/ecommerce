@@ -7,7 +7,7 @@ import 'package:http/http.dart' as http;
 
 class Curd {
   Future<Either<StatusRequest, Map<String, dynamic>>> postData(
-      String url, Map<String, String> body) async {
+      String url, Map<String, dynamic> body) async {
     try {
       if (await checkInternet()) {
         var response = await http.post(
@@ -17,7 +17,7 @@ class Curd {
         if (response.statusCode >= ConstantScale.statusCode &&
             response.statusCode <= ConstantScale.statusCodeMax) {
           //remove and try catch
-          // print("$response : body : ${response.body}");
+          print("$response : body : ${response.body}");
           var responseBody = jsonDecode(response.body);
 
           return right(responseBody);

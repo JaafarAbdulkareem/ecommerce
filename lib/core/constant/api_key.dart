@@ -32,6 +32,7 @@ abstract class ApiKey {
   static const String status = "status";
   static const String couponsId = "couponsId";
   static const String addressId = "addressId";
+  static const String listSubmitData = "listSubmitData";
   //notifiaction
   static const String title = "title";
   static const String body = "body";
