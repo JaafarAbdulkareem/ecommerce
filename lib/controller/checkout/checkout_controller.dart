@@ -1,5 +1,6 @@
 import 'package:ecommerce/controller/bottom_bar/setting_controller.dart';
 import 'package:ecommerce/controller/cart/coupons_controller.dart';
+import 'package:ecommerce/controller/home/body_home_controller.dart';
 import 'package:ecommerce/controller/order/order_controller.dart';
 import 'package:ecommerce/core/class/status_request.dart';
 import 'package:ecommerce/core/constant/api_key.dart';
@@ -46,6 +47,7 @@ class CheckoutControllerImp extends CheckoutController {
   int? couponsId;
 
   late List<int> invalidProductIds;
+  late BodyHomeControllerImp bodyHomeController;
 
   @override
   void onInit() {
@@ -63,6 +65,8 @@ class CheckoutControllerImp extends CheckoutController {
     price = Get.arguments[ApiKey.price];
     deliveryPrice = Get.arguments[ApiKey.deliveryPrice];
     couponsId = couponsController.couponsData?.id;
+
+    bodyHomeController = Get.find<BodyHomeControllerImp>();
     super.onInit();
   }
 
@@ -174,6 +178,7 @@ class CheckoutControllerImp extends CheckoutController {
         data.id = int.parse(response[ApiResult.data]);
         // listOrderData.add(orderData);
         OrderControllerImp.firstTime = true;
+        bodyHomeController.recalledGetData();
         Get.offNamedUntil(
           ConstantScreenName.order,
           (route) => route.settings.name == ConstantScreenName.home,

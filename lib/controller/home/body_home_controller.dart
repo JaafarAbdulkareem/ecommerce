@@ -32,6 +32,8 @@ class BodyHomeControllerImp extends BodyHomeController {
 
   @override
   void onInit() {
+    print("fist initi : $firstTime");
+
     statusRequest = StatusRequest.initial;
     // categoryData = [];
     // productData = [];
@@ -89,7 +91,11 @@ class BodyHomeControllerImp extends BodyHomeController {
 
   @override
   Future<void> getData() async {
+    print("function : $firstTime");
+
     if (firstTime) {
+      productData.clear();
+      categoryData.clear();
       firstTime = false;
       statusRequest = StatusRequest.loading;
       update();
@@ -161,5 +167,11 @@ class BodyHomeControllerImp extends BodyHomeController {
         discountProductData.add(product);
       }
     }
+  }
+
+  void recalledGetData() {
+    // checkout controller
+    firstTime = true;
+    getData();
   }
 }
