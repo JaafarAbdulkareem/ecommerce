@@ -15,7 +15,7 @@ class BottomButtonCheckout extends GetView<CheckoutControllerImp> {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 10),
       child: CustomButtonWidget(
-        text: KeyLanguage.orderButton.tr,
+        text: KeyLanguage.checkButton.tr,
         color: AppColor.primary,
         onTap: () {
           controller.checkoutButton();

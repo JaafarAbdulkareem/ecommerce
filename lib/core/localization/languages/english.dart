@@ -16,7 +16,7 @@ Map<String, String> english = {
   KeyLanguage.loginButton: "Login",
   KeyLanguage.signupButton: "SignUp",
   KeyLanguage.saveButton: "Save",
-  KeyLanguage.checkButton: "Check",
+  KeyLanguage.checkButton: "Checkout",
   KeyLanguage.verifyButton: "Verify",
   KeyLanguage.yesButton: "Yes",
   KeyLanguage.noButton: "No",
