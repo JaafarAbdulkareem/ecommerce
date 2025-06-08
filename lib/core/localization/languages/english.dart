@@ -73,7 +73,8 @@ Map<String, String> english = {
   KeyLanguage.streetHint: "Enter your street name 🛣️",
   KeyLanguage.detailAddressHint: "Apartment number, floor, building 🏢",
   KeyLanguage.couponsHint: "Enter Coupons",
-  KeyLanguage.ratingHint: "Tap a star to set your rating. Add more description here if you want.",
+  KeyLanguage.ratingHint:
+      "Tap a star to set your rating. Add more description here if you want.",
   KeyLanguage.commentHint: "Set your custom comment hint",
   //message
   KeyLanguage.forgetPassword: "Forget Password",
@@ -127,6 +128,7 @@ Map<String, String> english = {
   KeyLanguage.color: "Color",
   KeyLanguage.addProductMessage: "SORRY, Not More Products",
   KeyLanguage.removeProductMessage: "This Is The Minimum For This Product",
+  KeyLanguage.outOfStock: "Out Of Stock",
   //setting
   // KeyLanguage.nameUSer : "Name : ",
   KeyLanguage.addressSetting: "Drop Your Address Here",

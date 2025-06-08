@@ -124,6 +124,8 @@ Map<String, String> arabic = {
   KeyLanguage.color: "اللون",
   KeyLanguage.addProductMessage: "آسف، لا يمكن إضافة المزيد من المنتجات",
   KeyLanguage.removeProductMessage: "هذا هو الحد الأدنى لهذا المنتج",
+  KeyLanguage.outOfStock: "غير متوفر",
+
   //setting
   KeyLanguage.addressSetting: "أضف عنوانك هنا",
   KeyLanguage.archiveTitle: "سجل الطلبات",

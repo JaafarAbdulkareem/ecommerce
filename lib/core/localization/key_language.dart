@@ -114,6 +114,7 @@ abstract class KeyLanguage {
   static const String color = "color";
   static const String addProductMessage = "addProductMessage";
   static const String removeProductMessage = "removeProductMessage";
+  static const String outOfStock = "outOfStock";
   // static const String titleBestSelling = "titleBestSelling";
 
   // //setting
