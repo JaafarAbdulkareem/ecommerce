@@ -77,7 +77,7 @@ abstract class KeyLanguage {
   //validator
   static const String empty = "empty";
   static const String invalidUsername = "invalidUsername";
-  static const String invalidEmail = "invalodUsername";
+  static const String invalidEmail = "invalidEmail";
   static const String invalidPassword = "invalidPassword";
   static const String invalidPhone = "invalidPhone";
   static const String lessMin = "lessMin";
