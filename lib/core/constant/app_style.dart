@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 
 abstract class AppStyle {
   static TextStyle styleSemiBold10(BuildContext context) {
-    return TextStyle(
+    return const TextStyle(
       fontSize: 10,
       color: AppColorText.textButton,
       fontWeight: FontWeight.w600,
@@ -12,7 +12,7 @@ abstract class AppStyle {
   }
 
   static TextStyle styleBold10(BuildContext context) {
-    return TextStyle(
+    return const TextStyle(
       fontSize: 10,
       color: AppColorText.secondary,
       fontWeight: FontWeight.bold,
@@ -20,7 +20,7 @@ abstract class AppStyle {
   }
 
   static TextStyle styleSemiBold12(BuildContext context) {
-    return TextStyle(
+    return const TextStyle(
       fontSize: 12,
       color: AppColorText.textButton,
       fontWeight: FontWeight.w600,
@@ -29,7 +29,7 @@ abstract class AppStyle {
   }
 
   static TextStyle styleBold12(BuildContext context) {
-    return TextStyle(
+    return const TextStyle(
       fontSize: 12,
       color: AppColorText.secondary,
       fontWeight: FontWeight.bold,
@@ -37,7 +37,7 @@ abstract class AppStyle {
   }
 
   static TextStyle styleLight14(BuildContext context) {
-    return TextStyle(
+    return const TextStyle(
       fontSize: 14,
       color: AppColorText.secondary,
       fontWeight: FontWeight.w300,
@@ -45,7 +45,7 @@ abstract class AppStyle {
   }
 
   static TextStyle styleRegular14(BuildContext context) {
-    return TextStyle(
+    return const TextStyle(
       fontSize: 14,
       color: AppColor.price,
       fontWeight: FontWeight.w400,
@@ -54,7 +54,7 @@ abstract class AppStyle {
   }
 
   static TextStyle styleSemiBold14(BuildContext context) {
-    return TextStyle(
+    return const TextStyle(
       fontSize: 14,
       fontWeight: FontWeight.w600,
       color: AppColor.primary,
@@ -62,7 +62,7 @@ abstract class AppStyle {
   }
 
   static TextStyle styleBold14(BuildContext context) {
-    return TextStyle(
+    return const TextStyle(
       fontSize: 14,
       fontWeight: FontWeight.bold,
       color: AppColorText.secondary,
@@ -70,7 +70,7 @@ abstract class AppStyle {
   }
 
   static TextStyle styleLight16(BuildContext context) {
-    return TextStyle(
+    return const TextStyle(
       fontWeight: FontWeight.w300,
       fontSize: 16,
       color: AppColorText.secondary,
@@ -78,7 +78,7 @@ abstract class AppStyle {
   }
 
   static TextStyle styleSemiBold16(BuildContext context) {
-    return TextStyle(
+    return const TextStyle(
       fontWeight: FontWeight.w600,
       fontSize: 16,
       color: AppColorText.primary,
@@ -86,7 +86,7 @@ abstract class AppStyle {
   }
 
   static TextStyle styleBold16(BuildContext context) {
-    return TextStyle(
+    return const TextStyle(
       fontWeight: FontWeight.bold,
       fontSize: 16,
       color: AppColorText.textButton,
@@ -94,7 +94,7 @@ abstract class AppStyle {
   }
 
   static TextStyle styleSemibold18(BuildContext context) {
-    return TextStyle(
+    return const TextStyle(
       fontSize: 18,
       fontWeight: FontWeight.w600,
       color: AppColor.primary,
@@ -102,7 +102,7 @@ abstract class AppStyle {
   }
 
   static TextStyle styleBold18(BuildContext context) {
-    return TextStyle(
+    return const TextStyle(
       fontWeight: FontWeight.bold,
       fontSize: 18,
       color: AppColorText.secondary,
@@ -110,7 +110,7 @@ abstract class AppStyle {
   }
 
   static TextStyle styleSemiBold20(BuildContext context) {
-    return TextStyle(
+    return const TextStyle(
       fontSize: 20,
       fontWeight: FontWeight.w600,
       color: AppColorText.titleProductDetail,
@@ -118,7 +118,7 @@ abstract class AppStyle {
   }
 
   static TextStyle styleBold20(BuildContext context) {
-    return TextStyle(
+    return const TextStyle(
       fontSize: 20,
       fontWeight: FontWeight.bold,
       color: AppColorText.primary,
@@ -126,7 +126,7 @@ abstract class AppStyle {
   }
 
   static TextStyle styleSemiBold24(BuildContext context) {
-    return TextStyle(
+    return const TextStyle(
       fontSize: 24,
       fontWeight: FontWeight.w600,
       color: AppColorText.textButton,

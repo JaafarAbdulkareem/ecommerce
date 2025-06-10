@@ -6,13 +6,13 @@ abstract class ConstantTypeTheme {
   static ThemeData englishTheme = ThemeData(
     scaffoldBackgroundColor: AppColor.backgroundScaffold,
     floatingActionButtonTheme:
-        FloatingActionButtonThemeData(backgroundColor: AppColor.primary),
+        const FloatingActionButtonThemeData(backgroundColor: AppColor.primary),
     fontFamily: ConstantTextFons.englishFont,
   );
   static ThemeData arabicTheme = ThemeData(
     scaffoldBackgroundColor: AppColor.backgroundScaffold,
     floatingActionButtonTheme:
-        FloatingActionButtonThemeData(backgroundColor: AppColor.primary),
+        const FloatingActionButtonThemeData(backgroundColor: AppColor.primary),
     fontFamily: ConstantTextFons.arabicFont,
   );
 }
