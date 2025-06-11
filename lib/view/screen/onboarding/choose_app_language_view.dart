@@ -27,11 +27,11 @@ class ChooseAppLanguageView extends GetView<LocaleController> {
                     style: AppStyle.styleBold20(context),
                     textAlign: TextAlign.center,
                   ),
-                  CustomTextButton(
+                  const CustomTextButton(
                     text: KeyLanguage.arabic,
                     codeLanguage: ConstantLanguage.ar,
                   ),
-                  CustomTextButton(
+                  const CustomTextButton(
                     text: KeyLanguage.english,
                     codeLanguage: ConstantLanguage.en,
                   ),
