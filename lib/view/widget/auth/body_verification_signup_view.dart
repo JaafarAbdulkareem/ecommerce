@@ -22,7 +22,7 @@ class BodyVerificationSignupView
           TitleDescriptionWidget(
             title:
                 "${KeyLanguage.verifyTitle.tr} : ${controller.titleVerifyCode}",
-            subTitle: "${KeyLanguage.verifyContent.tr}king@gmail.com",
+            subTitle: "${KeyLanguage.verifyContent.tr}${controller.email}",
           ),
           OtpTextFieldWidget(
             onTap: (String verificationCode) {
