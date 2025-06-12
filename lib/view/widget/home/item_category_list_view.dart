@@ -40,7 +40,7 @@ class ItemCategoryListView extends StatelessWidget {
                         width: 50,
                       );
                     } else if (snapshot.hasError) {
-                      return Icon(AppIcon.error);
+                      return const Icon(AppIcon.error);
                     } else {
                       return snapshot.data!;
                     }
