@@ -22,7 +22,7 @@ class TotalPriceDetailOrder extends StatelessWidget {
           style: AppStyle.styleSemiBold14(context),
           textAlign: TextAlign.center,
         ),
-        SizedBox(width: 4),
+        const SizedBox(width: 4),
         PriceProductItem(
           price: price,
           discount: price == totalPrice ? 0 : 1,
