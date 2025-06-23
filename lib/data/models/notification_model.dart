@@ -24,12 +24,4 @@ class NotificationModel {
         timeCreate: json[ApiColumnDb.timeCreate],
         userId: int.parse(json[ApiColumnDb.userId]),
       );
-
-  Map<String, dynamic> toJson() => {
-        ApiColumnDb.id: id,
-        ApiColumnDb.title: title,
-        ApiColumnDb.body: body,
-        ApiColumnDb.timeCreate: timeCreate,
-        ApiColumnDb.userId: userId,
-      };
 }

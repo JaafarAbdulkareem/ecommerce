@@ -46,7 +46,8 @@ void notificationMessage() {
       OrderControllerImp orderController;
       ArchiveOrderControllerImp archiveController;
       if (ConstantScreenName.home == Get.currentRoute) {
-        orderController = Get.find<OrderControllerImp>();
+        orderController = Get.put(OrderControllerImp());
+        // orderController = Get.find<OrderControllerImp>();
         archiveController = Get.put(ArchiveOrderControllerImp());
         orderController.refreshOrderStatus();
         archiveController.refreshArchiveOrderStatus();

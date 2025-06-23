@@ -1,6 +1,6 @@
 abstract class ApiConstant {
   static const String server =
-      "https://9d1a-49-206-0-60.ngrok-free.app/"; // ngrok ngrok http --url=pleasantly-divine-bear.ngrok-free.app 80
+      "https://b3e2-49-206-0-60.ngrok-free.app/"; // ngrok ngrok http --url=pleasantly-divine-bear.ngrok-free.app 80
   // static const String server = "http://192.168.0.113"; // home wifi
   // static const String server = "http://192.168.230.139";
   // static const String server = "http://192.168.50.139"; // mobile
@@ -10,7 +10,7 @@ abstract class ApiConstant {
   static const String imagePath = "$serverPath/upload";
   static const String categoryImagePath = "$imagePath/category";
   static const String productImagePath = "$imagePath/product";
- static const String folderUser = "$serverPath/users/";
+  static const String folderUser = "$serverPath/users/";
   static const String folderAuth = "$folderUser/auth";
   static const String apiSignup = "$folderAuth/signup.php";
   static const String apiVerificationSignup =
@@ -58,8 +58,6 @@ abstract class ApiConstant {
   static const String folderNotification = "$folderUser/notification";
   static const String apiViewNotification =
       "$folderNotification/view_notification.php";
-  static const String apiInsertNotification =
-      "$folderNotification/insert_notification.php";
   static const String apiDeleteNotification =
       "$folderNotification/delete_notification.php";
 

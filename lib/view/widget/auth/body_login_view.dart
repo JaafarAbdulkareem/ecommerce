@@ -21,68 +21,76 @@ class BodyLoginView extends GetView<LoginControllerImp> {
 
   @override
   Widget build(BuildContext context) {
-    return Form(
-      key: controller.keyLogin,
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            const CustomLogoWidget(),
-            TitleDescriptionWidget(
-              title: KeyLanguage.welcomeTitle.tr,
-              subTitle: KeyLanguage.loginContent.tr,
-            ),
-            CustomTextFormFieldWidget(
-              hint: KeyLanguage.emailHint.tr,
-              label: KeyLanguage.emailLabel.tr,
-              icon: AppIcon.email,
-              controller: controller.email,
-              keyboardType: TextInputType.emailAddress,
-              validator: (value) => validator(
-                value,
-                ConstantKey.emailValidator,
-                ConstantScale.minEmail,
-                ConstantScale.maxEmail,
+    return SingleChildScrollView(
+      child: Form(
+        key: controller.keyLogin,
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 16),
+          child: Column(
+            // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              const SizedBox(height: 16),
+              const CustomLogoWidget(),
+              const SizedBox(height: 16),
+              TitleDescriptionWidget(
+                title: KeyLanguage.welcomeTitle.tr,
+                subTitle: KeyLanguage.loginContent.tr,
               ),
-            ),
-            GetBuilder<LoginControllerImp>(
-              builder: (controller) => CustomTextFormFieldWidget(
-                hint: KeyLanguage.passwordHint.tr,
-                label: KeyLanguage.passwordLabel.tr,
-                icon: AppIcon.closePassword,
-                controller: controller.password,
-                obscure: controller.hidePassword,
-                keyboardType: TextInputType.number,
+              const SizedBox(height: 16),
+              CustomTextFormFieldWidget(
+                hint: KeyLanguage.emailHint.tr,
+                label: KeyLanguage.emailLabel.tr,
+                icon: AppIcon.email,
+                controller: controller.email,
+                keyboardType: TextInputType.emailAddress,
                 validator: (value) => validator(
                   value,
-                  ConstantKey.passwordValidator,
-                  ConstantScale.minPassword,
-                  ConstantScale.maxPassword,
+                  ConstantKey.emailValidator,
+                  ConstantScale.minEmail,
+                  ConstantScale.maxEmail,
                 ),
-                changeCasePassword: () {
-                  controller.changeStatePassword();
+              ),
+              GetBuilder<LoginControllerImp>(
+                builder: (controller) => CustomTextFormFieldWidget(
+                  hint: KeyLanguage.passwordHint.tr,
+                  label: KeyLanguage.passwordLabel.tr,
+                  icon: AppIcon.closePassword,
+                  controller: controller.password,
+                  obscure: controller.hidePassword,
+                  keyboardType: TextInputType.number,
+                  validator: (value) => validator(
+                    value,
+                    ConstantKey.passwordValidator,
+                    ConstantScale.minPassword,
+                    ConstantScale.maxPassword,
+                  ),
+                  changeCasePassword: () {
+                    controller.changeStatePassword();
+                  },
+                ),
+              ),
+              const SizedBox(height: 8),
+              const ForgetPasswordWidget(),
+              const SizedBox(height: 8),
+              CustomButtonWidget(
+                text: KeyLanguage.loginButton.tr,
+                color: AppColor.primary,
+                onTap: () {
+                  controller.loginOnTap();
                 },
               ),
-            ),
-            const ForgetPasswordWidget(),
-            CustomButtonWidget(
-              text: KeyLanguage.loginButton.tr,
-              color: AppColor.primary,
-              onTap: () {
-                controller.loginOnTap();
-              },
-            ),
-            LinkMessage(
-              message: KeyLanguage.messageLinkLogin.tr,
-              link: KeyLanguage.signupButton.tr,
-              onTap: () {
-                controller.linkOnTap();
-              },
-            ),
-            const SizedBox(height: 32),
-          ],
+              const SizedBox(height: 16),
+              LinkMessage(
+                message: KeyLanguage.messageLinkLogin.tr,
+                link: KeyLanguage.signupButton.tr,
+                onTap: () {
+                  controller.linkOnTap();
+                },
+              ),
+              const SizedBox(height: 32),
+            ],
+          ),
         ),
       ),
     );
