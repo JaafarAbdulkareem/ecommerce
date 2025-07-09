@@ -13,14 +13,13 @@ abstract class ConstantScale {
 
   static const int minPhone = 10;
   static const int maxPhone = 15;
-
-  ///status code
+//status code
   static const int statusCode = 200;
   static const int statusCodeMax = 299;
-  //home
+//home
   static const double iconShop = 32;
   static const int defalutIndexView = 0;
-  //product
+//product
   static const int crossAxisCount = 2;
   static const double icon = 20;
   static const int noStar = 1;
@@ -31,18 +30,16 @@ abstract class ConstantScale {
   static const int addColor = 0xFF01A70C;
   static const int removeColor = 0xFF084275;
   static const int favoriteDelay = 250;
-  //setting
+//setting
   static const int settingDeley = 100;
   static const int settingNoPassword = 6;
-  // address
+// address
   static const double initialLatitude = 0;
   static const double initialLongitude = 0;
   static const double zoomUserLocation = 14;
-
-  //cart
+//cart
   static const int couponsLottieDelay = 3;
-
-  //order
+//order
   static const int cachOption = 0;
   static const int paymentOption = 1;
   static const int deliveryOption = 0;
@@ -52,6 +49,8 @@ abstract class ConstantScale {
   static const int onWayOption = 2;
   static const int doneDeliveryOption = 3;
   static const double iconRating = 35;
-  //notification
+//checkout
+  static const int initialPaymentIndex = 0;
+//notification
   static const double iconDelete = 35;
 }

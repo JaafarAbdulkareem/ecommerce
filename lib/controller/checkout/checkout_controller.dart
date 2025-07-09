@@ -1,5 +1,6 @@
 import 'package:ecommerce/controller/bottom_bar/setting_controller.dart';
 import 'package:ecommerce/controller/cart/coupons_controller.dart';
+import 'package:ecommerce/controller/checkout/payment_controller.dart';
 import 'package:ecommerce/controller/home/body_home_controller.dart';
 import 'package:ecommerce/controller/order/order_controller.dart';
 import 'package:ecommerce/core/class/alert_default.dart';
@@ -51,6 +52,8 @@ class CheckoutControllerImp extends CheckoutController {
   late BodyHomeControllerImp bodyHomeController;
 
   final AlertDefault _alertDefault = AlertDefault();
+  final PaymentControllerImp _paymentController =
+      Get.put(PaymentControllerImp());
 
   @override
   void onInit() {
@@ -145,19 +148,19 @@ class CheckoutControllerImp extends CheckoutController {
           PaymentMethodsBottomSheet(),
         );
       }
-      _checkoutMethod(
-        data: OrderModel(
-          id: 0,
-          typePayment: paymentType,
-          typeDelivery: deliveryType!,
-          deliveryPrice: deliveryPrice,
-          price: price,
-          totalPrice: totalPrice,
-          userId: int.parse(userId),
-          addressId: idAddress,
-          couponsId: couponsId,
-        ),
-      );
+      // _checkoutMethod(
+      //   data: OrderModel(
+      //     id: 0,
+      //     typePayment: paymentType,
+      //     typeDelivery: deliveryType!,
+      //     deliveryPrice: deliveryPrice,
+      //     price: price,
+      //     totalPrice: totalPrice,
+      //     userId: int.parse(userId),
+      //     addressId: idAddress,
+      //     couponsId: couponsId,
+      //   ),
+      // );
     }
   }
 
