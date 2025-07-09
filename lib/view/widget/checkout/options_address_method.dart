@@ -12,23 +12,25 @@ class OptionsAddressMethod extends StatelessWidget {
     return GetBuilder<CheckoutControllerImp>(
       id: ConstantKey.idAddressType,
       builder: (controller) {
-        return Padding(
-          padding: controller.language == ConstantLanguage.en
-              ? const EdgeInsets.only(left: 12, right: 4)
-              : const EdgeInsets.only(left: 4, right: 12),
-          child: Column(
-            children: CheckoutControllerImp.addressData
-                .map(
-                  (e) => ItemAddressMethod(
-                    data: e,
-                    isActive: controller.idAddress == e.id,
-                    onTap: () {
-                      controller.chooseAddressMethod(e.id);
-                    },
-                  ),
-                )
-                .toList(),
-          ),
+        return
+            // Padding(
+            //   padding: controller.language == ConstantLanguage.en
+            //       ? const EdgeInsets.only(left: 12, right: 4)
+            //       : const EdgeInsets.only(left: 4, right: 12),
+            //   child:
+            Column(
+          children: CheckoutControllerImp.addressData
+              .map(
+                (e) => ItemAddressMethod(
+                  data: e,
+                  isActive: controller.idAddress == e.id,
+                  onTap: () {
+                    controller.chooseAddressMethod(e.id);
+                  },
+                ),
+              )
+              .toList(),
+          // ),
         );
       },
     );

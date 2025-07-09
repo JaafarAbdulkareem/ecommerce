@@ -1,7 +1,6 @@
 import 'package:ecommerce/controller/checkout/checkout_controller.dart';
 import 'package:ecommerce/core/constant/app_color.dart';
 import 'package:ecommerce/core/constant/app_style.dart';
-import 'package:ecommerce/core/constant/constant_key.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -17,14 +16,12 @@ class ItemPaymentMethod extends GetView<CheckoutControllerImp> {
   final VoidCallback onTap;
   @override
   Widget build(BuildContext context) {
-    return InkWell(
+    return GestureDetector(
       onTap: onTap,
       child: AspectRatio(
         aspectRatio: 9,
         child: Container(
-          alignment: controller.language == ConstantLanguage.en
-              ? Alignment.centerLeft
-              : Alignment.centerRight,
+          alignment: AlignmentDirectional.centerStart,
           padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
           margin: const EdgeInsets.symmetric(horizontal: 16),
           decoration: BoxDecoration(

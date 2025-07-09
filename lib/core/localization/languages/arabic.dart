@@ -32,6 +32,8 @@ Map<String, String> arabic = {
   KeyLanguage.injectButton: "حقن",
   KeyLanguage.cancelButton: "إلغاء",
   KeyLanguage.submitButton: "إرسال",
+  KeyLanguage.buttonOkay: "حسنًا",
+
   //auth
   KeyLanguage.welcomeTitle: "مرحبًا بك مجددًا",
   KeyLanguage.checkEmailTitle: "تحقق من البريد الإلكتروني",

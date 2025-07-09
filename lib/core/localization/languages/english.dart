@@ -32,6 +32,8 @@ Map<String, String> english = {
   KeyLanguage.injectButton: "Inject",
   KeyLanguage.cancelButton: "Cancel",
   KeyLanguage.submitButton: "Submit",
+    KeyLanguage.buttonOkay: "Okey",
+
 //auth
   KeyLanguage.welcomeTitle: "Welcome Back",
   KeyLanguage.checkEmailTitle: "Check Email",

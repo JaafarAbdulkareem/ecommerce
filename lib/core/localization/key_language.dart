@@ -29,6 +29,7 @@ abstract class KeyLanguage {
   static const String injectButton = "injectButton";
   static const String cancelButton = "cancelButton";
   static const String submitButton = "submitButton";
+  static const String buttonOkay = "buttonOkay";
 //auth
   static const String welcomeTitle = "welcomeTitle";
   static const String checkEmailTitle = "checkEmailTitle";

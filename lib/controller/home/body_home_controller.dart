@@ -170,7 +170,7 @@ class BodyHomeControllerImp extends BodyHomeController {
   }
 
   void recalledGetData() {
-    // checkout controller
+    // checkout controller because for using if any item out stock
     firstTime = true;
     getData();
   }

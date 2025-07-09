@@ -59,7 +59,7 @@ class UserDetail extends GetView<SettingControllerImp> {
           icon: AppIcon.closePassword,
           onTap: () {},
         ),
-        SizedBox(height: 50),
+        const SizedBox(height: 50),
         FieldSetting(
           title: KeyLanguage.contectUsTitle.tr,
           icon: AppIcon.contactUs,
