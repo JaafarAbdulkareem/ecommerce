@@ -1,7 +1,7 @@
 import 'package:ecommerce/core/localization/key_language.dart';
 
 Map<String, String> english = {
-  //onboarding
+//onboarding
   KeyLanguage.chooseLanguage: "choose language",
   KeyLanguage.arabic: "Arabic",
   KeyLanguage.english: "English",
@@ -11,7 +11,7 @@ Map<String, String> english = {
   KeyLanguage.fastDelivery: "Fast Delivery",
   KeyLanguage.bodyChooseProduct:
       "We Have 100k Product, Choose\nYour Product From Our E-commerce Shop",
-  //button
+//button
   KeyLanguage.continueButton: "Continue",
   KeyLanguage.loginButton: "Login",
   KeyLanguage.signupButton: "SignUp",
@@ -32,8 +32,7 @@ Map<String, String> english = {
   KeyLanguage.injectButton: "Inject",
   KeyLanguage.cancelButton: "Cancel",
   KeyLanguage.submitButton: "Submit",
-    KeyLanguage.buttonOkay: "Okey",
-
+  KeyLanguage.buttonOkay: "Okey",
 //auth
   KeyLanguage.welcomeTitle: "Welcome Back",
   KeyLanguage.checkEmailTitle: "Check Email",
@@ -50,8 +49,7 @@ Map<String, String> english = {
   KeyLanguage.resetPasswordContent: "Please, Enter New Password",
   KeyLanguage.successContent:
       "Success! Your Action Is Complete. Please Log In Again.",
-//text field
-  //label
+//label
   KeyLanguage.usernameLabel: "Username",
   KeyLanguage.emailLabel: "Email",
   KeyLanguage.passwordLabel: "Password",
@@ -62,8 +60,7 @@ Map<String, String> english = {
   KeyLanguage.cityLabel: "City",
   KeyLanguage.streetLabel: "Street",
   KeyLanguage.detailAddressLabel: "Detail Address(Option)",
-
-  //hint
+//hint
   KeyLanguage.usernameHint: "Enter Your Name",
   KeyLanguage.emailHint: "Enter Your Email",
   KeyLanguage.passwordHint: "Enter Your Password",
@@ -78,13 +75,13 @@ Map<String, String> english = {
   KeyLanguage.ratingHint:
       "Tap a star to set your rating. Add more description here if you want.",
   KeyLanguage.commentHint: "Set your custom comment hint",
-  //message
+//message
   KeyLanguage.forgetPassword: "Forget Password",
   KeyLanguage.messageLinkLogin: "Don't have an acconunt?",
   KeyLanguage.messageLinkSignup: "I really have an account",
   KeyLanguage.productNoNotAvailableMessage:
       "Please Note That This Is The Only Unit Currently Available In Our Store.",
-  //validator
+//validator
   KeyLanguage.empty: "Please, Fill Field",
   KeyLanguage.invalidUsername: "Username Is Invalid",
   KeyLanguage.invalidEmail: "Email Is Invalid",
@@ -92,7 +89,7 @@ Map<String, String> english = {
   KeyLanguage.invalidPhone: "Enter The Phone Number Correctly",
   KeyLanguage.lessMin: "Entry length is less than : ",
   KeyLanguage.greaterMax: "Entry length is greater than : ",
-  //dialog
+//dialog
   KeyLanguage.alert: "Alert",
   KeyLanguage.dialogPopContent: "Do You Want Exit?",
   KeyLanguage.emailFoundMessage: "The Email or Phone is Exist",
@@ -116,22 +113,28 @@ Map<String, String> english = {
   KeyLanguage.orderSuccessMessage: "You’re the best — thanks for your order!",
   KeyLanguage.productOutStackMessage:
       "Some Products Are Not Valid Or Out Of Stock.",
-  //home
+  KeyLanguage.alertPaymentSuccess: "Payment completed successfully",
+  KeyLanguage.alertPaymentCanceled: "Payment canceled by user",
+  KeyLanguage.alertPaymentFailedStripe: "Payment failed due to Stripe error",
+  KeyLanguage.alertUnexpectedError: "An unexpected error occurred",
+//home
   KeyLanguage.hello: "Hello",
   KeyLanguage.titleCategories: "Categories",
   KeyLanguage.titleDiscountProduct: "Product For You",
-  //botton bar
+//botton bar
   KeyLanguage.barHome: "HOME",
   KeyLanguage.barSetting: " SETTING",
   KeyLanguage.barReceipt: "Receipt",
   // KeyLanguage.barProfile: "PROFILE",
   KeyLanguage.barNotification: "Notification",
-  //product
+//product
   KeyLanguage.color: "Color",
   KeyLanguage.addProductMessage: "SORRY, Not More Products",
   KeyLanguage.removeProductMessage: "This Is The Minimum For This Product",
   KeyLanguage.outOfStock: "Out Of Stock",
-  //setting
+  KeyLanguage.alertCreatePaymentIntent: "Failed to Create Payment Intent",
+  KeyLanguage.alertEphemeralKey: "Failed to Ephemeral Key",
+//setting
   // KeyLanguage.nameUSer : "Name : ",
   KeyLanguage.addressSetting: "Drop Your Address Here",
   // KeyLanguage.emailUSer : "Email : ",
@@ -140,7 +143,7 @@ Map<String, String> english = {
   KeyLanguage.archiveTitle: "Orders archive",
   KeyLanguage.contectUsTitle: "Contact Us",
   KeyLanguage.logout: "Logout",
-  //drawer
+//drawer
   KeyLanguage.aboutUS: "Aboout Us",
   KeyLanguage.contactWithUs: "contact With Us",
   KeyLanguage.commonQuestion: "Common Question",
@@ -150,7 +153,7 @@ Map<String, String> english = {
   KeyLanguage.changeModeBG: "changeModeBG",
   KeyLanguage.natification: "natification",
   KeyLanguage.readMoneyAi: "readMoneyAi",
-  //cart
+//cart
   KeyLanguage.appBarTitleCart: "My Cart",
   KeyLanguage.youHave: "You Have",
   KeyLanguage.listITemCart: "Item/s In Your List",
@@ -161,14 +164,14 @@ Map<String, String> english = {
   KeyLanguage.couponsDiscount: "Coupon Discount",
   KeyLanguage.couponsNotFoundMessage:
       "Oops, That Coupon Didn’t Work. Try Another One!",
-  //search
+//search
   KeyLanguage.enterEnter: "Press Enter or tap 🔍 to start the search.",
-  //address
+//address
   KeyLanguage.appBarTitleInsertAddress: "Add New Address",
   KeyLanguage.appBarTitleDetailInsertAddress: "Confirm Address Details",
   KeyLanguage.appBarTitleDisplayAddress: "My Addresse/s",
   KeyLanguage.waitingGoogleMap: "Waiting, Please...",
-  //checkout
+//checkout
   KeyLanguage.titlePaymentMethod: "Choose Payment Method",
   KeyLanguage.titleDeliveryType: "Choose Delivery Type",
   KeyLanguage.titleShoppingAddress: "Choose Shopping Address",
@@ -199,6 +202,6 @@ Map<String, String> english = {
   KeyLanguage.countTitle: "Counts",
   KeyLanguage.quantityTitle: "QTY",
   KeyLanguage.addressTitle: "Shipping Address",
-  //notification
+//notification
   KeyLanguage.appBarTitleNotification: "Notificaion",
 };

@@ -147,6 +147,7 @@ class CheckoutControllerImp extends CheckoutController {
           // backgroundColor: AppColor.card,
           PaymentMethodsBottomSheet(),
         );
+       
       }
       // _checkoutMethod(
       //   data: OrderModel(

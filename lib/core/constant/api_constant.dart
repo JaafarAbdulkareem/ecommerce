@@ -1,7 +1,7 @@
 abstract class ApiConstant {
   static const String server =
-      "https://pleasantly-divine-bear.ngrok-free.app/"; // ngrok ngrok http --url=pleasantly-divine-bear.ngrok-free.app 80
-  // static const String server = "http://192.168.0.113"; // home wifi
+      "https://pleasantly-divine-bear.ngrok-free.app"; // ngrok ngrok http --url=pleasantly-divine-bear.ngrok-free.app 80
+  // static const String server = "http://192.168.0.100"; // home wifi
   // static const String server = "http://192.168.230.139";
   // static const String server = "http://192.168.50.139"; // mobile
   static const String project = "/project/ecommerce";
@@ -10,7 +10,7 @@ abstract class ApiConstant {
   static const String imagePath = "$serverPath/upload";
   static const String categoryImagePath = "$imagePath/category";
   static const String productImagePath = "$imagePath/product";
-  static const String folderUser = "$serverPath/users/";
+  static const String folderUser = "$serverPath/users";
   static const String folderAuth = "$folderUser/auth";
   static const String apiSignup = "$folderAuth/signup.php";
   static const String apiVerificationSignup =
@@ -63,4 +63,12 @@ abstract class ApiConstant {
 
   static const String folderRating = "$folderUser/rating";
   static const String apiInsertRating = "$folderRating/insert_rating.php";
+
+  static const String folderPayment = "$folderUser/payment";
+  static const String apiCreatePaymentIntents =
+      "$folderPayment/create_payment_intents.php";
+  static const String apiCreateCusomerId =
+      "$folderPayment/create_customer_id.php";
+  static const String apiCreateEphemeralKey =
+      "$folderPayment/create_ephemeral_key.php";
 }

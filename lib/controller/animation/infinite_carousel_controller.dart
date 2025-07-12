@@ -17,7 +17,8 @@ class InfiniteCarouselController extends GetxController {
   InfiniteCarouselController(this.items) {
     prefs = Get.find<SharedPrefsService>();
     pageController = PageController(initialPage: initialPage);
-    isRTL = prefs.prefs.getString(ConstantKey.keyLanguage) == ConstantLanguage.ar;
+    isRTL =
+        prefs.prefs.getString(ConstantKey.keyLanguage) == ConstantLanguage.ar;
   }
 
   void startAutoSlide() {

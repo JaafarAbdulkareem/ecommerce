@@ -10,6 +10,7 @@
 .svn/
 migrate_working_dir/
 
+lib/core/constant/api_key_secret.dart
 # IntelliJ related
 *.iml
 *.ipr

@@ -1,5 +1,5 @@
 abstract class KeyLanguage {
-  //onboarding
+//onboarding
   static const String chooseLanguage = "chooseLanguage";
   static const String arabic = "arabic";
   static const String english = "english";
@@ -8,7 +8,7 @@ abstract class KeyLanguage {
   static const String trackYourOrder = "Track Your Order";
   static const String fastDelivery = "Fast Delivery";
   static const String bodyChooseProduct = "bodyChooseProduct";
-  //button
+//button
   static const String continueButton = "ContinueButton";
   static const String loginButton = "loginButton";
   static const String signupButton = "signupButton";
@@ -42,8 +42,7 @@ abstract class KeyLanguage {
   static const String verifyContent = "verifyContent";
   static const String resetPasswordContent = "resetPasswordContent";
   static const String successContent = "successContent";
-//////Text field
-  //label
+//label
   static const String usernameLabel = "UsernameLabel";
   static const String emailLabel = "emailLabel";
   static const String passwordLabel = "passwordLabel";
@@ -54,7 +53,7 @@ abstract class KeyLanguage {
   static const String cityLabel = "cityLabel";
   static const String streetLabel = "streetLabel";
   static const String detailAddressLabel = "detailAddressLabel";
-  //hint
+//hint
   static const String usernameHint = "usernameHint";
   static const String emailHint = "emailHint";
   static const String passwordHint = "passwordHint";
@@ -68,14 +67,13 @@ abstract class KeyLanguage {
   static const String couponsHint = "couponsHint";
   static const String ratingHint = 'ratingHint';
   static const String commentHint = 'commentHint';
-
-  //message
+//message
   static const String forgetPassword = "forgetPassword";
   static const String messageLinkLogin = "messsageLinkLogin";
   static const String messageLinkSignup = "messageLinkSignup";
   static const String productNoNotAvailableMessage =
       "ProductNoNotAvailableMessage";
-  //validator
+//validator
   static const String empty = "empty";
   static const String invalidUsername = "invalidUsername";
   static const String invalidEmail = "invalidEmail";
@@ -83,7 +81,7 @@ abstract class KeyLanguage {
   static const String invalidPhone = "invalidPhone";
   static const String lessMin = "lessMin";
   static const String greaterMax = "greaterMax";
-  //dialog
+//dialog
   static const String alert = "alert";
   static const String dialogPopContent = "dialogPopContent";
   static const String emailFoundMessage = "emailFoundMessage";
@@ -100,25 +98,29 @@ abstract class KeyLanguage {
   static const String permissionExceptionMessage = "permissionExceptionMessage";
   static const String orderSuccessMessage = "orderSuccessMessage";
   static const String productOutStackMessage = "productOutStackMessage";
-  //home
+  static const String alertCreatePaymentIntent = "alertCreatePaymentIntent";
+  static const String alertEphemeralKey = "alertEphemeralKey";
+  static const String alertPaymentSuccess = "alertPaymentSuccess";
+  static const String alertPaymentCanceled = "alertPaymentCanceled";
+  static const String alertPaymentFailedStripe = "alertPaymentFailedStripe";
+  static const String alertUnexpectedError = "alertUnexpectedError";
+//home
   static const String hello = "hello";
   static const String titleCategories = "titleCategories";
   static const String titleDiscountProduct = "titleDiscountProduct";
-
-  //botton bar
+//botton bar
   static const String barHome = "barHome";
   static const String barSetting = "barSetting";
   static const String barReceipt = "barReceipt";
   // static const String barProfile = "barProfile";
   static const String barNotification = "barNotification";
-  //product
+//product
   static const String color = "color";
   static const String addProductMessage = "addProductMessage";
   static const String removeProductMessage = "removeProductMessage";
   static const String outOfStock = "outOfStock";
   // static const String titleBestSelling = "titleBestSelling";
-
-  // //setting
+//setting
   // static const String nameUSer = "nameUser";
   static const String addressSetting = "addressSetting";
   // static const String emailUSer = "emailUser";
@@ -127,7 +129,7 @@ abstract class KeyLanguage {
   static const String archiveTitle = "archiveTitle";
   static const String contectUsTitle = "contectUsTitle";
   static const String logout = "logout";
-  //drawer
+//drawer
   static const String aboutUS = "aboutUS";
   static const String contactWithUs = "contactWithUs";
   static const String commonQuestion = "commonQuestion";
@@ -137,8 +139,7 @@ abstract class KeyLanguage {
   static const String changeModeBG = "changeModeBG";
   static const String natification = "natification";
   static const String readMoneyAi = "readMoneyAi";
-
-  // cart
+//cart
   static const String appBarTitleCart = "appBarTitleCart";
   static const String youHave = "youHave";
   static const String listITemCart = "listItemCart";
@@ -148,18 +149,15 @@ abstract class KeyLanguage {
   static const String ratingTitle = "ratingTitle";
   static const String couponsDiscount = "couponsDiscount";
   static const String couponsNotFoundMessage = "couponsNotFoundMessage";
-
-  //search
+//search
   static const String enterEnter = "enterEnter";
-
-  //address
+//address
   static const String appBarTitleInsertAddress = "appBarTitleInsertAddress";
   static const String appBarTitleDetailInsertAddress =
       "appBarTitleDetailInsertAddress";
   static const String appBarTitleDisplayAddress = "appBarTitleDisplayAddress";
   static const String waitingGoogleMap = "waitingGoogleMap";
-
-  //checkout
+//checkout
   static const String titlePaymentMethod = "titlePaymentMethod";
   static const String titleDeliveryType = "titleDeliveryType";
   static const String titleShoppingAddress = "titleShoppingAddress";
@@ -170,7 +168,7 @@ abstract class KeyLanguage {
   static const String errorAddressMessage = "errorAddressMessage";
   static const String chooseDeliveryMessage = "chooseDeliveryMessage";
   static const String chooseAddressMessage = "chooseAddressMessage";
-  //order
+//order
   static const String appBarTitleOrder = "appBarTitleOrder";
   static const String appBarTitleDetailOrder = "appBarTitleDetailOrder";
   static const String appBarTitleArchive = "appBarTitleArchive";
@@ -189,6 +187,6 @@ abstract class KeyLanguage {
   static const String countTitle = "countTitle";
   static const String quantityTitle = "quantityTitle";
   static const String addressTitle = "addressTitle";
-  //notification
+//notification
   static const String appBarTitleNotification = "appBarTitleNotification";
 }

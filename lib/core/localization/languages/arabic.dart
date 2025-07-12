@@ -1,7 +1,7 @@
 import 'package:ecommerce/core/localization/key_language.dart';
 
 Map<String, String> arabic = {
-  //onboarding
+//onboarding
   KeyLanguage.chooseLanguage: "اختر اللغة",
   KeyLanguage.arabic: "العربية",
   KeyLanguage.english: "الإنجليزية",
@@ -11,7 +11,7 @@ Map<String, String> arabic = {
   KeyLanguage.fastDelivery: "توصيل سريع",
   KeyLanguage.bodyChooseProduct:
       "لدينا 100 ألف منتج، اختر\nمنتجك من متجرنا الإلكتروني",
-  //button
+//button
   KeyLanguage.continueButton: "استمر",
   KeyLanguage.loginButton: "تسجيل الدخول",
   KeyLanguage.signupButton: "التسجيل",
@@ -33,8 +33,7 @@ Map<String, String> arabic = {
   KeyLanguage.cancelButton: "إلغاء",
   KeyLanguage.submitButton: "إرسال",
   KeyLanguage.buttonOkay: "حسنًا",
-
-  //auth
+//auth
   KeyLanguage.welcomeTitle: "مرحبًا بك مجددًا",
   KeyLanguage.checkEmailTitle: "تحقق من البريد الإلكتروني",
   KeyLanguage.verifyTitle: "التحقق",
@@ -50,8 +49,7 @@ Map<String, String> arabic = {
   KeyLanguage.resetPasswordContent: "الرجاء إدخال كلمة مرور جديدة",
   KeyLanguage.successContent:
       "نجاح! تم إتمام الإجراء. الرجاء تسجيل الدخول مرة أخرى.",
-  //text field
-  //label
+//label
   KeyLanguage.usernameLabel: "اسم المستخدم",
   KeyLanguage.emailLabel: "البريد الإلكتروني",
   KeyLanguage.passwordLabel: "كلمة المرور",
@@ -62,7 +60,7 @@ Map<String, String> arabic = {
   KeyLanguage.cityLabel: "المدينة",
   KeyLanguage.streetLabel: "الشارع",
   KeyLanguage.detailAddressLabel: "العنوان بالتفصيل (اختياري)",
-  //hint
+//hint
   KeyLanguage.usernameHint: "أدخل اسمك",
   KeyLanguage.emailHint: "أدخل بريدك الإلكتروني",
   KeyLanguage.passwordHint: "أدخل كلمة المرور الخاصة بك",
@@ -77,13 +75,13 @@ Map<String, String> arabic = {
   KeyLanguage.ratingHint:
       "انقر على نجمة لتعيين تقييمك. أضف وصفًا إضافيًا هنا إذا أردت.",
   KeyLanguage.commentHint: "أضف تلميحًا مخصصًا لتقييمك",
-  //message
+//message
   KeyLanguage.forgetPassword: "نسيت كلمة المرور",
   KeyLanguage.messageLinkLogin: "لا تملك حسابًا؟",
   KeyLanguage.messageLinkSignup: "لدي حساب بالفعل",
   KeyLanguage.productNoNotAvailableMessage:
       "يرجى ملاحظة أن هذا هو الوحدة الوحيدة المتاحة حاليًا في متجرنا.",
-  //validator
+//validator
   KeyLanguage.empty: "يرجى ملء الحقل",
   KeyLanguage.invalidUsername: "اسم المستخدم غير صالح",
   KeyLanguage.invalidEmail: "البريد الإلكتروني غير صالح",
@@ -91,7 +89,7 @@ Map<String, String> arabic = {
   KeyLanguage.invalidPhone: "أدخل رقم الهاتف بشكل صحيح",
   KeyLanguage.lessMin: "طول الإدخال أقل من: ",
   KeyLanguage.greaterMax: "طول الإدخال أكبر من: ",
-  //dialog
+//dialog
   KeyLanguage.alert: "تنبيه",
   KeyLanguage.dialogPopContent: "هل تريد الخروج؟",
   KeyLanguage.emailFoundMessage: "البريد الإلكتروني أو الهاتف موجود",
@@ -113,27 +111,33 @@ Map<String, String> arabic = {
       "تم رفض صلاحيات الموقع. الرجاء منح الوصول إلى الموقع في إعدادات الجهاز لل Continuation.",
   KeyLanguage.orderSuccessMessage: "أنت الأفضل — شكرًا على طلبك!",
   KeyLanguage.productOutStackMessage: "بعض المنتجات غير صالحة أو نفد المخزون.",
-  //home
+  KeyLanguage.alertCreatePaymentIntent: "تعذّر إنشاء عملية الدفع",
+  // In your Arabic localization file
+  KeyLanguage.alertEphemeralKey: "فشل في إنشاء المفتاح المؤقت",
+  KeyLanguage.alertPaymentSuccess: "تم الدفع بنجاح",
+  KeyLanguage.alertPaymentCanceled: "تم إلغاء الدفع من قبل المستخدم",
+  KeyLanguage.alertPaymentFailedStripe: "فشل الدفع بسبب خطأ في Stripe",
+  KeyLanguage.alertUnexpectedError: "حدث خطأ غير متوقع",
+//home
   KeyLanguage.hello: "مرحبًا",
   KeyLanguage.titleCategories: "الفئات",
   KeyLanguage.titleDiscountProduct: "منتجات لك",
-  //botton bar
+//botton bar
   KeyLanguage.barHome: "الرئيسية",
   KeyLanguage.barSetting: "الإعدادات",
   KeyLanguage.barReceipt: "المفضلة",
   KeyLanguage.barNotification: "الإشعارات",
-  //product
+//product
   KeyLanguage.color: "اللون",
   KeyLanguage.addProductMessage: "آسف، لا يمكن إضافة المزيد من المنتجات",
   KeyLanguage.removeProductMessage: "هذا هو الحد الأدنى لهذا المنتج",
   KeyLanguage.outOfStock: "غير متوفر",
-
-  //setting
+//setting
   KeyLanguage.addressSetting: "أضف عنوانك هنا",
   KeyLanguage.archiveTitle: "سجل الطلبات",
   KeyLanguage.contectUsTitle: "اتصل بنا",
   KeyLanguage.logout: "تسجيل الخروج",
-  //drawer
+//drawer
   KeyLanguage.aboutUS: "عننا",
   KeyLanguage.contactWithUs: "اتصل بنا",
   KeyLanguage.commonQuestion: "أسئلة شائعة",
@@ -143,7 +147,7 @@ Map<String, String> arabic = {
   KeyLanguage.changeModeBG: "تغيير خلفية الوضع",
   KeyLanguage.natification: "الإشعارات",
   KeyLanguage.readMoneyAi: "قراءة المال بالذكاء الاصطناعي",
-  //cart
+//cart
   KeyLanguage.appBarTitleCart: "سلة التسوق",
   KeyLanguage.youHave: "لديك",
   KeyLanguage.listITemCart: "منتج/منتجات في قائمتك",
@@ -153,14 +157,14 @@ Map<String, String> arabic = {
   KeyLanguage.ratingTitle: "التقييم",
   KeyLanguage.couponsDiscount: "خصم الكوبون",
   KeyLanguage.couponsNotFoundMessage: "أوه، لم يعمل الكوبون. حاول آخر!",
-  //search
+//search
   KeyLanguage.enterEnter: "اضغط على Enter أو انقر على 🔍 للبدء في البحث.",
-  //address
+//address
   KeyLanguage.appBarTitleInsertAddress: "إضافة عنوان جديد",
   KeyLanguage.appBarTitleDetailInsertAddress: "تأكيد تفاصيل العنوان",
   KeyLanguage.appBarTitleDisplayAddress: "عنوان/عناوينك",
   KeyLanguage.waitingGoogleMap: "انتظار، الرجاء...",
-  //checkout
+//checkout
   KeyLanguage.titlePaymentMethod: "اختر طريقة الدفع",
   KeyLanguage.titleDeliveryType: "اختر نوع التوصيل",
   KeyLanguage.titleShoppingAddress: "اختر عنوان التسوق",
@@ -191,6 +195,6 @@ Map<String, String> arabic = {
   KeyLanguage.countTitle: "العدد",
   KeyLanguage.quantityTitle: "الكمية",
   KeyLanguage.addressTitle: "عنوان الشحن",
-  //notification
+//notification
   KeyLanguage.appBarTitleNotification: "الإشعارات",
 };

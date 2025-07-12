@@ -51,6 +51,8 @@ abstract class ConstantScale {
   static const double iconRating = 35;
 //checkout
   static const int initialPaymentIndex = 0;
+  static const int stripeOption = 0;
+  static const int paypalOption = 1;
 //notification
   static const double iconDelete = 35;
 }
