@@ -30,12 +30,11 @@ class PaymentMethodsBottomSheet extends GetView<PaymentControllerImp> {
             text: KeyLanguage.continueButton.tr,
             color: AppColor.primary,
             onTap: () {
-              print("called");
               controller.paymentButton(
                 inputPaymentIntentModel: InputPaymentIntentModel(
                   amount: 100,
                   currency: ConstantText.currencyPayment,
-                  customer: "cus_Sf1wuhX4jm4uSW",
+                  customer: controller.customerId,
                 ),
               );
             },

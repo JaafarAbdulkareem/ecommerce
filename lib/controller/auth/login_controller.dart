@@ -63,6 +63,8 @@ class LoginControllerImp extends LoginController {
     await sharedPrefsService.prefs
         .setString(ConstantKey.keyUserId, response[ApiColumnDb.id]);
     await sharedPrefsService.prefs
+        .setString(ConstantKey.keyCustomerId, response[ApiColumnDb.customerId]);
+    await sharedPrefsService.prefs
         .setString(ConstantKey.keyUsername, response[ApiColumnDb.username]);
     // await sharedPrefsService.prefs
     //     .setString(ApiKey.email, response[ApiColumnDb.email]);

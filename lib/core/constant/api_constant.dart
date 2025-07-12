@@ -67,8 +67,6 @@ abstract class ApiConstant {
   static const String folderPayment = "$folderUser/payment";
   static const String apiCreatePaymentIntents =
       "$folderPayment/create_payment_intents.php";
-  static const String apiCreateCusomerId =
-      "$folderPayment/create_customer_id.php";
   static const String apiCreateEphemeralKey =
       "$folderPayment/create_ephemeral_key.php";
 }

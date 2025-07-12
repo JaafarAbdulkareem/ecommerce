@@ -1,5 +1,7 @@
+import 'package:ecommerce/core/constant/api_column_db.dart';
 import 'package:ecommerce/core/constant/api_constant.dart';
 import 'package:ecommerce/core/constant/api_key.dart';
+import 'package:ecommerce/core/constant/api_key_secret.dart';
 import 'package:ecommerce/core/service/curd.dart';
 
 class SignupRemote {
@@ -17,6 +19,7 @@ class SignupRemote {
       ApiKey.email: email,
       ApiKey.password: password,
       ApiKey.phone: phone,
+      ApiColumnDb.secretKey: ApiKeySecret.keySecret,
     });
     return response.fold((left) => left, (right) => right);
   }

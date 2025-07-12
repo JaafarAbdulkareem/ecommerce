@@ -19,92 +19,99 @@ class BodySignupView extends GetView<SignupControllerImp> {
 
   @override
   Widget build(BuildContext context) {
-    return Form(
-      key: controller.keySignup,
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            TitleDescriptionWidget(
-              title: KeyLanguage.welcomeTitle.tr,
-              subTitle: KeyLanguage.signupContent.tr,
-            ),
-            CustomTextFormFieldWidget(
-              hint: KeyLanguage.usernameHint.tr,
-              label: KeyLanguage.usernameLabel.tr,
-              icon: AppIcon.username,
-              controller: controller.username,
-              keyboardType: TextInputType.text,
-              validator: (value) => validator(
-                value,
-                ConstantKey.usernameValidator,
-                ConstantScale.minUsername,
-                ConstantScale.maxUsername,
-              ),
-            ),
-            CustomTextFormFieldWidget(
-              hint: KeyLanguage.emailHint.tr,
-              label: KeyLanguage.emailLabel.tr,
-              icon: AppIcon.email,
-              controller: controller.email,
-              keyboardType: TextInputType.emailAddress,
-              validator: (value) => validator(
-                value,
-                ConstantKey.emailValidator,
-                ConstantScale.minEmail,
-                ConstantScale.maxEmail,
-              ),
-            ),
-            GetBuilder<SignupControllerImp>(
-              builder: (controller) => CustomTextFormFieldWidget(
-                hint: KeyLanguage.passwordHint.tr,
-                label: KeyLanguage.passwordLabel.tr,
-                icon: AppIcon.closePassword,
-                controller: controller.password,
-                obscure: controller.hidePassword,
-                keyboardType: TextInputType.number,
-                validator: (value) => validator(
-                  value,
-                  ConstantKey.passwordValidator,
-                  ConstantScale.minPassword,
-                  ConstantScale.maxPassword,
+    return Center(
+      child: SingleChildScrollView(
+        child: Form(
+          key: controller.keySignup,
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16),
+            child: Column(
+              // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                TitleDescriptionWidget(
+                  title: KeyLanguage.welcomeTitle.tr,
+                  subTitle: KeyLanguage.signupContent.tr,
                 ),
-                changeCasePassword: () {
-                  controller.changeStatePassword();
-                },
-              ),
+                const SizedBox(height: 16),
+                CustomTextFormFieldWidget(
+                  hint: KeyLanguage.usernameHint.tr,
+                  label: KeyLanguage.usernameLabel.tr,
+                  icon: AppIcon.username,
+                  controller: controller.username,
+                  keyboardType: TextInputType.text,
+                  validator: (value) => validator(
+                    value,
+                    ConstantKey.usernameValidator,
+                    ConstantScale.minUsername,
+                    ConstantScale.maxUsername,
+                  ),
+                ),
+                CustomTextFormFieldWidget(
+                  hint: KeyLanguage.emailHint.tr,
+                  label: KeyLanguage.emailLabel.tr,
+                  icon: AppIcon.email,
+                  controller: controller.email,
+                  keyboardType: TextInputType.emailAddress,
+                  validator: (value) => validator(
+                    value,
+                    ConstantKey.emailValidator,
+                    ConstantScale.minEmail,
+                    ConstantScale.maxEmail,
+                  ),
+                ),
+                GetBuilder<SignupControllerImp>(
+                  builder: (controller) => CustomTextFormFieldWidget(
+                    hint: KeyLanguage.passwordHint.tr,
+                    label: KeyLanguage.passwordLabel.tr,
+                    icon: AppIcon.closePassword,
+                    controller: controller.password,
+                    obscure: controller.hidePassword,
+                    keyboardType: TextInputType.number,
+                    validator: (value) => validator(
+                      value,
+                      ConstantKey.passwordValidator,
+                      ConstantScale.minPassword,
+                      ConstantScale.maxPassword,
+                    ),
+                    changeCasePassword: () {
+                      controller.changeStatePassword();
+                    },
+                  ),
+                ),
+                CustomTextFormFieldWidget(
+                  hint: KeyLanguage.phoneHint.tr,
+                  label: KeyLanguage.phoneLabel.tr,
+                  icon: AppIcon.phone,
+                  controller: controller.phone,
+                  keyboardType: TextInputType.phone,
+                  validator: (value) => validator(
+                    value,
+                    ConstantKey.phoneValidator,
+                    ConstantScale.minPhone,
+                    ConstantScale.maxPhone,
+                  ),
+                ),
+                const SizedBox(height: 16),
+                CustomButtonWidget(
+                  text: KeyLanguage.signupButton.tr,
+                  color: AppColor.primary,
+                  onTap: () {
+                    controller.signupOnTap();
+                  },
+                ),
+                const SizedBox(height: 16),
+                LinkMessage(
+                  message: KeyLanguage.messageLinkSignup.tr,
+                  link: KeyLanguage.loginButton.tr,
+                  onTap: () {
+                    controller.linkOnTap();
+                  },
+                ),
+                const SizedBox(height: 32),
+              ],
             ),
-            CustomTextFormFieldWidget(
-              hint: KeyLanguage.phoneHint.tr,
-              label: KeyLanguage.phoneLabel.tr,
-              icon: AppIcon.phone,
-              controller: controller.phone,
-              keyboardType: TextInputType.phone,
-              validator: (value) => validator(
-                value,
-                ConstantKey.phoneValidator,
-                ConstantScale.minPhone,
-                ConstantScale.maxPhone,
-              ),
-            ),
-            CustomButtonWidget(
-              text: KeyLanguage.signupButton.tr,
-              color: AppColor.primary,
-              onTap: () {
-                controller.signupOnTap();
-              },
-            ),
-            LinkMessage(
-              message: KeyLanguage.messageLinkSignup.tr,
-              link: KeyLanguage.loginButton.tr,
-              onTap: () {
-                controller.linkOnTap();
-              },
-            ),
-            const SizedBox(height: 32),
-          ],
+          ),
         ),
       ),
     );
