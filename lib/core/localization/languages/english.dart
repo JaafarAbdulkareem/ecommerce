@@ -185,6 +185,11 @@ Map<String, String> english = {
       "Oops! Please Select A Delivery Option—Either Delivery Or Receive—Before Continuing. 😊",
   KeyLanguage.chooseAddressMessage:
       "Oops! Please Select One Of Your Saved Addresses Before Continuing. 😊",
+  KeyLanguage.paymentTransactionDescription:
+      "Payment For Your Order Via Secure Online Transaction",
+  KeyLanguage.contactUsForOrderQuestions:
+      "Contact Us For Any Questions On Your Order",
+//order
   KeyLanguage.appBarTitleOrder: "Orders",
   KeyLanguage.appBarTitleDetailOrder: "Orders Detail",
   KeyLanguage.appBarTitleArchive: "Archive",

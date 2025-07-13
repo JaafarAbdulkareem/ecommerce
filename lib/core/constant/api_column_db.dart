@@ -93,4 +93,13 @@ class ApiColumnDb {
   static const String defaultPaymentMethod = 'default_payment_method';
   static const String footer = 'footer';
   static const String renderingOptions = 'rendering_options';
+
+  static const String total = 'total';
+  static const String details = 'details';
+  static const String subtotal = 'subtotal';
+  static const String shipping = 'shipping';
+  static const String shippingDiscount = 'shipping_discount';
+  static const String itemList = 'item_list';
+  static const String items = 'items';
+  static const String quantity = 'quantity';
 }

@@ -168,6 +168,9 @@ abstract class KeyLanguage {
   static const String errorAddressMessage = "errorAddressMessage";
   static const String chooseDeliveryMessage = "chooseDeliveryMessage";
   static const String chooseAddressMessage = "chooseAddressMessage";
+  static const String paymentTransactionDescription =
+      "paymentTransactionDescription";
+  static const String contactUsForOrderQuestions = "contactUsForOrderQuestions";
 //order
   static const String appBarTitleOrder = "appBarTitleOrder";
   static const String appBarTitleDetailOrder = "appBarTitleDetailOrder";

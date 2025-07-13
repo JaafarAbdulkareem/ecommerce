@@ -178,6 +178,11 @@ Map<String, String> arabic = {
       "أوه! الرجاء اختيار خيار توصيل—إما التوصيل أو الاستلام—قبل المتابعة. 😊",
   KeyLanguage.chooseAddressMessage:
       "أوه! الرجاء اختيار أحد العناوين المحفوظة قبل المتابعة. 😊",
+  KeyLanguage.paymentTransactionDescription:
+      "الدفع مقابل طلبك عبر معاملة إلكترونية آمنة",
+  KeyLanguage.contactUsForOrderQuestions:
+      "تواصل معنا إذا كانت لديك أي أسئلة بشأن طلبك",
+//order
   KeyLanguage.appBarTitleOrder: "الطلبات",
   KeyLanguage.appBarTitleDetailOrder: "تفاصيل الطلب",
   KeyLanguage.appBarTitleArchive: "الأرشيف",
