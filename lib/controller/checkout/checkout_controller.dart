@@ -6,7 +6,6 @@ import 'package:ecommerce/controller/order/order_controller.dart';
 import 'package:ecommerce/core/class/alert_default.dart';
 import 'package:ecommerce/core/class/status_request.dart';
 import 'package:ecommerce/core/constant/api_key.dart';
-import 'package:ecommerce/core/constant/app_color.dart';
 import 'package:ecommerce/core/constant/constant_key.dart';
 import 'package:ecommerce/core/constant/constant_scale.dart';
 import 'package:ecommerce/core/constant/constant_screen_name.dart';
@@ -52,8 +51,8 @@ class CheckoutControllerImp extends CheckoutController {
   late BodyHomeControllerImp bodyHomeController;
 
   final AlertDefault _alertDefault = AlertDefault();
-  final PaymentControllerImp _paymentController =
-      Get.put(PaymentControllerImp());
+  // final PaymentControllerImp _paymentController =
+  //     Get.put(PaymentControllerImp());
 
   @override
   void onInit() {
@@ -73,6 +72,8 @@ class CheckoutControllerImp extends CheckoutController {
     couponsId = couponsController.couponsData?.id;
 
     bodyHomeController = Get.find<BodyHomeControllerImp>();
+
+    Get.lazyPut(() => PaymentControllerImp());
     super.onInit();
   }
 
@@ -137,32 +138,40 @@ class CheckoutControllerImp extends CheckoutController {
   @override
   void checkoutButton() async {
     if (deliveryType == null) {
-      _alertDefault.dialogDefault(body: KeyLanguage.chooseDeliveryMessage.tr);
+      _alertDefault.dialogDefault(
+        body: KeyLanguage.chooseDeliveryMessage.tr,
+      );
     } else if (idAddress == null &&
         ConstantScale.deliveryOption == deliveryType) {
-      _alertDefault.dialogDefault(body: KeyLanguage.chooseAddressMessage.tr);
+      _alertDefault.dialogDefault(
+        body: KeyLanguage.chooseAddressMessage.tr,
+      );
     } else {
       if (ConstantScale.paymentOption == paymentType) {
         await Get.bottomSheet(
           // backgroundColor: AppColor.card,
           PaymentMethodsBottomSheet(),
         );
-       
+      } else {
+        callCheckoutMethod();
       }
-      // _checkoutMethod(
-      //   data: OrderModel(
-      //     id: 0,
-      //     typePayment: paymentType,
-      //     typeDelivery: deliveryType!,
-      //     deliveryPrice: deliveryPrice,
-      //     price: price,
-      //     totalPrice: totalPrice,
-      //     userId: int.parse(userId),
-      //     addressId: idAddress,
-      //     couponsId: couponsId,
-      //   ),
-      // );
     }
+  }
+
+  void callCheckoutMethod() {
+    _checkoutMethod(
+      data: OrderModel(
+        id: 0,
+        typePayment: paymentType,
+        typeDelivery: deliveryType!,
+        deliveryPrice: deliveryPrice,
+        price: price,
+        totalPrice: totalPrice,
+        userId: int.parse(userId),
+        addressId: idAddress,
+        couponsId: couponsId,
+      ),
+    );
   }
 
   _checkoutMethod({

@@ -1,14 +1,15 @@
 import 'package:ecommerce/core/constant/api_column_db.dart';
 import 'package:ecommerce/core/constant/api_key_secret.dart';
+import 'package:ecommerce/core/constant/constant_key.dart';
 
 class InputPaymentIntentModel {
   final double amount;
   final String currency;
   final String customer;
 
-  InputPaymentIntentModel({
+  const InputPaymentIntentModel({
     required this.amount,
-    required this.currency,
+    this.currency = ConstantText.currencyPayment,
     required this.customer,
   });
 

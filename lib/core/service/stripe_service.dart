@@ -9,6 +9,7 @@ import 'package:ecommerce/data/models/stripe_payment_model/ephemeral_key/input_e
 import 'package:ecommerce/data/models/stripe_payment_model/input_initial_payment_intent_model.dart';
 import 'package:ecommerce/data/models/stripe_payment_model/payment_intents/input_payment_intent_model.dart';
 import 'package:ecommerce/data/models/stripe_payment_model/payment_intents/payment_intent_model.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_stripe/flutter_stripe.dart';
 import 'package:get/get.dart';
 
@@ -92,6 +93,7 @@ class StripeService {
 
   Future<void> stripePayment({
     required InputPaymentIntentModel inputPaymentIntentModel,
+    required VoidCallback successFunction,
   }) async {
     try {
       // Step 1: Create PaymentIntent
@@ -130,8 +132,9 @@ class StripeService {
 
       // Step 3: Present Payment Sheet (user interaction)
       await Stripe.instance.presentPaymentSheet();
-
+      successFunction();
       _alertDefault.snackBarDefault(
+        title: KeyLanguage.successTitle.tr,
         body: KeyLanguage.alertPaymentSuccess.tr,
       );
     } on StripeException catch (e) {
