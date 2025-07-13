@@ -1,3 +1,4 @@
+import 'package:ecommerce/controller/home/body_home_controller.dart';
 import 'package:ecommerce/controller/order/archive_order_controller.dart';
 import 'package:ecommerce/controller/order/order_controller.dart';
 import 'package:ecommerce/core/constant/app_color.dart';
@@ -35,13 +36,14 @@ Future<void> requestNotificationPremission() async {
 void notificationMessage() {
   FirebaseMessaging.onMessage.listen((message) async {
     await FlutterRingtonePlayer().playNotification();
-    Get.snackbar(
-      icon: Icon(AppIcon.notificationRing),
-      message.notification?.title ?? "",
-      message.notification?.body ?? "",
-      backgroundColor: AppColor.snackbar,
-    );
+
     if (ConstantScreenName.order == message.data["pagename"]) {
+      Get.snackbar(
+        icon: Icon(AppIcon.notificationRing),
+        message.notification?.title ?? "",
+        message.notification?.body ?? "",
+        backgroundColor: AppColor.snackbar,
+      );
       print("page : ${Get.currentRoute}");
       OrderControllerImp orderController;
       ArchiveOrderControllerImp archiveController;
@@ -57,6 +59,16 @@ void notificationMessage() {
         orderController.refreshOrderStatus();
         archiveController.refreshArchiveOrderStatus();
       }
+    } else if (ConstantScreenName.home == message.data["pagename"]) {
+      BodyHomeControllerImp controllerImp = Get.find();
+      controllerImp.recalledGetData();
+    } else {
+      Get.snackbar(
+        icon: Icon(AppIcon.notificationRing),
+        message.notification?.title ?? "",
+        message.notification?.body ?? "",
+        backgroundColor: AppColor.snackbar,
+      );
     }
   });
 }

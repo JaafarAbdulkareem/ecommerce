@@ -24,69 +24,72 @@ class ItemListDisplayProduct extends StatelessWidget {
   final VoidCallback onTap;
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: onTap,
-      child: Card(
-        color: AppColor.card,
-        child: Stack(
-          children: [
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 4),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  // Hero(
-                  //   tag: ConstantKey.tagProductImage + data.id.toString(),
-                  //   child:
-                  CachedNetworkImage(
-                    height: 60,
-                    fit: BoxFit.fill,
-                    imageUrl: "${ApiConstant.productImagePath}/${data.image}",
-                    progressIndicatorBuilder:
-                        (context, url, downloadProgress) => Lottie.asset(
-                      AppLottie.loading,
+    return AspectRatio(
+      aspectRatio: 1,
+      child: InkWell(
+        onTap: onTap,
+        child: Card(
+          color: AppColor.card,
+          child: Stack(
+            children: [
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 4),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    // Hero(
+                    //   tag: ConstantKey.tagProductImage + data.id.toString(),
+                    //   child:
+                    CachedNetworkImage(
+                      height: 60,
+                      fit: BoxFit.fill,
+                      imageUrl: "${ApiConstant.productImagePath}/${data.image}",
+                      progressIndicatorBuilder:
+                          (context, url, downloadProgress) => Lottie.asset(
+                        AppLottie.loading,
+                      ),
+                      errorWidget: (context, url, error) =>
+                          const Icon(AppIcon.error),
                     ),
-                    errorWidget: (context, url, error) =>
-                        const Icon(AppIcon.error),
-                  ),
-                  // ),
-                  Text(
-                    translateLanguage(
-                      arabic: data.arabicName,
-                      english: data.englishName,
+                    // ),
+                    Text(
+                      translateLanguage(
+                        arabic: data.arabicName,
+                        english: data.englishName,
+                      ),
+                      style: AppStyle.styleSemiBold14(context),
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
                     ),
-                    style: AppStyle.styleSemiBold14(context),
-                    maxLines: 1,
-                    overflow: TextOverflow.ellipsis,
-                  ),
-                  Text(
-                    translateLanguage(
-                      arabic: data.arabicDescription,
-                      english: data.englishDescription,
+                    Text(
+                      translateLanguage(
+                        arabic: data.arabicDescription,
+                        english: data.englishDescription,
+                      ),
+                      style: AppStyle.styleBold10(context),
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
+                      textAlign: TextAlign.center,
                     ),
-                    style: AppStyle.styleBold10(context),
-                    maxLines: 2,
-                    overflow: TextOverflow.ellipsis,
-                    textAlign: TextAlign.center,
-                  ),
-                  PriceProductItem(
-                    price: data.price,
-                    discount: data.discount,
-                    discountPrice: data.discountPrice,
-                  ),
-                  FootItemProduct(
-                    index: index,
-                    rating: data.rating.toString(),
-                  )
-                ],
+                    PriceProductItem(
+                      price: data.price,
+                      discount: data.discount,
+                      discountPrice: data.discountPrice,
+                    ),
+                    FootItemProduct(
+                      index: index,
+                      rating: data.rating.toString(),
+                    )
+                  ],
+                ),
               ),
-            ),
-            data.discount == 0 || data.discount == 0.0
-                ? const SizedBox()
-                : CustomDiscountWidget(discount: data.discount),
-          ],
+              data.discount == 0 || data.discount == 0.0
+                  ? const SizedBox()
+                  : CustomDiscountWidget(discount: data.discount),
+            ],
+          ),
         ),
       ),
     );

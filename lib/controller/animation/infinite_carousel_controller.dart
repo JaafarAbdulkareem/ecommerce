@@ -22,6 +22,7 @@ class InfiniteCarouselController extends GetxController {
   }
 
   void startAutoSlide() {
+    _timer?.cancel();
     _timer = Timer.periodic(Duration(seconds: 3), (_) {
       if (!pageController.hasClients) return;
 

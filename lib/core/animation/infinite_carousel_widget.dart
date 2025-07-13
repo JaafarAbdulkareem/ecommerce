@@ -8,7 +8,7 @@ class InfiniteCarouselWidget<T> extends StatelessWidget {
 // final Widget child;
   const InfiniteCarouselWidget({
     super.key,
-    required this.items, 
+    required this.items,
     // required this.child,
     required this.itemBuilder,
   });
@@ -16,14 +16,17 @@ class InfiniteCarouselWidget<T> extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final tag = items.hashCode.toString();
-    final controller = Get.put(InfiniteCarouselController(items), tag: tag);
+    final controller = Get.put(
+      InfiniteCarouselController(items),
+      tag: tag,
+    );
 
     // Start auto-slide after widget is built
     WidgetsBinding.instance.addPostFrameCallback((_) {
       controller.startAutoSlide();
     });
 
-    // return child; 
+    // return child;
     return SizedBox(
       height: 150,
       child: PageView.builder(
@@ -31,7 +34,6 @@ class InfiniteCarouselWidget<T> extends StatelessWidget {
         scrollDirection: Axis.horizontal,
         reverse: controller.isRTL, // Important for RTL support
         itemBuilder: (context, index) {
-          
           final realIndex = index % items.length;
           return itemBuilder(items[realIndex]);
         },
