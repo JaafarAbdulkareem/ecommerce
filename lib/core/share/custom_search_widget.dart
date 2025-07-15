@@ -23,16 +23,6 @@ class CustomSearchWidget extends GetView<BodyHomeControllerImp> {
           ),
         ),
         const SizedBox(width: 6),
-        IconButton(
-          color: AppColor.primary,
-          style: IconButton.styleFrom(
-            backgroundColor: AppColor.backgroundIcon,
-          ),
-          onPressed: () {
-            controller.goToCart();
-          },
-          icon: const Icon(AppIcon.cart),
-        ),
         isAppearFavorite
             ? IconButton(
                 color: AppColor.primary,
