@@ -58,11 +58,8 @@ class InsertAddressControllerImp extends InsertAddressController {
       markers.refresh();
 
       googleMapController.animateCamera(
-        CameraUpdate.newCameraPosition(
-          CameraPosition(
-            target: initialLatLng,
-            zoom: ConstantScale.zoomUserLocation,
-          ),
+        CameraUpdate.newLatLng(
+          initialLatLng,
         ),
       );
       if (!enableButton.value) {
@@ -88,7 +85,10 @@ class InsertAddressControllerImp extends InsertAddressController {
         markers.refresh();
 
         googleMapController.animateCamera(
-          CameraUpdate.newLatLng(currentLatLng),
+          CameraUpdate.newLatLngZoom(
+            currentLatLng,
+            ConstantScale.zoomUserLocation,
+          ),
         );
       });
     } on LocationServiceException {

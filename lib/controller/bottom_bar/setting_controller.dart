@@ -179,7 +179,11 @@ class SettingControllerImp extends SettingController {
     FirebaseMessaging.instance.unsubscribeFromTopic(ConstantKey.usersTopics);
     FirebaseMessaging.instance
         .unsubscribeFromTopic("${ConstantKey.usersTopics}$userId");
-    sharedPrefsService.prefs.clear();
+
+    sharedPrefsService.prefs.remove(ConstantKey.keyCustomerId);
+    sharedPrefsService.prefs.remove(ConstantKey.keyUserId);
+    sharedPrefsService.prefs.remove(ConstantKey.keyLogin);
+    sharedPrefsService.prefs.remove(ConstantKey.keyUsername);
     Get.offAllNamed(ConstantScreenName.login);
   }
 }

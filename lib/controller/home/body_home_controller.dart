@@ -32,8 +32,6 @@ class BodyHomeControllerImp extends BodyHomeController {
 
   @override
   void onInit() {
-    print("fist initi : $firstTime");
-
     statusRequest = StatusRequest.initial;
     // categoryData = [];
     // productData = [];
@@ -43,7 +41,8 @@ class BodyHomeControllerImp extends BodyHomeController {
     homeRemote = HomeRemote(curd: Get.find());
     getData();
     prefs = Get.find<SharedPrefsService>();
-    language = prefs.prefs.getString(ConstantKey.keyLanguage)!;
+    language =
+        prefs.prefs.getString(ConstantKey.keyLanguage) ?? ConstantLanguage.en;
     super.onInit();
   }
 
@@ -91,8 +90,6 @@ class BodyHomeControllerImp extends BodyHomeController {
 
   @override
   Future<void> getData() async {
-    print("function : $firstTime");
-
     if (firstTime) {
       productData.clear();
       categoryData.clear();

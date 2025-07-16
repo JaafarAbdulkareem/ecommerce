@@ -37,7 +37,7 @@ abstract class ConstantScale {
 // address
   static const double initialLatitude = 0;
   static const double initialLongitude = 0;
-  static const double zoomUserLocation = 14;
+  static const double zoomUserLocation = 18;
 //cart
   static const int couponsLottieDelay = 3;
 //order

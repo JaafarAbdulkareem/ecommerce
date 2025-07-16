@@ -14,11 +14,6 @@ const List<HomeNavigatorBarModel> dataNavigatorBar = [
     screen: BodyHomeView(),
   ),
   HomeNavigatorBarModel(
-    icon: AppIcon.setting,
-    title: KeyLanguage.barSetting,
-    screen: Center(child: SettingView()),
-  ),
-  HomeNavigatorBarModel(
     icon: AppIcon.receive,
     title: KeyLanguage.barReceipt,
     screen: OrderView(),
@@ -27,6 +22,10 @@ const List<HomeNavigatorBarModel> dataNavigatorBar = [
     icon: AppIcon.notification,
     title: KeyLanguage.barNotification,
     screen: NotificationView(),
-    // screen: Center(child: Text("profile")),
+  ),
+  HomeNavigatorBarModel(
+    icon: AppIcon.setting,
+    title: KeyLanguage.barSetting,
+    screen: Center(child: SettingView()),
   ),
 ];

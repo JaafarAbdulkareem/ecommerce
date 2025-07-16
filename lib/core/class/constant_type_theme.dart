@@ -23,9 +23,7 @@ abstract class ConstantTypeTheme {
     final cardColor = isDark ? AppColor.cardDark : AppColor.cardLight;
     final primaryColor = isMale ? AppColor.malePrimary : AppColor.femalePrimary;
     final accentColor = isMale ? AppColor.maleAccent : AppColor.femaleAccent;
-    //  final opposite = isDark
-    //     ? AppColor.backgroundScaffoldLight
-    //     : AppColor.backgroundScaffoldDark;
+
     final fontFamily =
         isArabic ? ConstantTextFons.arabicFont : ConstantTextFons.englishFont;
 
@@ -33,7 +31,6 @@ abstract class ConstantTypeTheme {
       brightness: brightness,
       colorScheme: ColorScheme.fromSeed(
         primary: primaryColor,
-        // tertiary: opposite,
         seedColor: primaryColor,
         brightness: brightness,
         surfaceContainerHighest: accentColor,

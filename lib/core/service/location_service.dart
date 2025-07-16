@@ -47,7 +47,15 @@ class LocationService {
   Future<LatLng> getCurrentLocation() async {
     await checkAndRequiredLocationService();
     await checkAndRequiredLocationPermission();
+
+    // Optional: small delay to ensure GPS lock
+    await Future.delayed(const Duration(milliseconds: 500));
+
+    // Get current location
     LocationData locationData = await location.getLocation();
+
+    // Log precise coordinates
+
     return LatLng(
       locationData.latitude!,
       locationData.longitude!,
