@@ -1,4 +1,5 @@
 import 'package:ecommerce/controller/order/invalid_order_controller.dart';
+import 'package:ecommerce/core/constant/app_color.dart';
 import 'package:ecommerce/core/constant/constant_key.dart';
 import 'package:ecommerce/core/localization/key_language.dart';
 import 'package:ecommerce/core/share/custom_button_widget.dart';
@@ -23,7 +24,6 @@ class ItemListInvalidOrder extends StatelessWidget {
     return GetBuilder<InvalidOrderControllerImp>(
       id: ConstantKey.idInvalidButton,
       builder: (controller) {
-        print("$index invalid re building");
         return Card(
           color: theme.cardColor,
           child: Padding(
@@ -71,7 +71,7 @@ class ItemListInvalidOrder extends StatelessWidget {
                             Expanded(
                               child: CustomButtonWidget(
                                 text: KeyLanguage.acceptButton.tr,
-                                color: theme.colorScheme.secondary,
+                                color: AppColor.price,
                                 onTap: () {
                                   controller.accept(index);
                                 },

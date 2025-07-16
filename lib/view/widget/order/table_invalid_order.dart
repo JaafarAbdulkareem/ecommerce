@@ -23,13 +23,13 @@ class TableInvalidOrder extends StatelessWidget {
                 flex: 2,
                 child: Text(
                   KeyLanguage.productTitle.tr,
-                  style: textTheme.titleMedium,
+                  style: textTheme.titleLarge,
                 ),
               ),
               Expanded(
                 child: Text(
                   KeyLanguage.countTitle.tr,
-                  style: textTheme.titleMedium,
+                  style: textTheme.titleLarge,
                 ),
               ),
               const Expanded(

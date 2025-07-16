@@ -12,9 +12,10 @@ class BodyInvalidOrderView extends StatelessWidget {
 
     return Column(
       children: [
+        const SizedBox(height: 16),
         Text(
           KeyLanguage.productNoNotAvailableMessage.tr,
-          style: textTheme.titleMedium, // Replaces custom AppStyle
+          style: textTheme.displaySmall, 
           textAlign: TextAlign.center,
         ),
         const Expanded(

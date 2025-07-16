@@ -41,12 +41,15 @@ class BottomButtonInvalidOrder extends GetView<InvalidOrderControllerImp> {
 
   @override
   Widget build(BuildContext context) {
-    return CustomButtonWidget(
-      text: KeyLanguage.submitButton.tr,
-      color: AppColor.primary,
-      onTap: () {
-        controller.submitButton();
-      },
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 16,vertical: 12),
+      child: CustomButtonWidget(
+        text: KeyLanguage.submitButton.tr,
+        color: AppColor.primary,
+        onTap: () {
+          controller.submitButton();
+        },
+      ),
     );
   }
 }
