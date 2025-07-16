@@ -1,5 +1,4 @@
 import 'package:ecommerce/controller/order/detail_order_controller.dart';
-import 'package:ecommerce/core/constant/app_color.dart';
 import 'package:ecommerce/view/widget/order/has_address_detail_order.dart';
 import 'package:ecommerce/view/widget/order/table_detail_order.dart';
 import 'package:ecommerce/view/widget/order/total_price_detail_order.dart';
@@ -11,10 +10,12 @@ class BodyDetailOrderView extends GetView<DetailOrderControllerImp> {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
       child: Card(
-        color: AppColor.card,
+        color: theme.cardColor,
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
           child: SingleChildScrollView(
@@ -26,7 +27,7 @@ class BodyDetailOrderView extends GetView<DetailOrderControllerImp> {
                   price: controller.detailOrderData.price,
                   totalPrice: controller.detailOrderData.totalPrice,
                 ),
-                if (controller.detailOrderData.addressId != null)
+                if (controller.detailOrderData.addressId != null )
                   const HasAddressDetailOrder(),
               ],
             ),

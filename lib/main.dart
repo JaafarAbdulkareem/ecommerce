@@ -25,22 +25,26 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     LocaleController controller = Get.put(LocaleController());
-    return GetMaterialApp(
-      // //remove
-      useInheritedMediaQuery: true,
-      // locale: DevicePreview.locale(context),
-      builder: DevicePreview.appBuilder,
+    return GetBuilder<LocaleController>(
+      builder: (_) {
+        return GetMaterialApp(
+          // //remove
+          useInheritedMediaQuery: true,
+          // locale: DevicePreview.locale(context),
+          builder: DevicePreview.appBuilder,
 
-      debugShowCheckedModeBanner: false,
-      title: 'Ecommerce',
-      theme: controller.theme,
-      translations: TranslationLanguages(),
-      locale: controller.language,
-      initialBinding: InitialBindings(),
-      // home: TestView(),
-      // home: const ChooseAppLanguage(),
-      // const LoginView(),
-      getPages: getPages,
+          debugShowCheckedModeBanner: false,
+          title: 'Ecommerce',
+          theme: controller.theme,
+          translations: TranslationLanguages(),
+          locale: controller.language,
+          initialBinding: InitialBindings(),
+          // home: TestView(),
+          // home: const ChooseAppLanguage(),
+          // const LoginView(),
+          getPages: getPages,
+        );
+      },
     );
   }
 }

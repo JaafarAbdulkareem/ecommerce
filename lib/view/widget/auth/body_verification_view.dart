@@ -28,13 +28,6 @@ class BodyVerifcationView extends GetView<VerificationControllerImp> {
               controller.verificationOnTap(verifyCode: verifyCode);
             },
           ),
-          // CustomButtonWidget(
-          //   text: KeyLanguage.verify.tr,
-          //   color: AppColor.primary,
-          //   onTap: () {
-          //     controller.verificationOnTap();
-          //   },
-          // ),
           const SizedBox(height: 32),
         ],
       ),

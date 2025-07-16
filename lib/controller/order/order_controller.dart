@@ -1,6 +1,6 @@
+import 'package:ecommerce/core/class/alert_default.dart';
 import 'package:ecommerce/core/class/status_request.dart';
 import 'package:ecommerce/core/constant/api_key.dart';
-import 'package:ecommerce/core/constant/app_color.dart';
 import 'package:ecommerce/core/constant/constant_key.dart';
 import 'package:ecommerce/core/constant/constant_screen_name.dart';
 import 'package:ecommerce/core/function/handle_status.dart';
@@ -23,6 +23,8 @@ class OrderControllerImp extends OrderController {
   late StatusRequest statusRequest;
   static List<OrderModel> orderData = [];
   static bool firstTime = true;
+  final AlertDefault _alertDefault = AlertDefault();
+
   @override
   void onInit() {
     prefs = Get.find<SharedPrefsService>();
@@ -61,10 +63,8 @@ class OrderControllerImp extends OrderController {
         Get.offAllNamed(ConstantScreenName.home);
         // statusRequest = StatusRequest.success;
         update();
-        Get.snackbar(
-          KeyLanguage.alert.tr,
-          KeyLanguage.errorAddressMessage.tr,
-          backgroundColor: AppColor.snackbar,
+        _alertDefault.snackBarDefault(
+          body: KeyLanguage.errorAddressMessage.tr,
         );
       }
     } else {
@@ -117,4 +117,7 @@ class OrderControllerImp extends OrderController {
       update();
     }
   }
+
+  bool get isMale =>
+      prefs.prefs.getBool(ConstantKey.keyIsMale) ?? true;
 }

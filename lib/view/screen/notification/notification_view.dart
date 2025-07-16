@@ -1,5 +1,4 @@
 import 'package:ecommerce/controller/notification/notification_controller.dart';
-import 'package:ecommerce/core/constant/app_style.dart';
 import 'package:ecommerce/core/localization/key_language.dart';
 import 'package:ecommerce/core/share/status_view.dart';
 import 'package:ecommerce/view/widget/notification/body_notification_view.dart';
@@ -12,14 +11,15 @@ class NotificationView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Get.lazyPut(() => NotificationControllerImp());
+    final theme = Theme.of(context);
+
     return Scaffold(
       appBar: AppBar(
-        centerTitle: true,
         title: Text(
           KeyLanguage.appBarTitleNotification.tr,
-          style: AppStyle.styleBold18(context),
         ),
       ),
+      backgroundColor: theme.scaffoldBackgroundColor,
       body: SafeArea(
         child: GetBuilder<NotificationControllerImp>(
           builder: (controller) {

@@ -1,7 +1,5 @@
 import 'package:ecommerce/controller/cart/counter_cart_controller.dart';
-import 'package:ecommerce/core/constant/app_color.dart';
 import 'package:ecommerce/core/constant/app_icon.dart';
-import 'package:ecommerce/core/constant/app_style.dart';
 import 'package:ecommerce/core/constant/constant_key.dart';
 import 'package:ecommerce/core/share/custom_loading_widget.dart';
 import 'package:ecommerce/data/models/cart_model.dart';
@@ -14,28 +12,39 @@ class CounterCart extends StatelessWidget {
     required this.index,
     required this.count,
   });
+
   final int index;
   final CartModel count;
+
   @override
   Widget build(BuildContext context) {
     CounterCartControllerImp controller = Get.put(CounterCartControllerImp());
+
+    final theme = Theme.of(context);
+    final textStyle = theme.textTheme.displayLarge?.copyWith(
+      fontFamily: ConstantTextFons.sans,
+    );
+    final primary = theme.colorScheme.primary;
+
     return Column(
       children: [
         IconButton(
           onPressed: () {
             controller.increment(index);
           },
-          icon: const Icon(
+          icon: Icon(
             AppIcon.add,
+            color: primary,
           ),
         ),
         Container(
           padding: const EdgeInsets.all(2),
-          width: 30,
-          height: 30,
-          decoration: const ShapeDecoration(
+          width: 40,
+          height: 40,
+          decoration: ShapeDecoration(
             shape: RoundedRectangleBorder(
-              side: BorderSide(color: AppColorText.titleProductDetail),
+              side: BorderSide(color: theme.dividerColor),
+              borderRadius: BorderRadius.circular(4),
             ),
           ),
           alignment: Alignment.center,
@@ -48,9 +57,7 @@ class CounterCart extends StatelessWidget {
                   fit: BoxFit.scaleDown,
                   child: Text(
                     count.count.toString(),
-                    style: AppStyle.styleSemiBold20(context).copyWith(
-                        color: Color(controller.colorValue),
-                        fontFamily: ConstantTextFons.sans),
+                    style: textStyle,
                   ),
                 ),
               );
@@ -61,8 +68,9 @@ class CounterCart extends StatelessWidget {
           onPressed: () {
             controller.decrement(index);
           },
-          icon: const Icon(
+          icon: Icon(
             AppIcon.remove,
+            color: primary,
           ),
         ),
       ],

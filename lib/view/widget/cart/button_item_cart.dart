@@ -1,4 +1,3 @@
-import 'package:ecommerce/core/constant/app_color.dart';
 import 'package:ecommerce/core/constant/constant_scale.dart';
 import 'package:flutter/material.dart';
 
@@ -12,6 +11,7 @@ class ButtonItemCart extends StatelessWidget {
   final VoidCallback onTap;
   @override
   Widget build(BuildContext context) {
+    final primary = Theme.of(context).colorScheme.primary;
     return Align(
       alignment: Alignment.bottomRight,
       child: InkWell(
@@ -21,7 +21,7 @@ class ButtonItemCart extends StatelessWidget {
           child: Icon(
             icon,
             size: ConstantScale.icon,
-            color: AppColorText.titleProductDetail,
+            color:  primary,
           ),
         ),
       ),

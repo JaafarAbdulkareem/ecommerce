@@ -1,6 +1,6 @@
+import 'package:ecommerce/core/class/alert_default.dart';
 import 'package:ecommerce/core/class/status_request.dart';
 import 'package:ecommerce/core/constant/api_key.dart';
-import 'package:ecommerce/core/constant/app_color.dart';
 import 'package:ecommerce/core/constant/constant_key.dart';
 import 'package:ecommerce/core/function/handle_status.dart';
 import 'package:ecommerce/core/localization/key_language.dart';
@@ -32,6 +32,8 @@ class DetailOrderControllerImp extends DetailOrderController {
   late GoogleMapController googleMapController;
   late LocationService locationService;
   // late Uuid uuid;
+  final AlertDefault _alertDefault = AlertDefault();
+
   @override
   void onInit() {
     detailOrderRemote = DetailOrderRemote(curd: Get.find());
@@ -77,10 +79,8 @@ class DetailOrderControllerImp extends DetailOrderController {
       }
     } else {
       update();
-      Get.snackbar(
-        KeyLanguage.alert.tr,
-        KeyLanguage.errorAddressMessage.tr,
-        backgroundColor: AppColor.snackbar,
+      _alertDefault.snackBarDefault(
+        body: KeyLanguage.errorAddressMessage.tr,
       );
     }
   }

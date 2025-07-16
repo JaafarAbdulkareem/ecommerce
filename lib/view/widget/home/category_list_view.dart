@@ -13,9 +13,11 @@ class CategoryListView extends GetView<BodyHomeControllerImp> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const TitleSectionWidget(title: KeyLanguage.titleCategories),
-        SizedBox(
-          height: 85,
+        const TitleSectionWidget(
+          title: KeyLanguage.titleCategories,
+        ),
+        AspectRatio(
+          aspectRatio: 3.7,
           child: ListView.builder(
             scrollDirection: Axis.horizontal,
             itemCount: BodyHomeControllerImp.categoryData.length,

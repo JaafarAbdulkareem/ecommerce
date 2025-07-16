@@ -1,5 +1,3 @@
-import 'package:ecommerce/core/constant/app_color.dart';
-import 'package:ecommerce/core/constant/app_style.dart';
 import 'package:flutter/material.dart';
 
 class ItemListCategeryBar extends StatelessWidget {
@@ -9,24 +7,35 @@ class ItemListCategeryBar extends StatelessWidget {
     required this.onTap,
     required this.selected,
   });
+
   final String name;
   final VoidCallback onTap;
   final bool selected;
+
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+
+    final TextStyle textStyle = theme.textTheme.titleMedium!.copyWith(
+        color: selected
+            ? theme.textTheme.titleMedium?.color
+            : theme.colorScheme.primary);
+
+    final Color backgroundColor = selected
+        ? theme.colorScheme.primary
+        : theme.colorScheme.surfaceContainerHighest;
+
     return Card(
       elevation: 5,
-      color: selected ? AppColor.primary : AppColor.backgroundIcon,
+      color: backgroundColor,
       child: InkWell(
         onTap: onTap,
+        borderRadius: BorderRadius.circular(8),
         child: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 8),
+          padding: const EdgeInsets.symmetric(vertical: 6, horizontal: 12),
           child: Text(
             name,
-            style: selected
-                ? AppStyle.styleSemiBold14(context)
-                    .copyWith(color: AppColorText.textButton)
-                : AppStyle.styleSemiBold14(context),
+            style: textStyle,
           ),
         ),
       ),

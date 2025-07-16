@@ -1,5 +1,4 @@
 import 'package:ecommerce/controller/home/body_home_controller.dart';
-import 'package:ecommerce/core/constant/app_color.dart';
 import 'package:ecommerce/core/constant/app_icon.dart';
 import 'package:ecommerce/core/share/custom_search_field_text_widge.dart';
 import 'package:flutter/material.dart';
@@ -15,6 +14,7 @@ class CustomSearchWidget extends GetView<BodyHomeControllerImp> {
   final bool autofocus;
   @override
   Widget build(BuildContext context) {
+    final colorScheme = Theme.of(context).colorScheme;
     return Row(
       children: [
         Expanded(
@@ -25,9 +25,9 @@ class CustomSearchWidget extends GetView<BodyHomeControllerImp> {
         const SizedBox(width: 6),
         isAppearFavorite
             ? IconButton(
-                color: AppColor.primary,
+                color: colorScheme.primary,
                 style: IconButton.styleFrom(
-                  backgroundColor: AppColor.backgroundIcon,
+                  backgroundColor: colorScheme.surfaceContainerHighest,
                 ),
                 onPressed: () {
                   controller.goToFavorite();

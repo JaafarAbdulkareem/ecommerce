@@ -1,6 +1,5 @@
-import 'package:ecommerce/core/constant/app_style.dart';
+import 'package:ecommerce/core/function/improve_price.dart';
 import 'package:ecommerce/core/localization/key_language.dart';
-import 'package:ecommerce/view/widget/product/price_product_item.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -14,19 +13,20 @@ class TotalPriceDetailOrder extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final textTheme = Theme.of(context).textTheme;
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Text(
           "${KeyLanguage.totalPriceTitle.tr} : ",
-          style: AppStyle.styleSemiBold14(context),
-          textAlign: TextAlign.center,
+          style: textTheme.headlineSmall,
         ),
-        const SizedBox(width: 4),
-        PriceProductItem(
-          price: price,
-          discount: price == totalPrice ? 0 : 1,
-          discountPrice: totalPrice,
+        Text(
+          improvePrice(amount: totalPrice),
+          style: textTheme.bodyLarge?.copyWith(
+            fontWeight: FontWeight.w500,
+          
+          ),
         ),
       ],
     );

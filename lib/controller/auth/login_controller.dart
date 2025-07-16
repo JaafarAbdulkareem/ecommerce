@@ -1,3 +1,4 @@
+import 'package:ecommerce/core/class/alert_default.dart';
 import 'package:ecommerce/core/class/status_request.dart';
 import 'package:ecommerce/core/constant/api_column_db.dart';
 import 'package:ecommerce/core/constant/api_key.dart';
@@ -22,14 +23,15 @@ abstract class LoginController extends GetxController {
 }
 
 class LoginControllerImp extends LoginController {
-  bool hidePassword = true;
+  RxBool hidePassword = true.obs;
   late GlobalKey<FormState> keyLogin;
   late TextEditingController email;
   late TextEditingController password;
   late StatusRequest statusRequest;
   late LoginRemote loginRemote;
-  late String titleDialog;
   late SharedPrefsService sharedPrefsService;
+
+  final AlertDefault _alertDefault = AlertDefault();
   @override
   void onInit() {
     keyLogin = GlobalKey<FormState>();
@@ -38,8 +40,6 @@ class LoginControllerImp extends LoginController {
     BackButtonInterceptor.add(onBackPressed);
     statusRequest = StatusRequest.initial;
     loginRemote = LoginRemote(curd: Get.find());
-    titleDialog = KeyLanguage.alert.tr;
-    // sharedPrefsService =
     sharedPrefsService = Get.find<SharedPrefsService>();
 
     super.onInit();
@@ -98,9 +98,8 @@ class LoginControllerImp extends LoginController {
           await Get.offAllNamed(ConstantScreenName.home);
         } else {
           if (response[ApiResult.data] == ApiResult.noFound) {
-            await Get.defaultDialog(
-              title: titleDialog,
-              middleText: KeyLanguage.noFoundMessage.tr,
+            _alertDefault.dialogDefault(
+              body: KeyLanguage.noFoundMessage.tr,
             );
           } else if (response[ApiResult.data] == ApiResult.noApprove) {
             Get.toNamed(ConstantScreenName.vertifySignup, arguments: {
@@ -108,24 +107,14 @@ class LoginControllerImp extends LoginController {
               ApiKey.password: password.text,
               ApiKey.verifyCode: response[ApiResult.verifyCode],
             });
-            // await Get.defaultDialog(
-            //   title: titleDialog,
-            //   middleText: KeyLanguage.noApproveMessage.tr,
-            // );
           } else {
-            await Get.defaultDialog(
-              title: titleDialog,
-              middleText: KeyLanguage.someErrorMessage.tr,
-            );
+            _alertDefault.snackBarDefault();
           }
           email.clear();
           password.clear();
         }
       } else {
-        await Get.defaultDialog(
-          title: titleDialog,
-          middleText: KeyLanguage.someErrorMessage.tr,
-        );
+        _alertDefault.snackBarDefault();
       }
     }
   }
@@ -144,16 +133,14 @@ class LoginControllerImp extends LoginController {
       statusRequest = StatusRequest.success;
       update();
     } else {
-      await Get.defaultDialog(
-        title: titleDialog,
-        middleText: KeyLanguage.enterEmailMessage.tr,
+      _alertDefault.dialogDefault(
+        body: KeyLanguage.enterEmailMessage.tr,
       );
     }
   }
 
   @override
   void changeStatePassword() {
-    hidePassword = !hidePassword;
-    update();
+    hidePassword.value = !hidePassword.value;
   }
 }

@@ -7,6 +7,8 @@ abstract class ConstantKey {
   static const String keyUserId = "keyUserId";
   static const String keyCustomerId = "keyCustomerId";
   static const String keyUsername = "keyUsername";
+  static const String keyIsDarkMode = "keyIsDarkMode";
+  static const String keyIsMale = "keyIsMale";
   // static const String userIdValidator = "userId";
   //validator
   static const String usernameValidator = "username";
@@ -74,4 +76,5 @@ abstract class ConstantText {
   static const String currencyPayment = "inr";
   // static const String currencyPrice = r'$';
   // static const String currencyPayment = "usd";
+  static const String phoneContactUs = "+1-555-010-999";
 }

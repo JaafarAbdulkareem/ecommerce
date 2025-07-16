@@ -1,8 +1,7 @@
 import 'package:ecommerce/core/constant/api_constant.dart';
-import 'package:ecommerce/core/constant/app_color.dart';
 import 'package:ecommerce/core/constant/app_icon.dart';
 import 'package:ecommerce/core/constant/app_lottie.dart';
-import 'package:ecommerce/core/constant/app_style.dart';
+import 'package:ecommerce/core/constant/constant_scale.dart';
 import 'package:ecommerce/core/function/load_cached_svg.dart';
 import 'package:ecommerce/core/function/translate_language.dart';
 import 'package:ecommerce/data/models/category_model.dart';
@@ -20,24 +19,30 @@ class ItemCategoryListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final colorScheme = theme.colorScheme;
+    final textTheme = theme.textTheme;
+
     return InkWell(
       onTap: onTap,
       child: Column(
         children: [
           Card(
-            color: AppColor.primary,
+            color: colorScheme.primary,
             child: Center(
               child: Padding(
                 padding: const EdgeInsets.all(4),
                 child: FutureBuilder<Widget>(
                   future: loadCachedSvg(
-                      "${ApiConstant.categoryImagePath}/${data.image}"),
+                    "${ApiConstant.categoryImagePath}/${data.image}",
+                    color: colorScheme.surfaceContainerHighest,
+                  ),
                   builder: (context, snapshot) {
                     if (snapshot.connectionState == ConnectionState.waiting) {
                       return Lottie.asset(
                         AppLottie.loading,
-                        height: 50,
-                        width: 50,
+                        height: ConstantScale.sizeCategoryIcon,
+                        width: ConstantScale.sizeCategoryIcon,
                       );
                     } else if (snapshot.hasError) {
                       return const Icon(AppIcon.error);
@@ -56,7 +61,7 @@ class ItemCategoryListView extends StatelessWidget {
                 arabic: data.arabicName,
                 english: data.englishName,
               ),
-              style: AppStyle.styleBold12(context),
+              style: textTheme.bodySmall,
             ),
           ),
         ],

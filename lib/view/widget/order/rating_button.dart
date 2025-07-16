@@ -1,4 +1,3 @@
-import 'package:ecommerce/core/constant/app_color.dart';
 import 'package:ecommerce/core/localization/key_language.dart';
 import 'package:ecommerce/core/share/custom_button_widget.dart';
 import 'package:ecommerce/view/widget/order/done_order_rating.dart';
@@ -9,8 +8,12 @@ class RatingButton extends StatelessWidget {
   const RatingButton({super.key, required this.isRating, required this.onTap});
   final bool isRating;
   final VoidCallback onTap;
+
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final color = theme.colorScheme.secondary;
+
     return Padding(
       padding: const EdgeInsets.only(bottom: 8.0),
       child: SizedBox(
@@ -19,7 +22,7 @@ class RatingButton extends StatelessWidget {
             ? const DoneOrderRating()
             : CustomButtonWidget(
                 text: KeyLanguage.ratingTitle.tr,
-                color: AppColor.price,
+                color: color,
                 onTap: onTap,
               ),
       ),

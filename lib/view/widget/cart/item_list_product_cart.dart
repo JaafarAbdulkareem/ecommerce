@@ -1,5 +1,4 @@
 import 'package:ecommerce/controller/cart/cart_controller.dart';
-import 'package:ecommerce/core/constant/app_color.dart';
 import 'package:ecommerce/core/constant/app_icon.dart';
 import 'package:ecommerce/core/function/translate_language.dart';
 import 'package:ecommerce/core/share/custom_discount_widget.dart';
@@ -18,56 +17,68 @@ class ItemListProductCart extends GetView<CartControllerImp> {
     required this.data,
     required this.onTap,
   });
+
   final int index;
   final CartModel data;
   final VoidCallback onTap;
+
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+
     return InkWell(
       onTap: onTap,
       child: Card(
-        color: AppColor.card,
+        color: theme.cardColor,
+        elevation: 2,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(12),
+        ),
         child: Stack(
           children: [
-            Row(
-              children: [
-                Expanded(
-                  child: ImageCart(
-                    image: data.image,
-                  ),
-                ),
-                Expanded(
-                  flex: 3,
-                  child: InfoCart(
-                    productName: translateLanguage(
-                      arabic: data.arabicName,
-                      english: data.englishName,
-                    ),
-                    price: data.price,
-                    discount: data.discount,
-                    discountPrice: data.discountPrice,
-                  ),
-                ),
-                ButtonItemCart(
-                  icon: AppIcon.delete,
-                  onTap: () {
-                    controller.deleteCart(index);
-                  },
-                ),
-                Expanded(
-                  child: FittedBox(
-                    fit: BoxFit.scaleDown,
-                    child: CounterCart(
-                      index: index,
-                      count: data,
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Row(
+                children: [
+                  Expanded(
+                    child: ImageCart(
+                      image: data.image,
                     ),
                   ),
-                )
-              ],
+                  const SizedBox(width: 8),
+                  Expanded(
+                    flex: 3,
+                    child: InfoCart(
+                      productName: translateLanguage(
+                        arabic: data.arabicName,
+                        english: data.englishName,
+                      ),
+                      price: data.price,
+                      discount: data.discount,
+                      discountPrice: data.discountPrice,
+                    ),
+                  ),
+                  ButtonItemCart(
+                    icon: AppIcon.delete,
+                    onTap: () {
+                      controller.deleteCart(index);
+                    },
+                  ),
+                  const SizedBox(width: 4),
+                  Expanded(
+                    child: FittedBox(
+                      fit: BoxFit.scaleDown,
+                      child: CounterCart(
+                        index: index,
+                        count: data,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ),
-            data.discount == 0 || data.discount == 0.0
-                ? const SizedBox()
-                : CustomDiscountWidget(discount: data.discount),
+            if (data.discount != 0 && data.discount != 0.0)
+              CustomDiscountWidget(discount: data.discount),
           ],
         ),
       ),

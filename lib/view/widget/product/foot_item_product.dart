@@ -10,10 +10,11 @@ import 'package:get/get.dart';
 class FootItemProduct extends StatelessWidget {
   const FootItemProduct({
     super.key,
-    required this.index, required this.rating,
+    required this.index,
+    required this.rating,
   });
   final int index;
-  final String  rating;
+  final String rating;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -22,8 +23,7 @@ class FootItemProduct extends StatelessWidget {
         GetBuilder<ProductControllerImp>(
           id: ConstantKey.idFavoriteProduct,
           builder: (controller) {
-
-            return InkWell(
+            return GestureDetector(
               onTap: () {
                 controller.setFavorite(index);
               },
@@ -39,7 +39,9 @@ class FootItemProduct extends StatelessWidget {
             );
           },
         ),
-        RateItemProduct(rating: rating ,),
+        RateItemProduct(
+          rating: rating,
+        ),
       ],
     );
   }

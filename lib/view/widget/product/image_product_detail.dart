@@ -1,7 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:ecommerce/controller/product/product_detail_controller.dart';
 import 'package:ecommerce/core/constant/api_constant.dart';
-import 'package:ecommerce/core/constant/app_color.dart';
 import 'package:ecommerce/core/constant/app_icon.dart';
 import 'package:ecommerce/core/constant/app_lottie.dart';
 import 'package:flutter/material.dart';
@@ -15,37 +14,37 @@ class ImageProductDetail extends GetView<ProductDetailControllerImp> {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
     return Stack(
       clipBehavior: Clip.none,
       children: [
-        const AspectRatio(
+        AspectRatio(
           aspectRatio: 2.2,
           child: ColoredBox(
-            color: AppColor.primary,
+            color: theme.colorScheme.primary,
           ),
         ),
         Positioned(
           top: -25,
           right: 30,
           left: 30,
-          // child: Hero(
-          //   tag: ConstantKey.tagProductImage +
-          //       controller.productDetailData.id.toString(),
-          child: Padding(
-            padding: const EdgeInsets.all(4),
-            child: CachedNetworkImage(
-              fit: BoxFit.contain,
-              height: 230,
-              imageUrl:
-                  "${ApiConstant.productImagePath}/${controller.productDetailData.image}",
-              progressIndicatorBuilder: (context, url, downloadProgress) =>
-                  Lottie.asset(
-                AppLottie.loading,
+          child: Hero(
+            tag: controller.productDetailData.id.toString(),
+            child: Padding(
+              padding: const EdgeInsets.all(4),
+              child: CachedNetworkImage(
+                fit: BoxFit.contain,
+                height: 230,
+                imageUrl:
+                    "${ApiConstant.productImagePath}/${controller.productDetailData.image}",
+                progressIndicatorBuilder: (context, url, downloadProgress) =>
+                    Lottie.asset(
+                  AppLottie.loading,
+                ),
+                errorWidget: (context, url, error) => const Icon(AppIcon.error),
               ),
-              errorWidget: (context, url, error) => const Icon(AppIcon.error),
             ),
           ),
-          // ),
         ),
       ],
     );

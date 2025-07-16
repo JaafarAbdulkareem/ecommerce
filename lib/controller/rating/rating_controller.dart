@@ -1,7 +1,7 @@
 import 'package:ecommerce/controller/order/detail_order_controller.dart';
+import 'package:ecommerce/core/class/alert_default.dart';
 import 'package:ecommerce/core/class/status_request.dart';
 import 'package:ecommerce/core/constant/api_key.dart';
-import 'package:ecommerce/core/constant/app_color.dart';
 import 'package:ecommerce/core/constant/constant_key.dart';
 import 'package:ecommerce/core/function/handle_status.dart';
 import 'package:ecommerce/core/localization/key_language.dart';
@@ -21,6 +21,8 @@ class RatingControllerImp extends RatingController {
   late DetailOrderControllerImp detailOrderController;
   RxDouble rating = 1.0.obs;
   final TextEditingController commentController = TextEditingController();
+  final AlertDefault _alertDefault = AlertDefault();
+
   @override
   void onInit() {
     ratingRemote = RatingRemote(curd: Get.find());
@@ -67,16 +69,14 @@ class RatingControllerImp extends RatingController {
         commentController.clear();
         statusRequest = StatusRequest.failure;
         update();
-        Get.snackbar(
-          KeyLanguage.alert.tr,
-          KeyLanguage.addProductMessage.tr,
-          backgroundColor: AppColor.snackbar,
+        _alertDefault.snackBarDefault(
+          body: KeyLanguage.addProductMessage.tr,
         );
       }
     } else {
       update();
     }
-    Get.back(); 
+    Get.back();
   }
 
   @override

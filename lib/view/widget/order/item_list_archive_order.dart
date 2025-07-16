@@ -1,5 +1,3 @@
-import 'package:ecommerce/core/constant/app_color.dart';
-import 'package:ecommerce/core/constant/app_style.dart';
 import 'package:ecommerce/core/constant/constant_key.dart';
 import 'package:ecommerce/core/function/commant_checkout_choose.dart';
 import 'package:ecommerce/core/localization/key_language.dart';
@@ -15,9 +13,14 @@ class ItemListArchiveOrder extends StatelessWidget {
     required this.data,
   });
   final OrderModel data;
+
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final textTheme = theme.textTheme;
+
     return Card(
+      color: theme.cardColor,
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 4),
         child: Column(
@@ -26,8 +29,9 @@ class ItemListArchiveOrder extends StatelessWidget {
           children: [
             Text(
               "${KeyLanguage.orderNumber.tr}${data.id}",
-              style: AppStyle.styleSemiBold16(context)
-                  .copyWith(color: AppColorText.titleArchive),
+              style: textTheme.headlineSmall?.copyWith(
+                color: theme.colorScheme.primary,
+              ),
             ),
             const SizedBox(height: 12),
             TextItemOrder(

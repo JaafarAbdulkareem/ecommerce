@@ -1,5 +1,4 @@
 import 'package:ecommerce/controller/checkout/checkout_controller.dart';
-import 'package:ecommerce/core/constant/app_color.dart';
 import 'package:ecommerce/core/localization/key_language.dart';
 import 'package:ecommerce/core/share/custom_button_widget.dart';
 import 'package:flutter/material.dart';
@@ -16,7 +15,6 @@ class BottomButtonCheckout extends GetView<CheckoutControllerImp> {
       padding: const EdgeInsets.symmetric(horizontal: 10),
       child: CustomButtonWidget(
         text: KeyLanguage.checkButton.tr,
-        color: AppColor.primary,
         onTap: () {
           controller.checkoutButton();
         },

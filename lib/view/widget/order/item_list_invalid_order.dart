@@ -1,6 +1,4 @@
 import 'package:ecommerce/controller/order/invalid_order_controller.dart';
-import 'package:ecommerce/core/constant/app_color.dart';
-import 'package:ecommerce/core/constant/app_style.dart';
 import 'package:ecommerce/core/constant/constant_key.dart';
 import 'package:ecommerce/core/localization/key_language.dart';
 import 'package:ecommerce/core/share/custom_button_widget.dart';
@@ -16,14 +14,18 @@ class ItemListInvalidOrder extends StatelessWidget {
   });
   final int index;
   final InvalidOrderModel data;
+
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final textTheme = theme.textTheme;
+
     return GetBuilder<InvalidOrderControllerImp>(
       id: ConstantKey.idInvalidButton,
       builder: (controller) {
         print("$index invalid re building");
         return Card(
-          color: AppColor.card,
+          color: theme.cardColor,
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 4),
             child: Row(
@@ -34,8 +36,9 @@ class ItemListInvalidOrder extends StatelessWidget {
                   flex: 2,
                   child: Text(
                     data.name,
-                    style: AppStyle.styleSemiBold16(context)
-                        .copyWith(color: AppColorText.titleArchive),
+                    style: textTheme.headlineSmall?.copyWith(
+                      color: theme.colorScheme.primary,
+                    ),
                     overflow: TextOverflow.ellipsis,
                     maxLines: 2,
                   ),
@@ -44,8 +47,9 @@ class ItemListInvalidOrder extends StatelessWidget {
                 Expanded(
                   child: Text(
                     data.count.toString(),
-                    style: AppStyle.styleSemiBold16(context)
-                        .copyWith(color: AppColorText.titleArchive),
+                    style: textTheme.headlineSmall?.copyWith(
+                      color: theme.colorScheme.primary,
+                    ),
                   ),
                 ),
                 Expanded(
@@ -57,7 +61,7 @@ class ItemListInvalidOrder extends StatelessWidget {
                             Expanded(
                               child: CustomButtonWidget(
                                 text: KeyLanguage.injectButton.tr,
-                                color: AppColor.wrong,
+                                color: theme.colorScheme.error,
                                 onTap: () {
                                   controller.inject(index);
                                 },
@@ -67,7 +71,7 @@ class ItemListInvalidOrder extends StatelessWidget {
                             Expanded(
                               child: CustomButtonWidget(
                                 text: KeyLanguage.acceptButton.tr,
-                                color: AppColor.price,
+                                color: theme.colorScheme.secondary,
                                 onTap: () {
                                   controller.accept(index);
                                 },

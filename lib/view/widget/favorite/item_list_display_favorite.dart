@@ -1,9 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:ecommerce/core/constant/api_constant.dart';
-import 'package:ecommerce/core/constant/app_color.dart';
 import 'package:ecommerce/core/constant/app_icon.dart';
 import 'package:ecommerce/core/constant/app_lottie.dart';
-import 'package:ecommerce/core/constant/app_style.dart';
 import 'package:ecommerce/core/function/translate_language.dart';
 import 'package:ecommerce/core/share/custom_discount_widget.dart';
 import 'package:ecommerce/data/models/favorit_model.dart';
@@ -22,10 +20,11 @@ class ItemListDisplayFavorite extends StatelessWidget {
   final VoidCallback onTap;
   @override
   Widget build(BuildContext context) {
-    return InkWell(
+    final theme = Theme.of(context);
+    return GestureDetector(
       onTap: onTap,
       child: Card(
-        color: AppColor.card,
+        color: theme.cardColor,
         child: Stack(
           children: [
             Padding(
@@ -35,27 +34,31 @@ class ItemListDisplayFavorite extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  // Hero(
-                  //   tag: ConstantKey.tagProductImage + data.id.toString(),
-                  //   child:
-                  CachedNetworkImage(
-                    height: 60,
-                    fit: BoxFit.fill,
-                    imageUrl: "${ApiConstant.productImagePath}/${data.image}",
-                    progressIndicatorBuilder:
-                        (context, url, downloadProgress) => Lottie.asset(
-                      AppLottie.loading,
+                  SizedBox(
+                    height:
+                        (MediaQuery.of(context).size.height / 15).clamp(53, 70),
+                    child: Hero(
+                      tag: data.id.toString(),
+                      child: CachedNetworkImage(
+                        fit: BoxFit.fill,
+                        imageUrl:
+                            "${ApiConstant.productImagePath}/${data.image}",
+                        progressIndicatorBuilder:
+                            (context, url, downloadProgress) =>
+                                Lottie.asset(AppLottie.loading),
+                        errorWidget: (context, url, error) =>
+                            const Icon(AppIcon.error),
+                      ),
                     ),
-                    errorWidget: (context, url, error) =>
-                        const Icon(AppIcon.error),
                   ),
-                  // ),
                   Text(
                     translateLanguage(
                       arabic: data.arabicName,
                       english: data.englishName,
                     ),
-                    style: AppStyle.styleSemiBold14(context),
+                    style: theme.textTheme.titleMedium?.copyWith(
+                      color: theme.colorScheme.primary,
+                    ),
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
                   ),
@@ -64,26 +67,27 @@ class ItemListDisplayFavorite extends StatelessWidget {
                       arabic: data.arabicDescription,
                       english: data.englishDescription,
                     ),
-                    style: AppStyle.styleBold10(context),
+                    style: theme.textTheme.bodySmall?.copyWith(
+                      fontWeight: FontWeight.w500,
+                    ),
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
                     textAlign: TextAlign.center,
                   ),
+                  const Spacer(),
                   PriceProductItem(
                     price: data.price,
                     discount: data.discount,
                     discountPrice: data.discountPrice,
                   ),
-                  // const FootItemProduct(),
                   RateItemProduct(
                     rating: data.rating.toString(),
                   ),
                 ],
               ),
             ),
-            data.discount == 0 || data.discount == 0.0
-                ? const SizedBox()
-                : CustomDiscountWidget(discount: data.discount),
+            if (data.discount != 0 && data.discount != 0.0)
+              CustomDiscountWidget(discount: data.discount),
           ],
         ),
       ),

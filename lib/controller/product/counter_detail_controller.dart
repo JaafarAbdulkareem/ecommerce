@@ -1,5 +1,5 @@
+import 'package:ecommerce/core/class/alert_default.dart';
 import 'package:ecommerce/core/class/status_request.dart';
-import 'package:ecommerce/core/constant/app_color.dart';
 import 'package:ecommerce/core/constant/constant_scale.dart';
 import 'package:ecommerce/core/localization/key_language.dart';
 import 'package:get/get.dart';
@@ -21,6 +21,7 @@ class CounterDetailControllerImp extends CounterDetailController {
 
   late int colorValue;
   late StatusRequest statusRequest;
+  final AlertDefault _alertDefault = AlertDefault();
 
   CounterDetailControllerImp({
     required super.countProduct,
@@ -47,10 +48,8 @@ class CounterDetailControllerImp extends CounterDetailController {
       colorValue = ConstantScale.addColor;
       update();
     } else {
-      Get.snackbar(
-        KeyLanguage.alert.tr,
-        KeyLanguage.addProductMessage.tr,
-        backgroundColor: AppColor.snackbar,
+      _alertDefault.snackBarDefault(
+        body: KeyLanguage.addProductMessage.tr,
       );
     }
   }
@@ -67,10 +66,8 @@ class CounterDetailControllerImp extends CounterDetailController {
       colorValue = ConstantScale.removeColor;
       update();
     } else {
-      Get.snackbar(
-        KeyLanguage.alert.tr,
-        KeyLanguage.removeProductMessage.tr,
-        backgroundColor: AppColor.snackbar,
+      _alertDefault.snackBarDefault(
+        body: KeyLanguage.removeProductMessage.tr,
       );
     }
   }

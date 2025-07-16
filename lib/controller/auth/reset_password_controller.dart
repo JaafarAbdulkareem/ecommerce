@@ -1,3 +1,4 @@
+import 'package:ecommerce/core/class/alert_default.dart';
 import 'package:ecommerce/core/class/status_request.dart';
 import 'package:ecommerce/core/constant/api_key.dart';
 import 'package:ecommerce/core/constant/constant_screen_name.dart';
@@ -24,6 +25,7 @@ class ResetPasswordControllerImp extends ResetPasswordController {
   late String email;
   late ResetPasswordRemote resetPasswordRemote;
   late String titleDialog;
+  final AlertDefault _alertDefault = AlertDefault();
   @override
   void onInit() {
     keyResetPassword = GlobalKey<FormState>();
@@ -61,28 +63,20 @@ class ResetPasswordControllerImp extends ResetPasswordController {
           } else if (response[ApiResult.data] == ApiResult.noFound) {
             password.clear();
             rePassword.clear();
-            await Get.defaultDialog(
-              title: titleDialog,
-              middleText: KeyLanguage.noFoundMessage.tr,
+            _alertDefault.snackBarDefault(
+              body: KeyLanguage.noFoundMessage.tr,
             );
           } else {
-            await Get.defaultDialog(
-              title: titleDialog,
-              middleText: KeyLanguage.someErrorMessage.tr,
+            password.clear();
+            rePassword.clear();
+            _alertDefault.snackBarDefault(
+              body: KeyLanguage.resetPasswordContent.tr,
             );
           }
         }
-        // else {
-        //   await Get.defaultDialog(
-        //     title: titleDialog,
-        //     middleText: KeyLanguage.someThingMessage.tr,
-        //   );
-        // }
       } else {
-        await Get.defaultDialog(
-          title: titleDialog,
-          middleText: KeyLanguage.passwordMismatchMassage.tr,
-        );
+        _alertDefault.snackBarDefault(
+            body: KeyLanguage.passwordMismatchMassage.tr);
       }
     }
   }

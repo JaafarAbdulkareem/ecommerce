@@ -26,11 +26,13 @@ class TopCart extends StatelessWidget {
               ),
             ],
           ),
-          GetBuilder<CouponsControllerImp>(builder: (controller) {
-            return controller.isLottieEvffect
-                ? Lottie.asset(AppLottie.couponsCelebration, repeat: false)
-                : const SizedBox();
-          }),
+          GetBuilder<CouponsControllerImp>(
+            builder: (controller) {
+              return controller.isLottieEvffect
+                  ? Lottie.asset(AppLottie.couponsCelebration, repeat: false)
+                  : const SizedBox();
+            },
+          ),
         ],
       ),
     );

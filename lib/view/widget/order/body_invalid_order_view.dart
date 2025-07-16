@@ -1,4 +1,3 @@
-import 'package:ecommerce/core/constant/app_style.dart';
 import 'package:ecommerce/core/localization/key_language.dart';
 import 'package:ecommerce/view/widget/order/table_invalid_order.dart';
 import 'package:flutter/material.dart';
@@ -9,11 +8,13 @@ class BodyInvalidOrderView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final textTheme = Theme.of(context).textTheme;
+
     return Column(
       children: [
         Text(
           KeyLanguage.productNoNotAvailableMessage.tr,
-          style: AppStyle.styleSemiBold14(context),
+          style: textTheme.titleMedium, // Replaces custom AppStyle
           textAlign: TextAlign.center,
         ),
         const Expanded(

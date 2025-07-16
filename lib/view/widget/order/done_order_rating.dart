@@ -1,26 +1,24 @@
-import 'package:ecommerce/core/constant/app_color.dart';
-import 'package:ecommerce/core/constant/app_style.dart';
-import 'package:ecommerce/core/localization/key_language.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:ecommerce/core/localization/key_language.dart';
 
 class DoneOrderRating extends StatelessWidget {
-  const DoneOrderRating({
-    super.key,
-  });
+  const DoneOrderRating({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+
     return TextButton(
       style: TextButton.styleFrom(
-        backgroundColor: AppColor.secondary,
+        backgroundColor: theme.colorScheme.secondary,
       ),
       onPressed: null,
       child: FittedBox(
         fit: BoxFit.scaleDown,
         child: Text(
           KeyLanguage.ratingTitle.tr,
-          style: AppStyle.styleBold16(context),
+          style: theme.textTheme.headlineSmall, // previously AppStyle.styleBold16
         ),
       ),
     );

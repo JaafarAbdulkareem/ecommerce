@@ -135,6 +135,9 @@ Map<String, String> arabic = {
 //setting
   KeyLanguage.addressSetting: "أضف عنوانك هنا",
   KeyLanguage.archiveTitle: "سجل الطلبات",
+  KeyLanguage.language: "اللغة",
+  KeyLanguage.darkMode: "الوضع الداكن",
+  KeyLanguage.genderMode: "وضع الجنس",
   KeyLanguage.contectUsTitle: "اتصل بنا",
   KeyLanguage.logout: "تسجيل الخروج",
 //drawer

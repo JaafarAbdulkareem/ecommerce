@@ -5,10 +5,12 @@ import 'package:ecommerce/core/constant/constant_scale.dart';
 import 'package:ecommerce/core/constant/constant_screen_name.dart';
 import 'package:ecommerce/core/function/handle_status.dart';
 import 'package:ecommerce/core/localization/key_language.dart';
+import 'package:ecommerce/core/localization/locale_controller.dart';
 import 'package:ecommerce/core/service/shared_prefs_service.dart';
 import 'package:ecommerce/data/data_source/remote/auth/user_info_remote.dart';
 import 'package:ecommerce/data/models/setting_model/user_info_model.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:url_launcher/url_launcher.dart';
 // import 'package:url_launcher/url_launcher.dart';
@@ -17,6 +19,9 @@ abstract class SettingController extends GetxController {
   void goToInserAddress();
   void goToDisplayAddress();
   void goToArchive();
+  void changeLanguage(String languageCode);
+  void changeThemeGender();
+  void changeThemeMode();
   void contactUs();
   void logout();
 }
@@ -31,6 +36,14 @@ class SettingControllerImp extends SettingController {
   static UserInfoModel? lastUserData;
   static bool firstTime = true;
 
+  final LocaleController _localeController = Get.find<LocaleController>();
+  late RxBool isMale;
+  late RxBool isDarkMode;
+  late RxString currentLanguage;
+  final items = const [
+    DropdownMenuItem(value: ConstantLanguage.en, child: Text("English")),
+    DropdownMenuItem(value: ConstantLanguage.ar, child: Text("العربية")),
+  ];
   @override
   void onInit() {
     sharedPrefsService = sharedPrefsService = Get.find<SharedPrefsService>();
@@ -38,6 +51,10 @@ class SettingControllerImp extends SettingController {
     userInfoRemote = UserInfoRemote(curd: Get.find());
     statusRequest = StatusRequest.initial;
     callRequest();
+
+    isMale = _localeController.isMale.obs;
+    isDarkMode = (_localeController.isDark).obs;
+    currentLanguage = _localeController.language.languageCode.obs;
     super.onInit();
   }
 
@@ -127,10 +144,28 @@ class SettingControllerImp extends SettingController {
   }
 
   @override
+  void changeLanguage(String languageCode) {
+    currentLanguage.value = languageCode;
+    _localeController.changeLanguage(languageCode);
+  }
+
+  @override
+  void changeThemeGender() {
+    isMale.value = !isMale.value;
+    _localeController.changeGenderMode(isMale.value);
+  }
+
+  @override
+  void changeThemeMode() {
+    isDarkMode.value = !isDarkMode.value;
+    _localeController.changeDarkMode(isDarkMode.value);
+  }
+
+  @override
   void contactUs() async {
     statusRequest = StatusRequest.loading;
     update();
-    await launchUrl(Uri.parse("tel:+1-555-010-999")).then((_) {
+    await launchUrl(Uri.parse("tel:${ConstantText.phoneContactUs}")).then((_) {
       statusRequest = StatusRequest.success;
       update();
     }).catchError((error) {

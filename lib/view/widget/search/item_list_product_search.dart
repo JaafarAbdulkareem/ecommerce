@@ -1,4 +1,3 @@
-import 'package:ecommerce/core/constant/app_color.dart';
 import 'package:ecommerce/core/function/translate_language.dart';
 import 'package:ecommerce/core/share/custom_discount_widget.dart';
 import 'package:ecommerce/data/models/product_model.dart';
@@ -13,15 +12,23 @@ class ItemListProductSearch extends StatelessWidget {
     required this.data,
     required this.onTap,
   });
+
   final int index;
   final ProductModel data;
   final VoidCallback onTap;
+
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+
     return InkWell(
       onTap: onTap,
       child: Card(
-        color: AppColor.card,
+        color: theme.cardColor,
+        elevation: 4,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(8),
+        ),
         child: Stack(
           children: [
             Row(
@@ -45,9 +52,8 @@ class ItemListProductSearch extends StatelessWidget {
                 ),
               ],
             ),
-            data.discount == 0 || data.discount == 0.0
-                ? const SizedBox()
-                : CustomDiscountWidget(discount: data.discount),
+            if (data.discount != 0 && data.discount != 0.0)
+              CustomDiscountWidget(discount: data.discount),
           ],
         ),
       ),

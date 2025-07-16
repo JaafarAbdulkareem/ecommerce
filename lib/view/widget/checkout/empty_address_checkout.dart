@@ -1,48 +1,51 @@
-import 'package:ecommerce/controller/checkout/checkout_controller.dart';
-import 'package:ecommerce/core/constant/app_color.dart';
 import 'package:ecommerce/core/constant/app_images.dart';
-import 'package:ecommerce/core/constant/app_style.dart';
 import 'package:ecommerce/core/localization/key_language.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class EmptyAddressCheckout extends GetView<CheckoutControllerImp> {
+class EmptyAddressCheckout extends StatelessWidget {
   const EmptyAddressCheckout({
     super.key,
     required this.onTap,
   });
+
   final VoidCallback onTap;
+
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final textTheme = theme.textTheme;
+
     return GestureDetector(
-      onTap: () {
-        controller.goToInsertAddress();
-      },
+      onTap: onTap,
       child: Center(
         child: Container(
-          width: 120,
-          height: 140,
-          padding: const EdgeInsets.symmetric(
-            horizontal: 8,
-            vertical: 4,
-          ),
+          width: 160,
+          height: 160,
+          padding: const EdgeInsets.all(8),
           decoration: BoxDecoration(
-            color: AppColor.optionCheckout,
+            color: theme.colorScheme.surfaceContainerHighest.withOpacity(0.3),
             borderRadius: BorderRadius.circular(16),
           ),
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               FittedBox(
                 fit: BoxFit.scaleDown,
                 child: Text(
                   KeyLanguage.appBarTitleInsertAddress.tr,
-                  style: AppStyle.styleBold14(context).copyWith(
-                    color: AppColorText.titleProductDetail,
+                  style: textTheme.titleMedium?.copyWith(
+                    color: theme.colorScheme.primary,
                   ),
+                  textAlign: TextAlign.center,
                 ),
               ),
-              Image.asset(
-                AppImages.imagesPlus,
+              const SizedBox(height: 8),
+              Expanded(
+                child: Image.asset(
+                  AppImages.imagesPlus,
+                  fit: BoxFit.contain,
+                ),
               ),
             ],
           ),

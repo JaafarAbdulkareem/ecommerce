@@ -1,6 +1,5 @@
 import 'package:ecommerce/controller/address/display_address_controller.dart';
 import 'package:ecommerce/core/constant/app_icon.dart';
-import 'package:ecommerce/core/constant/app_style.dart';
 import 'package:ecommerce/core/localization/key_language.dart';
 import 'package:ecommerce/core/share/status_view.dart';
 import 'package:ecommerce/view/widget/address/body_display_address.dart';
@@ -13,22 +12,21 @@ class DisplayAddressView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    DisplayAddressControllerImp controller =
-        Get.put(DisplayAddressControllerImp());
+    final theme = Theme.of(context);
+    final controller = Get.put(DisplayAddressControllerImp());
+
     return Scaffold(
       appBar: AppBar(
-        centerTitle: true,
         title: Text(
           KeyLanguage.appBarTitleDisplayAddress.tr,
-          style: AppStyle.styleBold18(context),
         ),
       ),
-      floatingActionButton: CustomFloatingButton(
-        icon: AppIcon.add,
-        onTap: () {
-          controller.goToInsertAddress();
-        },
-      ),
+      // floatingActionButton:
+      //  CustomFloatingButton(
+      //   icon: AppIcon.add,
+      //   onTap: controller.goToInsertAddress,
+      // ),
+      backgroundColor: theme.scaffoldBackgroundColor,
       body: SafeArea(
         child: GetBuilder<DisplayAddressControllerImp>(
           builder: (controller) {

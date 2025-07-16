@@ -1,5 +1,4 @@
 import 'package:ecommerce/controller/auth/login_controller.dart';
-import 'package:ecommerce/core/constant/app_style.dart';
 import 'package:ecommerce/core/localization/key_language.dart';
 import 'package:ecommerce/core/share/status_view.dart';
 import 'package:ecommerce/view/widget/auth/body_login_view.dart';
@@ -12,19 +11,18 @@ class LoginView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Get.lazyPut(() => LoginControllerImp());
+
     return Scaffold(
       appBar: AppBar(
-        centerTitle: true,
         title: Text(
           KeyLanguage.loginButton.tr,
-          style: AppStyle.styleBold18(context),
         ),
       ),
       body: SafeArea(
         child: GetBuilder<LoginControllerImp>(
           builder: (controller) => StatusView(
             statusRequest: controller.statusRequest,
-            child: BodyLoginView(),
+            child: const BodyLoginView(),
           ),
         ),
       ),

@@ -4,6 +4,7 @@ import 'package:ecommerce/core/constant/constant_key.dart';
 import 'package:ecommerce/core/constant/constant_scale.dart';
 import 'package:ecommerce/core/localization/key_language.dart';
 import 'package:ecommerce/view/widget/setting/field_setting.dart';
+import 'package:ecommerce/view/widget/setting/theme_theme_setting.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -59,6 +60,7 @@ class UserDetail extends GetView<SettingControllerImp> {
           icon: AppIcon.closePassword,
           onTap: () {},
         ),
+        const ThemeModeSettings(),
         const SizedBox(height: 50),
         FieldSetting(
           title: KeyLanguage.contectUsTitle.tr,

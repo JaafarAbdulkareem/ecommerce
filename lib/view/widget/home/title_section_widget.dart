@@ -1,4 +1,3 @@
-import 'package:ecommerce/core/constant/app_style.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -8,13 +7,18 @@ class TitleSectionWidget extends StatelessWidget {
     required this.title,
   });
   final String title;
+
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
     return Padding(
-      padding: const EdgeInsets.only(top: 12, bottom: 6),
+      padding: const EdgeInsets.only(
+        top: 12,
+        bottom: 6,
+      ),
       child: Text(
         title.tr,
-        style: AppStyle.styleSemibold18(context),
+        style: theme.textTheme.displaySmall,
       ),
     );
   }

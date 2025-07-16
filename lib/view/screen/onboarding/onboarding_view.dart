@@ -14,6 +14,7 @@ class OnboardingView extends StatelessWidget {
       body: SafeArea(
         child: Column(
           children: [
+            SizedBox(height: 32),
             Expanded(
               flex: 3,
               child: SliderPageView(),

@@ -1,5 +1,4 @@
 import 'package:ecommerce/controller/auth/signup_controller.dart';
-import 'package:ecommerce/core/constant/app_color.dart';
 import 'package:ecommerce/core/constant/app_icon.dart';
 import 'package:ecommerce/core/constant/constant_key.dart';
 import 'package:ecommerce/core/constant/constant_scale.dart';
@@ -26,7 +25,6 @@ class BodySignupView extends GetView<SignupControllerImp> {
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16),
             child: Column(
-              // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 TitleDescriptionWidget(
@@ -95,7 +93,6 @@ class BodySignupView extends GetView<SignupControllerImp> {
                 const SizedBox(height: 16),
                 CustomButtonWidget(
                   text: KeyLanguage.signupButton.tr,
-                  color: AppColor.primary,
                   onTap: () {
                     controller.signupOnTap();
                   },

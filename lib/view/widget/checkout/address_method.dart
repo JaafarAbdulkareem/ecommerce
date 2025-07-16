@@ -3,8 +3,8 @@ import 'package:ecommerce/core/constant/constant_key.dart';
 import 'package:ecommerce/core/constant/constant_scale.dart';
 import 'package:ecommerce/core/localization/key_language.dart';
 import 'package:ecommerce/view/widget/checkout/empty_address_checkout.dart';
-import 'package:ecommerce/view/widget/checkout/title_checkout.dart';
 import 'package:ecommerce/view/widget/checkout/options_address_method.dart';
+import 'package:ecommerce/view/widget/home/title_section_widget.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 
@@ -20,12 +20,14 @@ class AddressMethod extends StatelessWidget {
             ? Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  TitleCheckout(
+                  TitleSectionWidget(
                     title: KeyLanguage.titleShoppingAddress.tr,
                   ),
                   CheckoutControllerImp.addressData.isEmpty
                       ? EmptyAddressCheckout(
-                          onTap: () {},
+                          onTap: () {
+                            controller.goToInsertAddress();
+                          },
                         )
                       : const OptionsAddressMethod(),
                   const SizedBox(height: 6),

@@ -1,5 +1,3 @@
-import 'package:ecommerce/core/constant/app_color.dart';
-import 'package:ecommerce/core/constant/app_style.dart';
 import 'package:ecommerce/data/models/setting_model/address_model.dart';
 import 'package:flutter/material.dart';
 
@@ -13,34 +11,36 @@ class ItemAddressMethod extends StatelessWidget {
   final AddressModel data;
   final bool isActive;
   final VoidCallback onTap;
+
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final colorScheme = theme.colorScheme;
+
+    final backgroundColor =
+        isActive ? colorScheme.primary : colorScheme.surfaceContainerHighest;
+
     return GestureDetector(
       onTap: onTap,
       child: SizedBox(
         height: 85,
         child: Card(
-          color: isActive ? AppColor.primary : AppColor.optionCheckout,
+          color: backgroundColor,
           child: Center(
             child: ListTile(
-              contentPadding: EdgeInsets.only(left: 12),
               title: Text(
                 data.typeAddress,
-                style: AppStyle.styleSemiBold14(context).copyWith(
-                  color: isActive
-                      ? AppColorText.textButton
-                      : AppColorText.titleProductDetail,
+                style: theme.textTheme.titleMedium?.copyWith(
+                  color: isActive ? null : theme.colorScheme.primary,
                 ),
                 maxLines: 1,
                 overflow: TextOverflow.ellipsis,
                 textAlign: TextAlign.justify,
               ),
               subtitle: Text(
-                "${data.city} ${data.street} \n ${data.detailAddress}",
-                style: AppStyle.styleLight14(context).copyWith(
-                  color: isActive
-                      ? AppColorText.textButton
-                      : AppColorText.titleProductDetail,
+                "${data.city} ${data.street} \n${data.detailAddress}",
+                style: theme.textTheme.titleMedium?.copyWith(
+                  color: isActive ? null : theme.colorScheme.primary,
                 ),
                 maxLines: 2,
                 overflow: TextOverflow.ellipsis,

@@ -1,6 +1,4 @@
 import 'package:ecommerce/controller/checkout/checkout_controller.dart';
-import 'package:ecommerce/core/constant/app_color.dart';
-import 'package:ecommerce/core/constant/app_style.dart';
 import 'package:ecommerce/core/localization/key_language.dart';
 import 'package:ecommerce/view/widget/checkout/body_checkout_view.dart';
 import 'package:ecommerce/view/widget/checkout/bottom_button_checkout.dart';
@@ -12,19 +10,17 @@ class CheckoutView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // CheckoutControllerImp controller = Get.put(CheckoutControllerImp());
     Get.lazyPut(() => CheckoutControllerImp());
+    final theme = Theme.of(context);
+
     return Scaffold(
       appBar: AppBar(
-        centerTitle: true,
         title: Text(
           KeyLanguage.appBarTitleCart.tr,
-          style: AppStyle.styleSemiBold24(context),
         ),
-        backgroundColor: AppColor.primary,
       ),
       bottomNavigationBar: const BottomButtonCheckout(),
-      backgroundColor: AppColor.backgroundScaffold,
+      backgroundColor: theme.scaffoldBackgroundColor,
       body: const SafeArea(
         child: BodyCheckoutView(),
       ),

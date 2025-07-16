@@ -1,5 +1,3 @@
-import 'package:ecommerce/core/constant/app_color.dart';
-import 'package:ecommerce/core/constant/app_style.dart';
 import 'package:flutter/material.dart';
 
 class ItemDeliveryMethod extends StatelessWidget {
@@ -16,17 +14,20 @@ class ItemDeliveryMethod extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final colorScheme = theme.colorScheme;
+
+    final primary =
+        isActive ? colorScheme.primary : colorScheme.surfaceContainerHighest;
+
+    final iconColor = isActive ? theme.cardColor : colorScheme.primary;
+
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        width: 150,
-        height: 150,
-        padding: const EdgeInsets.symmetric(
-          horizontal: 4,
-          vertical: 2,
-        ),
+        padding: const EdgeInsets.all(10),
         decoration: BoxDecoration(
-          color: isActive ? AppColor.primary : AppColor.optionCheckout,
+          color: primary,
           borderRadius: BorderRadius.circular(16),
         ),
         child: Column(
@@ -34,17 +35,15 @@ class ItemDeliveryMethod extends StatelessWidget {
             Image.asset(
               image,
               width: 130,
-              height: 120,
+              height: 100,
               fit: BoxFit.cover,
-              color: isActive ? AppColor.iconColor : null,
+              color: iconColor,
+              colorBlendMode: BlendMode.srcIn,
             ),
+            const SizedBox(height: 8),
             Text(
               text,
-              style: AppStyle.styleSemiBold14(context).copyWith(
-                color: isActive
-                    ? AppColorText.textButton
-                    : AppColorText.titleProductDetail,
-              ),
+              style: theme.textTheme.titleMedium?.copyWith(color: iconColor),
             ),
           ],
         ),

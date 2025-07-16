@@ -13,16 +13,17 @@ class LocaleController extends GetxController {
   late StatusRequest statusRequest;
   late SharedPrefsService sharedPrefsService;
 
-  changeLanguage(String languageCode) async {
-    Locale locale = Locale(languageCode);
-    await sharedPrefsService.prefs.setString(
-      ConstantKey.keyLanguage,
-      languageCode,
-    );
-    theme = languageCode == ConstantLanguage.ar
-        ? ConstantTypeTheme.arabicTheme
-        : ConstantTypeTheme.englishTheme;
-    Get.changeTheme(theme);
+  // Theme preferences
+  late bool isDark;
+  late bool isMale;
+
+  Future<void> changeLanguage(String languageCode) async {
+    final locale = Locale(languageCode);
+    await sharedPrefsService.prefs
+        .setString(ConstantKey.keyLanguage, languageCode);
+
+    language = locale;
+    _applyTheme(); // Apply theme after changing language
     Get.updateLocale(locale);
   }
 
@@ -30,17 +31,19 @@ class LocaleController extends GetxController {
   void onInit() async {
     statusRequest = StatusRequest.success;
     sharedPrefsService = Get.find<SharedPrefsService>();
-    String? initLanguage =
+
+    // Load saved language
+    String? langCode =
         sharedPrefsService.prefs.getString(ConstantKey.keyLanguage);
-    if (initLanguage == null) {
-      language = Locale(Get.deviceLocale?.languageCode ?? ConstantLanguage.en);
-      theme = ConstantTypeTheme.englishTheme;
-    } else {
-      language = Locale(initLanguage);
-      theme = initLanguage == ConstantLanguage.ar
-          ? ConstantTypeTheme.arabicTheme
-          : ConstantTypeTheme.englishTheme;
-    }
+    language = Locale(
+        langCode ?? Get.deviceLocale?.languageCode ?? ConstantLanguage.en);
+
+    // Load theme preferences
+    isDark =
+        sharedPrefsService.prefs.getBool(ConstantKey.keyIsDarkMode) ?? false;
+    isMale = sharedPrefsService.prefs.getBool(ConstantKey.keyIsMale) ?? true;
+
+    _applyTheme(); // Initial theme setup
 
     fCMNotification();
     super.onInit();
@@ -53,5 +56,30 @@ class LocaleController extends GetxController {
     await Get.toNamed(ConstantScreenName.onboarding);
     statusRequest = StatusRequest.success;
     update();
+  }
+
+  // 🔄 Apply combined theme
+  void _applyTheme() {
+    theme = ConstantTypeTheme.theme(
+      isDark: isDark,
+      isArabic: language.languageCode == ConstantLanguage.ar,
+      isMale: isMale,
+    );
+    Get.changeTheme(theme);
+    update();
+  }
+
+  // 🌙 Change only dark/light mode
+  Future<void> changeDarkMode(bool darkMode) async {
+    isDark = darkMode;
+    await sharedPrefsService.prefs.setBool(ConstantKey.keyIsDarkMode, isDark);
+    _applyTheme();
+  }
+
+  // 👦👧 Change only gender mode
+  Future<void> changeGenderMode(bool maleMode) async {
+    isMale = maleMode;
+    await sharedPrefsService.prefs.setBool(ConstantKey.keyIsMale, isMale);
+    _applyTheme();
   }
 }

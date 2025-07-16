@@ -1,6 +1,5 @@
 import 'package:ecommerce/controller/order/archive_order_controller.dart';
 import 'package:ecommerce/core/constant/app_color.dart';
-import 'package:ecommerce/core/constant/app_style.dart';
 import 'package:ecommerce/core/constant/constant_key.dart';
 import 'package:ecommerce/core/localization/key_language.dart';
 import 'package:ecommerce/core/share/custom_button_widget.dart';
@@ -13,20 +12,32 @@ class TotalPriceArchiveOrder extends GetView<ArchiveOrderControllerImp> {
     required this.id,
     required this.totalPriceText,
   });
+
   final int id;
   final String totalPriceText;
+
   @override
   Widget build(BuildContext context) {
+    final textStyle = Theme.of(context).textTheme.titleMedium;
+
+    // Gender-based theming support
+    final bool isMale = Get.isRegistered<ArchiveOrderControllerImp>()
+        ? Get.find<ArchiveOrderControllerImp>().isMale
+        : true; // fallback to male if not found
+
+    final Color genderAccentColor =
+        isMale ? AppColor.maleAccent : AppColor.femaleAccent;
+
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Text(
           "${KeyLanguage.totalPriceTitle.tr} : $totalPriceText${ConstantText.currencyPrice}",
-          style: AppStyle.styleSemiBold14(context),
+          style: textStyle,
         ),
         CustomButtonWidget(
           text: KeyLanguage.detailButton.tr,
-          color: AppColor.iconColor,
+          color: genderAccentColor,
           onTap: () {
             controller.goToDetailArchiveOrder(id);
           },

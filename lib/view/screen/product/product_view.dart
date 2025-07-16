@@ -1,6 +1,5 @@
 import 'package:ecommerce/controller/product/product_controller.dart';
 import 'package:ecommerce/controller/search/search_product_controller.dart';
-import 'package:ecommerce/core/constant/app_color.dart';
 import 'package:ecommerce/core/share/custom_search_widget.dart';
 import 'package:ecommerce/view/widget/search/body_search_view.dart';
 import 'package:ecommerce/view/widget/product/body_product_view.dart';
@@ -13,8 +12,11 @@ class ProductView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Get.lazyPut(() => ProductControllerImp());
+
+    final theme = Theme.of(context);
+
     return Scaffold(
-      backgroundColor: AppColor.backgroundScaffold,
+      backgroundColor: theme.scaffoldBackgroundColor,
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 6),

@@ -1,5 +1,4 @@
 import 'package:ecommerce/controller/address/detail_address_controller.dart';
-import 'package:ecommerce/core/constant/app_style.dart';
 import 'package:ecommerce/core/localization/key_language.dart';
 import 'package:ecommerce/view/widget/address/body_detail_insert_address_view.dart';
 import 'package:ecommerce/view/widget/address/bottom_button_next_address.dart';
@@ -14,10 +13,8 @@ class DetailInsertAddressView extends StatelessWidget {
     Get.lazyPut(() => DetailAddressControllerImp());
     return Scaffold(
       appBar: AppBar(
-        centerTitle: true,
         title: Text(
           KeyLanguage.appBarTitleDetailInsertAddress.tr,
-          style: AppStyle.styleBold18(context),
         ),
       ),
       bottomSheet: const BottomButtonNextAddress(),

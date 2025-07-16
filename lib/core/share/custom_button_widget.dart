@@ -1,28 +1,29 @@
-import 'package:ecommerce/core/constant/app_style.dart';
 import 'package:flutter/material.dart';
 
 class CustomButtonWidget extends StatelessWidget {
   const CustomButtonWidget({
     super.key,
     required this.text,
-    required this.color,
     required this.onTap,
+    this.color,
   });
+
   final String text;
-  final Color color;
   final VoidCallback onTap;
+  final Color? color;
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+
     return TextButton(
-      style: TextButton.styleFrom(
-        backgroundColor: color,
-      ),
       onPressed: onTap,
+      style:
+          color != null ? TextButton.styleFrom(backgroundColor: color) : null,
       child: FittedBox(
         fit: BoxFit.scaleDown,
         child: Text(
           text,
-          style: AppStyle.styleBold16(context),
+          style: theme.textTheme.titleMedium,
         ),
       ),
     );

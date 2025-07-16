@@ -1,6 +1,6 @@
+import 'package:ecommerce/core/class/alert_default.dart';
 import 'package:ecommerce/core/class/status_request.dart';
 import 'package:ecommerce/core/constant/api_key.dart';
-import 'package:ecommerce/core/constant/app_color.dart';
 import 'package:ecommerce/core/constant/constant_key.dart';
 import 'package:ecommerce/core/constant/constant_scale.dart';
 import 'package:ecommerce/core/function/handle_status.dart';
@@ -22,6 +22,8 @@ class CouponsControllerImp extends CouponsController {
   CouponsModel? couponsData;
   late bool isApplyCoupons;
   late bool isLottieEvffect;
+
+  final AlertDefault _alertDefault = AlertDefault();
   @override
   void onInit() {
     prefs = Get.find<SharedPrefsService>();
@@ -68,10 +70,8 @@ class CouponsControllerImp extends CouponsController {
           isApplyCoupons = false;
           statusRequest = StatusRequest.success;
           update();
-          Get.snackbar(
-            KeyLanguage.alert.tr,
-            KeyLanguage.addProductMessage.tr,
-            backgroundColor: AppColor.snackbar,
+          _alertDefault.snackBarDefault(
+            body: KeyLanguage.couponsNotFoundMessage.tr,
           );
         }
       } else {

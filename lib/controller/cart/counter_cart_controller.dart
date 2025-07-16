@@ -1,8 +1,8 @@
 import 'package:ecommerce/controller/cart/cart_controller.dart';
+import 'package:ecommerce/core/class/alert_default.dart';
 import 'package:ecommerce/core/class/status_request.dart';
 import 'package:ecommerce/core/constant/api_key.dart';
 import 'package:ecommerce/core/constant/constant_key.dart';
-import 'package:ecommerce/core/constant/constant_scale.dart';
 import 'package:ecommerce/core/function/handle_status.dart';
 import 'package:ecommerce/core/localization/key_language.dart';
 import 'package:ecommerce/core/service/shared_prefs_service.dart';
@@ -21,9 +21,8 @@ class CounterCartControllerImp extends CounterCartController {
   late String userId;
   late CartControllerImp cartController;
   late List<CartModel> cartData;
-  late int colorValue;
   late StatusRequest statusRequest;
-
+  final AlertDefault _alertDefault = AlertDefault();
   @override
   void onInit() {
     cartRemote = CartRemote(curd: Get.find());
@@ -31,8 +30,8 @@ class CounterCartControllerImp extends CounterCartController {
     userId = prefs.prefs.getString(ConstantKey.keyUserId)!;
     cartController = Get.find<CartControllerImp>();
     cartData = cartController.cartData;
-    colorValue = ConstantScale.removeColor;
     statusRequest = StatusRequest.initial;
+
     super.onInit();
   }
 
@@ -47,7 +46,6 @@ class CounterCartControllerImp extends CounterCartController {
     statusRequest = handleStatus(response);
     if (statusRequest == StatusRequest.success) {
       if (response[ApiResult.status] == ApiResult.success) {
-        colorValue = ConstantScale.addColor;
         if (response[ApiResult.data] is num) {
           cartData[newIndex].count = response[ApiResult.data];
           cartController.refreshReceive();
@@ -56,33 +54,23 @@ class CounterCartControllerImp extends CounterCartController {
         } else if (response[ApiResult.data] == ApiResult.noChange) {
           statusRequest = StatusRequest.success;
           update([cartData[newIndex].id]);
-          await Get.defaultDialog(
-            title: KeyLanguage.alert.tr,
-            middleText: KeyLanguage.incrementMessage.tr,
+          _alertDefault.dialogDefault(
+            body: KeyLanguage.incrementMessage.tr,
           );
         } else {
           statusRequest = StatusRequest.success;
           update([cartData[newIndex].id]);
-          await Get.defaultDialog(
-            title: KeyLanguage.alert.tr,
-            middleText: KeyLanguage.someErrorMessage.tr,
-          );
+          _alertDefault.snackBarDefault();
         }
       } else {
         statusRequest = StatusRequest.failure;
         update([cartData[newIndex].id]);
-        await Get.defaultDialog(
-          title: KeyLanguage.alert.tr,
-          middleText: KeyLanguage.someErrorMessage.tr,
-        );
+        _alertDefault.snackBarDefault();
       }
     } else {
       statusRequest = StatusRequest.failure;
       update([cartData[newIndex].id]);
-      await Get.defaultDialog(
-        title: KeyLanguage.alert.tr,
-        middleText: KeyLanguage.someErrorMessage.tr,
-      );
+      _alertDefault.snackBarDefault();
     }
   }
 
@@ -98,9 +86,7 @@ class CounterCartControllerImp extends CounterCartController {
     if (statusRequest == StatusRequest.success) {
       if (response[ApiResult.status] == ApiResult.success) {
         if (response[ApiResult.data] is num) {
-          colorValue = ConstantScale.removeColor;
           cartData[newIndex].count = response[ApiResult.data];
-          // cartController.refreshReceive();
           cartController.refreshReceive();
           statusRequest = StatusRequest.success;
           update([cartData[newIndex].id]);
@@ -110,26 +96,17 @@ class CounterCartControllerImp extends CounterCartController {
         } else {
           statusRequest = StatusRequest.success;
           update([cartData[newIndex].id]);
-          await Get.defaultDialog(
-            title: KeyLanguage.alert.tr,
-            middleText: KeyLanguage.someErrorMessage.tr,
-          );
+          _alertDefault.snackBarDefault();
         }
       } else {
         statusRequest = StatusRequest.failure;
         update([cartData[newIndex].id]);
-        await Get.defaultDialog(
-          title: KeyLanguage.alert.tr,
-          middleText: KeyLanguage.someErrorMessage.tr,
-        );
+        _alertDefault.snackBarDefault();
       }
     } else {
       statusRequest = StatusRequest.failure;
       update([cartData[newIndex].id]);
-      await Get.defaultDialog(
-        title: KeyLanguage.alert.tr,
-        middleText: KeyLanguage.someErrorMessage.tr,
-      );
+      _alertDefault.snackBarDefault();
     }
   }
 }

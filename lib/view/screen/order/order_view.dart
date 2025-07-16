@@ -1,5 +1,4 @@
 import 'package:ecommerce/controller/order/order_controller.dart';
-import 'package:ecommerce/core/constant/app_style.dart';
 import 'package:ecommerce/core/localization/key_language.dart';
 import 'package:ecommerce/core/share/status_view.dart';
 import 'package:ecommerce/view/widget/order/body_order_view.dart';
@@ -14,10 +13,8 @@ class OrderView extends StatelessWidget {
     Get.lazyPut(() => OrderControllerImp());
     return Scaffold(
       appBar: AppBar(
-        centerTitle: true,
         title: Text(
           KeyLanguage.appBarTitleOrder.tr,
-          style: AppStyle.styleBold18(context),
         ),
       ),
       body: SafeArea(

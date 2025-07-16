@@ -1,4 +1,3 @@
-import 'package:ecommerce/core/constant/app_color.dart';
 import 'package:ecommerce/core/constant/app_images.dart';
 import 'package:flutter/material.dart';
 
@@ -9,29 +8,37 @@ class ImageSetting extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+
     return Stack(
       clipBehavior: Clip.none,
       children: [
-        const AspectRatio(
+        AspectRatio(
           aspectRatio: 5.5,
           child: ColoredBox(
-            color: AppColor.primary,
+            color: theme.colorScheme.primary,
           ),
         ),
-        AspectRatio(
-          aspectRatio: 3,
-          child: CircleAvatar(
-            backgroundColor: AppColor.card,
+        Positioned.fill(
+          top: 20,
+          child: Align(
+            alignment: Alignment.bottomCenter,
             child: CircleAvatar(
-              radius: 55,
-              child: ClipOval(
-                child: Image.asset(
-                  AppImages.imagesDragon,
+              radius: 60,
+              backgroundColor: theme.cardColor,
+              child: CircleAvatar(
+                radius: 55,
+                backgroundColor: Colors.transparent,
+                child: ClipOval(
+                  child: Image.asset(
+                    AppImages.imagesDragon,
+                    fit: BoxFit.cover,
+                  ),
                 ),
               ),
             ),
           ),
-        )
+        ),
       ],
     );
   }

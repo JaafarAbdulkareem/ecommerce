@@ -19,6 +19,7 @@ abstract class ConstantScale {
 //home
   static const double iconShop = 32;
   static const int defalutIndexView = 0;
+  static const double sizeCategoryIcon = 55;
 //product
   static const int crossAxisCount = 2;
   static const double icon = 20;

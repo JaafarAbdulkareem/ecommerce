@@ -1,4 +1,3 @@
-import 'package:ecommerce/core/constant/app_style.dart';
 import 'package:ecommerce/core/constant/constant_key.dart';
 import 'package:ecommerce/core/localization/key_language.dart';
 import 'package:ecommerce/core/localization/locale_controller.dart';
@@ -12,25 +11,30 @@ class ChooseAppLanguageView extends GetView<LocaleController> {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+
     return Scaffold(
+      backgroundColor: theme.scaffoldBackgroundColor,
       body: SafeArea(
         child: GetBuilder<LocaleController>(
           builder: (controller) {
             return HomeStatusView(
               statusRequest: controller.statusRequest,
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
                 mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   Text(
                     KeyLanguage.chooseLanguage.tr,
-                    style: AppStyle.styleBold20(context),
+                    style: theme.textTheme.displayMedium,
                     textAlign: TextAlign.center,
                   ),
+                  const SizedBox(height: 24),
                   const CustomTextButton(
                     text: KeyLanguage.arabic,
                     codeLanguage: ConstantLanguage.ar,
                   ),
+                  const SizedBox(height: 16),
                   const CustomTextButton(
                     text: KeyLanguage.english,
                     codeLanguage: ConstantLanguage.en,

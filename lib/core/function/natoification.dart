@@ -1,12 +1,11 @@
 import 'package:ecommerce/controller/home/body_home_controller.dart';
 import 'package:ecommerce/controller/order/archive_order_controller.dart';
 import 'package:ecommerce/controller/order/order_controller.dart';
-import 'package:ecommerce/core/constant/app_color.dart';
+import 'package:ecommerce/core/class/alert_default.dart';
 import 'package:ecommerce/core/constant/app_icon.dart';
 import 'package:ecommerce/core/constant/constant_screen_name.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter_ringtone_player/flutter_ringtone_player.dart';
-import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 Future<void> requestNotificationPremission() async {
@@ -34,16 +33,22 @@ Future<void> requestNotificationPremission() async {
 // class ProvisionalStatusException implements Exception {}
 
 void notificationMessage() {
+  final AlertDefault alertDefault = AlertDefault();
   FirebaseMessaging.onMessage.listen((message) async {
     await FlutterRingtonePlayer().playNotification();
 
     if (ConstantScreenName.order == message.data["pagename"]) {
-      Get.snackbar(
-        icon: Icon(AppIcon.notificationRing),
-        message.notification?.title ?? "",
-        message.notification?.body ?? "",
-        backgroundColor: AppColor.snackbar,
+      alertDefault.snackBarDefault(
+        icon: AppIcon.notificationRing,
+        title: message.notification?.title ?? "",
+        body: message.notification?.body ?? "",
       );
+      // Get.snackbar(
+      //   icon: Icon(AppIcon.notificationRing),
+      //   message.notification?.title ?? "",
+      //   message.notification?.body ?? "",
+      //   backgroundColor: AppColor.snackbar,
+      // );
       print("page : ${Get.currentRoute}");
       OrderControllerImp orderController;
       ArchiveOrderControllerImp archiveController;
@@ -63,12 +68,17 @@ void notificationMessage() {
       BodyHomeControllerImp controllerImp = Get.find();
       controllerImp.recalledGetData();
     } else {
-      Get.snackbar(
-        icon: Icon(AppIcon.notificationRing),
-        message.notification?.title ?? "",
-        message.notification?.body ?? "",
-        backgroundColor: AppColor.snackbar,
+      alertDefault.snackBarDefault(
+        icon: AppIcon.notificationRing,
+        title: message.notification?.title ?? "",
+        body: message.notification?.body ?? "",
       );
+      // Get.snackbar(
+      //   icon: Icon(AppIcon.notificationRing),
+      //   message.notification?.title ?? "",
+      //   message.notification?.body ?? "",
+      //   backgroundColor: AppColor.snackbar,
+      // );
     }
   });
 }

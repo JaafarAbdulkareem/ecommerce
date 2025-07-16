@@ -1,5 +1,4 @@
 import 'package:ecommerce/controller/auth/forget_password_controller.dart';
-import 'package:ecommerce/core/constant/app_color.dart';
 import 'package:ecommerce/core/constant/app_icon.dart';
 import 'package:ecommerce/core/constant/constant_key.dart';
 import 'package:ecommerce/core/constant/constant_scale.dart';
@@ -45,7 +44,6 @@ class BodyForgetPasswordView extends GetView<ForgetPasswordControllerImp> {
             ),
             CustomButtonWidget(
               text: KeyLanguage.checkButton.tr,
-              color: AppColor.primary,
               onTap: () {
                 controller.forgetPasswordOnTap();
               },

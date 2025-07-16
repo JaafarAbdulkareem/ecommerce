@@ -1,6 +1,5 @@
 import 'package:ecommerce/controller/order/invalid_order_controller.dart';
 import 'package:ecommerce/core/constant/app_color.dart';
-import 'package:ecommerce/core/constant/app_style.dart';
 import 'package:ecommerce/core/localization/key_language.dart';
 import 'package:ecommerce/core/share/custom_button_widget.dart';
 import 'package:ecommerce/view/widget/home/home_status_view.dart';
@@ -16,10 +15,8 @@ class InvalidOrderView extends StatelessWidget {
     Get.lazyPut(() => InvalidOrderControllerImp());
     return Scaffold(
       appBar: AppBar(
-        centerTitle: true,
         title: Text(
           KeyLanguage.appBarTitleOrder.tr,
-          style: AppStyle.styleBold18(context),
         ),
       ),
       bottomNavigationBar: const BottomButtonInvalidOrder(),

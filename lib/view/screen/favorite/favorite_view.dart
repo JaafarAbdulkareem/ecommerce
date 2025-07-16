@@ -1,5 +1,4 @@
 import 'package:ecommerce/controller/favorite/favorite_controller.dart';
-import 'package:ecommerce/core/constant/app_color.dart';
 import 'package:ecommerce/view/widget/favorite/body_favorite.dart';
 import 'package:ecommerce/view/widget/home/home_status_view.dart';
 import 'package:flutter/material.dart';
@@ -11,8 +10,10 @@ class FavoriteView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Get.lazyPut(() => FavoriteControllerImp());
+    final theme = Theme.of(context);
+
     return Scaffold(
-      backgroundColor: AppColor.backgroundScaffold,
+      backgroundColor: theme.scaffoldBackgroundColor,
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 6),
@@ -20,7 +21,7 @@ class FavoriteView extends StatelessWidget {
             builder: (controller) {
               return HomeStatusView(
                 statusRequest: controller.statusRequest,
-                child: BodyFavorite(),
+                child: const BodyFavorite(),
               );
             },
           ),

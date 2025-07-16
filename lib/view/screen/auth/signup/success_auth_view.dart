@@ -1,6 +1,4 @@
 import 'package:ecommerce/controller/auth/success_controller.dart';
-import 'package:ecommerce/core/constant/app_color.dart';
-import 'package:ecommerce/core/constant/app_style.dart';
 import 'package:ecommerce/core/localization/key_language.dart';
 import 'package:ecommerce/core/share/custom_button_widget.dart';
 import 'package:ecommerce/view/widget/auth/correct_logo_widget.dart';
@@ -14,12 +12,12 @@ class SuccessAuthView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final SuccessControllerImp controller = Get.put(SuccessControllerImp());
+    final theme = Theme.of(context);
+
     return Scaffold(
       appBar: AppBar(
-        centerTitle: true,
         title: Text(
           KeyLanguage.successTitle.tr,
-          style: AppStyle.styleBold18(context),
         ),
       ),
       body: SafeArea(
@@ -28,18 +26,16 @@ class SuccessAuthView extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              CorrectLogoWidget(),
+              const CorrectLogoWidget(),
               TitleDescriptionWidget(
                 title: KeyLanguage.successTitle.tr,
                 subTitle: KeyLanguage.successContent.tr,
               ),
-              Spacer(),
+              const Spacer(),
               CustomButtonWidget(
                 text: KeyLanguage.loginButton.tr,
-                color: AppColor.primary,
-                onTap: () {
-                  controller.loginScreen();
-                },
+                color: theme.colorScheme.primary,
+                onTap: controller.loginScreen,
               ),
               const SizedBox(height: 32),
             ],

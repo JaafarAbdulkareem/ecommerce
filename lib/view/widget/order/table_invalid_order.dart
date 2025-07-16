@@ -1,4 +1,3 @@
-import 'package:ecommerce/core/constant/app_style.dart';
 import 'package:ecommerce/core/localization/key_language.dart';
 import 'package:ecommerce/view/widget/order/list_invalid_order.dart';
 import 'package:flutter/material.dart';
@@ -11,6 +10,8 @@ class TableInvalidOrder extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final textTheme = Theme.of(context).textTheme;
+
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 12.0),
       child: Column(
@@ -22,13 +23,13 @@ class TableInvalidOrder extends StatelessWidget {
                 flex: 2,
                 child: Text(
                   KeyLanguage.productTitle.tr,
-                  style: AppStyle.styleSemiBold16(context),
+                  style: textTheme.titleMedium,
                 ),
               ),
               Expanded(
                 child: Text(
                   KeyLanguage.countTitle.tr,
-                  style: AppStyle.styleSemiBold16(context),
+                  style: textTheme.titleMedium,
                 ),
               ),
               const Expanded(

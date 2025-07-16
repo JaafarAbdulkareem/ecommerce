@@ -1,8 +1,7 @@
 import 'package:ecommerce/controller/product/product_detail_controller.dart';
-import 'package:ecommerce/core/constant/app_color.dart';
-import 'package:ecommerce/view/widget/product/body_product_detail.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:ecommerce/view/widget/product/body_product_detail.dart';
 
 class ProductDetailView extends StatelessWidget {
   const ProductDetailView({super.key});
@@ -10,9 +9,12 @@ class ProductDetailView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Get.lazyPut(() => ProductDetailControllerImp());
+
+    final theme = Theme.of(context);
+
     return Scaffold(
-      backgroundColor: AppColor.backgroundScaffold,
-      body: SafeArea(
+      backgroundColor: theme.scaffoldBackgroundColor,
+      body: const SafeArea(
         child: BodyProductDetail(),
       ),
     );

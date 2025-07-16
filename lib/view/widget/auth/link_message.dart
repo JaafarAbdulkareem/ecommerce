@@ -1,4 +1,3 @@
-import 'package:ecommerce/core/constant/app_style.dart';
 import 'package:flutter/material.dart';
 
 class LinkMessage extends StatelessWidget {
@@ -8,24 +7,30 @@ class LinkMessage extends StatelessWidget {
     required this.link,
     required this.onTap,
   });
-  final String message, link;
 
+  final String message, link;
   final VoidCallback onTap;
+
   @override
   Widget build(BuildContext context) {
+    final textTheme = Theme.of(context).textTheme;
+
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Text(
           message,
-          style: AppStyle.styleLight14(context),
+          style: textTheme.bodyMedium,
         ),
         const SizedBox(width: 4),
         GestureDetector(
           onTap: onTap,
           child: Text(
             link,
-            style: AppStyle.styleSemiBold14(context),
+            style: textTheme.titleMedium?.copyWith(
+              color: Theme.of(context).colorScheme.primary,
+              decoration: TextDecoration.underline,
+            ),
           ),
         ),
       ],

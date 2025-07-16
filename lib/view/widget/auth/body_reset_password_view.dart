@@ -1,5 +1,4 @@
 import 'package:ecommerce/controller/auth/reset_password_controller.dart';
-import 'package:ecommerce/core/constant/app_color.dart';
 import 'package:ecommerce/core/constant/app_icon.dart';
 import 'package:ecommerce/core/constant/constant_key.dart';
 import 'package:ecommerce/core/constant/constant_scale.dart';
@@ -70,7 +69,6 @@ class BodyResetPasswordView extends GetView<ResetPasswordControllerImp> {
             ),
             CustomButtonWidget(
               text: KeyLanguage.saveButton.tr,
-              color: AppColor.primary,
               onTap: () {
                 controller.saveOnTap();
               },

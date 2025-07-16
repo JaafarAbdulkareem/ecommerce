@@ -1,6 +1,4 @@
 import 'package:ecommerce/controller/cart/cart_controller.dart';
-import 'package:ecommerce/core/constant/app_color.dart';
-import 'package:ecommerce/core/constant/app_style.dart';
 import 'package:ecommerce/core/constant/constant_key.dart';
 import 'package:ecommerce/core/function/improve_price.dart';
 import 'package:ecommerce/core/localization/key_language.dart';
@@ -13,18 +11,20 @@ class ReceiveShoppingCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final textTheme = theme.textTheme;
+
     return GetBuilder<CartControllerImp>(
       id: ConstantKey.idReceiveShopping,
       builder: (controller) {
         return Container(
-          padding: EdgeInsets.symmetric(
-            horizontal: 12,
-            vertical: 6,
-          ),
+          padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
           decoration: ShapeDecoration(
-            shape: Border.all(
-              color: AppColor.primary,
+            shape: RoundedRectangleBorder(
+              side: BorderSide(color: theme.colorScheme.primary),
+              borderRadius: BorderRadius.circular(12),
             ),
+            color: theme.cardColor,
           ),
           child: Column(
             children: [
@@ -32,24 +32,24 @@ class ReceiveShoppingCard extends StatelessWidget {
                 title: KeyLanguage.priceTitle.tr,
                 receiveAmount: controller.price,
               ),
-              controller.couponsController.isApplyCoupons
-                  ? Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          KeyLanguage.couponsDiscount.tr,
-                        ),
-                        Text(
-                          improvePrice(amount: controller.couponsDiscount),
-                          style: AppStyle.styleRegular14(context).copyWith(
-                            fontFamily: ConstantTextFons.sans,
-                            decorationThickness: 3,
-                            color: AppColor.wrong,
-                          ),
-                        ),
-                      ],
-                    )
-                  : const SizedBox(),
+              if (controller.couponsController.isApplyCoupons)
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      KeyLanguage.couponsDiscount.tr,
+                      style: textTheme.bodyMedium,
+                    ),
+                    Text(
+                      improvePrice(amount: controller.couponsDiscount),
+                      style: textTheme.bodyMedium?.copyWith(
+                        decorationThickness: 2,
+                        color: theme.colorScheme.error,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                  ],
+                ),
               TextReceiveShoppingCard(
                 title: KeyLanguage.shoppingTitle.tr,
                 receiveAmount: controller.shopping,

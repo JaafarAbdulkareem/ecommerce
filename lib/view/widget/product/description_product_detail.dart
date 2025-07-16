@@ -15,6 +15,7 @@ class DescriptionProductDetail extends StatelessWidget {
         ImageProductDetail(),
         SizedBox(height: 20),
         InfoProductDetail(),
+        SizedBox(height: 20),
       ],
     );
   }

@@ -1,6 +1,5 @@
 import 'package:ecommerce/controller/checkout/payment_controller.dart';
 import 'package:ecommerce/core/class/status_request.dart';
-import 'package:ecommerce/core/constant/app_color.dart';
 import 'package:ecommerce/core/constant/app_lottie.dart';
 import 'package:ecommerce/core/localization/key_language.dart';
 import 'package:ecommerce/core/share/custom_button_widget.dart';
@@ -38,7 +37,6 @@ class PaymentMethodsBottomSheet extends GetView<PaymentControllerImp> {
                     )
                   : CustomButtonWidget(
                       text: KeyLanguage.continueButton.tr,
-                      color: AppColor.primary,
                       onTap: () {
                         controller.paymentButton();
                       },
