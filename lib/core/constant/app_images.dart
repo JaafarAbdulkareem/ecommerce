@@ -10,9 +10,17 @@ class AppImages {
   /// assets/images/card.svg
   static const String imagesCard = "assets/images/card.svg";
 
+  /// Assets for imagesCustomerHome
+  /// assets/images/customer_home.png
+  static const String imagesCustomerHome = "assets/images/customer_home.png";
+
   /// Assets for imagesDelivery
   /// assets/images/delivery.png
   static const String imagesDelivery = "assets/images/delivery.png";
+
+  /// Assets for imagesDeliveryMan
+  /// assets/images/delivery_man.png
+  static const String imagesDeliveryMan = "assets/images/delivery_man.png";
 
   /// Assets for imagesDiscount
   /// assets/images/discount.png

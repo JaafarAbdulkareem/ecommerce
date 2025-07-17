@@ -38,7 +38,7 @@ class TotalPriceOrder extends GetView<OrderControllerImp> {
           ],
         ),
         const SizedBox(width: 6),
-        if (status < ConstantScale.onWayOption)
+        if (status < ConstantScale.prepareOption)
           Expanded(
             child: CustomButtonWidget(
               text: KeyLanguage.deleteButton.tr,

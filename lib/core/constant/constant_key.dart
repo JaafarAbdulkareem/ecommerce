@@ -38,10 +38,11 @@ abstract class ConstantKey {
   static const String idUpdateAddress = "idUpdateAddress";
   static const String idInvalidButton = "idInvalidButton";
   static const String idRatingButton = "idRatingButton";
-  // static const String idGoogleMap = "idGoogleMap";
+  static const String idGoogleMap = "idGoogleMap";
+  static const String idCouponsApply = "idCouponsApply";
   // id marker in google map
   static const String idUserLocation = "userLocation";
-  static const String idCouponsApply = "idCouponsApply";
+  static const String idDeliveryLocation = "idDeliveryLocation";
   //checkout
   static const String idPaymentType = "idPaymentType";
   static const String idDeliveryType = "idDeliveryType";
@@ -56,6 +57,8 @@ abstract class ConstantKey {
 
   //topics
   static const String usersTopics = "users";
+  //firebase store
+  static const String collectionDelivery = "delivery";
 }
 
 abstract class ConstantLanguage {

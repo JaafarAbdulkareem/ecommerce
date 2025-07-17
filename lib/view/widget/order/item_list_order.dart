@@ -60,7 +60,7 @@ class ItemListOrder extends StatelessWidget {
             TotalPriceOrder(
               id: data.id,
               totalPrice: data.totalPrice,
-              status: data.status ?? ConstantScale.onWayOption,
+              status: data.status ?? ConstantScale.approvedOption,
             ),
           ],
         ),

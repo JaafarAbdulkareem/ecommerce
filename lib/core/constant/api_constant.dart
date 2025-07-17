@@ -1,6 +1,6 @@
 abstract class ApiConstant {
   static const String server =
-      "https://pleasantly-divine-bear.ngrok-free.app"; // ngrok ngrok http --url=pleasantly-divine-bear.ngrok-free.app 80
+      "https://pleasantly-divine-bear.ngrok-free.app"; // ngrok start myapp
   // static const String server = "http://192.168.0.100"; // home wifi
   // static const String server = "http://192.168.230.139";
   // static const String server = "http://192.168.50.139"; // mobile

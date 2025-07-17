@@ -12,7 +12,7 @@ class BottomButtonCheckout extends GetView<CheckoutControllerImp> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 10),
+      padding: const EdgeInsets.symmetric(horizontal: 16,vertical: 12),
       child: CustomButtonWidget(
         text: KeyLanguage.checkButton.tr,
         onTap: () {

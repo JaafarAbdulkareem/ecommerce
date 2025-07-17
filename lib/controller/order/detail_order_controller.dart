@@ -1,10 +1,10 @@
 import 'package:ecommerce/core/class/alert_default.dart';
+import 'package:ecommerce/core/class/custom_google_map.dart';
 import 'package:ecommerce/core/class/status_request.dart';
 import 'package:ecommerce/core/constant/api_key.dart';
 import 'package:ecommerce/core/constant/constant_key.dart';
 import 'package:ecommerce/core/function/handle_status.dart';
 import 'package:ecommerce/core/localization/key_language.dart';
-import 'package:ecommerce/core/service/location_service.dart';
 import 'package:ecommerce/data/data_source/remote/order/detail_order_remote.dart';
 import 'package:ecommerce/data/models/detail_order_model/detail_order_model/detail_order_model.dart';
 import 'package:ecommerce/view/widget/order/show_rating_dialogs_product.dart';
@@ -30,7 +30,7 @@ class DetailOrderControllerImp extends DetailOrderController {
   // Set<Polyline> polylines = {};
   late CameraPosition initialCameraPosition;
   late GoogleMapController googleMapController;
-  late LocationService locationService;
+  late CustomGoogleMap customGoogleMap;
   // late Uuid uuid;
   final AlertDefault _alertDefault = AlertDefault();
 
@@ -44,14 +44,18 @@ class DetailOrderControllerImp extends DetailOrderController {
     getData();
     // locationService = LocationService();
     // uuid = const Uuid();
-
+    customGoogleMap = CustomGoogleMap(refresh: () {
+      googleMapController.animateCamera(
+          CameraUpdate.newLatLngBounds(customGoogleMap.bounds!, 16));
+      update([ConstantKey.idGoogleMap]);
+    });
     super.onInit();
   }
 
   @override
   void dispose() {
     googleMapController.dispose();
-    locationService.cancelLocationSubscription();
+    customGoogleMap.dispose();
 
     super.dispose();
   }
@@ -125,6 +129,12 @@ class DetailOrderControllerImp extends DetailOrderController {
     }
   }
 
+  void onMapCreated(controller) async {
+    googleMapController = controller;
+    customGoogleMap.mapCameraPosition(
+      detailOrderData: detailOrderData,
+    );
+  }
   // void onMapCreated(controller) async {
   //   googleMapController = controller;
   //   await locationService.getRealTimeLocationData((locationData) {
