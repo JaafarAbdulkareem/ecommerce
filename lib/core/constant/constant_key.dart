@@ -75,9 +75,9 @@ abstract class ConstantTextFons {
 abstract class ConstantText {
   static const String businessName = "King";
   static const String obscureText = "*";
-  static const String currencyPrice = '₹';
-  static const String currencyPayment = "inr";
-  // static const String currencyPrice = r'$';
-  // static const String currencyPayment = "usd";
+  // static const String currencyPrice = '₹';
+  // static const String currencyPayment = "inr";
+  static const String currencyPrice = r'$';
+  static const String currencyPayment = "usd";
   static const String phoneContactUs = "+1-555-010-999";
 }

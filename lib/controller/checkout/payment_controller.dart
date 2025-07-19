@@ -51,15 +51,16 @@ class PaymentControllerImp extends PaymentController {
           amount: AmountModel(
             total: _cartController.totalPrice.discountPrice.toString(),
             details: AmountDetailsModel(
-              subtotal: _cartController.totalPrice.discountPrice.toString(),
-              shipping: _cartController.shopping.discountPrice.toString(),
-              shippingDiscount: _cartController.totalPrice.discount.toInt(),
-            ),
+                subtotal: _cartController.totalPrice.discountPrice.toString(),
+                shipping:
+                    "0", //_cartController.shopping.discountPrice.toString(),
+                shippingDiscount: 0
+                // _cartController.totalPrice.discount.toInt(),
+                ),
           ),
           itemList: ItemListModel.fromCart(_cartController.cartData),
         ),
       );
-      _checkoutController.callCheckoutMethod();
     } else {
       _alertDefault.snackBarDefault();
       statusRequest = StatusRequest.success;
@@ -81,13 +82,14 @@ class PaymentControllerImp extends PaymentController {
         successFunction: () {
           _checkoutController.callCheckoutMethod();
         });
-    // statusRequest = StatusRequest.success;
-    // update();
+    statusRequest = StatusRequest.success;
+    update();
   }
 
   Future<void> _payPalButton({
     required PayPalPaymentModel payPalPaymentModel,
   }) async {
+    Get.back();
     await Get.to(
       () => PaypalCheckoutView(
         sandboxMode: true,
@@ -100,12 +102,18 @@ class PaymentControllerImp extends PaymentController {
         onSuccess: (Map params) async {
           Get.back(); // Closes the PayPal view
           _checkoutController.callCheckoutMethod();
+          statusRequest = StatusRequest.success;
+          update();
         },
         onError: (error) {
           debugPrint("PayPal onError: $error");
+          statusRequest = StatusRequest.failure;
+          update();
           Get.back(); // Closes the PayPal view
         },
         onCancel: () {
+          statusRequest = StatusRequest.success;
+          update();
           Get.back(); // Also closes view if user cancels
         },
       ),
