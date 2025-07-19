@@ -20,7 +20,7 @@ Start your journey with **Ecommerce App** with an engaging and informative onboa
 ---
 
 ### 2. **User Authentication 🔐🔑**
-<img src="assets/screenshots/auth" alt="Authentication" width="800">
+<img src="assets/screenshot/auth.png" alt="Authentication" width="800">
 
 Logging in, registering, and resetting your password has never been easier or more secure! 🛡️ With **Ecommerce App**, we ensure your personal information is protected with advanced security protocols. 🏦🔒
 
@@ -31,7 +31,7 @@ Logging in, registering, and resetting your password has never been easier or mo
 ---
 
 ### 3. **Product Listing with Details Integration 🛍️📝**
-<img src="assets/screenshots/products.png" alt="Products" width="800">
+<img src="assets/screenshot/products.png" alt="Products" width="800">
 ShopEase brings you an intuitive product listing experience combined with in-depth details to ensure your shopping journey is smooth and informative! 🎯🛒
 
 ---
@@ -69,7 +69,7 @@ This smooth integration ensures that your shopping experience is efficient, fast
 ---
 
 ### 4. **Add to Cart & Checkout Process 🛒💳**
-<img src="assets/screenshots/cart" alt="Onboarding" width="800">
+<img src="assets/screenshot/cart.png" alt="cart and checkout" width="800">
 Adding products to your cart and completing checkout has never been easier! 🛍️💨 The cart updates in real-time to show you the total price, quantity, and more.
 
 - **Cart Features:** View all your items, update quantities, or remove products as needed! 🧾🛒  
@@ -89,7 +89,7 @@ View and manage your past orders, including **pending orders**, **archived order
 ---
 
 ### **6. Search & Favorite 🔍❤️**
-<img src="assets/screenshots/search" alt="Search and Favorite" width="800">
+<img src="assets/screenshot/search.png" alt="Search and Favorite" width="800">
 Find your favorite products in seconds and save them for future reference! 📌💖 With **Ecommerce App**, searching and favoriting products has never been easier or more fun!
 
 - **Search:** Quickly locate products by typing in names, categories, or keywords! 🔍👨‍💻  
@@ -98,7 +98,7 @@ Find your favorite products in seconds and save them for future reference! 📌�
 
 ---
 ### 7. *Themes & Language Support* 🎨🌍
-<img src="assets/screenshots/theme.png" alt="Search and Favorite" width="800">
+<img src="assets/screenshot/theme.png" alt="theme" width="800">
 Customize your experience with flexible theme and language settings:
 
 - **👦 Male & 👧 Female Themes:** Choose between *light* and *dark* modes tailored for both male and female preferences for a personalized look and feel.  
