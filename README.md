@@ -69,7 +69,7 @@ This smooth integration ensures that your shopping experience is efficient, fast
 ---
 
 ### 4. **Add to Cart & Checkout Process 🛒💳**
-<img src="assets/screenshot/cart.png" alt="cart and checkout" width="800">
+<img src="assets/screenshot/checkout.png" alt="cart and checkout" width="800">
 Adding products to your cart and completing checkout has never been easier! 🛍️💨 The cart updates in real-time to show you the total price, quantity, and more.
 
 - **Cart Features:** View all your items, update quantities, or remove products as needed! 🧾🛒  
