@@ -9,7 +9,7 @@ Whether you’re looking for the latest gadgets, home electronics, or accessorie
 ## **🌟 Features 🌟**
 
 ### 1. **Onboarding Experience 🎉🖥️**
-<img src="assets/screenshots/onboarding.png" alt="Onboarding" width="800">
+<img src="assets/screenshot/onboarding.png" alt="Onboarding" width="800">
 
 Start your journey with **Ecommerce App** with an engaging and informative onboarding experience! 🎈📝 Our onboarding screens will guide you through the app, highlighting key features and setting you up for a smooth start.
 
