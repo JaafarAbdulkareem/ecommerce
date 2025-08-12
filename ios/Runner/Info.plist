@@ -53,5 +53,11 @@
 	<string>Scan your card to add it automatically</string>
 	<key>NSCameraUsageDescription</key>
 	<string>To scan cards</string>
+
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>To upload product images</string>
+
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>To provide location-based services</string>
 </dict>
 </plist>

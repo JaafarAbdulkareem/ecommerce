@@ -7,6 +7,44 @@
   "client": [
     {
       "client_info": {
+        "mobilesdk_app_id": "1:551771648041:android:a878d12d35055127ec2c38",
+        "android_client_info": {
+          "package_name": "com.example.admin_ecommerce"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyATLKBvY6ZDmqNFZaJIvV8igsjaxBGpuE0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:551771648041:android:81b9c82933e74d8aec2c38",
+        "android_client_info": {
+          "package_name": "com.example.delivery_ecommerce"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyATLKBvY6ZDmqNFZaJIvV8igsjaxBGpuE0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
         "mobilesdk_app_id": "1:551771648041:android:9b32053872a45b00ec2c38",
         "android_client_info": {
           "package_name": "com.example.ecommerce"

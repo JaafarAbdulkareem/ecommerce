@@ -16,7 +16,7 @@ import 'package:flutter_polyline_points/flutter_polyline_points.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class CustomGoogleMap {
-  PolylinePoints polylinePoints = PolylinePoints();
+  PolylinePoints polylinePoints = PolylinePoints(apiKey: ApiKeySecret.apiKeyDirection);
   late LatLng latLngSource;
   // LatLng latLngStore = const LatLng(
   //   ConstantScale.latitudeStore,
@@ -113,7 +113,7 @@ class CustomGoogleMap {
     List<LatLng> polylineCoordinates = [];
 
     PolylineResult result = await polylinePoints.getRouteBetweenCoordinates(
-      googleApiKey: ApiKeySecret.apiKeyDirection,
+      // googleApiKey: ,
       request: PolylineRequest(
         origin: PointLatLng(latLngSource.latitude, latLngSource.longitude),
         destination: PointLatLng(
